@@ -1,0 +1,310 @@
+/**
+ * RD GESTION - Tables
+ * Tableaux de données avec tri, densité et responsive
+ */
+
+@layer components {
+  
+  /* ========================================
+     TABLE CONTAINER
+     ======================================== */
+  
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    background-color: var(--surface-base);
+  }
+  
+  
+  /* ========================================
+     TABLE
+     ======================================== */
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--surface-base);
+    border-radius: var(--radius-2xl);
+    font-family: var(--font-body);
+    font-size: var(--font-body2-size);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+    
+  /* ========================================
+     HEADER
+     ======================================== */
+  
+  .table__head {
+    background-color: var(--color-primary-600);
+    color: var(--text-inverse);
+  }
+  
+  .table__header-cell {
+    padding: var(--space-4) var(--space-4);
+    text-align: left;
+    
+    font-family: var(--font-heading);
+    font-size: var(--font-body2-size);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    
+    border-bottom: 2px solid var(--color-primary-700);
+    white-space: nowrap;
+  }
+  
+  .table__header-cell--numeric {
+    text-align: right;
+  }
+  
+  .table__header-cell--center {
+    text-align: center;
+  }
+  
+  
+  /* Sortable headers */
+  .table__header-cell--sortable {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    padding-right: var(--space-8);
+  }
+  
+  .table__header-cell--sortable:hover {
+    background-color: var(--color-primary-700);
+  }
+  
+  .table__header-cell--sortable::after {
+    content: '⇅';
+    position: absolute;
+    right: var(--space-3);
+    opacity: 0.5;
+  }
+  
+  .table__header-cell--sorted-asc::after {
+    content: '↑';
+    opacity: 1;
+  }
+  
+  .table__header-cell--sorted-desc::after {
+    content: '↓';
+    opacity: 1;
+  }
+  
+  
+  /* ========================================
+     BODY
+     ======================================== */
+  
+  .table__body {
+    background-color: var(--surface-base);
+  }
+  
+  .table__row {
+    border-bottom: 1px solid var(--border-light);
+    transition: background-color var(--transition-fast);
+  }
+  
+  .table__row:nth-child(even) {
+    background-color: var(--surface-subtle);
+  }
+  
+  .table__row:hover {
+    background-color: var(--color-primary-50);
+  }
+  
+  .table__row--selected {
+    background-color: var(--color-primary-100);
+  }
+  
+  .table__row--selected:hover {
+    background-color: var(--color-primary-200);
+  }
+  
+  .table__cell {
+    padding: var(--space-4) var(--space-4);
+    color: var(--text-primary);
+    vertical-align: middle;
+  }
+  
+  .table__cell--numeric {
+    text-align: right;
+    font-family: var(--font-subtitle);
+    font-weight: var(--font-weight-medium);
+    font-variant-numeric: tabular-nums;
+  }
+  
+  .table__cell--center {
+    text-align: center;
+  }
+  
+  .table__cell--muted {
+    color: var(--text-tertiary);
+  }
+  
+  .table__cell--bold {
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  
+  /* ========================================
+     DENSITY VARIANTS
+     ======================================== */
+  
+  .table--compact .table__cell,
+  .table--compact .table__header-cell {
+    padding: var(--space-2) var(--space-3);
+  }
+  
+  .table--comfortable .table__cell,
+  .table--comfortable .table__header-cell {
+    padding: var(--space-5) var(--space-5);
+  }
+  
+  
+  /* ========================================
+     STRIPED VARIANT
+     ======================================== */
+  
+  .table--striped .table__row:nth-child(odd) {
+    background-color: var(--surface-base);
+  }
+  
+  .table--striped .table__row:nth-child(even) {
+    background-color: var(--surface-subtle);
+  }
+  
+  
+  /* ========================================
+     BORDERED VARIANT
+     ======================================== */
+  
+  .table--bordered {
+    border: 1px solid var(--border-light);
+  }
+  
+  .table--bordered .table__cell,
+  .table--bordered .table__header-cell {
+    border-right: 1px solid var(--border-light);
+  }
+  
+  .table--bordered .table__cell:last-child,
+  .table--bordered .table__header-cell:last-child {
+    border-right: none;
+  }
+  
+  
+  /* ========================================
+     HOVERABLE VARIANT
+     ======================================== */
+  
+  .table--hoverable .table__row:hover {
+    background-color: var(--color-primary-50);
+    cursor: pointer;
+  }
+  
+  
+  /* ========================================
+     FOOTER
+     ======================================== */
+  
+  .table__footer {
+    background-color: var(--surface-raised);
+    border-top: 2px solid var(--border-default);
+  }
+  
+  .table__footer-cell {
+    padding: var(--space-4);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+  }
+  
+  
+  /* ========================================
+     EMPTY STATE
+     ======================================== */
+  
+  .table__empty {
+    padding: var(--space-12) var(--space-6);
+    text-align: center;
+    color: var(--text-tertiary);
+  }
+  
+  .table__empty-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto var(--space-4);
+    opacity: 0.3;
+  }
+  
+  
+  /* ========================================
+     ACTIONS COLUMN
+     ======================================== */
+  
+  .table__actions {
+    display: flex;
+    gap: var(--space-2);
+    justify-content: flex-end;
+  }
+  
+  
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  
+  @media (max-width: 640px) {
+    .table {
+      font-size: var(--font-caption-size);
+    }
+    
+    .table__cell,
+    .table__header-cell {
+      padding: var(--space-3) var(--space-2);
+    }
+    
+    .table__header-cell {
+      font-size: 0.6875rem;
+    }
+    
+    /* Stack sur mobile pour certaines tables */
+    .table--stack-mobile {
+      display: block;
+    }
+    
+    .table--stack-mobile .table__head {
+      display: none;
+    }
+    
+    .table--stack-mobile .table__body {
+      display: block;
+    }
+    
+    .table--stack-mobile .table__row {
+      display: block;
+      margin-bottom: var(--space-4);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+    }
+    
+    .table--stack-mobile .table__cell {
+      display: flex;
+      justify-content: space-between;
+      padding: var(--space-3);
+      border-bottom: 1px solid var(--border-light);
+    }
+    
+    .table--stack-mobile .table__cell:last-child {
+      border-bottom: none;
+    }
+    
+    .table--stack-mobile .table__cell::before {
+      content: attr(data-label);
+      font-weight: var(--font-weight-semibold);
+      color: var(--text-secondary);
+    }
+  }
+}

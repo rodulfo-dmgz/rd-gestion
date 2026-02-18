@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Politique de Confidentialité | L'Échoppe Gauloise</title>
+  <meta name="description" content="Politique de confidentialité et protection des données personnelles de L'Échoppe Gauloise. RGPD, cookies, droits des utilisateurs.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../../../assets/logo.svg">
+  
+  <!-- Polices modernes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../css/design-system.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="/css/pages/confidentialite.css">
+
+  <!-- FontAwesome (pour certaines icônes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Translate -->
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+<body>
+  <!-- Google Translate Widget -->
+  <div id="google_translate_element" style="position:absolute;top:10px;right:10px;z-index:1000;"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HEADER MINIMALISTE (identique au modèle)
+       ═══════════════════════════════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <!-- Logo minimaliste -->
+        <a href="../../../index.html" class="logo">
+          <img src="../../../../assets/logo.svg" alt="Logo L'Échoppe Gauloise">
+          <span>L'Échoppe</span>
+        </a>
+
+        <!-- Navigation -->
+        <ul class="nav-links">
+          <li><a href="../../../index.html">Accueil</a></li>
+          <li><a href="/Pages/bieres/bieres.html">Bières</a></li>
+          <li><a href="/Pages/vins/vins.html">Vins</a></li>
+          <li><a href="/Pages/Entreprise/export.html">Export</a></li>
+          <li><a href="/Pages/Entreprise/carrières.html">Carrières</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Rechercher">
+            <i data-lucide="search" stroke-width="1.5"></i>
+          </button>
+          <a href="/Pages/commande/panier.html" class="icon-btn" aria-label="Panier">
+            <i data-lucide="shopping-bag" stroke-width="1.5"></i>
+            <span class="badge cart-badge" id="cartBadge">0</span>
+          </a>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <i data-lucide="menu" stroke-width="1.5"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HERO CONFIDENTIALITÉ
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="privacy-hero" id="main-content">
+    <div class="container">
+      <div class="privacy-hero-content">
+        <div class="badge-pill">
+          <i data-lucide="shield" size="14"></i>
+          <span>Protection des données</span>
+        </div>
+        <h1 class="privacy-hero-title">
+          Politique de Confidentialité
+        </h1>
+        <p class="privacy-hero-subtitle">
+          Nous accordons une importance capitale à la protection de vos données personnelles, 
+          conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi 
+          Informatique et Libertés.
+        </p>
+        <div class="privacy-hero-meta">
+          <span>Dernière mise à jour : février 2025</span>
+          <span class="separator">•</span>
+          <span>Entreprise fictive – Création originale de Rodulfo DOMINGUEZ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SOMMAIRE (ANCRES RAPIDES)
+       ═══════════════════════════════════════════════════════════════════ -->
+  <div class="privacy-toc">
+    <div class="container">
+      <div class="toc-wrapper">
+        <span class="toc-label">Accès rapide :</span>
+        <ul class="toc-list">
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#responsable">Responsable</a></li>
+          <li><a href="#donnees">Données collectées</a></li>
+          <li><a href="#finalites">Finalités</a></li>
+          <li><a href="#base-juridique">Base juridique</a></li>
+          <li><a href="#destinataires">Destinataires</a></li>
+          <li><a href="#duree">Durée de conservation</a></li>
+          <li><a href="#cookies">Cookies</a></li>
+          <li><a href="#droits">Vos droits</a></li>
+          <li><a href="#securite">Sécurité</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       CONTENU PRINCIPAL - CONFIDENTIALITÉ
+       ═══════════════════════════════════════════════════════════════════ -->
+  <main class="privacy-content">
+    <div class="container">
+      
+      <!-- NOTICE PÉDAGOGIQUE -->
+      <div class="privacy-notice">
+        <div class="notice-icon">
+          <i data-lucide="graduation-cap" size="32"></i>
+        </div>
+        <div class="notice-text">
+          <h3>Document à usage pédagogique</h3>
+            <p class="pedagogical-note"> Ce site internet est une démonstration technique réalisée dans un cadre éducatif par <strong>Rodulfo DOMINGUEZ</strong>. L'ensemble des contenus (entreprise, catalogue, tarifs) est fictif et ne saurait engager une quelconque activité commerciale. Toute similitude avec des structures existantes est involontaire.</p>
+        </div>
+      </div>
+
+      <!-- 1. INTRODUCTION -->
+      <section id="introduction" class="privacy-section">
+        <h2 class="section-title"><span class="section-number">1.</span> Introduction</h2>
+        <div class="section-card">
+          <p>La société <strong>L’Échoppe Gauloise</strong> (ci‑après « nous », « notre », « nos ») s’engage à protéger la vie privée de ses clients et visiteurs. La présente politique de confidentialité a pour objet de vous informer de manière claire et transparente sur la manière dont nous collectons, utilisons et protégeons vos données personnelles lorsque vous naviguez sur notre site www.lechoppegauloise.fr ou lorsque vous effectuez un achat.</p>
+          <p>Nous respectons scrupuleusement le Règlement (UE) 2016/679 du 27 avril 2016 (RGPD) ainsi que la loi n° 78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés modifiée.</p>
+        </div>
+      </section>
+
+      <!-- 2. RESPONSABLE DE TRAITEMENT -->
+      <section id="responsable" class="privacy-section">
+        <h2 class="section-title"><span class="section-number">2.</span> Responsable de traitement</h2>
+        <div class="section-card">
+          <div class="info-item">
+            <i data-lucide="building-2" size="20"></i>
+            <div>
+              <strong>L’Échoppe Gauloise</strong>
+              <span>SARL au capital de 10 000 €</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <i data-lucide="map-pin" size="20"></i>
+            <div>
+              <strong>Siège social</strong>
+              <span>12 Rue des Grands Crus, 33000 Bordeaux</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <i data-lucide="mail" size="20"></i>
+            <div>
+              <strong>E-mail</strong>
+              <span><a href="mailto:contact@lechoppegauloise.fr">contact@lechoppegauloise.fr</a> (indiquez « Données personnelles » dans l’objet)</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <i data-lucide="phone" size="20"></i>
+            <div>
+              <strong>Téléphone</strong>
+              <span>05 56 78 90 12</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. DONNÉES COLLECTÉES -->
+      <section id="donnees" class="privacy-section">
+        <h2 class="section-title"><span class="section-number">3.</span> Données personnelles collectées</h2>
+        <div class="section-card">
+          <p>Nous collectons uniquement les données strictement nécessaires aux finalités décrites ci‑après :</p>
+          <div class="data-table">
+            <div class="data-row header">
+              <span>Catégorie</span>
+              <span>Données concernées</span>
+            </div>
+            <div class="data-row">
+              <span><strong>Identité</strong></span>
+              <span>Civilité, nom, prénom</span>
+            </div>
+            <div class="data-row">
+              <span><strong>Coordonnées</strong></span>
+              <span>Adresse email, adresse postale, numéro de téléphone</span>
+            </div>
+            <div class="data-row">
+              <span><strong>Commande</strong></span>
+              <span>Adresse de livraison, adresse de facturation, historique des achats</span>
+            </div>
+            <div class="data-row">
+              <span><strong>Paiement</strong></span>
+              <span>Coordonnées bancaires (via prestataire sécurisé, nous ne conservons pas ces données)</span>
+            </div>
+            <div class="data-row">
+              <span><strong>Connexion</strong></span>
+              <span>Adresse IP, logs de connexion, type de navigateur</span>
+            </div>
+            <div class="data-row">
+              <span><strong>Navigation</strong></span>
+              <span>Cookies techniques et fonctionnels</span>
+            </div>
+          </div>
+          <p class="data-note">Nous ne collectons pas de données sensibles (origine raciale, opinions politiques, santé, etc.).</p>
+        </div>
+      </section>
+
+      <!-- 4. FINALITÉS DU TRAITEMENT -->
+      <section id="finalites" class="privacy-section">
+        <h2 class="section-title"><span class="section-number">4.</span> Finalités du traitement</h2>
+        <div class="section-card">
+          <ul class="purpose-list">
+            <li>
+              <i data-lucide="check-circle" size="18"></i>
+              <span><strong>Gestion des commandes et livraison :</strong> traitement des achats, facturation, suivi de livraison, service après-vente.</span>
+            </li>
+            <li>
+              <i data-lucide="check-circle" size="18"></i>
+              <span><strong>Relation client :</strong> réponse aux demandes d’information, gestion des réclamations, assistance.</span>
+            </li>
+            <li>
+              <i data-lucide="check-circle" size="18"></i>
+              <span><strong>Marketing et prospection :</strong> envoi de newsletters et offres personnalisées (uniquement avec votre consentement).</span>
+            </li>
+            <li>
+              <i data-lucide="check-circle" size="18"></i>
+              <span><strong>Amélioration du site :</strong> analyse des visites et de l’audience (via cookies anonymisés).</span>
+            </li>
+            <li>
+              <i data-lucide="check-circle" size="18"></i>
+              <span><strong>Obligations légales :</strong> tenue de la comptabilité, réponse aux autorités judiciaires.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 5. BASE JURIDIQUE -->
+      <section id="base-juridique" class="privacy-section">
+        <h2 class="section-title"><span class="section-number">5.</span> Base juridique des traitements</h2>
+        <div class="section-card">
+          <div class="legal-basis-grid">
+            <div class="basis-item">
+              <i data-lucide="file-text" size="20"></i>
+              <div>
+                <strong>Exécution d’un contrat</strong>
+                <p>Gestion des commandes, livraison, service après-vente</p>
+              </div>
+            </div>
+            <div class="basis-item">
+              <i data-lucide="check-square" size="20"></i>
+              <div>
+                <strong>Consentement</strong>
+                <p>Newsletter, cookies publicitaires (opt-in)</p>
+              </div>
+            </div>
+            <div class="basis-item">
+              <i data-lucide="scale" size="20"></i>
+              <div>
+                <strong>Obligation légale</strong>
+                <p>Facturation, comptabilité, archivage</p>
+              </div>
+            </div>
+            <div class="basis-item">
+              <i data-lucide="shield" size="20"></i>
+              <div>
+                <strong>Intérêt légitime</strong>
+                <p>Amélioration du site, sécurité, prévention de la fraude</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. DESTINATAIRES DES DONNÉES -->
+      <section id="destinataires" class="privacy-section">
+        <h2 class="section-title"><span class="section-number">6.</span> Destinataires des données</h2>
+        <div class="section-card">
+          <p>Vos données personnelles sont traitées par les services internes habilités de L’Échoppe Gauloise (service commercial, service comptable, service logistique).</p>
+          <p>Elles peuvent être transmises à des partenaires ou sous-traitants pour l’exécution de nos prestations :</p>
+          <ul class="recipient-list">
+            <li><i data-lucide="truck" size="16"></i> Transporteurs (Colissimo, DHL, etc.)</li>
+            <li><i data-lucide="credit-card" size="16"></i> Prestataires de paiement sécurisé (Stripe, PayPal)</li>
+            <li><i data-lucide="server" size="16"></i> Hébergeur du site (OVH)</li>
+            <li><i data-lucide="mail" size="16"></i> Prestataires d’envoi d’emails (Mailchimp / Sendinblue)</li>
+          </ul>
+          <p class="important-note">Nous ne vendons ni ne louons vos données à des tiers à des fins commerciales.</p>
+        </div>
+      </section>
+
+      <!-- 7. DURÉE DE CONSERVATION -->
+      <section id="duree" class="privacy-section">
+        <h2 class="section-title"><span class="section-number">7.</span> Durée de conservation</h2>
+        <div class="section-card">
+          <div class="retention-grid">
+            <div class="retention-item">
+              <strong>Données de compte client</strong>
+              <span>3 ans à compter du dernier contact</span>
+            </div>
+            <div class="retention-item">
+              <strong>Données de commande</strong>
+              <span>10 ans (obligation comptable)</span>
+            </div>
+            <div class="retention-item">
+              <strong>Newsletter</strong>
+              <span>Jusqu’au désabonnement + 3 ans</span>
+            </div>
+            <div class="retention-item">
+              <strong>Cookies</strong>
+              <span>13 mois maximum</span>
+            </div>
+            <div class="retention-item">
+              <strong>Logs de connexion</strong>
+              <span>1 an</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. COOKIES -->
+      <section id="cookies" class="privacy-section">
+        <h2 class="section-title"><span class="section-number">8.</span> Gestion des cookies</h2>
+        <div class="section-card">
+          <p>Notre site utilise des cookies pour améliorer votre expérience de navigation.</p>
+          <div class="cookie-types">
+            <div class="cookie-type">
+              <h4><i data-lucide="check-circle" size="18"></i> Cookies strictement nécessaires</h4>
+              <p>Ils sont indispensables au fonctionnement du site (panier d’achat, session utilisateur). Ils ne peuvent être désactivés. Ils ne collectent aucune donnée à des fins marketing.</p>
+            </div>
+            <div class="cookie-type">
+              <h4><i data-lucide="bar-chart" size="18"></i> Cookies de mesure d’audience</h4>
+              <p>Nous utilisons Google Analytics anonymisé pour comprendre comment les visiteurs interagissent avec le site. Ces cookies ne sont déposés qu’avec votre consentement.</p>
+            </div>
+            <div class="cookie-type">
+              <h4><i data-lucide="target" size="18"></i> Cookies publicitaires</h4>
+              <p>Nous ne déposons pas de cookies publicitaires tiers sans votre accord explicite.</p>
+            </div>
+          </div>
+          <div class="cookie-preferences">
+            <p>Vous pouvez à tout moment modifier vos préférences sur les cookies en cliquant sur le lien <a href="#" id="openCookiePreferences">« Gérer mes cookies »</a> en bas de page.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. VOS DROITS -->
+      <section id="droits" class="privacy-section">
+        <h2 class="section-title"><span class="section-number">9.</span> Vos droits</h2>
+        <div class="section-card">
+          <p>Conformément au RGPD et à la loi Informatique et Libertés, vous disposez des droits suivants :</p>
+          <div class="rights-grid">
+            <div class="right-item">
+              <i data-lucide="user-check" size="24"></i>
+              <h4>Droit d’accès</h4>
+              <p>Obtenir la confirmation que des données vous concernant sont traitées et en recevoir une copie.</p>
+            </div>
+            <div class="right-item">
+              <i data-lucide="edit" size="24"></i>
+              <h4>Droit de rectification</h4>
+              <p>Demander la correction de données inexactes ou incomplètes.</p>
+            </div>
+            <div class="right-item">
+              <i data-lucide="trash-2" size="24"></i>
+              <h4>Droit à l’effacement</h4>
+              <p>Obtenir la suppression de vos données dans certains cas.</p>
+            </div>
+            <div class="right-item">
+              <i data-lucide="pause-circle" size="24"></i>
+              <h4>Droit à la limitation</h4>
+              <p>Demander le gel du traitement de vos données.</p>
+            </div>
+            <div class="right-item">
+              <i data-lucide="download" size="24"></i>
+              <h4>Droit à la portabilité</h4>
+              <p>Recevoir vos données dans un format structuré et lisible par machine.</p>
+            </div>
+            <div class="right-item">
+              <i data-lucide="x-circle" size="24"></i>
+              <h4>Droit d’opposition</h4>
+              <p>Vous opposer au traitement de vos données pour des motifs légitimes.</p>
+            </div>
+          </div>
+          <p class="rights-exercise">Pour exercer vos droits, contactez-nous par email à <a href="mailto:contact@lechoppegauloise.fr">contact@lechoppegauloise.fr</a> ou par courrier postal accompagné d’une copie de votre pièce d’identité. Nous répondrons dans un délai d’un mois maximum.</p>
+          <p class="rights-recourse">En cas de non-satisfaction, vous avez le droit d’introduire une réclamation auprès de la CNIL (www.cnil.fr).</p>
+        </div>
+      </section>
+
+      <!-- 10. SÉCURITÉ -->
+      <section id="securite" class="privacy-section">
+        <h2 class="section-title"><span class="section-number">10.</span> Sécurité des données</h2>
+        <div class="section-card">
+          <p>Nous mettons en œuvre toutes les mesures techniques et organisationnelles appropriées pour garantir un niveau de sécurité adapté au risque :</p>
+          <ul class="security-list">
+            <li><i data-lucide="lock" size="16"></i> Chiffrement SSL/TLS du site (HTTPS)</li>
+            <li><i data-lucide="shield" size="16"></i> Accès aux données strictement limité aux personnes habilitées</li>
+            <li><i data-lucide="key" size="16"></i> Mots de passe hachés et salés</li>
+            <li><i data-lucide="database" size="16"></i> Sauvegardes régulières</li>
+            <li><i data-lucide="eye-off" size="16"></i> Anonymisation des données pour les statistiques</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 11. CONTACT -->
+      <section id="contact" class="privacy-section">
+        <h2 class="section-title"><span class="section-number">11.</span> Nous contacter</h2>
+        <div class="section-card">
+          <p>Pour toute question relative à cette politique de confidentialité ou à l’exercice de vos droits, vous pouvez nous joindre :</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <i data-lucide="mail" size="20"></i>
+              <div>
+                <strong>Email :</strong>
+                <a href="mailto:contact@lechoppegauloise.fr">contact@lechoppegauloise.fr</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i data-lucide="phone" size="20"></i>
+              <div>
+                <strong>Téléphone :</strong>
+                <span>05 56 78 90 12</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i data-lucide="map-pin" size="20"></i>
+              <div>
+                <strong>Courrier :</strong>
+                <span>12 Rue des Grands Crus, 33000 Bordeaux</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SIGNATURE PÉDAGOGIQUE -->
+      <div class="legal-signature">
+          <img src="../../../../assets/logo.svg" alt="Logo L'Échoppe Gauloise" class="signature-logo">
+          <div class="signature-content">
+              <p class="signature-mention">Fait pour servir et valoir ce que de droit.</p>
+              <p class="signature-credit">
+                  Document établi à des fins strictement pédagogiques — Création originale : 
+                  <span class="name-wrapper">
+                      <strong>Rodulfo DOMINGUEZ</strong>
+                      <img src="/assets/signature.png" alt="Signature" class="handwritten-signature">
+                  </span>
+              </p>
+          </div>
+
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FOOTER MINIMALISTE (identique au modèle)
+       ═══════════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../../../../assets/logo.svg" alt="Logo L'Échoppe Gauloise" class="logo-img">
+            <span>L'Échoppe Gauloise</span>
+          </div>
+          <p>L'excellence française depuis 1995. Bières artisanales et vins d'exception exportés vers 15 pays.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="instagram" size="20"></i>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="facebook" size="20"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i data-lucide="linkedin" size="20"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Produits</h4>
+            <ul>
+              <li><a href="/Pages/bieres/bieres.html">Bières</a></li>
+              <li><a href="/Pages/vins/vins.html">Vins</a></li>
+              <li><a href="/../../index.html#products">Nouveautés</a></li>
+              <li><a href="/../../index.html#products">Promotions</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Entreprise</h4>
+            <ul>
+              <li><a href="/Pages/Entreprise/notre-histoire.html">Notre Histoire</a></li>
+              <li><a href="/Pages/Entreprise/export.html">Export</a></li>
+              <li><a href="/Pages/Entreprise/carrières.html">Carrières</a></li>
+              <li><a href="/Pages/support/contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="/Pages/support/FAQ.html">FAQ</a></li>
+              <li><a href="/Pages/support/livraisons.html">Livraison</a></li>
+              <li><a href="/Pages/support/retours.html">Retours</a></li>
+              <li><a href="/Pages/support/cgv.html">CGV</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Légal</h4>
+            <ul>
+              <li><a href="/Pages/support/mentions-legales.html">Mentions légales</a></li>
+              <li><a href="#" class="active">Confidentialité</a></li>
+              <li><a href="#">Cookies</a></li>
+              <li><a href="/Pages/support/cgv.html">CGV</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 L'Échoppe Gauloise. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="/Pages/support/mentions-legales.html">Mentions légales</a>
+          <a href="#">Confidentialité</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════════════════════════════ -->
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <!-- App Scripts -->
+  <script src="/js/utils.js"></script>
+  <script src="/js/navigation.js"></script>
+  <script src="/Pages/support/confidentialite.js"></script>
+
+  <!-- Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'fr',
+        includedLanguages: 'en,es,de,it,nl',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+      
+      // Masquer la barre Google par défaut
+      const googleBar = document.querySelector('.goog-te-banner-frame');
+      if (googleBar) {
+        googleBar.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
+[file content end]

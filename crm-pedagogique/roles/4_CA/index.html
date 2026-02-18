@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard CA — Comptabilité</title>
+  <link rel="icon" type="image/svg+xml" href="../../../assets/icons/icon.svg?v=2">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Architecture modulaire -->
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages/dashboard.css">
+  <link rel="stylesheet" href="/css/components.css">
+
+  <style>
+    /* Thème Comptabilité – bleu professionnel */
+    .dashboard-ca {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.02) 0%, rgba(6, 182, 212, 0.02) 100%);
+    }
+    
+    .stat-card {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+      border: 1px solid rgba(37, 99, 235, 0.2);
+    }
+    .stat-card::before {
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+    }
+    .stat-card:hover {
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.2);
+      border-color: #2563eb;
+    }
+    .stat-value { color: #2563eb; }
+    .stat-icon { background: rgba(37, 99, 235, 0.1); color: #2563eb; }
+    
+    /* Header : navigation principale */
+    .main-nav {
+      display: flex;
+      gap: 1.5rem;
+      margin-left: 2rem;
+    }
+    .main-nav a {
+      color: var(--text-secondary);
+      font-weight: 600;
+      padding: 0.5rem 0;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .main-nav a i {
+      width: 18px;
+      height: 18px;
+    }
+    .main-nav a:hover {
+      color: #2563eb;
+      border-bottom-color: #2563eb;
+    }
+    .main-nav a.active {
+      color: #2563eb;
+      border-bottom-color: #2563eb;
+    }
+
+    /* Sidebar : sous‑onglets */
+    .sidebar-subtabs {
+      margin-top: 2rem;
+      padding: 0 1rem;
+    }
+    .sidebar-subtabs-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .subtab-link {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      margin-bottom: 0.2rem;
+    }
+    .subtab-link i {
+      width: 16px;
+      height: 16px;
+      color: var(--text-muted);
+    }
+    .subtab-link:hover {
+      background: rgba(37, 99, 235, 0.08);
+      color: #2563eb;
+    }
+    .subtab-link.active {
+      background: #2563eb;
+      color: white;
+    }
+    .subtab-link.active i {
+      color: white;
+    }
+    .subtab-divider {
+      margin: 1rem 0;
+      border-top: 1px solid var(--border-light);
+    }
+
+    /* Contenu principal */
+    .content-pane {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid var(--border-light);
+      padding: 1.5rem;
+      min-height: 400px;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .data-table th {
+      text-align: left;
+      padding: 0.75rem 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 2px solid var(--border-light);
+    }
+    .data-table td {
+      padding: 0.75rem 0.5rem;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .data-table tr:hover td {
+      background: rgba(37, 99, 235, 0.02);
+    }
+    .badge {
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-success { background: #d1fae5; color: #065f46; }
+    .badge-warning { background: #fed7aa; color: #92400e; }
+    .badge-danger { background: #fee2e2; color: #991b1b; }
+  </style>
+</head>
+<body class="dashboard-page dashboard-ca">
+
+  <!-- SIDEBAR (gauche) : logo, infos société, SOUS‑ONGLETS -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="../../../assets/images/logo.svg" alt="CRM" class="sidebar-logo">
+      <h2 id="company-name"></h2>
+    </div>
+
+    <!-- Sous‑onglets dynamiques (selon l'onglet principal) -->
+    <div class="sidebar-subtabs">
+      <div class="sidebar-subtabs-title" id="current-main-tab-label">Quotidien</div>
+      <div id="subtab-sidebar-list">
+        <!-- Généré par JS -->
+      </div>
+    </div>
+
+    <!-- Navigation secondaire fixe (liens vers autres modules CA) -->
+    <nav class="sidebar-nav" id="sidebar-nav">
+      <!-- Compléments de navigation (Journal, Clients, etc.) -->
+    </nav>
+  </aside>
+
+  <!-- CONTENEUR PRINCIPAL DROIT -->
+  <div class="dashboard-main">
+    
+    <!-- HEADER avec menu principal (nav) et infos utilisateur -->
+    <header class="topbar">
+      <nav class="main-nav" id="mainNav">
+        <a href="#" data-tab="quotidien" class="active"><i data-lucide="sun"></i> Quotidien</a>
+        <a href="#" data-tab="tresorerie"><i data-lucide="wallet"></i> Trésorerie</a>
+        <a href="#" data-tab="consultation"><i data-lucide="search"></i> Consultation</a>
+        <a href="#" data-tab="declaratif"><i data-lucide="file-check"></i> Déclaratif</a>
+        <a href="#" data-tab="cloture"><i data-lucide="archive"></i> Clôture</a>
+      </nav>
+      <div class="topbar-right">
+        <span id="user-info"><i data-lucide="user"></i> </span>
+        <button id="logout"><i data-lucide="log-out"></i> Quitter</button>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT : KPI + panneau de contenu -->
+    <main class="dashboard">
+
+      <!-- Page header -->
+      <section class="page-header">
+        <div>
+          <h1><i data-lucide="calculator"></i> Dashboard Comptabilité</h1>
+          <p>Assistant comptable – Gestion financière et déclarative</p>
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <span id="current-date" style="font-size: 0.9rem; color: var(--text-muted);"></span>
+        </div>
+      </section>
+
+      <!-- KPI Cards -->
+      <section class="kpi-grid" style="margin-bottom: 2rem;">
+        <div class="stat-card">
+          <div class="stat-icon"><i data-lucide="file-text"></i></div>
+          <div class="stat-value" id="stat-ecritures">—</div>
+          <div class="stat-label">Écritures du jour</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i data-lucide="clock"></i></div>
+          <div class="stat-value" id="stat-echeances">—</div>
+          <div class="stat-label">Échéances client</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i data-lucide="alert-triangle"></i></div>
+          <div class="stat-value" id="stat-relances">—</div>
+          <div class="stat-label">Relances à faire</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i data-lucide="banknote"></i></div>
+          <div class="stat-value" id="stat-tresorerie">—</div>
+          <div class="stat-label">Trésorerie (k€)</div>
+        </div>
+      </section>
+
+      <!-- Panneau de contenu principal -->
+      <div id="contentPane" class="content-pane">
+        <!-- Rempli par JavaScript -->
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../../core/config.js"></script>
+  <script src="../../core/supabase-config.js"></script>
+  <script src="../../core/auth.js"></script>
+  <script src="index.js"></script>
+
+</body>
+</html>

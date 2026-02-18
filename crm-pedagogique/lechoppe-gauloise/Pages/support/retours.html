@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Retours & Remboursements - L'Échoppe Gauloise | Politique de retour</title>
+  <meta name="description" content="Notre politique de retours et remboursements pour particuliers et professionnels. Conditions, délais, procédures et moyens de remboursement.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+  
+  <!-- Polices modernes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages/retours.css">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="/index.html" class="logo">
+          <img src="/assets/logo.svg" class="logo">
+          <span>L'Échoppe</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/Pages/bieres/bieres.html">Bières</a></li>
+          <li><a href="/Pages/vins/vins.html">Vins</a></li>
+          <li><a href="/Pages/Entreprise/export.html">Export</a></li>
+          <li><a href="/Pages/faq.html">FAQ</a></li>
+          <li><a href="/Pages/livraison.html">Livraison</a></li>
+          <li><a href="#" class="active">Retours</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Rechercher">
+            <i data-lucide="search" stroke-width="1.5"></i>
+          </button>
+          <a href="/Pages/commande/panier.html" class="icon-btn" aria-label="Panier">
+            <i data-lucide="shopping-bag" stroke-width="1.5"></i>
+            <span class="badge cart-badge" id="cartBadge">0</span>
+          </a>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <i data-lucide="menu" stroke-width="1.5"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HERO RETOURS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="retours-hero">
+    <div class="container">
+      <div class="retours-hero-content">
+        <div class="badge-pill">
+          <i data-lucide="refresh-ccw" size="14"></i>
+          <span>Satisfaction garantie</span>
+        </div>
+        
+        <h1 class="retours-title">
+          Retours & Remboursements
+          <span class="gradient-texte">Satisfaction 100% garantie</span>
+        </h1>
+        
+        <p class="retours-subtitle">
+          Notre politique de retour simple et transparente pour particuliers et professionnels.
+          Découvrez nos procédures, délais et moyens de remboursement.
+        </p>
+        
+        <!-- Stats de satisfaction -->
+        <div class="retours-stats">
+          <div class="retour-stat">
+            <strong>98%</strong>
+            <span>Satisfaction clients</span>
+          </div>
+          <div class="retour-stat">
+            <strong>24h</strong>
+            <span>Traitement des retours</span>
+          </div>
+          <div class="retour-stat">
+            <strong>14 jours</strong>
+            <span>Pour retourner</span>
+          </div>
+          <div class="retour-stat">
+            <strong>100%</strong>
+            <span>Remboursement casse</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       NAVIGATION PAR TYPE DE CLIENT
+       ═══════════════════════════════════════════════════════════════════ -->
+  <div class="client-type-nav">
+    <div class="container">
+      <div class="type-nav-container">
+        <button class="type-nav-btn active" data-type="particuliers">
+          <i data-lucide="user"></i>
+          Particuliers
+        </button>
+        <button class="type-nav-btn" data-type="professionnels">
+          <i data-lucide="building"></i>
+          Professionnels
+        </button>
+        <button class="type-nav-btn" data-type="conditions">
+          <i data-lucide="file-text"></i>
+          Conditions générales
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       CONTENU PRINCIPAL
+       ═══════════════════════════════════════════════════════════════════ -->
+  <main class="retours-main">
+    <div class="container">
+      <!-- Section: Particuliers -->
+      <section class="client-section active" id="section-particuliers">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i data-lucide="user" size="28"></i>
+            Retours pour les particuliers
+          </h2>
+          <p class="section-subtitle">
+            Vous n'êtes pas satisfait de votre commande ? Notre procédure de retour est simple et rapide.
+          </p>
+        </div>
+
+        <!-- Processus de retour -->
+        <div class="return-process">
+          <h3 class="process-title">Procédure de retour en 4 étapes</h3>
+          <div class="process-steps">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <div class="step-icon">
+                <i data-lucide="message-square" size="32"></i>
+              </div>
+              <h4>Demander un retour</h4>
+              <p>Contactez-nous sous 14 jours après réception via notre formulaire ou par email.</p>
+              <a href="#contact" class="step-link">
+                Formulaire de retour
+                <i data-lucide="arrow-right" size="16"></i>
+              </a>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <div class="step-icon">
+                <i data-lucide="package" size="32"></i>
+              </div>
+              <h4>Préparer le colis</h4>
+              <p>Replacez les produits dans leur emballage d'origine, sans les ouvrir.</p>
+              <div class="step-note">
+                <i data-lucide="alert-circle" size="16"></i>
+                <span>Produits non ouverts seulement</span>
+              </div>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <div class="step-icon">
+                <i data-lucide="truck" size="32"></i>
+              </div>
+              <h4>Expédier le retour</h4>
+              <p>Utilisez l'étiquette prépayée que nous vous envoyons. Retour gratuit pour les produits défectueux.</p>
+              <div class="step-note">
+                <i data-lucide="info" size="16"></i>
+                <span>Conservez le numéro de suivi</span>
+              </div>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">4</div>
+              <div class="step-icon">
+                <i data-lucide="credit-card" size="32"></i>
+              </div>
+              <h4>Recevoir le remboursement</h4>
+              <p>Dès réception, nous procédons au remboursement sous 5 jours ouvrés.</p>
+              <div class="step-note">
+                <i data-lucide="check-circle" size="16"></i>
+                <span>Même moyen de paiement utilisé</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conditions particulières -->
+        <div class="conditions-grid">
+          <div class="condition-card">
+            <div class="condition-icon green">
+              <i data-lucide="check-circle" size="24"></i>
+            </div>
+            <div class="condition-content">
+              <h4>Retours acceptés</h4>
+              <ul>
+                <li>Produits non ouverts</li>
+                <li>Produits endommagés lors du transport</li>
+                <li>Erreur de commande de notre part</li>
+                <li>Produits périmés (rare)</li>
+                <li>Emballage d'origine intact</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="condition-card">
+            <div class="condition-icon red">
+              <i data-lucide="x-circle" size="24"></i>
+            </div>
+            <div class="condition-content">
+              <h4>Retours refusés</h4>
+              <ul>
+                <li>Produits alcoolisés ouverts</li>
+                <li>Produits personnalisés ou sur mesure</li>
+                <li>Produits achetés en promotion "soldes"</li>
+                <li>Emballage endommagé par le client</li>
+                <li>Retour après 14 jours</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Remboursements -->
+        <div class="refunds-section">
+          <h3 class="section-subtitle">Modes de remboursement</h3>
+          <div class="refunds-methods">
+            <div class="method-card">
+              <div class="method-icon">
+                <i data-lucide="credit-card" size="32"></i>
+              </div>
+              <h4>Carte bancaire</h4>
+              <p>Remboursement sur la carte utilisée lors de l'achat.</p>
+              <div class="method-details">
+                <span class="detail-label">Délai</span>
+                <span class="detail-value">3-5 jours ouvrés</span>
+              </div>
+              <div class="method-details">
+                <span class="detail-label">Frais</span>
+                <span class="detail-value">Aucun</span>
+              </div>
+            </div>
+
+            <div class="method-card">
+              <div class="method-icon">
+                <i data-lucide="wallet" size="32"></i>
+              </div>
+              <h4>Portefeuille virtuel</h4>
+              <p>Crédit utilisable sur votre prochaine commande.</p>
+              <div class="method-details">
+                <span class="detail-label">Délai</span>
+                <span class="detail-value">24 heures</span>
+              </div>
+              <div class="method-details">
+                <span class="detail-label">Bonus</span>
+                <span class="detail-value">+5% de crédit</span>
+              </div>
+            </div>
+
+            <div class="method-card">
+              <div class="method-icon">
+                <i data-lucide="banknote" size="32"></i>
+              </div>
+              <h4>Virement bancaire</h4>
+              <p>Pour les commandes supérieures à 500€.</p>
+              <div class="method-details">
+                <span class="detail-label">Délai</span>
+                <span class="detail-value">5-7 jours ouvrés</span>
+              </div>
+              <div class="method-details">
+                <span class="detail-label">Frais</span>
+                <span class="detail-value">Aucun</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="refund-note">
+            <i data-lucide="info" size="20"></i>
+            <div>
+              <p><strong>Important :</strong> Les frais de livraison initiaux ne sont pas remboursés, sauf en cas d'erreur de notre part ou de produit défectueux. Pour les retours partiels, seuls les produits retournés seront remboursés.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Garantie casse -->
+        <div class="breakage-guarantee">
+          <div class="guarantee-card">
+            <div class="guarantee-icon">
+              <i data-lucide="shield-check" size="48"></i>
+            </div>
+            <div class="guarantee-content">
+              <h3>Garantie casse 100%</h3>
+              <p>Si des bouteilles arrivent cassées, nous les remplaçons gratuitement ou vous remboursons intégralement.</p>
+              <div class="guarantee-conditions">
+                <div class="condition">
+                  <i data-lucide="check" size="16"></i>
+                  <span>Signaler dans les 48h après réception</span>
+                </div>
+                <div class="condition">
+                  <i data-lucide="check" size="16"></i>
+                  <span>Fournir des photos des dégâts</span>
+                </div>
+                <div class="condition">
+                  <i data-lucide="check" size="16"></i>
+                  <span>Conserver l'emballage d'origine</span>
+                </div>
+              </div>
+              <button class="btn btn-secondary" id="reportBreakage">
+                <i data-lucide="camera"></i>
+                Signaler une casse
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Professionnels -->
+      <section class="client-section" id="section-professionnels">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i data-lucide="building" size="28"></i>
+            Retours pour les professionnels
+          </h2>
+          <p class="section-subtitle">
+            Conditions spécifiques pour les importateurs, cavistes, restaurants et hôtels.
+          </p>
+        </div>
+
+        <!-- Tableau comparatif -->
+        <div class="comparison-table">
+          <h3>Conditions professionnelles vs particuliers</h3>
+          <div class="table-responsive">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Aspect</th>
+                  <th>Particuliers</th>
+                  <th>Professionnels</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Délai de retour</td>
+                  <td>14 jours après réception</td>
+                  <td>30 jours après réception</td>
+                </tr>
+                <tr>
+                  <td>Quantité minimale</td>
+                  <td>1 bouteille</td>
+                  <td>1 caisse (6 ou 12 bouteilles)</td>
+                </tr>
+                <tr>
+                  <td>Frais de retour</td>
+                  <td>À charge du client (sauf défaut)</td>
+                  <td>À notre charge (au-delà de 500€)</td>
+                </tr>
+                <tr>
+                  <td>Modes de remboursement</td>
+                  <td>Carte bancaire, crédit, virement</td>
+                  <td>Virement bancaire uniquement</td>
+                </tr>
+                <tr>
+                  <td>Délai de traitement</td>
+                  <td>5 jours ouvrés</td>
+                  <td>48 heures</td>
+                </tr>
+                <tr>
+                  <td>Échange possible</td>
+                  <td>Oui</td>
+                  <td>Prioritaire</td>
+                </tr>
+                <tr>
+                  <td>Contact dédié</td>
+                  <td>Service client général</td>
+                  <td>Conseiller export attitré</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Procédure professionnelle -->
+        <div class="pro-procedure">
+          <h3>Procédure de retour professionnelle</h3>
+          <div class="procedure-steps">
+            <div class="procedure-step">
+              <div class="step-header">
+                <span class="step-badge">Étape 1</span>
+                <h4>Autorisation préalable</h4>
+              </div>
+              <div class="step-content">
+                <p>Tout retour professionnel nécessite une autorisation écrite de notre service export.</p>
+                <ul>
+                  <li>Contactez votre conseiller attitré</li>
+                  <li>Fournissez le numéro de commande</li>
+                  <li>Spécifiez la raison du retour</li>
+                  <li>Attendez le numéro RMA (Return Merchandise Authorization)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="procedure-step">
+              <div class="step-header">
+                <span class="step-badge">Étape 2</span>
+                <h4>Préparation de la palette</h4>
+              </div>
+              <div class="step-content">
+                <p>Les retours professionnels s'effectuent par palette complète.</p>
+                <ul>
+                  <li>Utilisez des emballages d'origine</li>
+                  <li>Protégez chaque bouteille individuellement</li>
+                  <li>Assurez la stabilité de la palette</li>
+                  <li>Évitez les mélanges de références</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="procedure-step">
+              <div class="step-header">
+                <span class="step-badge">Étape 3</span>
+                <h4>Transport retour</h4>
+              </div>
+              <div class="step-content">
+                <p>Nous organisons le transport retour pour les commandes supérieures à 1500€.</p>
+                <ul>
+                  <li>Nous fournissons les étiquettes de retour</li>
+                  <li>Transporteur agréé pour l'alcool</li>
+                  <li>Assurance tous risques incluse</li>
+                  <li>Suivi en temps réel</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="procedure-step">
+              <div class="step-header">
+                <span class="step-badge">Étape 4</span>
+                <h4>Crédit ou échange</h4>
+              </div>
+              <div class="step-content">
+                <p>Au choix : crédit sur votre compte pro ou échange contre d'autres références.</p>
+                <ul>
+                  <li>Crédit utilisable pendant 12 mois</li>
+                  <li>Pas de frais de réexpédition pour l'échange</li>
+                  <li>Priorité sur les nouvelles références</li>
+                  <li>Possibilité de remise exceptionnelle</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Remboursements professionnels -->
+        <div class="pro-refunds">
+          <h3>Modalités de remboursement professionnelles</h3>
+          <div class="refunds-options">
+            <div class="option-card">
+              <h4>Crédit commercial</h4>
+              <div class="option-benefits">
+                <div class="benefit">
+                  <i data-lucide="zap" size="16"></i>
+                  <span>Crédit immédiat</span>
+                </div>
+                <div class="benefit">
+                  <i data-lucide="percent" size="16"></i>
+                  <span>+3% de bonus</span>
+                </div>
+                <div class="benefit">
+                  <i data-lucide="clock" size="16"></i>
+                  <span>Valable 12 mois</span>
+                </div>
+              </div>
+              <p>Le mode de remboursement le plus rapide. Idéal pour les clients réguliers.</p>
+              <div class="option-note">
+                <i data-lucide="star" size="16"></i>
+                <span>Recommandé pour les échanges fréquents</span>
+              </div>
+            </div>
+
+            <div class="option-card featured">
+              <div class="option-badge">Populaire</div>
+              <h4>Virement bancaire</h4>
+              <div class="option-benefits">
+                <div class="benefit">
+                  <i data-lucide="banknote" size="16"></i>
+                  <span>Argent liquide</span>
+                </div>
+                <div class="benefit">
+                  <i data-lucide="shield" size="16"></i>
+                  <span>Sécurisé</span>
+                </div>
+                <div class="benefit">
+                  <i data-lucide="globe" size="16"></i>
+                  <span>International</span>
+                </div>
+              </div>
+              <p>Remboursement sur votre compte bancaire dans la devise de votre choix.</p>
+              <div class="option-note">
+                <i data-lucide="info" size="16"></i>
+                <span>Frais bancaires à votre charge</span>
+              </div>
+            </div>
+
+            <div class="option-card">
+              <h4>Échange direct</h4>
+              <div class="option-benefits">
+                <div class="benefit">
+                  <i data-lucide="refresh-cw" size="16"></i>
+                  <span>Échange rapide</span>
+                </div>
+                <div class="benefit">
+                  <i data-lucide="truck" size="16"></i>
+                  <span>Livraison gratuite</span>
+                </div>
+                <div class="benefit">
+                  <i data-lucide="package" size="16"></i>
+                  <span>Nouveaux produits</span>
+                </div>
+              </div>
+              <p>Échangez les produits retournés contre d'autres références de notre catalogue.</p>
+              <div class="option-note">
+                <i data-lucide="check-circle" size="16"></i>
+                <span>Aucun délai d'attente</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Conditions générales -->
+      <section class="client-section" id="section-conditions">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i data-lucide="file-text" size="28"></i>
+            Conditions générales de retour
+          </h2>
+          <p class="section-subtitle">
+            Détails complets de notre politique de retour conforme au droit français et européen.
+          </p>
+        </div>
+
+        <!-- Accordéon des conditions -->
+        <div class="conditions-accordion">
+          <div class="condition-item">
+            <button class="condition-question">
+              <span>1. Droit de rétractation</span>
+              <i data-lucide="chevron-down" class="condition-icon"></i>
+            </button>
+            <div class="condition-answer">
+              <p>Conformément à l'article L.221-18 du Code de la consommation, vous disposez d'un délai de quatorze jours pour exercer votre droit de rétractation sans avoir à justifier de motifs ni à payer de pénalités.</p>
+              <p><strong>Exceptions :</strong> Le droit de rétractation ne s'applique pas aux produits alcoolisés dont le prix a été soumis à des fluctuations sur le marché financier et dont le délai de livraison est supérieur à trente jours.</p>
+              <p>Pour les produits périssables (bières à consommer rapidement), le délai est réduit à 7 jours.</p>
+            </div>
+          </div>
+
+          <div class="condition-item">
+            <button class="condition-question">
+              <span>2. Produits exclus du droit de retour</span>
+              <i data-lucide="chevron-down" class="condition-icon"></i>
+            </button>
+            <div class="condition-answer">
+              <p>Ne peuvent être retournés :</p>
+              <ul>
+                <li>Les produits alcoolisés dont l'emballage a été descellé après livraison</li>
+                <li>Les produits personnalisés à votre demande</li>
+                <li>Les produits périssables dont la date limite de consommation est inférieure à 30 jours</li>
+                <li>Les coffrets cadeaux ouverts</li>
+                <li>Les produits achetés lors de ventes privées ou soldes</li>
+                <li>Les échantillons gratuits</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="condition-item">
+            <button class="condition-question">
+              <span>3. État des produits retournés</span>
+              <i data-lucide="chevron-down" class="condition-icon"></i>
+            </button>
+            <div class="condition-answer">
+              <p>Les produits doivent être retournés dans leur état d'origine :</p>
+              <ul>
+                <li>Emballage d'origine intact et non endommagé</li>
+                <li>Étiquettes et scellés d'origine présents</li>
+                <li>Accessoires et notices inclus</li>
+                <li>Produits non utilisés, non lavés, non modifiés</li>
+              </ul>
+              <p><strong>Attention :</strong> En cas de non-respect de ces conditions, nous nous réservons le droit de refuser le retour ou de réduire le montant du remboursement proportionnellement à la dépréciation.</p>
+            </div>
+          </div>
+
+          <div class="condition-item">
+            <button class="condition-question">
+              <span>4. Frais de retour</span>
+              <i data-lucide="chevron-down" class="condition-icon"></i>
+            </button>
+            <div class="condition-answer">
+              <p>Les frais de retour sont à la charge du client, sauf dans les cas suivants :</p>
+              <ul>
+                <li>Produits défectueux ou non conformes</li>
+                <li>Erreur de notre part dans la commande</li>
+                <li>Produits endommagés lors du transport</li>
+                <li>Exercice du droit de rétractation pour les commandes supérieures à 100€</li>
+              </ul>
+              <p>Pour les professionnels, les frais de retour sont pris en charge pour les commandes supérieures à 500€ TTC.</p>
+            </div>
+          </div>
+
+          <div class="condition-item">
+            <button class="condition-question">
+              <span>5. Délais de remboursement</span>
+              <i data-lucide="chevron-down" class="condition-icon"></i>
+            </button>
+            <div class="condition-answer">
+              <p>Nous nous engageons à procéder au remboursement dans les délais suivants :</p>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-date">J+1</div>
+                  <div class="timeline-content">
+                    <strong>Réception et contrôle du retour</strong>
+                    <p>Vérification de l'état des produits et conformité</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-date">J+2</div>
+                  <div class="timeline-content">
+                    <strong>Validation du remboursement</strong>
+                    <p>Émission de l'ordre de remboursement</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-date">J+3 à J+10</div>
+                  <div class="timeline-content">
+                    <strong>Exécution par la banque</strong>
+                    <p>Délai variable selon l'établissement bancaire</p>
+                  </div>
+                </div>
+              </div>
+              <p><strong>Maximum légal :</strong> 14 jours après réception du retour ou preuve d'expédition.</p>
+            </div>
+          </div>
+
+          <div class="condition-item">
+            <button class="condition-question">
+              <span>6. Litiges et réclamations</span>
+              <i data-lucide="chevron-down" class="condition-icon"></i>
+            </button>
+            <div class="condition-answer">
+              <p>En cas de litige concernant un retour :</p>
+              <ol>
+                <li>Contactez notre service client dans les 30 jours suivant le retour</li>
+                <li>Fournissez toutes les preuves (photos, suivi, échanges)</li>
+                <li>Notre médiateur interne examine le dossier sous 15 jours</li>
+                <li>Si désaccord persiste, vous pouvez saisir la médiation de la consommation</li>
+              </ol>
+              <div class="legal-info">
+                <i data-lucide="scale" size="20"></i>
+                <div>
+                  <p><strong>Médiateur de la consommation :</strong> Pour toute réclamation non résolue, vous pouvez contacter le médiateur du e-commerce :</p>
+                  <p>Médiateur du e-commerce - 60 rue La Boétie - 75008 Paris<br>
+                  Site : <a href="https://www.mediateurduecommerce.fr">www.mediateurduecommerce.fr</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Informations légales -->
+        <div class="legal-section">
+          <h3>Informations légales</h3>
+          <div class="legal-cards">
+            <div class="legal-card">
+              <h4><i data-lucide="scale" size="20"></i> Conformité légale</h4>
+              <p>Notre politique de retour est conforme aux dispositions du Code de la consommation français et de la directive européenne 2011/83/UE.</p>
+              <a href="#" class="legal-link">
+                Voir le texte de loi
+                <i data-lucide="external-link" size="14"></i>
+              </a>
+            </div>
+
+            <div class="legal-card">
+              <h4><i data-lucide="shield" size="20"></i> Protection des données</h4>
+              <p>Les données collectées lors d'un retour sont traitées conformément à notre politique de confidentialité et au RGPD.</p>
+              <a href="#" class="legal-link">
+                Politique de confidentialité
+                <i data-lucide="external-link" size="14"></i>
+              </a>
+            </div>
+
+            <div class="legal-card">
+              <h4><i data-lucide="file-check" size="20"></i> CGV complètes</h4>
+              <p>Ces conditions de retour font partie intégrante de nos Conditions Générales de Vente.</p>
+              <a href="#" class="legal-link">
+                Consulter les CGV
+                <i data-lucide="external-link" size="14"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Formulaire de retour -->
+      <section class="return-form-section" id="contact">
+        <div class="form-container">
+          <div class="form-header">
+            <h3><i data-lucide="mail" size="28"></i> Demander un retour</h3>
+            <p>Remplissez ce formulaire pour initier une demande de retour. Nous vous répondrons sous 24h.</p>
+          </div>
+
+          <form id="returnRequestForm" class="return-form">
+            <div class="form-section">
+              <h4>Informations de contact</h4>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="clientTypeSelect">Type de client *</label>
+                  <select id="clientTypeSelect" name="clientType" required>
+                    <option value="">Sélectionnez...</option>
+                    <option value="particulier">Particulier</option>
+                    <option value="professionnel">Professionnel</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="orderNumber">Numéro de commande *</label>
+                  <input type="text" id="orderNumber" name="orderNumber" required placeholder="Ex: CMD-2024-001234">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Téléphone</label>
+                  <input type="tel" id="phone" name="phone" placeholder="01 23 45 67 89">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h4>Détails du retour</h4>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="returnReason">Motif du retour *</label>
+                  <select id="returnReason" name="returnReason" required>
+                    <option value="">Sélectionnez...</option>
+                    <option value="defective">Produit défectueux</option>
+                    <option value="damaged">Produit endommagé</option>
+                    <option value="wrong">Mauvais produit reçu</option>
+                    <option value="changed">Changement d'avis</option>
+                    <option value="other">Autre raison</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="productCount">Nombre de produits *</label>
+                  <div class="quantity-input">
+                    <button type="button" class="qty-btn" id="decreaseProduct">-</button>
+                    <input type="number" id="productCount" name="productCount" min="1" max="100" value="1" required>
+                    <button type="button" class="qty-btn" id="increaseProduct">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="returnDetails">Détails supplémentaires</label>
+                <textarea id="returnDetails" name="returnDetails" rows="4" placeholder="Décrivez le problème, les numéros de lot, etc."></textarea>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="preferredRefund">Mode de remboursement préféré *</label>
+                <div class="refund-options">
+                  <label class="radio-option">
+                    <input type="radio" name="refundMethod" value="card" checked>
+                    <span>Carte bancaire</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="refundMethod" value="credit">
+                    <span>Crédit boutique (+5%)</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="refundMethod" value="exchange">
+                    <span>Échange produit</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h4>Documents à joindre</h4>
+              <div class="upload-area" id="uploadArea">
+                <i data-lucide="upload" size="32"></i>
+                <p>Glissez-déposez vos fichiers ici ou <button type="button" id="browseFiles">parcourir</button></p>
+                <input type="file" id="fileUpload" multiple accept="image/*,.pdf" style="display: none;">
+                <p class="upload-hint">Photos des produits, preuve de livraison, facture (max. 5 fichiers, 10MB chacun)</p>
+              </div>
+              <div id="fileList" class="file-list"></div>
+            </div>
+
+            <div class="form-footer">
+              <div class="form-agreement">
+                <label class="checkbox-option">
+                  <input type="checkbox" id="acceptTerms" name="acceptTerms" required>
+                  <span>J'accepte les <a href="#">conditions générales de retour</a> et la <a href="#">politique de confidentialité</a> *</span>
+                </label>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                  <i data-lucide="send" size="18"></i>
+                  Envoyer la demande
+                </button>
+                <button type="reset" class="btn btn-outline">
+                  <i data-lucide="trash-2" size="18"></i>
+                  Effacer le formulaire
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Section: Questions fréquentes -->
+      <section class="retours-faq">
+        <div class="faq-header">
+          <h3><i data-lucide="help-circle" size="28"></i> Questions fréquentes sur les retours</h3>
+        </div>
+        
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h4>Combien de temps pour recevoir mon remboursement ?</h4>
+            <p>Le remboursement est effectué sous 5 jours ouvrés après réception et contrôle des produits. Le délai bancaire peut ajouter 2 à 5 jours supplémentaires.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Puis-je retourner un cadeau ?</h4>
+            <p>Oui, si vous avez reçu un produit en cadeau, contactez-nous avec le numéro de commande original. Le remboursement sera crédité sur la carte du donneur ou sous forme de bon d'achat.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Que faire si j'ai ouvert une bouteille par erreur ?</h4>
+            <p>Malheureusement, les produits alcoolisés ouverts ne peuvent être repris pour des raisons légales. Cependant, contactez-nous pour discuter d'une solution au cas par cas.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Les frais de livraison sont-ils remboursés ?</h4>
+            <p>Les frais de livraison initiaux ne sont remboursés qu'en cas d'erreur de notre part ou de produit défectueux. Les frais de retour sont généralement à votre charge.</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Comment suivre mon retour ?</h4>
+            <p>Nous vous envoyons un numéro de suivi par email. Vous pouvez également suivre l'avancement dans votre espace client sous "Mes retours".</p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Puis-je échanger plutôt que me faire rembourser ?</h4>
+            <p>Absolument ! Indiquez simplement votre préférence dans le formulaire de retour. L'échange est gratuit et prioritaire.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       CTA FINAL
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="retours-cta">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-content">
+          <h3>Besoin d'aide avec un retour ?</h3>
+          <p>Notre équipe client est disponible pour vous accompagner dans votre démarche de retour.</p>
+          <div class="cta-actions">
+            <a href="mailto:retours@echoppe-gauloise.com" class="btn btn-outline">
+              <i data-lucide="mail"></i>
+              Écrire à l'équipe retours
+            </a>
+            <a href="tel:+33123456789" class="btn btn-outline">
+              <i data-lucide="phone"></i>
+              01 23 45 67 89
+            </a>
+          </div>
+          <div class="cta-info">
+            <div class="info-item">
+              <i data-lucide="clock"></i>
+              <span>Lundi - Vendredi : 9h-18h</span>
+            </div>
+            <div class="info-item">
+              <i data-lucide="message-square"></i>
+              <span>Réponse sous 2h ouvrées</span>
+            </div>
+            <div class="info-item">
+              <i data-lucide="check-circle"></i>
+              <span>Service gratuit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="/assets/logo.svg" alt="Logo L'Échoppe Gauloise" class="logo-img">
+            <span>L'Échoppe Gauloise</span>
+          </div>
+          <p>L'excellence française depuis 1995. Bières artisanales et vins d'exception exportés vers 15 pays.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="instagram" size="20"></i>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="facebook" size="20"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i data-lucide="linkedin" size="20"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Produits</h4>
+            <ul>
+              <li><a href="/Pages/bieres/bieres.html">Bières</a></li>
+              <li><a href="/Pages/vins/vins.html">Vins</a></li>
+              <li><a href="/index.html#products">Nouveautés</a></li>
+              <li><a href="/index.html#products">Promotions</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Service client</h4>
+            <ul>
+              <li><a href="/Pages/faq.html">FAQ</a></li>
+              <li><a href="/Pages/livraison.html">Livraison</a></li>
+              <li><a href="/Pages/retours.html" class="active">Retours & Remboursements</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Entreprise</h4>
+            <ul>
+              <li><a href="/Pages/Entreprise/notre-histoire.html">Notre Histoire</a></li>
+              <li><a href="/Pages/Entreprise/export.html">Export</a></li>
+              <li><a href="/Pages/Entreprise/export.html#contact">Contact Export</a></li>
+              <li><a href="#">Carrières</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Légal</h4>
+            <ul>
+              <li><a href="#">CGV</a></li>
+              <li><a href="#">Mentions légales</a></li>
+              <li><a href="#">Confidentialité</a></li>
+              <li><a href="#">Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 L'Échoppe Gauloise. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="#">Mentions légales</a>
+          <a href="#">Confidentialité</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════════════════════════════════ -->
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <!-- App Scripts -->
+  <script src="/js/navigation.js"></script>
+  <script src="/Pages/support/retours.js"></script>
+
+</body>
+</html>

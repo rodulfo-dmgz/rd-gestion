@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>L'Échoppe Gauloise | Bières Artisanales & Vins d'Excellence</title>
+  <meta name="description" content="Découvrez notre sélection premium de bières artisanales françaises et vins d'exception. Export vers 15 pays. Tradition, qualité et authenticité depuis 1995.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  
+  <!-- Polices modernes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+
+    <!-- FontAwesome pour les icônes du panier -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Translate -->
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+<body>
+  <!-- Google Translate Widget -->
+  <div id="google_translate_element" style="position:absolute;top:10px;right:10px;z-index:1000;"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HEADER MINIMALISTE
+       ═══════════════════════════════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <!-- Logo minimaliste -->
+        <a href="index.html" class="logo">
+          <img src="assets/logo.svg" class="logo">
+          <span>L'Échoppe</span>
+        </a>
+
+        <!-- Navigation -->
+        <ul class="nav-links">
+          <li><a href="#" class="active">Accueil</a></li>
+          <li><a href="Pages/bieres/bieres.html">Bières</a></li>
+          <li><a href="Pages/vins/vins.html">Vins</a></li>
+          <li><a href="Pages/Entreprise/export.html">Export</a></li>
+        </ul>
+
+       <!-- Actions -->
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Rechercher">
+            <i data-lucide="search" stroke-width="1.5"></i>
+          </button>
+          <a href="/Pages/commande/panier.html" class="icon-btn" aria-label="Panier">
+            <i data-lucide="shopping-bag" stroke-width="1.5"></i>
+            <span class="badge cart-badge" id="cartBadge">0</span>
+          </a>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <i data-lucide="menu" stroke-width="1.5"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HERO MINIMALISTE
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="hero" id="main-content">
+    <div class="container">
+      <div class="hero-content">
+        <!-- Badge subtil -->
+        <div class="badge-pill">
+          <i data-lucide="sparkles" size="14"></i>
+          <span>Depuis 1995</span>
+        </div>
+        
+        <h1 class="hero-title">
+          L'Excellence Française
+          <span class="gradient-texte">dans Votre Verre</span>
+        </h1>
+        
+        <p class="hero-subtitle">
+          Bières artisanales et vins d'exception, exportés avec passion vers 15 pays.
+          Découvrez notre savoir-faire authentique.
+        </p>
+        
+        <div class="hero-cta">
+          <a href="#products" class="btn btn-secondary">
+            Découvrir
+            <i data-lucide="arrow-right" size="18"></i>
+          </a>
+          <a href="/Pages/Entreprise/export.html" class="btn btn-secondary">
+            Export
+            <i data-lucide="globe" size="18"></i>
+          </a>
+        </div>
+
+        <!-- Stats minimalistes -->
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-icon">
+              <i data-lucide="award" stroke-width="1.5"></i>
+            </div>
+            <div class="stat-info">
+              <strong>28+</strong>
+              <span>Récompenses</span>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="stat-icon">
+              <i data-lucide="globe-2" stroke-width="1.5"></i>
+            </div>
+            <div class="stat-info">
+              <strong>15</strong>
+              <span>Pays</span>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="stat-icon">
+              <i data-lucide="users" stroke-width="1.5"></i>
+            </div>
+            <div class="stat-info">
+              <strong>5000+</strong>
+              <span>Clients</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Illustration moderne -->
+      <div class="hero-visual">
+        <div class="hero-image-wrapper">
+          <img 
+            src="https://images.unsplash.com/photo-1608270586620-248524c67de9?w=800&h=1000&fit=crop" 
+            alt="Bière artisanale"
+            class="hero-image">
+          <div class="floating-card">
+            <i data-lucide="beer" size="24" stroke-width="1.5"></i>
+            <div>
+              <strong>100%</strong>
+              <span>Artisanal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       VALEURS (3 Cards Minimalistes)
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="values">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nos Valeurs</span>
+        <h2 class="section-title">Pourquoi Nous Choisir</h2>
+      </div>
+
+      <div class="values-grid">
+        <!-- Card 1 -->
+        <article class="value-card">
+          <div class="card-icon">
+            <i data-lucide="hop" stroke-width="1.5" size="28"></i>
+          </div>
+          <h3>Artisanal</h3>
+          <p>Brassage traditionnel et sélection rigoureuse. Chaque bouteille raconte une histoire de passion et de savoir-faire.</p>
+          <a href="/Pages/bieres/bieres.html" class="card-link">
+            En savoir plus
+            <i data-lucide="arrow-right" size="16"></i>
+          </a>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="value-card">
+          <div class="card-icon">
+            <i data-lucide="globe" stroke-width="1.5" size="28"></i>
+          </div>
+          <h3>Export Mondial</h3>
+          <p>Présents dans 15 pays. Notre expertise logistique garantit une livraison rapide et sécurisée partout dans le monde.</p>
+          <a href="/Pages/Entreprise/export.html" class="card-link">
+            Voir les pays
+            <i data-lucide="arrow-right" size="16"></i>
+          </a>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="value-card">
+          <div class="card-icon">
+            <i data-lucide="award" stroke-width="1.5" size="28"></i>
+          </div>
+          <h3>Qualité Premium</h3>
+          <p>Multi-récompensés dans les concours internationaux. Des certifications reconnues mondialement.</p>
+          <a href="/Pages/Entreprise/notre-histoire.html" class="card-link">
+            Nos récompenses
+            <i data-lucide="arrow-right" size="16"></i>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       PRODUITS PHARES (Grid Moderne)
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-label">Nos Produits</span>
+          <h2 class="title-golden">Sélection Premium</h2>
+        </div>
+        <div class="section-nav">
+          <button class="nav-dot active" data-filter="all" title="Tous les produits">
+            <i data-lucide="layout-grid"></i>
+          </button>
+          <button class="nav-dot" data-filter="beer" title="Nos bières">
+            <i data-lucide="beer"></i>
+          </button>
+          <button class="nav-dot" data-filter="wine" title="Nos vins">
+            <i data-lucide="wine"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="products-grid">
+
+      </div>
+
+      <div class="section-cta">
+        <a href="/Catalogue/index.html" class="btn btn-outline-large">
+          Voir tout le catalogue
+          <i data-lucide="arrow-right" size="18"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       NEWSLETTER MINIMALISTE
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-icon">
+          <i data-lucide="mail" size="32" stroke-width="1.5"></i>
+        </div>
+        <div class="newsletter-text">
+          <h2>Restez Informé</h2>
+          <p>Recevez nos offres exclusives et actualités. <strong>-10%</strong> sur votre première commande.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm">
+          <input 
+            type="email" 
+            placeholder="votre@email.com" 
+            required
+            aria-label="Email"
+            id="newsletterEmail">
+          <button type="submit" class="btn btn-secondary">
+            S'inscrire
+            <i data-lucide="arrow-right" size="18"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FOOTER MINIMALISTE
+       ═══════════════════════════════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="/assets/logo.svg" alt="Logo L'Échoppe Gauloise" class="logo-img">
+                        <span>L'Échoppe Gauloise</span>
+                    </div>
+                    <p>L'excellence française depuis 1995. Bières artisanales et vins d'exception exportés vers 15 pays.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">
+                            <i data-lucide="instagram" size="20"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <i data-lucide="facebook" size="20"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <i data-lucide="linkedin" size="20"></i>
+                        </a>
+                    </div>
+                </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Produits</h4>
+            <ul>
+              <li><a href="/Pages/bieres/bieres.html">Bières</a></li>
+              <li><a href="/Pages/vins/vins.html">Vins</a></li>
+              <li><a href="#products">Nouveautés</a></li>
+              <li><a href="#products">Promotions</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Entreprise</h4>
+            <ul>
+              <li><a href="/Pages/Entreprise/notre-histoire.html">Notre Histoire</a></li>
+              <li><a href="/Pages/Entreprise/export.html">Export</a></li>
+              <li><a href="/Pages/Entreprise/export.html#contact">Contact</a></li>
+              <li><a href="/Pages/Entreprise/carrieres.html">Carrières</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Export</h4>
+            <ul>
+              <li><a href="/Pages/Entreprise/pays-desservis.html">Pays desservis</a></li>
+              <li><a href="/Pages/Entreprise/processus-export.html">Processus d'export</a></li>
+              <li><a href="/Pages/Entreprise/certifications.html">Certifications</a></li>
+              <li><a href="/Pages/Entreprise/export.html#formulaireDevis">Demande de devis</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="/Pages/support/FAQ.html">FAQ</a></li>
+              <li><a href="/Pages/support/livraisons.html">Livraison</a></li>
+              <li><a href="/Pages/support/retours.html">Retours</a></li>
+              <li><a href="/Pages/support/cgv.html">CGV</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 L'Échoppe Gauloise. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="/Pages/support/mentions-legales.html">Mentions légales</a>
+          <a href="/Pages/support/confidentialite.html">Confidentialité</a>
+          <a href="/Pages/support/cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════════════════════════════ -->
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <!-- Dans la section <head> -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+
+  
+  <!-- App Scripts -->
+  <script src="js/carousel.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/cart-module.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/newsletter.js"></script>
+  <script src="js/index.js"></script>
+
+  <!-- Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'fr',
+        includedLanguages: 'en,es,de,it,nl',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+      
+      // Masquer la barre Google par défaut
+      const googleBar = document.querySelector('.goog-te-banner-frame');
+      if (googleBar) {
+        googleBar.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

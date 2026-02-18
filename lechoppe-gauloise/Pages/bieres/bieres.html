@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Bières Artisanales | L'Échoppe Gauloise - Sélection Premium</title>
+  <meta name="description" content="Découvrez notre sélection exclusive de bières artisanales françaises. IPA, blonde, ambrée, brune - des saveurs uniques brassées avec passion depuis 1995.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../assets/logo.svg">
+  
+  <!-- Polices modernes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome pour les icônes du panier -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../css/design-system.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/pages/bieres.css">
+  
+  <!-- Style pour le feedback d'ajout au panier -->
+  
+</head>
+
+<body>
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <!-- Logo minimaliste -->
+        <a href="../../index.html" class="logo">
+          <img src="../../assets/logo.svg" class="logo">
+          <span>L'Échoppe</span>
+        </a>
+
+        <!-- Navigation -->
+        <ul class="nav-links">
+          <li><a href="../../index.html">Accueil</a></li>
+          <li><a href="../../Pages/bieres/bieres.html" class="active">Bières</a></li>
+          <li><a href="../../Pages/vins/vins.html">Vins</a></li>
+          <li><a href="../../Pages/Entreprise/export.html">Export</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Rechercher">
+            <i data-lucide="search" stroke-width="1.5"></i>
+          </button>
+          <a href="../../Pages/commande/panier.html" class="icon-btn" aria-label="Panier">
+            <i data-lucide="shopping-bag" stroke-width="1.5"></i>
+            <span class="badge cart-badge" id="cartBadge">0</span>
+          </a>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <i data-lucide="menu" stroke-width="1.5"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HERO SPÉCIFIQUE BIÈRES
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="bieres-hero">
+    <div class="container">
+      <div class="bieres-hero-content">
+        <div class="badge-pill">
+          <i data-lucide="beer" size="14"></i>
+          <span>Artisanal Français</span>
+        </div>
+        
+        <h1 class="bieres-hero-title">
+          Nos Bières
+          <span class="gradient-text">Artisanales</span>
+        </h1>
+        
+        <p class="bieres-hero-subtitle">
+          Découvrez notre sélection de bières brassées avec passion. 
+          Des recettes uniques, des ingrédients d'exception, une tradition française revisitée.
+        </p>
+        
+        <!-- Filtres rapides -->
+        <div class="quick-filters">
+          <button class="filter-btn active" data-filter="all">
+            <i data-lucide="beer" size="16"></i>
+            Toutes
+          </button>
+          <button class="filter-btn" data-filter="ipa">
+            <i data-lucide="zap" size="16"></i>
+            IPA
+          </button>
+          <button class="filter-btn" data-filter="blonde">
+            <i data-lucide="sun" size="16"></i>
+            Blondes
+          </button>
+          <button class="filter-btn" data-filter="ambree">
+            <i data-lucide="flame" size="16"></i>
+            Ambrées
+          </button>
+          <button class="filter-btn" data-filter="brune">
+            <i data-lucide="moon" size="16"></i>
+            Brunes
+          </button>
+          <button class="filter-btn" data-filter="speciales">
+            <i data-lucide="sparkles" size="16"></i>
+            Spéciales
+          </button>
+        </div>
+      </div>
+      
+      <!-- Illustration bière -->
+      <div class="bieres-hero-visual">
+        <div class="bieres-hero-image-wrapper">
+          <img 
+            src="https://images.unsplash.com/photo-1600788886242-5c96aabe3757?w=800&h=600&fit=crop" 
+            alt="Assortiment de bières artisanales"
+            class="bieres-hero-image">
+          <div class="floating-card">
+            <i data-lucide="hop" size="24" stroke-width="1.5"></i>
+            <div>
+              <strong>28+</strong>
+              <span>Recettes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION SAVOIR-FAIRE
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="savoir-faire">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Notre Savoir-Faire</span>
+        <h2 class="section-title">L'Art du Brassage</h2>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-card">
+          <div class="process-number">01</div>
+          <div class="process-icon">
+            <i data-lucide="wheat" stroke-width="1.5" size="28"></i>
+          </div>
+          <h3>Malt d'Exception</h3>
+          <p>Sélection rigoureuse de malts français pour des arômes profonds et une texture unique.</p>
+        </article>
+
+        <article class="process-card">
+          <div class="process-number">02</div>
+          <div class="process-icon">
+            <i data-lucide="leaf" stroke-width="1.5" size="28"></i>
+          </div>
+          <h3>Houblons Français</h3>
+          <p>Houblons cultivés en Alsace et dans le Nord, apportant amertume et notes aromatiques délicates.</p>
+        </article>
+
+        <article class="process-card">
+          <div class="process-number">03</div>
+          <div class="process-icon">
+            <i data-lucide="droplets" stroke-width="1.5" size="28"></i>
+          </div>
+          <h3>Eau de Source</h3>
+          <p>Eau pure des Vosges, naturellement filtrée, idéale pour le brassage traditionnel.</p>
+        </article>
+
+        <article class="process-card">
+          <div class="process-number">04</div>
+          <div class="process-icon">
+            <i data-lucide="clock" stroke-width="1.5" size="28"></i>
+          </div>
+          <h3>Fermentation Lente</h3>
+          <p>Respect des temps de fermentation pour développer des saveurs complexes et équilibrées.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION BIÈRES - GRID AVEC FILTRES
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="bieres-grid-section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-label">Notre Sélection</span>
+          <h2 class="title-golden">Nos Bières</h2>
+        </div>
+        
+        <!-- Filtres avancés -->
+        <div class="advanced-filters">
+          <div class="filter-group">
+            <label for="beer-filter">
+              <i data-lucide="beer" size="16"></i>
+              Type de bière
+            </label>
+            <select id="beer-filter" class="filter-select">
+              <option value="all">Tous les styles</option>
+              <option value="ipa">IPA</option> <option value="blonde">Blondes</option>
+              <option value="ambree">Ambrées</option>
+              <option value="brune">Brunes</option>
+              <option value="speciales">Les Gauloises</option>
+            </select>
+          </div>
+
+
+          <div class="filter-group">
+            <label for="alcohol-filter">
+              <i data-lucide="flame" size="16"></i>
+              Degré d'alcool
+            </label>
+            <select id="alcohol-filter" class="filter-select">
+              <option value="all">Tous les degrés</option>
+              <option value="light">Faible (3-5%)</option>
+              <option value="medium">Moyen (5-7%)</option>
+              <option value="strong">Fort (7%+)</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="sort-filter">
+              <i data-lucide="arrow-up-down" size="16"></i>
+              Trier par
+            </label>
+            <select id="sort-filter" class="filter-select">
+              <option value="popular">Popularité</option>
+              <option value="price-asc">Prix croissant</option>
+              <option value="price-desc">Prix décroissant</option>
+              <option value="rating">Meilleures notes</option>
+              <option value="newest">Nouveautés</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grille de bières -->
+      <div class="bieres-grid" id="bieresGrid">
+        <!-- Les bières seront injectées via JavaScript -->
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button class="pagination-btn" id="prevPage" disabled>
+          <i data-lucide="chevron-left" size="16"></i>
+          Précédent
+        </button>
+        <div class="pagination-numbers">
+          <span class="pagination-current">1</span>
+          <span>sur</span>
+          <span class="pagination-total">3</span>
+        </div>
+        <button class="pagination-btn" id="nextPage">
+          Suivant
+          <i data-lucide="chevron-right" size="16"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION DÉGUSTATION
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="degustation">
+    <div class="container">
+      <div class="degustation-content">
+        <div class="degustation-text">
+          <span class="section-label">Conseils d'Expert</span>
+          <h2>L'Art de la Dégustation</h2>
+          <p>Découvrez comment apprécier pleinement chaque bière. Température, verre, accords mets & bières - nos experts vous guident.</p>
+          
+          <div class="degustation-tips">
+            <div class="tip">
+              <i data-lucide="thermometer" size="20"></i>
+              <div>
+                <strong>Température idéale</strong>
+                <span>Entre 6°C et 12°C selon le style</span>
+              </div>
+            </div>
+            <div class="tip">
+              <i data-lucide="glass-water" size="20"></i>
+              <div>
+                <strong>Verre approprié</strong>
+                <span>Tulip, Pinte ou Snifter</span>
+              </div>
+            </div>
+            <div class="tip">
+              <i data-lucide="clock" size="20"></i>
+              <div>
+                <strong>Temps de garde</strong>
+                <span>De 6 mois à 3 ans pour certaines</span>
+              </div>
+            </div>
+          </div>
+          
+          <button class="btn btn-secondary">
+            <i data-lucide="book-open" size="18"></i>
+            Guide complet
+          </button>
+        </div>
+        
+        <div class="degustation-image">
+          <img 
+            src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?w=600&h=800&fit=crop" 
+            alt="Dégustation de bière">
+          <div class="degustation-badge">
+            <i data-lucide="award" size="20"></i>
+            <span>Guide certifié</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+       NEWSLETTER MINIMALISTE
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-icon">
+          <i data-lucide="mail" size="32" stroke-width="1.5"></i>
+        </div>
+        <div class="newsletter-text">
+          <h2>Restez Informé</h2>
+          <p>Recevez nos offres exclusives et actualités. <strong>-10%</strong> sur votre première commande.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm">
+          <input 
+            type="email" 
+            placeholder="votre@email.com" 
+            required
+            aria-label="Email">
+          <button type="submit" class="btn btn-secondary">
+            S'inscrire
+            <i data-lucide="arrow-right" size="18"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FOOTER MINIMALISTE
+       ═══════════════════════════════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../../assets/logo.svg" alt="Logo L'Échoppe Gauloise" class="logo-img">
+                        <span>L'Échoppe Gauloise</span>
+                    </div>
+                    <p>L'excellence française depuis 1995. Bières artisanales et vins d'exception exportés vers 15 pays.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">
+                            <i data-lucide="instagram" size="20"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <i data-lucide="facebook" size="20"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <i data-lucide="linkedin" size="20"></i>
+                        </a>
+                    </div>
+                </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Produits</h4>
+            <ul>
+              <li><a href="../../Pages/bieres/bieres.html">Bières</a></li>
+              <li><a href="../../Pages/vins/vins.html">Vins</a></li>
+              <li><a href="../../Pages/produits/nouveautes.html">Nouveautés</a></li>
+              <li><a href="#">Promotions</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Entreprise</h4>
+            <ul>
+              <li><a href="../../Pages/Entreprise/notre-histoire.html">Notre Histoire</a></li>
+              <li><a href="../../Pages/Entreprise/export.html">Export</a></li>
+              <li><a href="../../Pages/Entreprise/contact.html">Contact</a></li>
+              <li><a href="../../Pages/Entreprise/carrieres.html">Carrières</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Livraison</a></li>
+              <li><a href="#">Retours</a></li>
+              <li><a href="#">CGV</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 L'Échoppe Gauloise. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="#">Mentions légales</a>
+          <a href="#">Confidentialité</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════════════════════════════ -->
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+  
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/js/supabase-config.js"></script>
+
+
+  <!-- App Scripts -->
+  <script src="/js/carousel.js"></script>
+  <script src="/js/navigation.js"></script>
+  <script src="/js/newsletter.js"></script>  
+  <script src="/js/utils.js"></script>
+  <script src="/js/cart-module.js"></script>
+  <script src="/Pages/bieres/bieres.js"></script>
+</body>
+</html>

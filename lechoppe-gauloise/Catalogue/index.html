@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogue Été 2025 — L'Échoppe Gauloise</title>
+  <meta name="description" content="Découvrez notre sélection de bières artisanales et vins de terroir pour l'été 2025.">
+  <link rel="stylesheet" href="/Catalogue/styles.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader" class="loader-overlay">
+    <div class="loader-spinner"></div>
+    <p class="loader-text">Chargement du catalogue…</p>
+  </div>
+
+  
+        <header class="mag-header mag-nav-layout">
+            <div class="nav-group">
+                <a href="/../../index.html" class="nav-item">
+                    <i class="ph ph-caret-left"></i>
+                    <img src="/assets/logo.svg" alt="Logo" class="nav-logo">
+                    <span>Retourner au site</span>
+                </a>
+            </div>
+
+            <div class="nav-group">
+                <a href="/assets/catalogue.pdf" download class="nav-item">
+                    <span>Télécharger PDF</span>
+                    <i class="ph ph-download-simple"></i>
+                </a>
+            </div>
+
+            <div class="nav-group">
+                <a href="/panier.html" class="nav-item">
+                    <span>Mon panier</span>
+                    <i class="ph ph-shopping-cart"></i>
+                </a>
+            </div>
+        </header>
+
+
+  <!-- Magazine -->
+  <main id="magazine-wrapper" class="magazine-wrapper">
+    <header class="mag-header">
+      <p class="mag-header__brand">L'Échoppe Gauloise</p>
+      <p class="mag-header__hint">Feuilletez avec les flèches, les touches ← → ou swipez</p>
+    </header>
+
+    <div id="magazine" class="magazine">
+      <!-- Spreads générées dynamiquement par script.js -->
+    </div>
+
+    <nav class="mag-nav" aria-label="Navigation du catalogue">
+      <button id="btn-prev" class="mag-nav__btn" aria-label="Page précédente" disabled>
+        <i class="ph ph-caret-left"></i>
+      </button>
+      <span id="spread-indicator" class="mag-nav__indicator">1 / —</span>
+      <button id="btn-next" class="mag-nav__btn" aria-label="Page suivante">
+        <i class="ph ph-caret-right"></i>
+      </button>
+    </nav>
+
+    <div class="mag-progress" role="progressbar" aria-label="Progression">
+      <div class="mag-progress__bar" style="width: 0%;"></div>
+    </div>
+  </main>
+
+  <!-- Supabase config puis script flipbook -->
+  <script src="../js/supabase-config.js"></script>
+  <script src="/Catalogue/script.js"></script>
+</body>
+</html>

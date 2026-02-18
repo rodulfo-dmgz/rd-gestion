@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paie — CRM</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Architecture modulaire -->
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href=".../css/components.css">
+  <link rel="stylesheet" href="../css/pages/clients.css">
+</head>
+<body class="dashboard-page">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <h2 id="company-name">CRM</h2>
+    </div>
+    <nav class="sidebar-nav" id="sidebar-nav">
+      <!-- Navigation générée dynamiquement par JS selon les permissions -->
+    </nav>
+  </aside>
+
+  <!-- Main Dashboard -->
+  <div class="dashboard-main">
+
+    <!-- Header -->
+    <header class="topbar">
+      <span class="brand">CRM</span>
+      <div class="topbar-right">
+        <span id="user-info"></span>
+        <button id="logout">Quitter</button>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="dashboard">
+
+      <!-- Page header -->
+      <section class="page-header">
+        <h1>Gestion de la Paie</h1>
+        <p>Suivi des bulletins de paie et masses salariales.</p>
+      </section>
+
+      <!-- Actions -->
+      <section class="actions-bar">
+        <input type="text" id="search-payroll" placeholder="Rechercher une paie...">
+        <button id="add-payroll-btn">+ Générer un bulletin</button>
+      </section>
+
+      <!-- Tableau paies -->
+      <section class="table-section">
+        <table id="payroll-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Employé</th>
+              <th>Période</th>
+              <th>Salaire Brut</th>
+              <th>Salaire Net</th>
+              <th>Statut</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rempli par JS -->
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Modal Ajouter -->
+  <div class="modal" id="payroll-modal">
+    <div class="modal-content">
+      <span class="modal-close" id="modal-close">&times;</span>
+      <h3 id="modal-title">Générer un bulletin de paie</h3>
+      <form id="payroll-form">
+        <label for="payroll-employee">Employé</label>
+        <input type="text" id="payroll-employee" name="employee" required>
+
+        <label for="payroll-period">Période (mois/année)</label>
+        <input type="month" id="payroll-period" name="period" required>
+
+        <label for="payroll-gross">Salaire Brut (€)</label>
+        <input type="number" step="0.01" id="payroll-gross" name="gross" required>
+
+        <label for="payroll-net">Salaire Net (€)</label>
+        <input type="number" step="0.01" id="payroll-net" name="net" required>
+
+        <button type="submit">Enregistrer</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Voir Détails -->
+  <div class="modal" id="view-payroll-modal" style="display: none;">
+    <div class="modal-content" style="max-width: 700px;">
+      <span class="modal-close" id="modal-view-close">&times;</span>
+      <h3 id="view-modal-title" style="margin-bottom: 0.5rem;">Bulletin de paie</h3>
+      <p id="view-modal-subtitle" style="color: var(--text-muted); font-size: 14px; margin-bottom: 1.5rem;"></p>
+      <div id="view-modal-body" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+        <!-- Contenu généré dynamiquement -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="../js/config.js"></script>
+  <script src="../js/paie.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+/**
+ * RD GESTION - Reset CSS
+ * Normalisation des styles navigateur
+ * Inspiré de modern-normalize et custom reset
+ */
+
+@layer reset {
+  
+  /* ========================================
+     BOX SIZING
+     ======================================== */
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  
+  /* ========================================
+     MARGES & PADDING
+     ======================================== */
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  /* ========================================
+     DOCUMENT & BODY
+     ======================================== */
+  
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  
+  
+  /* ========================================
+     TYPOGRAPHIE
+     ======================================== */
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  
+  /* ========================================
+     LISTES
+     ======================================== */
+  
+  ol, ul {
+    list-style: none;
+  }
+  
+  
+  /* ========================================
+     MÉDIAS
+     ======================================== */
+  
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  img, svg {
+    vertical-align: middle;
+  }
+  
+  
+  /* ========================================
+     FORMULAIRES
+     ======================================== */
+  
+  input, button, textarea, select {
+    font: inherit;
+    color: inherit;
+  }
+  
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  
+  /* ========================================
+     TABLEAUX
+     ======================================== */
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  
+  /* ========================================
+     LIENS
+     ======================================== */
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  
+  /* ========================================
+     ACCESSIBILITÉ
+     ======================================== */
+  
+  /* Préserver le focus visible pour l'accessibilité */
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+  
+  /* Masquer visuellement mais garder accessible aux lecteurs d'écran */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  
+  /* ========================================
+     SCROLL
+     ======================================== */
+  
+  /* Scroll smooth pour les ancres */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  
+  /* Respect des préférences de mouvement réduit */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

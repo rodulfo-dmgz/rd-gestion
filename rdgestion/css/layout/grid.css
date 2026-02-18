@@ -1,0 +1,217 @@
+/**
+ * RD GESTION - Grid System
+ * Système de grille flexible et responsive
+ */
+
+@layer layout {
+  
+  /* ========================================
+     CONTAINER
+     ======================================== */
+  
+  .container {
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+  
+  @media (min-width: 640px) {
+    .container {
+      padding-left: var(--space-6);
+      padding-right: var(--space-6);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: var(--space-8);
+      padding-right: var(--space-8);
+    }
+  }
+  
+  .container--fluid {
+    max-width: 100%;
+  }
+  
+  .container--narrow {
+    max-width: 1024px;
+  }
+  
+  
+  /* ========================================
+     GRID AUTO-RESPONSIVE
+     ======================================== */
+  
+  .grid {
+    display: grid;
+    gap: var(--space-6);
+  }
+  
+  /* Colonnes auto-adaptatives */
+  .grid--auto {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .grid--auto-sm {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .grid--auto-lg {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+  
+  /* Gaps personnalisés */
+  .grid--gap-sm {
+    gap: var(--space-3);
+  }
+  
+  .grid--gap-md {
+    gap: var(--space-4);
+  }
+  
+  .grid--gap-lg {
+    gap: var(--space-8);
+  }
+  
+  
+  /* ========================================
+     GRID COLONNES FIXES
+     ======================================== */
+  
+  .grid--cols-1 { grid-template-columns: repeat(1, 1fr); }
+  .grid--cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid--cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid--cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .grid--cols-6 { grid-template-columns: repeat(6, 1fr); }
+  .grid--cols-12 { grid-template-columns: repeat(12, 1fr); }
+  
+  /* Responsive */
+  @media (min-width: 640px) {
+    .grid--sm-cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid--sm-cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid--sm-cols-4 { grid-template-columns: repeat(4, 1fr); }
+  }
+  
+  @media (min-width: 768px) {
+    .grid--md-cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid--md-cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid--md-cols-4 { grid-template-columns: repeat(4, 1fr); }
+  }
+  
+  @media (min-width: 1024px) {
+    .grid--lg-cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid--lg-cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid--lg-cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid--lg-cols-6 { grid-template-columns: repeat(6, 1fr); }
+  }
+  
+  
+  /* ========================================
+     GRID ITEM SPAN
+     ======================================== */
+  
+  .col-span-1 { grid-column: span 1; }
+  .col-span-2 { grid-column: span 2; }
+  .col-span-3 { grid-column: span 3; }
+  .col-span-4 { grid-column: span 4; }
+  .col-span-6 { grid-column: span 6; }
+  .col-span-full { grid-column: 1 / -1; }
+  
+  
+  /* ========================================
+     FLEXBOX UTILITIES
+     ======================================== */
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-col {
+    flex-direction: column;
+  }
+  
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  
+  .flex-1 {
+    flex: 1 1 0%;
+  }
+  
+  .flex-auto {
+    flex: 1 1 auto;
+  }
+  
+  .flex-none {
+    flex: none;
+  }
+  
+  /* Justify */
+  .justify-start { justify-content: flex-start; }
+  .justify-center { justify-content: center; }
+  .justify-end { justify-content: flex-end; }
+  .justify-between { justify-content: space-between; }
+  .justify-around { justify-content: space-around; }
+  
+  /* Align */
+  .items-start { align-items: flex-start; }
+  .items-center { align-items: center; }
+  .items-end { align-items: flex-end; }
+  .items-baseline { align-items: baseline; }
+  .items-stretch { align-items: stretch; }
+  
+  /* Gap */
+  .gap-1 { gap: var(--space-1); }
+  .gap-2 { gap: var(--space-2); }
+  .gap-3 { gap: var(--space-3); }
+  .gap-4 { gap: var(--space-4); }
+  .gap-5 { gap: var(--space-5); }
+  .gap-6 { gap: var(--space-6); }
+  .gap-8 { gap: var(--space-8); }
+  
+  
+  /* ========================================
+     SPACING UTILITIES
+     ======================================== */
+  
+  /* Margin */
+  .m-0 { margin: 0; }
+  .m-auto { margin: auto; }
+  
+  .mt-2 { margin-top: var(--space-2); }
+  .mt-3 { margin-top: var(--space-3); }
+  .mt-4 { margin-top: var(--space-4); }
+  .mt-6 { margin-top: var(--space-6); }
+  .mt-8 { margin-top: var(--space-8); }
+  
+  .mb-2 { margin-bottom: var(--space-2); }
+  .mb-3 { margin-bottom: var(--space-3); }
+  .mb-4 { margin-bottom: var(--space-4); }
+  .mb-6 { margin-bottom: var(--space-6); }
+  .mb-8 { margin-bottom: var(--space-8); }
+  
+  /* Padding */
+  .p-0 { padding: 0; }
+  .p-2 { padding: var(--space-2); }
+  .p-3 { padding: var(--space-3); }
+  .p-4 { padding: var(--space-4); }
+  .p-6 { padding: var(--space-6); }
+  .p-8 { padding: var(--space-8); }
+  
+  
+  /* ========================================
+     WIDTH & HEIGHT UTILITIES
+     ======================================== */
+  
+  .w-full { width: 100%; }
+  .w-auto { width: auto; }
+  .h-full { height: 100%; }
+  .h-auto { height: auto; }
+  
+  .min-h-screen {
+    min-height: 100vh;
+  }
+}

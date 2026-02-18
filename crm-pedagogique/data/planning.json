@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "RDV client Dupont",
+    "start_date": "2026-01-29",
+    "end_date": "2026-01-29",
+    "start_time": "09:00",
+    "end_time": "09:20",
+    "description": "Présentation devis"
+  },
+  {
+    "id": 2,
+    "title": "Réunion équipe",
+    "start_date": "2026-01-30",
+    "end_date": "2026-01-30",
+    "start_time": "09:00",
+    "end_time": "09:30",
+    "description": "Sprint planning"
+  }
+]

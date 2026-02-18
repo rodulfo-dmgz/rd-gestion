@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Notre Histoire | L'Échoppe Gauloise - Tradition & Passion depuis 1995</title>
+  <meta name="description" content="Découvrez l'histoire de L'Échoppe Gauloise, née d'une passion pour les produits artisanaux français. De notre fondation en 1995 à notre expansion internationale.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Polices modernes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../css/design-system.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="/css/pages/notre-histoire.css">
+</head>
+
+<body>
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <!-- Logo minimaliste -->
+        <a href="../../index.html" class="logo">
+          <img src="../../../../assets/logo.svg" class="logo">
+          <span>L'Échoppe</span>
+        </a>
+
+        <!-- Navigation -->
+        <ul class="nav-links">
+          <li><a href="/../../index.html">Accueil</a></li>
+          <li><a href="/Pages/bieres/bieres.html">Bières</a></li>
+          <li><a href="/Pages/vins/vins.html">Vins</a></li>
+          <li><a href="/Pages/Entreprise/export.html">Export</a></li>
+          <li><a href="/Pages/Entreprise/notre-histoire.html" class="active">Notre Histoire</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Rechercher">
+            <i data-lucide="search" stroke-width="1.5"></i>
+          </button>
+          <button class="icon-btn" aria-label="Panier">
+            <i data-lucide="shopping-bag" stroke-width="1.5"></i>
+            <span class="badge" id="cartBadge">0</span>
+          </button>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <i data-lucide="menu" stroke-width="1.5"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HERO NOTRE HISTOIRE
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="histoire-hero">
+    <div class="container">
+      <div class="histoire-hero-content">
+        <div class="badge-pill">
+          <i data-lucide="history" size="14"></i>
+          <span>Depuis 1995</span>
+        </div>
+        
+        <h1 class="histoire-hero-title">
+          Notre Histoire
+          <span class="gradient-text">Une Passion Française</span>
+        </h1>
+        
+        <p class="histoire-hero-subtitle">
+          De la petite boutique alsacienne à l'export international, 
+          découvrez le parcours d'une entreprise bâtie sur la passion 
+          des produits artisanaux français.
+        </p>
+        
+        <!-- Stats de l'histoire -->
+        <div class="histoire-stats">
+          <div class="histoire-stat">
+            <strong>30</strong>
+            <span>Ans d'expertise</span>
+          </div>
+          <div class="histoire-stat">
+            <strong>15</strong>
+            <span>Pays d'exportation</span>
+          </div>
+          <div class="histoire-stat">
+            <strong>200+</strong>
+            <span>Artisans partenaires</span>
+          </div>
+          <div class="histoire-stat">
+            <strong>28</strong>
+            <span>Récompenses</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Image vintage -->
+      <div class="histoire-hero-visual">
+        <div class="histoire-hero-image-wrapper">
+          <img 
+            src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=600&fit=crop" 
+            alt="Notre première boutique en Alsace, 1995"
+            class="histoire-hero-image">
+          <div class="floating-card vintage">
+            <i data-lucide="calendar" size="24" stroke-width="1.5"></i>
+            <div>
+              <strong>1995</strong>
+              <span>Fondation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION FONDATEURS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="fondateurs">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nos Origines</span>
+        <h2 class="section-title">Les Fondateurs</h2>
+      </div>
+
+      <div class="fondateurs-grid">
+        <div class="fondateur-card">
+          <div class="fondateur-image">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop" alt="Pierre Dubois">
+            <div class="fondateur-badge">Co-fondateur</div>
+          </div>
+          <div class="fondateur-info">
+            <h3>Pierre Dubois</h3>
+            <span class="fondateur-role">Maître Brasseur</span>
+            <p>Ancien ingénieur agronome, Pierre a quitté sa carrière pour se consacrer à sa passion : le brassage artisanal. Spécialiste des bières de tradition française.</p>
+            <div class="fondateur-quote">
+              <i data-lucide="quote" size="20"></i>
+              <p>"Une bonne bière, c'est comme une belle histoire, elle se savoure lentement et laisse un souvenir impérissable."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fondateur-card reverse">
+          <div class="fondateur-image">
+            <img src="https://images.unsplash.com/photo-1551836026-d5c2c7675e6b?w=400&h=500&fit=crop" alt="Élise Martin">
+            <div class="fondateur-badge">Co-fondatrice</div>
+          </div>
+          <div class="fondateur-info">
+            <h3>Élise Martin</h3>
+            <span class="fondateur-role">Œnologue Diplômée</span>
+            <p>Diplômée de l'Institut d'Œnologie de Bordeaux, Élise parcourt les vignobles français depuis 30 ans à la recherche des pépites méconnues.</p>
+            <div class="fondateur-quote">
+              <i data-lucide="quote" size="20"></i>
+              <p>"Le vin est la poésie de la terre. Notre mission est d'en être les traducteurs fidèles."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       TIMELINE INTERACTIVE
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="timeline-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Notre Parcours</span>
+        <h2 class="section-title">30 Ans d'Histoire</h2>
+      </div>
+
+      <div class="timeline" id="timeline">
+        <!-- Timeline items will be injected by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION VALEURS & ENGAGEMENTS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="valeurs-engagement">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Notre ADN</span>
+        <h2 class="section-title">Nos Valeurs & Engagements</h2>
+      </div>
+
+      <div class="valeurs-grid">
+        <article class="valeur-card">
+          <div class="valeur-icon">
+            <i data-lucide="hand-heart" size="32" stroke-width="1.5"></i>
+          </div>
+          <h3>Artisanat Authentique</h3>
+          <p>Nous sélectionnons uniquement des produits issus de savoir-faire traditionnels, transmis de génération en génération.</p>
+          <ul class="valeur-list">
+            <li><i data-lucide="check" size="16"></i> Producteurs indépendants</li>
+            <li><i data-lucide="check" size="16"></i> Méthodes traditionnelles</li>
+            <li><i data-lucide="check" size="16"></i> Volumes limités</li>
+          </ul>
+        </article>
+
+        <article class="valeur-card">
+          <div class="valeur-icon">
+            <i data-lucide="leaf" size="32" stroke-width="1.5"></i>
+          </div>
+          <h3>Développement Durable</h3>
+          <p>Engagés pour une viticulture et un brassage respectueux de l'environnement et des territoires.</p>
+          <ul class="valeur-list">
+            <li><i data-lucide="check" size="16"></i> Agriculture biologique</li>
+            <li><i data-lucide="check" size="16"></i> Circuits courts</li>
+            <li><i data-lucide="check" size="16"></i> Emballages recyclables</li>
+          </ul>
+        </article>
+
+        <article class="valeur-card">
+          <div class="valeur-icon">
+            <i data-lucide="users" size="32" stroke-width="1.5"></i>
+          </div>
+          <h3>Relations Humaines</h3>
+          <p>Des relations durables avec nos producteurs partenaires et un service personnalisé pour nos clients.</p>
+          <ul class="valeur-list">
+            <li><i data-lucide="check" size="16"></i> Contrats équitables</li>
+            <li><i data-lucide="check" size="16"></i> Visites régulières</li>
+            <li><i data-lucide="check" size="16"></i> Formation continue</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Engagements certifications -->
+      <div class="certifications">
+            <h3>Nos Certifications</h3>
+            <div class="certifications-grid">
+                
+                <a href="https://www.ecocert.com" target="_blank" class="certification">
+                <div class="certification-icon">
+                    <i data-lucide="shield-check" size="32"></i>
+                </div>
+                <div>
+                    <strong>Agriculture Biologique</strong>
+                    <span>Certification ECOCERT</span>
+                </div>
+                </a>
+
+                <a href="https://www.fairtrade.net" target="_blank" class="certification">
+                <div class="certification-icon">
+                    <i data-lucide="award" size="32"></i>
+                </div>
+                <div>
+                    <strong>Commerce Équitable</strong>
+                    <span>Label Fair Trade</span>
+                </div>
+                </a>
+
+                <a href="https://www.artisanat.fr/metiers/labels-qualifications/entreprise-patrimoine-vivant-epv" target="_blank" class="certification">
+                <div class="certification-icon">
+                    <i data-lucide="factory" size="32"></i>
+                </div>
+                <div>
+                    <strong>Entreprise du Patrimoine</strong>
+                    <span>Label "Living Heritage"</span>
+                </div>
+                </a>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION ÉQUIPE ACTUELLE
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="equipe-actuelle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Notre Équipe</span>
+        <h2 class="section-title">Les Gardiens de la Tradition</h2>
+      </div>
+
+      <div class="equipe-grid">
+        <article class="membre-equipe">
+          <div class="membre-image">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Thomas Lefèvre">
+            <div class="membre-social">
+              <a href="#"><i data-lucide="linkedin" size="16"></i></a>
+              <a href="#"><i data-lucide="mail" size="16"></i></a>
+            </div>
+          </div>
+          <div class="membre-info">
+            <h3>Thomas Lefèvre</h3>
+            <span class="membre-role">Directeur Export</span>
+            <p>15 ans d'expérience dans l'export. Parle 5 langues et a ouvert 8 nouveaux marchés pour L'Échoppe Gauloise.</p>
+            <div class="membre-stats">
+              <div class="membre-stat">
+                <strong>8</strong>
+                <span>Marchés</span>
+              </div>
+              <div class="membre-stat">
+                <strong>12</strong>
+                <span>Ans chez nous</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="membre-equipe">
+          <div class="membre-image">
+            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop" alt="Sophie Laurent">
+            <div class="membre-social">
+              <a href="#"><i data-lucide="linkedin" size="16"></i></a>
+              <a href="#"><i data-lucide="mail" size="16"></i></a>
+            </div>
+          </div>
+          <div class="membre-info">
+            <h3>Sophie Laurent</h3>
+            <span class="membre-role">Chef Sommelière</span>
+            <p>Meilleure Ouvrière de France 2018. Forme notre équipe et sélectionne chaque cuvée avec exigence.</p>
+            <div class="membre-stats">
+              <div class="membre-stat">
+                <strong>500+</strong>
+                <span>Vins dégustés/an</span>
+              </div>
+              <div class="membre-stat">
+                <strong>MOF</strong>
+                <span>2018</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="membre-equipe">
+          <div class="membre-image">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop" alt="Marc Bernard">
+            <div class="membre-social">
+              <a href="#"><i data-lucide="linkedin" size="16"></i></a>
+              <a href="#"><i data-lucide="mail" size="16"></i></a>
+            </div>
+          </div>
+          <div class="membre-info">
+            <h3>Marc Bernard</h3>
+            <span class="membre-role">Master Brewer</span>
+            <p>Ancien de la brasserie Gallia. Développe nos recettes exclusives et supervise la qualité brassicole.</p>
+            <div class="membre-stats">
+              <div class="membre-stat">
+                <strong>28</strong>
+                <span>Recettes créées</span>
+              </div>
+              <div class="membre-stat">
+                <strong>25</strong>
+                <span>Ans d'expérience</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="membre-equipe">
+          <div class="membre-image">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop" alt="Camille Petit">
+            <div class="membre-social">
+              <a href="#"><i data-lucide="linkedin" size="16"></i></a>
+              <a href="#"><i data-lucide="mail" size="16"></i></a>
+            </div>
+          </div>
+          <div class="membre-info">
+            <h3>Camille Petit</h3>
+            <span class="membre-role">Responsable RSE</span>
+            <p>Ingénieure environnement. Met en œuvre notre stratégie développement durable et relations producteurs.</p>
+            <div class="membre-stats">
+              <div class="membre-stat">
+                <strong>200+</strong>
+                <span>Producteurs audités</span>
+              </div>
+              <div class="membre-stat">
+                <strong>PhD</strong>
+                <span>Écologie</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION FUTUR
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="futur">
+    <div class="container">
+      <div class="futur-content">
+        <div class="futur-text">
+          <span class="section-label">Notre Avenir</span>
+          <h2>Écrire la Suite Ensemble</h2>
+          <p>Notre histoire continue de s'écrire chaque jour. Nous avons de grands projets pour les années à venir, toujours guidés par nos valeurs fondatrices.</p>
+          
+          <div class="projets-futurs">
+            <div class="projet">
+              <i data-lucide="globe" size="24"></i>
+              <div>
+                <strong>Nouveaux Marchés</strong>
+                <span>Objectif : 25 pays d'ici 2030</span>
+              </div>
+            </div>
+            <div class="projet">
+              <i data-lucide="leaf" size="24"></i>
+              <div>
+                <strong>100% Biologique</strong>
+                <span>Transition complète d'ici 2027</span>
+              </div>
+            </div>
+            <div class="projet">
+              <i data-lucide="school" size="24"></i>
+              <div>
+                <strong>École des Métiers</strong>
+                <span>Centre de formation dès 2025</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="futur-cta">
+            <button class="btn btn-secondary" id="rejoindreBtn">
+              <i data-lucide="user-plus" size="18"></i>
+              Rejoindre l'aventure
+            </button>
+            <button class="btn btn-secondary">
+              <i data-lucide="file-text" size="18"></i>
+              Télécharger notre rapport RSE
+            </button>
+          </div>
+        </div>
+        
+        <div class="futur-visual">
+          <div class="futur-image-wrapper">
+            <img 
+              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=800&fit=crop" 
+              alt="Notre vision pour l'avenir">
+            <div class="futur-badge">
+              <i data-lucide="target" size="20"></i>
+              <span>Vision 2030</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       NEWSLETTER HISTOIRE
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="newsletter newsletter-histoire">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-icon">
+          <i data-lucide="book-open" size="32" stroke-width="1.5"></i>
+        </div>
+        <div class="newsletter-text">
+          <h2>Restez Connectés à Notre Histoire</h2>
+          <p>Recevez nos actualités, histoires de producteurs et coulisses de l'entreprise. <strong>Livret gratuit</strong> sur l'histoire des bières françaises.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm">
+          <input 
+            type="email" 
+            placeholder="votre@email.com" 
+            required
+            aria-label="Email">
+          <button type="submit" class="btn btn-secondary">
+            S'abonner
+            <i data-lucide="arrow-right" size="18"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 14 L16 10 L20 14 L20 22 L12 22 Z" fill="currentColor" opacity="0.2"/>
+            </svg>
+            <span>L'Échoppe Gauloise</span>
+          </div>
+          <p>L'excellence française depuis 1995. Bières artisanales et vins d'exception exportés vers 15 pays.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="instagram" size="20"></i>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="facebook" size="20"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i data-lucide="linkedin" size="20"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Notre Histoire</h4>
+            <ul>
+              <li><a href="#">Les Fondateurs</a></li>
+              <li><a href="#">Notre Parcours</a></li>
+              <li><a href="#">Nos Valeurs</a></li>
+              <li><a href="#">L'Équipe</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Engagements</h4>
+            <ul>
+              <li><a href="#">Développement Durable</a></li>
+              <li><a href="#">Commerce Équitable</a></li>
+              <li><a href="#">Nos Producteurs</a></li>
+              <li><a href="#">Rapport RSE</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Carrières</h4>
+            <ul>
+              <li><a href="#">Nos Offres</a></li>
+              <li><a href="#">Stage & Alternance</a></li>
+              <li><a href="#">Candidature spontanée</a></li>
+              <li><a href="#">Vie chez nous</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 L'Échoppe Gauloise. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="#">Mentions légales</a>
+          <a href="#">Confidentialité</a>
+          <a href="#">Cookies</a>
+          <a href="#">Transparence</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       MODAL REJOINDRE L'AVENTURE
+       ═══════════════════════════════════════════════════════════════════ -->
+  <div class="modal" id="rejoindreModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">
+        <i data-lucide="x" size="20"></i>
+      </button>
+      <div class="modal-header">
+        <i data-lucide="user-plus" size="32"></i>
+        <h3>Rejoindre l'Aventure</h3>
+        <p>Découvrez comment contribuer à notre histoire</p>
+      </div>
+      <div class="modal-body">
+        <div class="modal-options">
+          <div class="modal-option">
+            <i data-lucide="briefcase" size="24"></i>
+            <h4>Carrières</h4>
+            <p>Postuler à nos offres d'emploi</p>
+            <a href="#" class="btn btn-secondary">Voir les offres</a>
+          </div>
+          <div class="modal-option">
+            <i data-lucide="graduation-cap" size="24"></i>
+            <h4>Stages</h4>
+            <p>Stage & alternance disponibles</p>
+            <a href="#" class="btn btn-secondary">Postuler</a>
+          </div>
+          <div class="modal-option">
+            <i data-lucide="handshake" size="24"></i>
+            <h4>Partenariats</h4>
+            <p>Devenir producteur partenaire</p>
+            <a href="#" class="btn btn-secondary">Nous contacter</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════════════════════════════ -->
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+  
+  <!-- App Scripts -->
+  <script src="/js/carousel.js"></script>
+  <script src="/js/navigation.js"></script>
+  <script src="/js/navigation.js"></script>
+  <script src="/js/newsletter.js"></script>  
+  <script src="/js/utils.js"></script>
+  <script src="/js/cart-module.js"></script>
+  <script src="/Pages/Entreprise/notre-histoire.js"></script>
+</body>
+</html>

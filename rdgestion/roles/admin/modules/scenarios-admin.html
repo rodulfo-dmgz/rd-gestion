@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion Scénarios — Admin</title>
+  <link rel="icon" type="image/svg+xml" href="../../../assets/icons/icon.svg?v=2">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Architecture modulaire -->
+  <link rel="stylesheet" href="../../../css/theme.css">
+  <link rel="stylesheet" href="../../../css/base.css">
+  <link rel="stylesheet" href="../../../css/layout.css">
+  <link rel="stylesheet" href="../../.../css/components.css">
+  <link rel="stylesheet" href="../../../css/pages/clients.css">
+
+  <style>
+    /* Stats KPI */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .stat-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      transition: all 0.3s;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
+    }
+    
+    .stat-card .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    
+    .stat-card.purple .icon { background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0.05) 100%); color: #8b5cf6; }
+    .stat-card.blue .icon { background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 100%); color: #3b82f6; }
+    .stat-card.green .icon { background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.05) 100%); color: #10b981; }
+    .stat-card.orange .icon { background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.05) 100%); color: #f59e0b; }
+    
+    .stat-card .value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      font-family: var(--font-title);
+      margin-bottom: 0.25rem;
+    }
+    
+    .stat-card .label {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    
+    /* Table scénarios */
+    .scenarios-table {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      overflow: hidden;
+    }
+    
+    .scenarios-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .scenarios-table thead {
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    }
+    
+    .scenarios-table th {
+      padding: 1rem;
+      text-align: left;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-light);
+    }
+    
+    .scenarios-table td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.875rem;
+    }
+    
+    .scenarios-table tbody tr {
+      transition: background 0.2s;
+    }
+    
+    .scenarios-table tbody tr:hover {
+      background: rgba(139, 92, 246, 0.02);
+    }
+    
+    .scenario-numero {
+      font-family: 'Courier New', monospace;
+      font-weight: 600;
+      color: #3b82f6;
+    }
+    
+    .scenario-type-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+    
+    .type-repondeur { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+    .type-conversation { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+    .type-occupe { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+    .type-invalide { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+    
+    .difficulte-badge {
+      padding: 0.25rem 0.625rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    
+    .diff-facile { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+    .diff-moyen { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+    .diff-difficile { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+    
+    .toggle-switch {
+      position: relative;
+      width: 48px;
+      height: 24px;
+      background: #cbd5e1;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .toggle-switch.active {
+      background: #10b981;
+    }
+    
+    .toggle-switch::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    
+    .toggle-switch.active::after {
+      transform: translateX(24px);
+    }
+    
+    .action-buttons {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .action-btn {
+      width: 32px;
+      height: 32px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      background: transparent;
+      color: var(--text-muted);
+    }
+    
+    .action-btn:hover {
+      background: rgba(139, 92, 246, 0.1);
+      color: #8b5cf6;
+    }
+    
+    .action-btn.danger:hover {
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+    }
+    
+    /* Upload zone */
+    .upload-zone {
+      border: 2px dashed var(--border-light);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s;
+      cursor: pointer;
+      background: rgba(139, 92, 246, 0.02);
+    }
+    
+    .upload-zone:hover {
+      border-color: #8b5cf6;
+      background: rgba(139, 92, 246, 0.05);
+    }
+    
+    .upload-zone.dragover {
+      border-color: #8b5cf6;
+      background: rgba(139, 92, 246, 0.1);
+    }
+    
+    .upload-icon {
+      font-size: 3rem;
+      color: #8b5cf6;
+      margin-bottom: 1rem;
+    }
+    
+    .audio-preview {
+      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      display: none;
+    }
+    
+    .audio-preview.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="dashboard-page">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="../../../assets/images/logo.svg" alt="CRM" class="sidebar-logo">
+      <h2 id="company-name">CRM</h2>
+    </div>
+    <nav class="sidebar-nav" id="sidebar-nav"></nav>
+  </aside>
+
+  <!-- Main Dashboard -->
+  <div class="dashboard-main">
+    
+    <!-- Header -->
+    <header class="topbar">
+      <span class="brand"></span>
+      <div class="topbar-right">
+        <span id="user-info"><i data-lucide="user"></i> </span>
+        <button id="logout"><i data-lucide="log-out"></i> Quitter</button>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="dashboard">
+
+      <!-- Page header -->
+      <section class="page-header">
+        <div>
+          <h1><i data-lucide="settings"></i> Gestion des Scénarios d'Appel</h1>
+          <p>Configuration pédagogique des simulations téléphoniques</p>
+        </div>
+      </section>
+
+      <!-- Stats -->
+      <section class="stats-grid">
+        <div class="stat-card purple">
+          <div class="icon">📞</div>
+          <div class="value" id="stat-total">—</div>
+          <div class="label">Total scénarios</div>
+        </div>
+        <div class="stat-card blue">
+          <div class="icon">✅</div>
+          <div class="value" id="stat-actifs">—</div>
+          <div class="label">Scénarios actifs</div>
+        </div>
+        <div class="stat-card green">
+          <div class="icon">🎯</div>
+          <div class="value" id="stat-faciles">—</div>
+          <div class="label">Niveau facile</div>
+        </div>
+        <div class="stat-card orange">
+          <div class="icon">🔥</div>
+          <div class="value" id="stat-difficiles">—</div>
+          <div class="label">Niveau difficile</div>
+        </div>
+      </section>
+
+      <!-- Actions bar -->
+      <section class="actions-bar">
+        <input type="text" id="search-scenario" placeholder="🔍 Rechercher un scénario...">
+        <button id="add-scenario-btn"><i data-lucide="plus"></i> Nouveau scénario</button>
+      </section>
+
+      <!-- Table des scénarios -->
+      <div class="scenarios-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Numéro</th>
+              <th>Contact</th>
+              <th>Type</th>
+              <th>Difficulté</th>
+              <th>Audio</th>
+              <th>Actif</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="scenarios-tbody">
+            <!-- Généré par JS -->
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Modal Ajouter/Modifier Scénario -->
+  <div class="modal" id="scenario-modal">
+    <div class="modal-content" style="max-width: 800px;">
+      <span class="modal-close" id="modal-close">&times;</span>
+      <h3 id="modal-title">Nouveau scénario d'appel</h3>
+      <form id="scenario-form">
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div>
+            <label for="scenario-numero">Numéro de téléphone *</label>
+            <input type="tel" id="scenario-numero" required placeholder="0123456789" pattern="[0-9]{10}">
+          </div>
+          <div>
+            <label for="scenario-type">Type de scénario *</label>
+            <select id="scenario-type" required>
+              <option value="repondeur">📞 Répondeur</option>
+              <option value="conversation">💬 Conversation</option>
+              <option value="occupe">🔴 Ligne occupée</option>
+              <option value="invalide">⚠️ Numéro invalide</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div>
+            <label for="scenario-contact">Nom du contact</label>
+            <input type="text" id="scenario-contact" placeholder="Jean Dupont">
+          </div>
+          <div>
+            <label for="scenario-entreprise">Entreprise</label>
+            <input type="text" id="scenario-entreprise" placeholder="Acme Corp">
+          </div>
+        </div>
+
+        <label for="scenario-poste">Poste / Fonction</label>
+        <input type="text" id="scenario-poste" placeholder="Directeur Commercial">
+
+        <label for="scenario-instructions">Instructions pédagogiques *</label>
+        <textarea id="scenario-instructions" rows="3" required placeholder="Consignes pour le stagiaire..."></textarea>
+
+        <label for="scenario-objectif">Objectif pédagogique</label>
+        <textarea id="scenario-objectif" rows="2" placeholder="Ce que le stagiaire doit apprendre..."></textarea>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div>
+            <label for="scenario-difficulte">Difficulté</label>
+            <select id="scenario-difficulte">
+              <option value="facile">✅ Facile</option>
+              <option value="moyen" selected>⚡ Moyen</option>
+              <option value="difficile">🔥 Difficile</option>
+            </select>
+          </div>
+          <div>
+            <label for="scenario-actif">Statut</label>
+            <select id="scenario-actif">
+              <option value="true" selected>✅ Actif</option>
+              <option value="false">❌ Inactif</option>
+            </select>
+          </div>
+        </div>
+
+        <label>Fichier audio (MP3)</label>
+        <div class="upload-zone" id="upload-zone">
+          <div class="upload-icon">🎵</div>
+          <p style="margin: 0 0 0.5rem 0; font-weight: 600;">Glisser-déposer un fichier audio</p>
+          <p style="margin: 0; font-size: 0.875rem; color: var(--text-muted);">ou cliquer pour parcourir</p>
+          <input type="file" id="audio-file" accept="audio/mp3,audio/mpeg" style="display: none;">
+        </div>
+        
+        <div class="audio-preview" id="audio-preview">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <i data-lucide="file-audio" style="color: #8b5cf6;"></i>
+            <div style="flex: 1;">
+              <p style="margin: 0; font-weight: 600;" id="audio-filename">fichier.mp3</p>
+              <p style="margin: 0; font-size: 0.75rem; color: var(--text-muted);" id="audio-filesize">0 KB</p>
+            </div>
+            <button type="button" onclick="removeAudioFile()" style="background: #ef4444; color: white; padding: 0.5rem 1rem; border: none; border-radius: 6px; cursor: pointer;">
+              <i data-lucide="x"></i> Retirer
+            </button>
+          </div>
+        </div>
+
+        <button type="submit">💾 Enregistrer le scénario</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Détails Scénario -->
+  <div class="modal" id="view-scenario-modal">
+    <div class="modal-content" style="max-width: 800px;">
+      <span class="modal-close" onclick="closeViewModal()">&times;</span>
+      <h3>📋 Détails du scénario</h3>
+      <div id="view-scenario-body" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0;">
+        <!-- Généré par JS -->
+      </div>
+      <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+        <button onclick="editScenarioFromView()" style="background: #8b5cf6; color: white;">
+          <i data-lucide="edit"></i> Modifier
+        </button>
+        <button onclick="deleteScenarioFromView()" style="background: #ef4444; color: white;">
+          <i data-lucide="trash-2"></i> Supprimer
+        </button>
+        <button onclick="closeViewModal()" style="background: var(--border-light); color: var(--text-muted);">
+          Fermer
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../../../core/supabase-config.js"></script>
+  <script src="../../../core/config.js"></script>
+  <script src="scenarios-admin.js"></script>
+
+</body>
+</html>

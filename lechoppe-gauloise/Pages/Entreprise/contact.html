@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Contact | L'Échoppe Gauloise</title>
+  <meta name="description" content="Contactez L'Échoppe Gauloise pour vos commandes, devis export, service client ou toute autre demande. Réponse sous 24h ouvrées.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../assets/logo.svg">
+  
+  <!-- Polices modernes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../css/design-system.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/pages/contact.css">
+
+  <!-- FontAwesome (pour certaines icônes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Translate -->
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+<body>
+  <!-- Google Translate Widget -->
+  <div id="google_translate_element" style="position:absolute;top:10px;right:10px;z-index:1000;"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HEADER MINIMALISTE
+       ═══════════════════════════════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <!-- Logo minimaliste -->
+        <a href="../../index.html" class="logo">
+          <img src="../../assets/logo.svg" alt="Logo L'Échoppe Gauloise">
+          <span>L'Échoppe</span>
+        </a>
+
+        <!-- Navigation -->
+        <ul class="nav-links">
+          <li><a href="../../index.html">Accueil</a></li>
+          <li><a href="../../Pages/bieres/bieres.html">Bières</a></li>
+          <li><a href="../../Pages/vins/vins.html">Vins</a></li>
+          <li><a href="../../Pages/Entreprise/export.html">Export</a></li>
+          <li><a href="../../Pages/Entreprise/carrières.html">Carrières</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Rechercher">
+            <i data-lucide="search" stroke-width="1.5"></i>
+          </button>
+          <a href="/Pages/commande/panier.html" class="icon-btn" aria-label="Panier">
+            <i data-lucide="shopping-bag" stroke-width="1.5"></i>
+            <span class="badge cart-badge" id="cartBadge">0</span>
+          </a>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <i data-lucide="menu" stroke-width="1.5"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HERO CONTACT
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="contact-hero" id="main-content">
+    <div class="container">
+      <div class="contact-hero-content">
+        <div class="badge-pill">
+          <i data-lucide="message-circle" size="14"></i>
+          <span>Nous contacter</span>
+        </div>
+        <h1 class="contact-hero-title">
+          Une question ? Une demande ?
+        </h1>
+        <p class="contact-hero-subtitle">
+          Notre équipe est à votre écoute pour vous accompagner dans vos projets, 
+          que vous soyez particulier, caviste, restaurateur ou distributeur international.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       CONTENU PRINCIPAL
+       ═══════════════════════════════════════════════════════════════════ -->
+  <main class="contact-main">
+    <div class="container">
+      
+      <!-- NOTICE PÉDAGOGIQUE -->
+      <div class="contact-notice">
+        <div class="notice-icon">
+          <i data-lucide="graduation-cap" size="32"></i>
+        </div>
+        <div class="notice-text">
+          <h3>Document à usage pédagogique</h3>
+            <p class="pedagogical-note">Ce site internet est une démonstration technique réalisée dans un cadre éducatif par <strong>Rodulfo DOMINGUEZ</strong>. L'ensemble des contenus (entreprise, catalogue, tarifs) est fictif et ne saurait engager une quelconque activité commerciale. Toute similitude avec des structures existantes est involontaire.</p>        </div>
+      </div>
+
+      <!-- Grille Contact : formulaire + infos -->
+      <div class="contact-grid">
+        
+        <!-- COLONNE GAUCHE : FORMULAIRE DE CONTACT -->
+        <div class="contact-form-col">
+          <div class="form-card">
+            <h2 class="form-title">Envoyez-nous un message</h2>
+            <p class="form-subtitle">Tous les champs marqués d'un * sont obligatoires.</p>
+            
+            <form id="contactForm" class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">Prénom *</label>
+                  <input type="text" id="firstName" name="firstName" placeholder="Votre prénom" required>
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Nom *</label>
+                  <input type="text" id="lastName" name="lastName" placeholder="Votre nom" required>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="phone">Téléphone</label>
+                <input type="tel" id="phone" name="phone" placeholder="01 23 45 67 89">
+              </div>
+              
+              <div class="form-group">
+                <label for="subject">Sujet *</label>
+                <select id="subject" name="subject" required>
+                  <option value="" disabled selected>Choisissez un sujet</option>
+                  <option value="commande">Suivi de commande</option>
+                  <option value="devis">Demande de devis (export)</option>
+                  <option value="produit">Information sur un produit</option>
+                  <option value="partenariat">Partenariat / Distribution</option>
+                  <option value="carriere">Candidature / Carrière</option>
+                  <option value="autre">Autre demande</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+              </div>
+              
+              <div class="form-group consent-group">
+                <input type="checkbox" id="consent" name="consent" required>
+                <label for="consent">
+                  J'accepte que mes données soient traitées conformément à la 
+                  <a href="/Pages/support/confidentialite.html">politique de confidentialité</a>. *
+                </label>
+              </div>
+              
+              <button type="submit" class="btn btn-secondary btn-submit">
+                <i data-lucide="send" size="18"></i>
+                Envoyer le message
+              </button>
+            </form>
+          </div>
+        </div>
+        
+        <!-- COLONNE DROITE : COORDONNÉES + HORAIRES + CARTE -->
+        <div class="contact-info-col">
+          
+          <!-- Coordonnées -->
+          <div class="info-card">
+            <h3><i data-lucide="map-pin" size="20"></i> Notre adresse</h3>
+            <address>
+              <strong>L'Échoppe Gauloise</strong><br>
+              12 Rue des Grands Crus<br>
+              33000 Bordeaux<br>
+              France
+            </address>
+            <div class="contact-detail">
+              <i data-lucide="phone" size="18"></i>
+              <span><a href="tel:+33556789012">05 56 78 90 12</a></span>
+            </div>
+            <div class="contact-detail">
+              <i data-lucide="mail" size="18"></i>
+              <span><a href="mailto:contact@lechoppegauloise.fr">contact@lechoppegauloise.fr</a></span>
+            </div>
+            <div class="contact-detail">
+              <i data-lucide="globe" size="18"></i>
+              <span><a href="https://www.lechoppegauloise.fr" target="_blank">www.lechoppegauloise.fr</a></span>
+            </div>
+          </div>
+          
+          <!-- Horaires -->
+          <div class="info-card">
+            <h3><i data-lucide="clock" size="20"></i> Horaires d'ouverture</h3>
+            <ul class="schedule-list">
+              <li><span>Lundi - Vendredi :</span> 09h00 – 18h00</li>
+              <li><span>Samedi :</span> 10h00 – 17h00</li>
+              <li><span>Dimanche :</span> Fermé</li>
+            </ul>
+            <p class="schedule-note">Notre service client répond à vos emails sous 24h ouvrées.</p>
+          </div>
+          
+          <!-- Service Export -->
+          <div class="info-card export-card">
+            <div class="export-header">
+              <i data-lucide="globe-2" size="28"></i>
+              <h3>Vous êtes un client international ?</h3>
+            </div>
+            <p>Notre équipe Export vous accompagne dans plus de 15 pays. Bénéficiez de tarifs adaptés et d'une logistique maîtrisée.</p>
+            <a href="/Pages/Entreprise/export.html" class="btn btn-outline btn-block">
+              Découvrir nos services Export
+              <i data-lucide="arrow-right" size="16"></i>
+            </a>
+          </div>
+          
+          <!-- Carte (simulation) -->
+          <div class="info-card map-card">
+            <h3><i data-lucide="map" size="20"></i> Nous trouver</h3>
+            <div class="map-placeholder">
+              <div class="map-overlay">
+                <i data-lucide="map-pin" size="48"></i>
+                <p>12 Rue des Grands Crus, Bordeaux</p>
+                <a href="https://maps.google.com/?q=12+Rue+des+Grands+Crus+33000+Bordeaux" target="_blank" rel="noopener" class="btn btn-link">
+                  Ouvrir dans Google Maps
+                  <i data-lucide="external-link" size="16"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-- SECTION FAQ (liens rapides) -->
+      <div class="contact-faq">
+        <div class="faq-prompt">
+          <i data-lucide="help-circle" size="24"></i>
+          <h3>Consultez notre FAQ</h3>
+          <p>La réponse à votre question s'y trouve peut-être déjà.</p>
+          <a href="/Pages/support/FAQ.html" class="btn btn-outline">
+            Accéder à la FAQ
+            <i data-lucide="arrow-right" size="16"></i>
+          </a>
+        </div>
+      </div>
+      
+            <!-- SIGNATURE FINALE -->
+            <div class="legal-signature">
+                <img src="../../assets/logo.svg" alt="Logo L'Échoppe Gauloise" class="signature-logo">
+                <div class="signature-content">
+                    <p class="signature-mention">Fait pour servir et valoir ce que de droit.</p>
+                    <p class="signature-credit">
+                        Document établi à des fins strictement pédagogiques — Création originale : 
+                        <span class="name-wrapper">
+                            <strong>Rodulfo DOMINGUEZ</strong>
+                            <img src="../../assets/signature.png" alt="Signature" class="handwritten-signature">
+                        </span>
+                    </p>
+                </div>
+            </div>
+          </div>
+
+
+          
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FOOTER MINIMALISTE
+       ═══════════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="/assets/logo.svg" alt="Logo L'Échoppe Gauloise" class="logo-img">
+            <span>L'Échoppe Gauloise</span>
+          </div>
+          <p>L'excellence française depuis 1995. Bières artisanales et vins d'exception exportés vers 15 pays.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="instagram" size="20"></i>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="facebook" size="20"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i data-lucide="linkedin" size="20"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Produits</h4>
+            <ul>
+              <li><a href="/Pages/bieres/bieres.html">Bières</a></li>
+              <li><a href="/Pages/vins/vins.html">Vins</a></li>
+              <li><a href="/index.html#products">Nouveautés</a></li>
+              <li><a href="/index.html#products">Promotions</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Entreprise</h4>
+            <ul>
+              <li><a href="/Pages/Entreprise/notre-histoire.html">Notre Histoire</a></li>
+              <li><a href="/Pages/Entreprise/export.html">Export</a></li>
+              <li><a href="/Pages/Entreprise/carrières.html">Carrières</a></li>
+              <li><a href="#" class="active">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="/Pages/support/FAQ.html">FAQ</a></li>
+              <li><a href="/Pages/support/livraisons.html">Livraison</a></li>
+              <li><a href="/Pages/support/retours.html">Retours</a></li>
+              <li><a href="/Pages/support/cgv.html">CGV</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Légal</h4>
+            <ul>
+              <li><a href="/Pages/support/mentions-legales.html">Mentions légales</a></li>
+              <li><a href="/Pages/support/confidentialite.html">Confidentialité</a></li>
+              <li><a href="/Pages/support/cookies.html">Cookies</a></li>
+              <li><a href="/Pages/support/cgv.html">CGV</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 L'Échoppe Gauloise. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="/Pages/support/mentions-legales.html">Mentions légales</a>
+          <a href="/Pages/support/confidentialite.html">Confidentialité</a>
+          <a href="/Pages/support/cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════════════════════════════ -->
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <!-- App Scripts -->
+  <script src="../../js/utils.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script src="../../Pages/Entreprise/contact.js"></script>
+  
+  </script>
+</body>
+</html>

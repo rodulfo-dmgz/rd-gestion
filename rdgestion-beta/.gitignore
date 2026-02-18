@@ -1,0 +1,38 @@
+# ============================================================================
+# GITIGNORE - RD GESTION
+# ============================================================================
+
+# ⚠️ Configuration sensible (DÉCOMMENTER si vous ne voulez pas commiter les clés)
+core/config/config.js
+
+# Variables d'environnement
+.env
+.env.local
+.env.*.local
+
+# Node modules
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build / Cache
+dist/
+build/
+.cache/
+
+# Fichiers temporaires
+*.tmp
+*.temp

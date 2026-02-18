@@ -1,0 +1,266 @@
+/**
+ * RD GESTION - Login Page
+ * Page de connexion avec 2 colonnes encapsulées sur fond dégradé
+ */
+
+@layer modules {
+  
+  /* ========================================
+     WRAPPER - Fond dégradé pleine page
+     ======================================== */
+  
+  .login-page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-8);
+    /* Fond de base sombre pour laisser respirer les couleurs du logo */
+    background: linear-gradient(135deg, var(--color-secondary-600) 0%, var(--color-primary-600) 50%,  var(--color-secondary-600) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* 1. La profondeur : Grille de points (Inspiration Nothing Tech) */
+  .login-page-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+      circle, 
+      rgba(255, 255, 255, 0.08) 1px, 
+      transparent 1px
+    );
+    background-size: 32px 32px;
+    /* On efface la grille au centre pour la lisibilité de la carte */
+    mask-image: radial-gradient(circle at center, transparent 10%, black 90%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* 2. L'ambiance : Les Auras (Couleurs de ton logo) */
+  .login-page-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80vw;
+    height: 80vw;
+    background: 
+      radial-gradient(circle at 30% 30%, var(--color-primary-800) 0%, transparent 40%),
+      radial-gradient(circle at 70% 70%, var(--color-secondary-800) 0%, transparent 40%);
+    filter: blur(80px); /* Un flou plus large pour plus de douceur */
+    opacity: 0.25; /* Augmenté légèrement car le fond est sombre */
+    transform: translate(-50%, -50%);
+    animation: auraFloat 20s ease-in-out infinite alternate;
+    z-index: 0;
+  }
+
+
+/* 3. Animation organique */
+@keyframes auraFloat {
+  0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+  50% { transform: translate(-45%, -55%) rotate(5deg) scale(1.1); }
+  100% { transform: translate(-55%, -45%) rotate(-20deg) scale(1); }
+}
+  
+  /* ========================================
+     LAYOUT - 2 colonnes côte à côte
+     ======================================== */
+  
+.login-layout {
+  width: 100%;
+  max-width: 900px;
+  min-height: 580px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--surface);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  z-index: 1;
+  animation: slideIn 0.6s ease-out;
+}
+  
+  
+  /* ========================================
+     COLONNE GAUCHE - Brand Card (ENCAPSULÉE)
+     ======================================== */
+
+    .login-brand-card img {
+      width: 200px;
+      margin-bottom: var(--space-2xl);
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  
+  .login-brand-card {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-top-left-radius: var(--radius-2x1, 12px);
+    border-bottom-left-radius: var(--radius-2x1, 12px);
+    padding: var(--space-12);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    box-shadow: var(--shadow-2xl);
+  }
+  
+  .login-brand-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+  }
+  
+  .login-brand__logo {
+    width: 120px;
+    height: 120px;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+  }
+  
+  .login-brand__name {
+    font-family: var(--font-heading);
+    font-size: var(--font-h1-size);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-inverse);
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .login-brand__slogan {
+    font-family: var(--font-subtitle);
+    font-size: var(--font-subtitle1-size);
+    color: var(--text-inverse);
+    opacity: 0.95;
+    margin: 0;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  /* ========================================
+     COLONNE DROITE - Form Card (ENCAPSULÉE)
+     ======================================== */
+  
+  .login-form-card {
+      background-color: var(--surface-base);
+      /* Option 1 : Propriétés spécifiques (plus lisible) */
+      border-top-right-radius: var(--radius-2x1, 12px);
+      border-bottom-right-radius: var(--radius-2x1, 12px);
+      padding: var(--space-10);
+      box-shadow: var(--shadow-2xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+  .login-form {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .login-form__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-h2-size);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-8);
+    text-align: center;
+  }
+  
+  .login-submit {
+    width: 100%;
+    margin-top: var(--space-2);
+  }
+  
+  
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  
+  /* Tablette et mobile : passer en 1 colonne */
+  @media (max-width: 1024px) {
+    .login-page-wrapper {
+      padding: var(--space-6);
+    }
+    
+    .login-layout {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+    
+    .login-brand-card {
+      padding: var(--space-8);
+      min-height: auto;
+    }
+    
+    .login-brand__logo {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .login-brand__name {
+      font-size: var(--font-h2-size);
+    }
+    
+    .login-brand__slogan {
+      font-size: var(--font-body1-size);
+    }
+    
+    .login-form-card {
+      padding: var(--space-8);
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 640px) {
+    .login-page-wrapper {
+      padding: var(--space-4);
+    }
+    
+    .login-layout {
+      gap: var(--space-4);
+    }
+    
+    .login-brand-card {
+      padding: var(--space-6);
+    }
+    
+    .login-brand__logo {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .login-brand__name {
+      font-size: var(--font-h3-size);
+    }
+    
+    .login-brand__slogan {
+      font-size: var(--font-body2-size);
+    }
+    
+    .login-form-card {
+      padding: var(--space-6);
+    }
+    
+    .login-form__title {
+      font-size: var(--font-h3-size);
+    }
+  }
+}

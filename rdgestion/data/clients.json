@@ -1,0 +1,6 @@
+[
+  {"id":1,"nom":"Alice Dupont","ville":"Paris","pays":"France"},
+  {"id":2,"nom":"Bob Martin","ville":"Lyon","pays":"France"},
+  {"id":3,"nom":"Carla Ruiz","ville":"Marseille","pays":"France"},
+  {"id":4,"nom":"Ramiro PEREZ","ville":"Chiapas","pays":"Mexique"}
+]

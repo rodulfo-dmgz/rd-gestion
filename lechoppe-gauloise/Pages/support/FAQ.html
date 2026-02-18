@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>FAQ - L'Échoppe Gauloise | Questions Fréquentes</title>
+  <meta name="description" content="Trouvez rapidement des réponses à vos questions sur nos produits, livraisons, export et services chez L'Échoppe Gauloise.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../../../assets/logo.svg">
+  
+  <!-- Polices modernes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../css/design-system.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="/css/pages/faq.css">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="/../../index.html" class="logo">
+          <img src="../../../../assets/logo.svg" class="logo">
+          <span>L'Échoppe</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="/../../index.html">Accueil</a></li>
+          <li><a href="/Pages/bieres/bieres.html">Bières</a></li>
+          <li><a href="/Pages/vins/vins.html">Vins</a></li>
+          <li><a href="/Pages/Entreprise/export.html">Export</a></li>
+          <li><a href="#" class="active">FAQ</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Rechercher">
+            <i data-lucide="search" stroke-width="1.5"></i>
+          </button>
+          <a href="/Pages/commande/panier.html" class="icon-btn" aria-label="Panier">
+            <i data-lucide="shopping-bag" stroke-width="1.5"></i>
+            <span class="badge cart-badge" id="cartBadge">0</span>
+          </a>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <i data-lucide="menu" stroke-width="1.5"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HERO FAQ
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="faq-hero">
+    <div class="container">
+      <div class="faq-hero-content">
+        <div class="badge-pill">
+          <i data-lucide="help-circle" size="14"></i>
+          <span>Centre d'aide</span>
+        </div>
+        
+        <h1 class="faq-title">
+          Questions Fréquentes
+          <span class="gradient-texte">Réponses rapides</span>
+        </h1>
+        
+        <p class="faq-subtitle">
+          Trouvez des réponses à vos questions sur nos produits, commandes, livraisons et services d'export.
+        </p>
+        
+        <!-- Barre de recherche FAQ -->
+        <div class="faq-search">
+          <div class="search-wrapper">
+            <i data-lucide="search" size="20"></i>
+            <input 
+              type="text" 
+              id="faqSearch" 
+              placeholder="Rechercher une question..."
+              aria-label="Rechercher dans la FAQ">
+            <button class="search-clear" id="clearSearch" aria-label="Effacer la recherche">
+              <i data-lucide="x" size="16"></i>
+            </button>
+          </div>
+          <p class="search-help">Exemples: "livraison", "retour", "export", "bière"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       CONTENU FAQ
+       ═══════════════════════════════════════════════════════════════════ -->
+  <main class="faq-main">
+    <div class="container">
+      <!-- Navigation par catégories -->
+      <div class="faq-categories">
+        <button class="category-btn active" data-category="all">
+          <i data-lucide="layout-grid"></i>
+          Toutes les questions
+        </button>
+        <button class="category-btn" data-category="produits">
+          <i data-lucide="package"></i>
+          Produits
+        </button>
+        <button class="category-btn" data-category="commande">
+          <i data-lucide="shopping-cart"></i>
+          Commande
+        </button>
+        <button class="category-btn" data-category="livraison">
+          <i data-lucide="truck"></i>
+          Livraison
+        </button>
+        <button class="category-btn" data-category="export">
+          <i data-lucide="globe"></i>
+          Export
+        </button>
+        <button class="category-btn" data-category="compte">
+          <i data-lucide="user"></i>
+          Mon compte
+        </button>
+      </div>
+
+      <!-- Liste des questions/réponses -->
+      <div class="faq-container">
+        <!-- Section Produits -->
+        <section class="faq-section" data-category="produits">
+          <h2 class="section-title">
+            <i data-lucide="package" size="24"></i>
+            Questions sur nos produits
+          </h2>
+          
+          <div class="faq-accordion">
+            <!-- Question 1 -->
+            <div class="faq-item" data-tags="bière conservation température">
+              <button class="faq-question">
+                <span>Comment conserver mes bières et vins ?</span>
+                <i data-lucide="chevron-down" class="faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p><strong>Pour les bières :</strong></p>
+                <ul>
+                  <li>Conservez-les à l'abri de la lumière, idéalement dans un endroit sombre</li>
+                  <li>Température entre 10°C et 15°C pour les bières de garde</li>
+                  <li>Position verticale pour éviter les sédiments</li>
+                  <li>Évitez les changements brusques de température</li>
+                </ul>
+                <p><strong>Pour les vins :</strong></p>
+                <ul>
+                  <li>Température constante entre 12°C et 15°C</li>
+                  <li>Humidité relative de 60% à 80%</li>
+                  <li>Position couchée pour les bouchons en liège</li>
+                  <li>À l'abri des vibrations et des odeurs fortes</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="faq-item" data-tags="bière artisanale fabrication différence">
+              <button class="faq-question">
+                <span>Qu'est-ce qui rend vos bières artisanales différentes ?</span>
+                <i data-lucide="chevron-down" class="faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Nos bières artisanales se distinguent par :</p>
+                <ul>
+                  <li><strong>Ingrédients de qualité supérieure :</strong> Houblons français, malts d'orge locaux, eau de source</li>
+                  <li><strong>Méthodes traditionnelles :</strong> Brassage à l'ancienne, fermentation haute</li>
+                  <li><strong>Absence de pasteurisation :</strong> Les arômes sont préservés naturellement</li>
+                  <li><strong>Production limitée :</strong> Chaque lot est unique et numéroté</li>
+                  <li><strong>Équilibre parfait :</strong> Entre amertume, malt et caractère houblonné</li>
+                </ul>
+                <p>Contrairement aux bières industrielles, nous n'utilisons pas d'additifs ni de conservateurs.</p>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="faq-item" data-tags="vin bio certification">
+              <button class="faq-question">
+                <span>Vos vins sont-ils certifiés bio ?</span>
+                <i data-lucide="chevron-down" class="faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Oui, une partie de notre sélection de vins est certifiée biologique :</p>
+                <ul>
+                  <li><strong>Certification AB (Agriculture Biologique)</strong> pour tous nos vins labellisés "bio"</li>
+                  <li><strong>Agriculture raisonnée</strong> pour la majorité de nos producteurs</li>
+                  <li><strong>Culture biodynamique</strong> pour certains de nos vins premium</li>
+                  <li><strong>Viticulture durable</strong> avec certification Terra Vitis</li>
+                </ul>
+                <p>Les certifications sont clairement indiquées sur chaque fiche produit. Vous pouvez filtrer les vins bio directement sur notre page <a href="/Pages/vins/vins.html">Vins</a>.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section Commande -->
+        <section class="faq-section" data-category="commande">
+          <h2 class="section-title">
+            <i data-lucide="shopping-cart" size="24"></i>
+            Commandes et paiement
+          </h2>
+          
+          <div class="faq-accordion">
+            <!-- Question 4 -->
+            <div class="faq-item" data-tags="commande paiement méthode">
+              <button class="faq-question">
+                <span>Quels sont les moyens de paiement acceptés ?</span>
+                <i data-lucide="chevron-down" class="faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Nous acceptons les moyens de paiement suivants :</p>
+                <div class="payment-methods">
+                  <div class="payment-method">
+                    <i data-lucide="credit-card" size="24"></i>
+                    <span>Cartes bancaires (Visa, Mastercard, CB)</span>
+                  </div>
+                  <div class="payment-method">
+                    <i data-lucide="smartphone" size="24"></i>
+                    <span>Apple Pay & Google Pay</span>
+                  </div>
+                  <div class="payment-method">
+                    <i data-lucide="banknote" size="24"></i>
+                    <span>Virement bancaire (pour les commandes supérieures à 500€)</span>
+                  </div>
+                  <div class="payment-method">
+                    <i data-lucide="receipt" size="24"></i>
+                    <span>Facture (professionnels uniquement)</span>
+                  </div>
+                </div>
+                <p><strong>Sécurité :</strong> Tous les paiements sont sécurisés par cryptage SSL 256-bit. Nous ne stockons jamais vos données bancaires.</p>
+              </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="faq-item" data-tags="commande modification annulation">
+              <button class="faq-question">
+                <span>Puis-je modifier ou annuler ma commande ?</span>
+                <i data-lucide="chevron-down" class="faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p><strong>Modification :</strong></p>
+                <ul>
+                  <li>Vous pouvez modifier votre commande tant qu'elle n'a pas été expédiée</li>
+                  <li>Contactez-nous par email à <a href="mailto:contact@echoppe-gauloise.com">contact@echoppe-gauloise.com</a> ou par téléphone au 01 23 45 67 89</li>
+                  <li>Nous vous répondons sous 2 heures ouvrées</li>
+                </ul>
+                <p><strong>Annulation :</strong></p>
+                <ul>
+                  <li>Annulation gratuite jusqu'à 24h après la commande</li>
+                  <li>Remboursement intégral sous 5 jours ouvrés</li>
+                  <li>Pour les commandes déjà expédiées, voir notre politique de retour</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section Livraison -->
+        <section class="faq-section" data-category="livraison">
+          <h2 class="section-title">
+            <i data-lucide="truck" size="24"></i>
+            Livraison et retours
+          </h2>
+          
+          <div class="faq-accordion">
+            <!-- Question 6 -->
+            <div class="faq-item" data-tags="livraison france délai">
+              <button class="faq-question">
+                <span>Quels sont les délais et frais de livraison en France ?</span>
+                <i data-lucide="chevron-down" class="faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <div class="delivery-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Type de livraison</th>
+                        <th>Délai</th>
+                        <th>Frais</th>
+                        <th>Caractéristiques</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Standard</td>
+                        <td>3-5 jours ouvrés</td>
+                        <td>4,90€</td>
+                        <td>Livraison Colissimo</td>
+                      </tr>
+                      <tr>
+                        <td>Express</td>
+                        <td>24-48h</td>
+                        <td>9,90€</td>
+                        <td>Livraison Chronopost avant 13h</td>
+                      </tr>
+                      <tr>
+                        <td>Gratuite</td>
+                        <td>3-5 jours ouvrés</td>
+                        <td>0€</td>
+                        <td>À partir de 50€ d'achat</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p><strong>Important :</strong> Les livraisons se font du lundi au vendredi. Aucune livraison le week-end et les jours fériés.</p>
+              </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="faq-item" data-tags="retour échange procédure">
+              <button class="faq-question">
+                <span>Quelle est votre politique de retour et d'échange ?</span>
+                <i data-lucide="chevron-down" class="faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Notre politique de retour est simple et transparente :</p>
+                <ul>
+                  <li><strong>Délai :</strong> 14 jours après réception de votre commande</li>
+                  <li><strong>Condition :</strong> Produits non ouverts et dans leur emballage d'origine</li>
+                  <li><strong>Procédure :</strong>
+                    <ol>
+                      <li>Contactez-nous pour obtenir un numéro de retour</li>
+                      <li>Renvoyez le colis à nos soins</li>
+                      <li>Remboursement ou échange sous 5 jours après réception</li>
+                    </ol>
+                  </li>
+                  <li><strong>Frais :</strong> Retours gratuits pour les produits défectueux</li>
+                  <li><strong>Exception :</strong> Les produits alcoolisés ne peuvent être retournés une fois ouverts pour des raisons légales</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section Export -->
+        <section class="faq-section" data-category="export">
+          <h2 class="section-title">
+            <i data-lucide="globe" size="24"></i>
+            Export international
+          </h2>
+          
+          <div class="faq-accordion">
+            <!-- Question 8 -->
+            <div class="faq-item" data-tags="export international pays livraison">
+              <button class="faq-question">
+                <span>Dans quels pays livrez-vous ?</span>
+                <i data-lucide="chevron-down" class="faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Nous livrons actuellement dans 15 pays :</p>
+                <div class="countries-grid">
+                  <div class="country">
+                    <i data-lucide="flag" size="16"></i>
+                    <span>Allemagne</span>
+                  </div>
+                  <div class="country">
+                    <i data-lucide="flag" size="16"></i>
+                    <span>Belgique</span>
+                  </div>
+                  <div class="country">
+                    <i data-lucide="flag" size="16"></i>
+                    <span>Espagne</span>
+                  </div>
+                  <div class="country">
+                    <i data-lucide="flag" size="16"></i>
+                    <span>Italie</span>
+                  </div>
+                  <div class="country">
+                    <i data-lucide="flag" size="16"></i>
+                    <span>Pays-Bas</span>
+                  </div>
+                  <div class="country">
+                    <i data-lucide="flag" size="16"></i>
+                    <span>Royaume-Uni</span>
+                  </div>
+                  <div class="country">
+                    <i data-lucide="flag" size="16"></i>
+                    <span>Suisse</span>
+                  </div>
+                  <div class="country">
+                    <i data-lucide="flag" size="16"></i>
+                    <span>Luxembourg</span>
+                  </div>
+                  <div class="country">
+                    <i data-lucide="flag" size="16"></i>
+                    <span>États-Unis</span>
+                  </div>
+                  <div class="country">
+                    <i data-lucide="flag" size="16"></i>
+                    <span>Canada</span>
+                  </div>
+                  <div class="country">
+                    <i data-lucide="flag" size="16"></i>
+                    <span>Japon</span>
+                  </div>
+                  <div class="country">
+                    <i data-lucide="flag" size="16"></i>
+                    <span>Australie</span>
+                  </div>
+                </div>
+                <p><strong>Pour les entreprises :</strong> Nous pouvons également organiser des livraisons dans d'autres pays sur demande. <a href="/Pages/Entreprise/export.html">Contactez notre service export</a> pour plus d'informations.</p>
+              </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="faq-item" data-tags="douane taxes frais importation">
+              <button class="faq-question">
+                <span>Y a-t-il des frais de douane supplémentaires ?</span>
+                <i data-lucide="chevron-down" class="faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Les frais de douane dépendent de la destination :</p>
+                <ul>
+                  <li><strong>Union Européenne :</strong> Pas de frais de douane supplémentaires (libre circulation)</li>
+                  <li><strong>Suisse :</strong> TVA suisse applicable (7.7%)</li>
+                  <li><strong>Royaume-Uni :</strong> TVA britannique (20%) + frais de douane potentiels selon la valeur</li>
+                  <li><strong>États-Unis/Canada :</strong> Taxes locales + droits d'importation sur l'alcool (varie par État/province)</li>
+                  <li><strong>Autres pays :</strong> Les frais sont calculés au cas par cas</li>
+                </ul>
+                <p><strong>Important :</strong> L'acheteur est responsable du paiement de tous les droits et taxes d'importation. Ces frais ne sont pas inclus dans nos prix de livraison.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section Compte -->
+        <section class="faq-section" data-category="compte">
+          <h2 class="section-title">
+            <i data-lucide="user" size="24"></i>
+            Mon compte et données
+          </h2>
+          
+          <div class="faq-accordion">
+            <!-- Question 10 -->
+            <div class="faq-item" data-tags="compte création mot de passe">
+              <button class="faq-question">
+                <span>Comment créer un compte et réinitialiser mon mot de passe ?</span>
+                <i data-lucide="chevron-down" class="faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p><strong>Création de compte :</strong></p>
+                <ol>
+                  <li>Cliquez sur "Mon compte" en haut à droite</li>
+                  <li>Remplissez le formulaire avec vos informations</li>
+                  <li>Confirmez votre email via le lien reçu</li>
+                  <li>Votre compte est activé immédiatement</li>
+                </ol>
+                <p><strong>Réinitialisation du mot de passe :</strong></p>
+                <ol>
+                  <li>Cliquez sur "Mot de passe oublié" sur la page de connexion</li>
+                  <li>Entrez votre adresse email</li>
+                  <li>Suivez les instructions du email reçu (lien valide 24h)</li>
+                  <li>Créez un nouveau mot de passe sécurisé</li>
+                </ol>
+                <p><strong>Conseil :</strong> Utilisez un mot de passe d'au moins 8 caractères avec majuscules, minuscules et chiffres.</p>
+              </div>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="faq-item" data-tags="données confidentialité RGPD">
+              <button class="faq-question">
+                <span>Comment sont protégées mes données personnelles ?</span>
+                <i data-lucide="chevron-down" class="faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Nous prenons la protection de vos données très au sérieux :</p>
+                <ul>
+                  <li><strong>Conformité RGPD :</strong> Nous respectons le règlement européen sur la protection des données</li>
+                  <li><strong>Chiffrement :</strong> Toutes les données sont chiffrées (SSL 256-bit)</li>
+                  <li><strong>Hébergement sécurisé :</strong> Serveurs en France chez OVH avec certification ISO 27001</li>
+                  <li><strong>Minimisation des données :</strong> Nous ne collectons que les données nécessaires</li>
+                  <li><strong>Droit d'accès :</strong> Vous pouvez demander la suppression ou la modification de vos données à tout moment</li>
+                  <li><strong>Pas de revente :</strong> Nous ne vendons jamais vos données à des tiers</li>
+                </ul>
+                <p>Consultez notre <a href="#">politique de confidentialité</a> pour plus de détails.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+    </main>
+
+        <!-- Section "Question non trouvée" -->
+        <section class="faq-cta">
+          <div class="container">
+            <div class="cta-card">
+              <div class="cta-content">
+              <h3>Vous n'avez pas trouvé de réponse ?</h3>
+              <p>Notre équipe est à votre disposition pour répondre à toutes vos questions.</p>
+              <div class="cta-actions">
+                <a href="mailto:contact@echoppe-gauloise.com" class="btn btn-outline">
+                  <i data-lucide="mail"></i>
+                  Nous écrire
+                </a>
+                <a href="tel:+33123456789" class="btn btn-outline">
+                  <i data-lucide="phone"></i>
+                  01 23 45 67 89
+                </a>
+              </div>
+              <div class="cta-info">
+                <div class="info-item">
+                <i data-lucide="clock" size="16"></i>
+                Lundi - Vendredi : 9h-18h | Samedi : 10h-16h
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+ 
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../../../../assets/logo.svg" alt="Logo L'Échoppe Gauloise" class="logo-img">
+            <span>L'Échoppe Gauloise</span>
+          </div>
+          <p>L'excellence française depuis 1995. Bières artisanales et vins d'exception exportés vers 15 pays.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="instagram" size="20"></i>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="facebook" size="20"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i data-lucide="linkedin" size="20"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Produits</h4>
+            <ul>
+              <li><a href="/Pages/bieres/bieres.html">Bières</a></li>
+              <li><a href="/Pages/vins/vins.html">Vins</a></li>
+              <li><a href="/../../index.html#products">Nouveautés</a></li>
+              <li><a href="/../../index.html#products">Promotions</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Entreprise</h4>
+            <ul>
+              <li><a href="/Pages/Entreprise/notre-histoire.html">Notre Histoire</a></li>
+              <li><a href="/Pages/Entreprise/export.html">Export</a></li>
+              <li><a href="/Pages/Entreprise/export.html#contact">Contact</a></li>
+              <li><a href="/Pages/faq.html" class="active">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Export</h4>
+            <ul>
+              <li><a href="/Pages/Entreprise/pays-desservis.html">Pays desservis</a></li>
+              <li><a href="/Pages/Entreprise/processus-export.html">Processus d'export</a></li>
+              <li><a href="/Pages/Entreprise/certifications.html">Certifications</a></li>
+              <li><a href="/Pages/Entreprise/export.html#formulaireDevis">Demande de devis</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="/Pages/faq.html" class="active">FAQ</a></li>
+              <li><a href="#">Livraison</a></li>
+              <li><a href="#">Retours</a></li>
+              <li><a href="#">CGV</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 L'Échoppe Gauloise. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="#">Mentions légales</a>
+          <a href="#">Confidentialité</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════════════════════════════ -->
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <!-- App Scripts -->
+  <script src="/js/navigation.js"></script>
+  <script src="/Pages/support/faq.js"></script>
+
+</body>
+</html>

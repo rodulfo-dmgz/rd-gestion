@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "nom": "Leadership et Management",
+    "employe": "Rodulfo DOMINGUEZ",
+    "organisme": "HEC Paris",
+    "debut": "2026-02-01",
+    "fin": "2026-02-28",
+    "duree": 35,
+    "statut": "En cours",
+    "description": "Formation avancée en leadership stratégique",
+    "cout": 4500
+  },
+  {
+    "id": 2,
+    "nom": "Paie et Gestion RH",
+    "employe": "Claire Martin",
+    "organisme": "CEGOS",
+    "debut": "2026-01-15",
+    "fin": "2026-01-19",
+    "duree": 21,
+    "statut": "Terminé",
+    "description": "Maîtrise complète de la paie",
+    "cout": 2100
+  },
+  {
+    "id": 3,
+    "nom": "Excel Avancé",
+    "employe": "Thomas Dubois",
+    "organisme": "ENI",
+    "debut": "2026-03-10",
+    "fin": "2026-03-12",
+    "duree": 14,
+    "statut": "Planifié",
+    "description": "Tableaux croisés dynamiques et macros",
+    "cout": 890
+  },
+  {
+    "id": 4,
+    "nom": "Communication interpersonnelle",
+    "employe": "Sophie Bernard",
+    "organisme": "Dale Carnegie",
+    "debut": "2026-02-20",
+    "fin": "2026-02-24",
+    "duree": 28,
+    "statut": "Planifié",
+    "description": "Développement des soft skills",
+    "cout": 1800
+  },
+  {
+    "id": 5,
+    "nom": "Comptabilité analytique",
+    "employe": "Lucas Moreau",
+    "organisme": "IFOCOP",
+    "debut": "2026-04-05",
+    "fin": "2026-04-09",
+    "duree": 21,
+    "statut": "Planifié",
+    "description": "Analyse des coûts et rentabilité",
+    "cout": 1650
+  },
+  {
+    "id": 6,
+    "nom": "Techniques de vente B2B",
+    "employe": "Camille Leroy",
+    "organisme": "Action Commerciale",
+    "debut": "2026-03-15",
+    "fin": "2026-03-16",
+    "duree": 14,
+    "statut": "En cours",
+    "description": "Stratégies de vente en milieu professionnel",
+    "cout": 1200
+  }
+]

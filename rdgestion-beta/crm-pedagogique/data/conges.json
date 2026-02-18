@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "employe": "Rodulfo DOMINGUEZ",
+    "type": "Congés payés",
+    "debut": "2026-02-10",
+    "fin": "2026-02-14",
+    "jours": 5,
+    "statut": "Approuvé",
+    "motif": "Vacances familiales"
+  },
+  {
+    "id": 2,
+    "employe": "Claire Martin",
+    "type": "RTT",
+    "debut": "2026-02-05",
+    "fin": "2026-02-05",
+    "jours": 1,
+    "statut": "Approuvé",
+    "motif": "Rendez-vous personnel"
+  },
+  {
+    "id": 3,
+    "employe": "Sophie Bernard",
+    "type": "Congés payés",
+    "debut": "2026-03-01",
+    "fin": "2026-03-07",
+    "jours": 7,
+    "statut": "En attente",
+    "motif": "Vacances de printemps"
+  },
+  {
+    "id": 4,
+    "employe": "Thomas Dubois",
+    "type": "Maladie",
+    "debut": "2026-01-28",
+    "fin": "2026-01-30",
+    "jours": 3,
+    "statut": "Approuvé",
+    "motif": "Arrêt maladie"
+  },
+  {
+    "id": 5,
+    "employe": "Camille Leroy",
+    "type": "Congés payés",
+    "debut": "2026-04-15",
+    "fin": "2026-04-22",
+    "jours": 8,
+    "statut": "En attente",
+    "motif": "Vacances d'été"
+  },
+  {
+    "id": 6,
+    "employe": "Lucas Moreau",
+    "type": "Formation",
+    "debut": "2026-03-10",
+    "fin": "2026-03-11",
+    "jours": 2,
+    "statut": "Approuvé",
+    "motif": "Formation Excel"
+  }
+]

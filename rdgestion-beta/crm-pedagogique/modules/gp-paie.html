@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GP - Paie — CRM</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages/clients.css">
+
+  <style>
+    .stat-card {
+      background: linear-gradient(135deg, rgba(255, 87, 10, 0.1) 0%, rgba(255, 87, 10, 0.05) 100%);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 87, 10, 0.2);
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      font-family: var(--font-title);
+    }
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+    .status-badge {
+      display: inline-flex;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-paye { background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2); }
+    .badge-attente { background: rgba(245, 158, 11, 0.1); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.2); }
+    .calc-section {
+      background: rgba(18, 53, 91, 0.03);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      border: 1px solid rgba(18, 53, 91, 0.1);
+    }
+    .calc-line {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(18, 53, 91, 0.1);
+    }
+    .calc-line:last-child {
+      border-bottom: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body class="dashboard-page">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+      <div class="sidebar-brand">
+        <img src="../assets/images/login.svg" alt="CRM" class="sidebar-logo">
+        <h2 id="company-name"></h2>
+      </div>
+    <nav class="sidebar-nav" id="sidebar-nav">
+      <!-- Navigation générée dynamiquement par JS selon les permissions -->
+    </nav>
+  </aside>
+
+  <div class="dashboard-main">
+    
+  <!-- Header -->
+    <header class="topbar">
+      <span class="brand"></span>
+      <div class="topbar-right">
+        <span id="user-info"><i data-lucide="user"></i> </span>
+        <button id="logout"><i data-lucide="log-out"></i> Quitter</button>
+      </div>
+    </header>
+
+     <!-- Main content -->
+    <main class="dashboard">
+
+       <!-- Page header -->
+      <section class="page-header">
+        <h1 id="conges"><i data-lucide="euro"></i> Gestion de la Paie</h1>
+        <p>Calculs détaillés et génération des bulletins de paie.</p>
+      </section>
+
+      <section class="kpi-grid" style="margin-bottom: 2rem;">
+        <div class="stat-card">
+          <div class="stat-value" id="stat-bulletins">—</div>
+          <div class="stat-label">Bulletins générés</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-masse">—</div>
+          <div class="stat-label">Masse salariale</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-cotisations">—</div>
+          <div class="stat-label">Cotisations totales</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-net">—</div>
+          <div class="stat-label">Net à payer</div>
+        </div>
+      </section>
+
+      <section class="actions-bar">
+        <input type="text" id="search-payroll" placeholder="🔍 Rechercher...">
+        <button id="add-payroll-btn">+ Générer bulletin</button>
+      </section>
+
+      <section class="table-section">
+        <table id="payroll-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Employé</th>
+              <th>Période</th>
+              <th>Brut</th>
+              <th>Cotisations</th>
+              <th>Net</th>
+              <th>Statut</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal Générer -->
+  <div class="modal" id="payroll-modal">
+    <div class="modal-content">
+      <span class="modal-close" id="modal-close">&times;</span>
+      <h3>Générer un bulletin de paie</h3>
+      <form id="payroll-form">
+        <label for="payroll-employee">Employé</label>
+        <input type="text" id="payroll-employee" required>
+
+        <label for="payroll-period">Période</label>
+        <input type="month" id="payroll-period" required>
+
+        <label for="payroll-gross">Salaire Brut (€)</label>
+        <input type="number" step="0.01" id="payroll-gross" required>
+
+        <div class="calc-section">
+          <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0.5rem;">Calcul automatique des cotisations (23%)</p>
+          <div id="auto-calc">
+            <div class="calc-line">
+              <span>Cotisations sociales</span>
+              <span id="calc-cotisations">0.00 €</span>
+            </div>
+            <div class="calc-line">
+              <span>Net à payer</span>
+              <span id="calc-net">0.00 €</span>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit">Générer le bulletin</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Voir Détails -->
+  <div class="modal" id="view-payroll-modal" style="display: none;">
+    <div class="modal-content" style="max-width: 700px;">
+      <span class="modal-close" id="modal-view-close">&times;</span>
+      <h3 id="view-modal-title">Bulletin de paie</h3>
+      <p id="view-modal-subtitle" style="color: var(--text-muted); margin-bottom: 1.5rem;"></p>
+      <div id="view-modal-body" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;"></div>
+      
+      <div class="calc-section" style="grid-column: 1 / -1; margin-top: 1.5rem;">
+        <h4 style="margin-bottom: 1rem; font-weight: 600;">💰 Détail des calculs</h4>
+        <div id="calc-details"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/gp-paie.js"></script>
+</body>
+</html>

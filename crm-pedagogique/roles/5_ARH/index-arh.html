@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard ARH — SIRH</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/icons/icon.svg?v=2">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Architecture modulaire -->
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../.../css/components.css">
+  <link rel="stylesheet" href="../../css/pages/dashboard.css">
+
+  <style>
+    /* Styles spécifiques Dashboard ARH */
+    .dashboard-arh {
+      background: linear-gradient(135deg, rgba(255, 87, 10, 0.02) 0%, rgba(18, 53, 91, 0.02) 100%);
+    }
+    
+    .stat-card {
+      background: linear-gradient(135deg, rgba(255, 87, 10, 0.1) 0%, rgba(255, 87, 10, 0.05) 100%);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 87, 10, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, rgba(255, 87, 10, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      transform: translate(30%, -30%);
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(255, 87, 10, 0.2);
+      border-color: var(--accent);
+    }
+    
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      font-family: var(--font-title);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+    
+    .stat-icon {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 87, 10, 0.1);
+      border-radius: 12px;
+      color: var(--accent);
+    }
+    
+    .quick-actions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    
+    .action-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .action-card:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-color: var(--accent);
+    }
+    
+    .action-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--accent) 0%, #ff6b00 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      flex-shrink: 0;
+    }
+    
+    .action-content h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+    
+    .action-content p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    
+    .recent-activities {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      margin-top: 2rem;
+    }
+    
+    .activity-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border-bottom: 1px solid var(--border-light);
+      transition: background 0.2s;
+    }
+    
+    .activity-item:last-child {
+      border-bottom: none;
+    }
+    
+    .activity-item:hover {
+      background: rgba(255, 87, 10, 0.02);
+    }
+    
+    .activity-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 87, 10, 0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    
+    .activity-content {
+      flex: 1;
+    }
+    
+    .activity-content h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+    
+    .activity-content p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    
+    .activity-time {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body class="dashboard-page dashboard-arh">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="../../assets/images/logo.svg" alt="CRM" class="sidebar-logo">
+      <h2 id="company-name">CRM</h2>
+    </div>
+    <nav class="sidebar-nav" id="sidebar-nav">
+      <!-- Navigation générée dynamiquement par JS -->
+    </nav>
+  </aside>
+
+  <!-- Main Dashboard -->
+  <div class="dashboard-main">
+    
+    <!-- Header -->
+    <header class="topbar">
+      <span class="brand"></span>
+      <div class="topbar-right">
+        <span id="user-info"><i data-lucide="user"></i> </span>
+        <button id="logout"><i data-lucide="log-out"></i> Quitter</button>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="dashboard">
+
+      <!-- Page header -->
+      <section class="page-header">
+        <div>
+          <h1><i data-lucide="users"></i> Dashboard Ressources Humaines</h1>
+          <p>Vue d'ensemble de la gestion du personnel et des ressources humaines</p>
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <span id="current-date" style="font-size: 0.9rem; color: var(--text-muted);"></span>
+        </div>
+      </section>
+
+      <!-- KPI Cards -->
+      <section class="kpi-grid" style="margin-bottom: 2rem;">
+        <div class="stat-card">
+          <div class="stat-icon"><i data-lucide="users"></i></div>
+          <div class="stat-value" id="stat-total">—</div>
+          <div class="stat-label">Total Salariés</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i data-lucide="user-check"></i></div>
+          <div class="stat-value" id="stat-actifs">—</div>
+          <div class="stat-label">Salariés Actifs</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i data-lucide="briefcase"></i></div>
+          <div class="stat-value" id="stat-services">—</div>
+          <div class="stat-label">Services</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i data-lucide="user-plus"></i></div>
+          <div class="stat-value" id="stat-recrutements">—</div>
+          <div class="stat-label">Recrutements (mois)</div>
+        </div>
+      </section>
+
+      <!-- Actions Rapides -->
+      <section>
+        <h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-primary);">
+          <i data-lucide="zap"></i> Actions Rapides
+        </h2>
+        <div class="quick-actions">
+          <div class="action-card" onclick="window.location.href='modules/employes.html'">
+            <div class="action-icon"><i data-lucide="users"></i></div>
+            <div class="action-content">
+              <h3>Gestion des Salariés</h3>
+              <p>Consulter et gérer les fiches employés</p>
+            </div>
+          </div>
+          
+          <div class="action-card" onclick="window.location.href='modules/conges.html'">
+            <div class="action-icon"><i data-lucide="calendar"></i></div>
+            <div class="action-content">
+              <h3>Gestion des Congés</h3>
+              <p>Demandes et validation de congés</p>
+            </div>
+          </div>
+          
+          <div class="action-card" onclick="window.location.href='modules/formations.html'">
+            <div class="action-icon"><i data-lucide="graduation-cap"></i></div>
+            <div class="action-content">
+              <h3>Formations</h3>
+              <p>Planning et suivi des formations</p>
+            </div>
+          </div>
+          
+          <div class="action-card" onclick="alert('Module en développement')">
+            <div class="action-icon"><i data-lucide="file-text"></i></div>
+            <div class="action-content">
+              <h3>Contrats</h3>
+              <p>Gestion des contrats de travail</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Activités Récentes -->
+      <section class="recent-activities">
+        <h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-primary);">
+          <i data-lucide="clock"></i> Activités Récentes
+        </h2>
+        <div id="activities-list">
+          <!-- Généré dynamiquement par JS -->
+        </div>
+      </section>
+
+      <!-- Section Statistiques -->
+      <section style="margin-top: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+        
+        <!-- Répartition par Service -->
+        <div class="recent-activities">
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-primary);">
+            <i data-lucide="pie-chart"></i> Répartition par Service
+          </h3>
+          <div id="service-distribution">
+            <!-- Généré par JS -->
+          </div>
+        </div>
+
+        <!-- Congés en attente -->
+        <div class="recent-activities">
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-primary);">
+            <i data-lucide="alert-circle"></i> Congés en Attente
+          </h3>
+          <div id="pending-leaves">
+            <p style="text-align: center; color: var(--text-muted); padding: 2rem;">
+              Aucune demande en attente
+            </p>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../../core/config.js"></script>
+  <script src="../../core/supabase-config.js"></script>
+  <script src="../../core/auth.js"></script>
+  <script src="index-arh.js"></script>
+
+</body>
+</html>

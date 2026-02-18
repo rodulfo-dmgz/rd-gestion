@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — CRM</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Architecture modulaire -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/dashboard.css">
+
+  <!-- Leaflet.js pour la carte -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Chart.js pour les graphiques -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body class="dashboard-page">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+      <div class="sidebar-brand">
+        <img src="assets/images/login.svg" alt="CRM" class="sidebar-logo">
+        <h2 id="company-name"></h2>
+      </div>
+    <nav class="sidebar-nav" id="sidebar-nav">
+      <!-- Navigation générée dynamiquement par JS selon les permissions -->
+    </nav>
+  </aside>
+
+  <!-- Main Dashboard -->
+  <div class="dashboard-main">
+    
+  <!-- Header -->
+    <header class="topbar">
+      <span class="brand"></span>
+      <div class="topbar-right">
+        <span id="user-info"><i data-lucide="user"></i> </span>
+        <button id="logout"><i data-lucide="log-out"></i> Quitter</button>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="dashboard">
+
+      <!-- Intro -->
+      <section class="dashboard-intro">
+        <h1 id="welcome">Bonjour</h1>
+        <p id="dashboard-subtitle">Vue synthétique de l'activité actuelle.</p>
+      </section>
+
+      <!-- KPI Grid - Contenu dynamique selon service -->
+      <section class="kpi-grid" id="kpi-grid">
+        <!-- KPIs générés dynamiquement -->
+      </section>
+
+      <!-- Graphiques & carte -->
+      <section class="charts-grid" id="charts-grid">
+        <!-- Graphiques générés dynamiquement -->
+      </section>
+
+      <!-- Tableau transactions & support -->
+      <section class="tables-grid" id="tables-grid">
+        <!-- Tables générées dynamiquement -->
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+
+</body>
+</html>

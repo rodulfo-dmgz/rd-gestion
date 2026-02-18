@@ -1,0 +1,239 @@
+/* ===============================
+   CLIENTS PAGE (et pages similaires)
+   Styles pour clients, produits, ventes
+   =============================== */
+
+/* ─────────────────────────────
+   PAGE HEADER
+───────────────────────────── */
+.page-header {
+  position: relative;
+  margin-bottom: var(--space-2xl);
+}
+
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: -var(--space-md);
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blaze-orange), transparent);
+  border-radius: var(--radius-full);
+}
+
+/* ─────────────────────────────
+   ACTIONS BAR
+───────────────────────────── */
+.actions-bar {
+  background: var(--surface);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  margin-bottom: var(--space-2xl);
+}
+
+.actions-bar input[type="text"] {
+  padding: var(--space-md) var(--space-lg);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  transition: all var(--transition-fast);
+  margin-bottom: 0;
+}
+
+.actions-bar input[type="text"]:focus {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-glow);
+}
+
+.actions-bar input[type="text"]::placeholder {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ─────────────────────────────
+   TABLE SECTION
+───────────────────────────── */
+.table-section {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+}
+
+/* Animation des lignes au chargement */
+.table-section tbody tr {
+  animation: fadeInRow 0.4s ease-out backwards;
+}
+
+.table-section tbody tr:nth-child(1) { animation-delay: 0.05s; }
+.table-section tbody tr:nth-child(2) { animation-delay: 0.1s; }
+.table-section tbody tr:nth-child(3) { animation-delay: 0.15s; }
+.table-section tbody tr:nth-child(4) { animation-delay: 0.2s; }
+.table-section tbody tr:nth-child(5) { animation-delay: 0.25s; }
+
+@keyframes fadeInRow {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ─────────────────────────────
+   TABLEAU CLIENTS/PRODUITS/VENTES
+───────────────────────────── */
+#clients-table th,
+#products-table th,
+#sales-table th {
+  background: linear-gradient(135deg, var(--oxford-navy) 0%);
+  padding: var(--space-lg) var(--space-xl);
+}
+
+#clients-table td,
+#products-table td,
+#sales-table td {
+  vertical-align: middle;
+}
+
+/* Colonne ID */
+#clients-table td:first-child,
+#products-table td:first-child,
+#sales-table td:first-child {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+/* Colonne Actions */
+#clients-table td:last-child,
+#products-table td:last-child,
+#sales-table td:last-child {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* ─────────────────────────────
+   BOUTONS D'ACTION DANS LES TABLES
+───────────────────────────── */
+table .edit-btn,
+table .delete-btn {
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-sm);
+  min-width: 80px;
+  text-align: center;
+}
+
+table .edit-btn {
+  background: linear-gradient(135deg, var(--blaze-orange), var(--accent-hover));
+}
+
+table .delete-btn {
+  background: linear-gradient(135deg, var(--danger), #dc2626);
+}
+
+/* ─────────────────────────────
+   MODAL FORMULAIRE
+───────────────────────────── */
+#client-modal .modal-content,
+#product-modal .modal-content,
+#sale-modal .modal-content {
+  max-width: 500px;
+}
+
+#client-modal form,
+#product-modal form,
+#sale-modal form {
+  margin-top: var(--space-lg);
+}
+
+#client-modal label,
+#product-modal label,
+#sale-modal label {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+#client-modal input,
+#product-modal input,
+#sale-modal input,
+#client-modal textarea,
+#product-modal textarea,
+#sale-modal textarea {
+  border: 2px solid var(--border-light);
+  transition: all var(--transition-fast);
+}
+
+#client-modal input:focus,
+#product-modal input:focus,
+#sale-modal input:focus {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ─────────────────────────────
+   ÉTATS VIDES
+───────────────────────────── */
+.table-section:has(tbody:empty)::after {
+  content: 'Aucune donnée disponible';
+  display: block;
+  text-align: center;
+  padding: var(--space-3xl);
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ─────────────────────────────
+   RESPONSIVE
+───────────────────────────── */
+@media (max-width: 768px) {
+  .actions-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .actions-bar input[type="text"] {
+    min-width: 100%;
+    margin-bottom: var(--space-md);
+  }
+  
+  .actions-bar button {
+    width: 100%;
+  }
+  
+  /* Tables responsive - scroll horizontal */
+  .table-section {
+    overflow-x: auto;
+  }
+  
+  table {
+    min-width: 600px;
+  }
+  
+  table th,
+  table td {
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  table .edit-btn,
+  table .delete-btn {
+    min-width: 60px;
+    padding: var(--space-xs) var(--space-sm);
+  }
+}

@@ -1,0 +1,251 @@
+/**
+ * RD GESTION - Cards
+ * Composant carte pour afficher du contenu groupé
+ */
+
+@layer components {
+  
+  /* ========================================
+     BASE CARD
+     ======================================== */
+  
+  .card {
+    background-color: var(--surface-base);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-fast);
+  }
+  
+  .card:hover {
+    box-shadow: var(--shadow-md);
+  }
+  
+  
+  /* ========================================
+     CARD HEADER
+     ======================================== */
+  
+  .card__header {
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border-light);
+  }
+  
+  .card__title {
+    font-family: var(--font-heading);
+    font-size: var(--font-h4-size);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    margin: 0;
+  }
+  
+  .card__subtitle {
+    font-family: var(--font-subtitle);
+    font-size: var(--font-subtitle2-size);
+    color: var(--text-secondary);
+    margin-top: var(--space-2);
+  }
+  
+  
+  /* ========================================
+     CARD CONTENT
+     ======================================== */
+  
+  .card__content {
+    color: var(--text-secondary);
+    font-size: var(--font-body2-size);
+    line-height: 1.6;
+  }
+  
+  .card__content > *:last-child {
+    margin-bottom: 0;
+  }
+  
+  
+  /* ========================================
+     CARD FOOTER
+     ======================================== */
+  
+  .card__footer {
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+  }
+  
+  
+  /* ========================================
+     CARD VARIANTS
+     ======================================== */
+  
+  /* Card élevée */
+  .card--elevated {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .card--elevated:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-2px);
+  }
+  
+  /* Card clickable */
+  .card--clickable {
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+  
+  .card--clickable:hover {
+    border-color: var(--color-primary-600);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .card--clickable:active {
+    transform: scale(0.98);
+  }
+  
+  /* Card sans bordure */
+  .card--borderless {
+    border: none;
+  }
+  
+  /* Card avec fond coloré */
+  .card--primary {
+    background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-700));
+    color: var(--text-inverse);
+    border: none;
+  }
+  
+  .card--primary .card__title,
+  .card--primary .card__subtitle,
+  .card--primary .card__content {
+    color: var(--text-inverse);
+  }
+  
+  .card--secondary {
+    background: linear-gradient(135deg, var(--color-secondary-600), var(--color-secondary-700));
+    color: var(--text-inverse);
+    border: none;
+  }
+  
+  .card--secondary .card__title,
+  .card--secondary .card__subtitle,
+  .card--secondary .card__content {
+    color: var(--text-inverse);
+  }
+    
+  /* ========================================
+     STAT CARD (variante compacte)
+     ======================================== */
+  
+  .stat-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    background-color: var(--surface-base);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+  }
+  
+  .stat-card__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .stat-card__icon--primary {
+    background-color: var(--color-primary-100);
+    color: var(--color-primary-600);
+  }
+  
+  .stat-card__icon--success {
+    background-color: var(--color-success-100);
+    color: var(--color-success-600);
+  }
+  
+  .stat-card__icon--warning {
+    background-color: var(--color-warning-100);
+    color: var(--color-warning-600);
+  }
+  
+  .stat-card__content {
+    flex: 1;
+  }
+  
+  .stat-card__label {
+    font-size: var(--font-caption-size);
+    color: var(--text-tertiary);
+    margin-bottom: var(--space-1);
+  }
+  
+  .stat-card__value {
+    font-family: var(--font-subtitle);
+    font-size: var(--font-h3-size);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+  }
+  
+  
+  /* ========================================
+     CARD GRID
+     ======================================== */
+  
+  .card-grid {
+    display: grid;
+    gap: var(--space-6);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  .card-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .card-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .card-grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  
+  @media (max-width: 1024px) {
+    .card-grid--4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .card-grid--3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .card {
+      padding: var(--space-4);
+    }
+    
+    .card-grid,
+    .card-grid--2,
+    .card-grid--3,
+    .card-grid--4 {
+      grid-template-columns: 1fr;
+    }
+    
+    .kpi-card__value {
+      font-size: var(--font-data-medium-size);
+    }
+  }
+}

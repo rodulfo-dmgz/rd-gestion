@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion - RD GESTION</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+
+  <!-- CSS - Point d'entrée unique -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- Skip link pour accessibilité -->
+  <a href="#loginForm" class="skip-link">Aller au formulaire de connexion</a>
+
+  <!-- Page de connexion avec fond dégradé -->
+  <div class="login-page-wrapper">
+    
+    <main class="login-layout">
+
+      <!-- Colonne gauche - Brand ENCAPSULÉE -->
+      <section class="login-brand-card">
+        <div class="login-brand-content">
+          <img src="assets/images/logo.svg" alt="RD GESTION" class="login-brand__logo" />
+          <h1 class="login-brand__name">RD GESTION</h1>
+          <p class="login-brand__slogan">Gérez votre entreprise efficacement</p>
+        </div>
+      </section>
+
+      <!-- Colonne droite - Formulaire ENCAPSULÉ -->
+      <section class="login-form-card">
+        
+        <form id="loginForm" class="login-form">
+          <h2 class="login-form__title">Connexion</h2>
+
+          <!-- Sélection de l'entreprise (select) -->
+          <div class="form-group">
+            <label for="tenant-select" class="form-label form-label--required">
+              Entreprise
+            </label>
+            <select 
+              id="tenant-select" 
+              name="tenant" 
+              class="form-select" 
+              required
+              aria-required="true"
+            >
+              <option value="" disabled selected>Choisir une entreprise...</option>
+              <option value="alpha">Alpha Industrie SARL — ALPHA - Lyon</option>
+              <option value="beta">Beta Services SAS — BETA - Paris</option>
+              <option value="gamma">Gamma Distribution EURL — GAMMA - Marseille</option>
+              <option value="delta">Delta Technologies SA — DELTA - Toulouse</option>
+              <option value="epsilon">Epsilon Consulting — EPSILON - Bordeaux</option>
+            </select>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email" class="form-label form-label--required">
+              Email
+            </label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email"
+              class="form-input"
+              placeholder="prenom.nom@entreprise.fr" 
+              autocomplete="email"
+              required
+              aria-required="true"
+            >
+          </div>
+
+          <!-- Mot de passe -->
+          <div class="form-group">
+            <label for="password" class="form-label form-label--required">
+              Mot de passe
+            </label>
+            <input 
+              type="password" 
+              id="password" 
+              name="password"
+              class="form-input"
+              placeholder="••••••••" 
+              autocomplete="current-password"
+              required
+              aria-required="true"
+            >
+          </div>
+
+          <!-- Message d'erreur -->
+          <p id="error" class="form-error" style="display: none;" role="alert" aria-live="polite"></p>
+
+          <!-- Bouton de connexion -->
+          <button type="submit" class="btn btn--primary login-submit" id="submitBtn">
+            Accéder au dashboard
+          </button>
+
+        </form>
+
+      </section>
+
+    </main>
+    
+  </div>
+
+  <!-- Scripts -->
+  
+  <!-- SDK Supabase (CDN officiel) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- Configuration Supabase -->
+  <script src="core/supabase-client.js"></script>
+
+  <!-- Core Scripts -->
+  <script src="core/config.js"></script>
+  <script src="core/auth.js"></script>
+
+</body>
+</html>

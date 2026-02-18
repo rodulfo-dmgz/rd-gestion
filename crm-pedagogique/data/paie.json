@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "employe": "Rodulfo DOMINGUEZ",
+    "periode": "2026-01",
+    "salaire_brut": 6500.00,
+    "salaire_net": 5005.00,
+    "cotisations": 1495.00,
+    "statut": "Payé",
+    "date_paiement": "2026-01-28"
+  },
+  {
+    "id": 2,
+    "employe": "Claire Martin",
+    "periode": "2026-01",
+    "salaire_brut": 3200.00,
+    "salaire_net": 2464.00,
+    "cotisations": 736.00,
+    "statut": "Payé",
+    "date_paiement": "2026-01-28"
+  },
+  {
+    "id": 3,
+    "employe": "Sophie Bernard",
+    "periode": "2026-01",
+    "salaire_brut": 2800.00,
+    "salaire_net": 2156.00,
+    "cotisations": 644.00,
+    "statut": "Payé",
+    "date_paiement": "2026-01-28"
+  },
+  {
+    "id": 4,
+    "employe": "Thomas Dubois",
+    "periode": "2026-01",
+    "salaire_brut": 3800.00,
+    "salaire_net": 2926.00,
+    "cotisations": 874.00,
+    "statut": "Payé",
+    "date_paiement": "2026-01-28"
+  },
+  {
+    "id": 5,
+    "employe": "Camille Leroy",
+    "periode": "2026-01",
+    "salaire_brut": 2600.00,
+    "salaire_net": 2002.00,
+    "cotisations": 598.00,
+    "statut": "En attente",
+    "date_paiement": null
+  },
+  {
+    "id": 6,
+    "employe": "Lucas Moreau",
+    "periode": "2026-01",
+    "salaire_brut": 3000.00,
+    "salaire_net": 2310.00,
+    "cotisations": 690.00,
+    "statut": "En attente",
+    "date_paiement": null
+  },
+  {
+    "id": 7,
+    "employe": "Marie Petit",
+    "periode": "2026-01",
+    "salaire_brut": 2500.00,
+    "salaire_net": 1925.00,
+    "cotisations": 575.00,
+    "statut": "Payé",
+    "date_paiement": "2026-01-28"
+  },
+  {
+    "id": 8,
+    "employe": "Alexandre Roux",
+    "periode": "2026-01",
+    "salaire_brut": 2700.00,
+    "salaire_net": 2079.00,
+    "cotisations": 621.00,
+    "statut": "Payé",
+    "date_paiement": "2026-01-28"
+  },
+  {
+    "id": 9,
+    "employe": "Emma Garcia",
+    "periode": "2026-01",
+    "salaire_brut": 3100.00,
+    "salaire_net": 2387.00,
+    "cotisations": 713.00,
+    "statut": "En attente",
+    "date_paiement": null
+  },
+  {
+    "id": 10,
+    "employe": "Hugo Lambert",
+    "periode": "2026-01",
+    "salaire_brut": 2750.00,
+    "salaire_net": 2117.50,
+    "cotisations": 632.50,
+    "statut": "Payé",
+    "date_paiement": "2026-01-28"
+  },
+  {
+    "id": 11,
+    "employe": "Julie Dupont",
+    "periode": "2026-01",
+    "salaire_brut": 3500.00,
+    "salaire_net": 2695.00,
+    "cotisations": 805.00,
+    "statut": "Payé",
+    "date_paiement": "2026-01-28"
+  }
+]

@@ -1,0 +1,191 @@
+[
+  {
+    "id": 1,
+    "date": "2026-01-05",
+    "libelle": "Achat fournitures de bureau",
+    "compte": "606400",
+    "debit": 245.50,
+    "credit": 0,
+    "piece": "FACT-2026-001"
+  },
+  {
+    "id": 2,
+    "date": "2026-01-05",
+    "libelle": "Achat fournitures de bureau",
+    "compte": "512000",
+    "debit": 0,
+    "credit": 245.50,
+    "piece": "FACT-2026-001"
+  },
+  {
+    "id": 3,
+    "date": "2026-01-10",
+    "libelle": "Vente client Dupont Jean",
+    "compte": "411000",
+    "debit": 2880.00,
+    "credit": 0,
+    "piece": "FAC-2026-001"
+  },
+  {
+    "id": 4,
+    "date": "2026-01-10",
+    "libelle": "Vente client Dupont Jean",
+    "compte": "707000",
+    "debit": 0,
+    "credit": 2400.00,
+    "piece": "FAC-2026-001"
+  },
+  {
+    "id": 5,
+    "date": "2026-01-10",
+    "libelle": "TVA collectée",
+    "compte": "445710",
+    "debit": 0,
+    "credit": 480.00,
+    "piece": "FAC-2026-001"
+  },
+  {
+    "id": 6,
+    "date": "2026-01-15",
+    "libelle": "Paiement loyer janvier",
+    "compte": "613000",
+    "debit": 1200.00,
+    "credit": 0,
+    "piece": "CHEK-2026-005"
+  },
+  {
+    "id": 7,
+    "date": "2026-01-15",
+    "libelle": "Paiement loyer janvier",
+    "compte": "512000",
+    "debit": 0,
+    "credit": 1200.00,
+    "piece": "CHEK-2026-005"
+  },
+  {
+    "id": 8,
+    "date": "2026-01-20",
+    "libelle": "Vente client Martin Claire",
+    "compte": "411000",
+    "debit": 959.88,
+    "credit": 0,
+    "piece": "FAC-2026-002"
+  },
+  {
+    "id": 9,
+    "date": "2026-01-20",
+    "libelle": "Vente client Martin Claire",
+    "compte": "707000",
+    "debit": 0,
+    "credit": 799.90,
+    "piece": "FAC-2026-002"
+  },
+  {
+    "id": 10,
+    "date": "2026-01-20",
+    "libelle": "TVA collectée",
+    "compte": "445710",
+    "debit": 0,
+    "credit": 159.98,
+    "piece": "FAC-2026-002"
+  },
+  {
+    "id": 11,
+    "date": "2026-01-22",
+    "libelle": "Achat matériel informatique",
+    "compte": "218300",
+    "debit": 1500.00,
+    "credit": 0,
+    "piece": "FACT-2026-008"
+  },
+  {
+    "id": 12,
+    "date": "2026-01-22",
+    "libelle": "TVA déductible",
+    "compte": "445660",
+    "debit": 300.00,
+    "credit": 0,
+    "piece": "FACT-2026-008"
+  },
+  {
+    "id": 13,
+    "date": "2026-01-22",
+    "libelle": "Achat matériel informatique",
+    "compte": "401000",
+    "debit": 0,
+    "credit": 1800.00,
+    "piece": "FACT-2026-008"
+  },
+  {
+    "id": 14,
+    "date": "2026-01-25",
+    "libelle": "Salaires janvier",
+    "compte": "641000",
+    "debit": 35950.00,
+    "credit": 0,
+    "piece": "PAIE-2026-01"
+  },
+  {
+    "id": 15,
+    "date": "2026-01-25",
+    "libelle": "Charges sociales",
+    "compte": "645000",
+    "debit": 8268.50,
+    "credit": 0,
+    "piece": "PAIE-2026-01"
+  },
+  {
+    "id": 16,
+    "date": "2026-01-25",
+    "libelle": "Salaires à payer",
+    "compte": "421000",
+    "debit": 0,
+    "credit": 27681.50,
+    "piece": "PAIE-2026-01"
+  },
+  {
+    "id": 17,
+    "date": "2026-01-25",
+    "libelle": "Organismes sociaux",
+    "compte": "431000",
+    "debit": 0,
+    "credit": 16537.00,
+    "piece": "PAIE-2026-01"
+  },
+  {
+    "id": 18,
+    "date": "2026-01-28",
+    "libelle": "Virement salaires",
+    "compte": "421000",
+    "debit": 27681.50,
+    "credit": 0,
+    "piece": "VIR-2026-025"
+  },
+  {
+    "id": 19,
+    "date": "2026-01-28",
+    "libelle": "Virement salaires",
+    "compte": "512000",
+    "debit": 0,
+    "credit": 27681.50,
+    "piece": "VIR-2026-025"
+  },
+  {
+    "id": 20,
+    "date": "2026-01-30",
+    "libelle": "Encaissement client Dupont",
+    "compte": "512000",
+    "debit": 2880.00,
+    "credit": 0,
+    "piece": "VIR-2026-030"
+  },
+  {
+    "id": 21,
+    "date": "2026-01-30",
+    "libelle": "Encaissement client Dupont",
+    "compte": "411000",
+    "debit": 0,
+    "credit": 2880.00,
+    "piece": "VIR-2026-030"
+  }
+]

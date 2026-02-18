@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Pays Desservis | L'Échoppe Gauloise - Export vers 15+ Pays</title>
+  <meta name="description" content="Découvrez les pays où nous exportons nos bières artisanales et vins d'exception. Cartographie interactive et détails par marché.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Polices modernes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages/pays-desservis.css">
+</head>
+
+<body>
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <!-- Logo minimaliste -->
+        <a href="index.html" class="logo">
+          <img src="/assets/logo.svg" class="logo">
+          <span>L'Échoppe</span>
+        </a>
+
+        <!-- Navigation -->
+        <ul class="nav-links">
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/Pages/bieres/bieres.html">Bières</a></li>
+          <li><a href="/Pages/vins/vins.html">Vins</a></li>
+          <li><a href="pays-desservis.html" class="active">Pays</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Rechercher">
+            <i data-lucide="search" stroke-width="1.5"></i>
+          </button>
+          <button class="icon-btn" aria-label="Panier">
+            <i data-lucide="shopping-bag" stroke-width="1.5"></i>
+            <span class="badge" id="cartBadge">0</span>
+          </button>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <i data-lucide="menu" stroke-width="1.5"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HERO PAYS DESSERVIS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="pays-hero">
+    <div class="container">
+      <div class="pays-hero-content">
+        <div class="badge-pill">
+          <i data-lucide="map" size="14"></i>
+          <span>Réseau International</span>
+        </div>
+        
+        <h1 class="pays-hero-title">
+          Nos Marchés
+          <span class="gradient-text">dans le Monde</span>
+        </h1>
+        
+        <p class="pays-hero-subtitle">
+          Découvrez les 15+ pays où nous exportons l'excellence française.
+          Sélectionnez un pays pour voir les détails de notre présence.
+        </p>
+        
+        <!-- Filtres rapides -->
+        <div class="filtres-continents">
+          <button class="continent-btn active" data-continent="all">
+            <i data-lucide="globe" size="16"></i>
+            Tous
+          </button>
+          <button class="continent-btn" data-continent="europe">
+            <i data-lucide="flag" size="16"></i>
+            Europe
+          </button>
+          <button class="continent-btn" data-continent="amerique">
+            <i data-lucide="mountain" size="16"></i>
+            Amérique
+          </button>
+          <button class="continent-btn" data-continent="asie">
+            <i data-lucide="sun" size="16"></i>
+            Asie
+          </button>
+          <button class="continent-btn" data-continent="moyen-orient">
+            <i data-lucide="compass" size="16"></i>
+            Moyen-Orient
+          </button>
+        </div>
+      </div>
+      
+      <!-- Statistiques globales -->
+      <div class="pays-stats">
+        <div class="pays-stat">
+          <strong>15+</strong>
+          <span>Pays</span>
+        </div>
+        <div class="pays-stat">
+          <strong>500+</strong>
+          <span>Clients B2B</span>
+        </div>
+        <div class="pays-stat">
+          <strong>99%</strong>
+          <span>Livraisons réussies</span>
+        </div>
+        <div class="pays-stat">
+          <strong>72h</strong>
+          <span>UE express</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION CARTOGRAPHIE
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="cartographie">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Notre Réseau</span>
+        <h2 class="section-title">Cartographie Interactive</h2>
+        <p class="section-subtitle">Cliquez sur un pays pour découvrir nos activités</p>
+      </div>
+
+      <div class="carte-container">
+        <!-- Carte SVG interactive -->
+        <div class="carte-interactive">
+          <svg viewBox="0 0 800 400" id="carteMonde">
+            <!-- Les pays SVG seront injectés via JavaScript -->
+            <text id="selectedCountry" x="400" y="380" text-anchor="middle" font-size="14" fill="var(--text-secondary)">
+              Cliquez sur un pays pour voir les détails
+            </text>
+          </svg>
+        </div>
+        
+        <!-- Légende -->
+        <div class="carte-legende">
+          <div class="legende-item">
+            <span class="legende-color" style="background: #3B82F6;"></span>
+            <span>Europe</span>
+          </div>
+          <div class="legende-item">
+            <span class="legende-color" style="background: #10B981;"></span>
+            <span>Amérique</span>
+          </div>
+          <div class="legende-item">
+            <span class="legende-color" style="background: #F59E0B;"></span>
+            <span>Asie-Pacifique</span>
+          </div>
+          <div class="legende-item">
+            <span class="legende-color" style="background: #8B5CF6;"></span>
+            <span>Moyen-Orient</span>
+          </div>
+          <div class="legende-item">
+            <span class="legende-color" style="background: #EF4444;"></span>
+            <span>Pays sélectionné</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION DETAILS PAYS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="details-pays" id="detailsPays">
+    <div class="container">
+      <div class="details-header">
+        <h2 class="details-title">Détails du Marché</h2>
+        <p class="details-subtitle">Informations spécifiques pour chaque pays</p>
+      </div>
+
+      <div class="details-content" id="detailsContent">
+        <!-- Les détails seront injectés via JavaScript -->
+        <div class="details-vide">
+          <i data-lucide="map-pin" size="48"></i>
+          <h3>Sélectionnez un pays</h3>
+          <p>Cliquez sur un pays dans la carte ou la liste pour voir les détails de notre présence sur ce marché.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION LISTE PAYS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="liste-pays">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Tous les Pays</span>
+        <h2 class="section-title">Nos Marchés en Détail</h2>
+      </div>
+
+      <div class="pays-filtres">
+        <div class="search-box">
+          <i data-lucide="search" size="18"></i>
+          <input type="text" id="searchPays" placeholder="Rechercher un pays...">
+        </div>
+        
+        <div class="tri-options">
+          <select id="triPays">
+            <option value="nom">Tri par nom</option>
+            <option value="clients">Clients (décroissant)</option>
+            <option value="depuis">Export depuis</option>
+            <option value="delai">Délai livraison</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="pays-table-container">
+        <table class="pays-table">
+          <thead>
+            <tr>
+              <th>Pays</th>
+              <th>Depuis</th>
+              <th>Clients</th>
+              <th>Délai moyen</th>
+              <th>Produits populaires</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="paysTableBody">
+            <!-- Les lignes seront injectées via JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION TEMOIGNAGES INTERNATIONAUX
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="temoignages-internationaux">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nos Clients</span>
+        <h2 class="section-title">Témoignages Internationaux</h2>
+      </div>
+
+      <div class="temoignages-grid">
+        <article class="temoignage-card">
+          <div class="temoignage-header">
+            <div class="temoignage-flag">
+              <img src="https://flagcdn.com/de.svg" alt="Allemagne" loading="lazy">
+            </div>
+            <div class="temoignage-auteur">
+              <h4>Michael Schmidt</h4>
+              <span>Weinhandlung Schmidt, Berlin</span>
+            </div>
+          </div>
+          <div class="temoignage-content">
+            <p>"La qualité constante des vins français et le service logistique impeccable font de L'Échoppe Gauloise notre partenaire privilégié depuis 5 ans."</p>
+          </div>
+          <div class="temoignage-footer">
+            <div class="temoignage-rating">
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+            </div>
+            <span class="temoignage-date">Depuis 2019</span>
+          </div>
+        </article>
+
+        <article class="temoignage-card">
+          <div class="temoignage-header">
+            <div class="temoignage-flag">
+              <img src="https://flagcdn.com/jp.svg" alt="Japon" loading="lazy">
+            </div>
+            <div class="temoignage-auteur">
+              <h4>Kenji Tanaka</h4>
+              <span>French Delights, Tokyo</span>
+            </div>
+          </div>
+          <div class="temoignage-content">
+            <p>"L'expertise douanière et les certifications nécessaires pour le marché japonais sont parfaitement gérées. Un partenaire de confiance."</p>
+          </div>
+          <div class="temoignage-footer">
+            <div class="temoignage-rating">
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+            </div>
+            <span class="temoignage-date">Depuis 2017</span>
+          </div>
+        </article>
+
+        <article class="temoignage-card">
+          <div class="temoignage-header">
+            <div class="temoignage-flag">
+              <img src="https://flagcdn.com/ae.svg" alt="Émirats Arabes Unis" loading="lazy">
+            </div>
+            <div class="temoignage-auteur">
+              <h4>Ahmed Al Mansoori</h4>
+              <span>Luxe Beverages, Dubaï</span>
+            </div>
+          </div>
+          <div class="temoignage-content">
+            <p>"Leur connaissance des certifications HALAL et du marché du Golfe nous a permis de développer rapidement notre offre de produits français premium."</p>
+          </div>
+          <div class="temoignage-footer">
+            <div class="temoignage-rating">
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16"></i>
+            </div>
+            <span class="temoignage-date">Depuis 2020</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION NOUVEAUX MARCHES
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="nouveaux-marches">
+    <div class="container">
+      <div class="nouveaux-content">
+        <div class="nouveaux-text">
+          <span class="section-label">Expansion</span>
+          <h2>Nouveaux Marchés à Venir</h2>
+          <p>Nous explorons activement de nouveaux marchés pour exporter l'excellence française. Découvrez les pays que nous visons pour l'année prochaine.</p>
+          
+          <div class="marches-futurs">
+            <div class="marche-futur">
+              <i data-lucide="map-pin" size="20"></i>
+              <div>
+                <strong>Corée du Sud</strong>
+                <span>Étude de marché en cours</span>
+              </div>
+            </div>
+            <div class="marche-futur">
+              <i data-lucide="map-pin" size="20"></i>
+              <div>
+                <strong>Mexique</strong>
+                <span>Négociations douanières</span>
+              </div>
+            </div>
+            <div class="marche-futur">
+              <i data-lucide="map-pin" size="20"></i>
+              <div>
+                <strong>Australie</strong>
+                <span>Recherche de distributeurs</span>
+              </div>
+            </div>
+          </div>
+          
+          <button class="btn btn-secondary" id="suggestionBtn">
+            <i data-lucide="lightbulb" size="18"></i>
+            Suggérer un nouveau marché
+          </button>
+        </div>
+        
+        <div class="nouveaux-visual">
+          <div class="nouveaux-image">
+            <img 
+              src="https://images.unsplash.com/photo-1533237264986-2c863008d0a5?w=600&h=400&fit=crop" 
+              alt="Expansion internationale">
+            <div class="nouveaux-badge">
+              <i data-lucide="trending-up" size="20"></i>
+              <span>+3 marchés en 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       NEWSLETTER PAYS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="newsletter newsletter-pays">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-icon">
+          <i data-lucide="map" size="32" stroke-width="1.5"></i>
+        </div>
+        <div class="newsletter-text">
+          <h2>Restez Informé sur nos Marchés</h2>
+          <p>Recevez nos mises à jour sur les nouveaux pays desservis et opportunités d'export. <strong>Guide gratuit</strong> sur les réglementations par pays.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterPaysForm">
+          <input 
+            type="email" 
+            placeholder="votre@email.com" 
+            required
+            aria-label="Email">
+          <button type="submit" class="btn btn-secondary">
+            S'abonner
+            <i data-lucide="arrow-right" size="18"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 14 L16 10 L20 14 L20 22 L12 22 Z" fill="currentColor" opacity="0.2"/>
+            </svg>
+            <span>L'Échoppe Gauloise</span>
+          </div>
+          <p>L'excellence française depuis 1995. Bières artisanales et vins d'exception exportés vers 15 pays.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="instagram" size="20"></i>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="facebook" size="20"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i data-lucide="linkedin" size="20"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Export</h4>
+            <ul>
+              <li><a href="/Pages/Entreprise/pays-desservis.html">Pays desservis</a></li>
+              <li><a href="/Pages/Entreprise/processus-export.html">Processus d'export</a></li>
+              <li><a href="/Pages/Entreprise/certifications.html">Certifications</a></li>
+              <li><a href="/Pages/Entreprise/export.html#formulaireDevis">Demande de devis</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Ressources</h4>
+            <ul>
+              <li><a href="#">Guide d'exportation</a></li>
+              <li><a href="#">Réglementations</a></li>
+              <li><a href="#">Calculateur de frais</a></li>
+              <li><a href="#">FAQ Export</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Contact Export</h4>
+            <ul>
+              <li><a href="#">Notre équipe</a></li>
+              <li><a href="#">Devenir partenaire</a></li>
+              <li><a href="#">Demande d'information</a></li>
+              <li><a href="#">Suivi de commande</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 L'Échoppe Gauloise. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="#">Mentions légales</a>
+          <a href="#">Confidentialité</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════════════════════════════ -->
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+  
+  <!-- App Scripts -->
+  <script src="/js/carousel.js"></script>
+  <script src="/js/navigation.js"></script>
+  <script src="/js/navigation.js"></script>
+  <script src="/js/newsletter.js"></script>  
+  <script src="/js/utils.js"></script>
+  <script src="/js/cart-module.js"></script>
+  <script src="/Pages/Entreprise/pays-desservis.js"></script>
+</body>
+</html>

@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Livraison & Export - L'Échoppe Gauloise | 15 Pays Desservis</title>
+  <meta name="description" content="Livraison en France et export vers 15 pays. Détails pour particuliers et professionnels. Délais, tarifs, procédures douanières et accompagnement.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+  
+  <!-- Polices modernes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages/livraison.css">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Leaflet CSS pour la carte -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="/index.html" class="logo">
+          <img src="/assets/logo.svg" class="logo">
+          <span>L'Échoppe</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/Pages/bieres/bieres.html">Bières</a></li>
+          <li><a href="/Pages/vins/vins.html">Vins</a></li>
+          <li><a href="/Pages/Entreprise/export.html">Export</a></li>
+          <li><a href="/Pages/faq.html">FAQ</a></li>
+          <li><a href="#" class="active">Livraison</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Rechercher">
+            <i data-lucide="search" stroke-width="1.5"></i>
+          </button>
+          <a href="/Pages/commande/panier.html" class="icon-btn" aria-label="Panier">
+            <i data-lucide="shopping-bag" stroke-width="1.5"></i>
+            <span class="badge cart-badge" id="cartBadge">0</span>
+          </a>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <i data-lucide="menu" stroke-width="1.5"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HERO LIVRAISON
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="livraison-hero">
+    <div class="container">
+      <div class="livraison-hero-content">
+        <div class="badge-pill">
+          <i data-lucide="globe" size="14"></i>
+          <span>Export International</span>
+        </div>
+        
+        <h1 class="livraison-title">
+          Livraison & Export
+          <span class="gradient-texte">Vers 15 Pays</span>
+        </h1>
+        
+        <p class="livraison-subtitle">
+          Depuis 1995, nous livrons l'excellence française aux particuliers et professionnels à travers le monde. 
+          Découvrez nos solutions de livraison sur mesure.
+        </p>
+        
+        <!-- Stats globales -->
+        <div class="livraison-stats">
+          <div class="livraison-stat">
+            <strong>15</strong>
+            <span>Pays desservis</span>
+          </div>
+          <div class="livraison-stat">
+            <strong>98%</strong>
+            <span>Livraisons réussies</span>
+          </div>
+          <div class="livraison-stat">
+            <strong>24h/48h</strong>
+            <span>Réponse aux demandes</span>
+          </div>
+          <div class="livraison-stat">
+            <strong>850+</strong>
+            <span>Clients internationaux</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       NAVIGATION PAR TYPE DE CLIENT
+       ═══════════════════════════════════════════════════════════════════ -->
+  <div class="client-type-nav">
+    <div class="container">
+      <div class="type-nav-container">
+        <button class="type-nav-btn active" data-type="particuliers">
+          <i data-lucide="user"></i>
+          Particuliers
+        </button>
+        <button class="type-nav-btn" data-type="professionnels">
+          <i data-lucide="building"></i>
+          Professionnels
+        </button>
+        <button class="type-nav-btn" data-type="export">
+          <i data-lucide="globe"></i>
+          Export détaillé
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       CONTENU PRINCIPAL
+       ═══════════════════════════════════════════════════════════════════ -->
+  <main class="livraison-main">
+    <div class="container">
+      <!-- Section: Particuliers -->
+      <section class="client-section active" id="section-particuliers">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i data-lucide="user" size="28"></i>
+            Livraison pour les particuliers
+          </h2>
+          <p class="section-subtitle">
+            Commandez vos vins et bières préférés et recevez-les rapidement, partout en France et en Europe.
+          </p>
+        </div>
+
+        <!-- Options de livraison France -->
+        <div class="delivery-options">
+          <h3 class="options-title">Livraison en France</h3>
+          <div class="options-grid">
+            <div class="option-card">
+              <div class="option-icon">
+                <i data-lucide="package" size="32"></i>
+              </div>
+              <h4>Livraison Standard</h4>
+              <div class="option-price">
+                <span class="price">4,90€</span>
+                <span class="details">ou offerte dès 50€</span>
+              </div>
+              <ul class="option-features">
+                <li><i data-lucide="check"></i> Délai : 3-5 jours ouvrés</li>
+                <li><i data-lucide="check"></i> Livraison Colissimo</li>
+                <li><i data-lucide="check"></i> Suivi en temps réel</li>
+                <li><i data-lucide="check"></i> Sans signature</li>
+              </ul>
+              <div class="option-note">
+                <i data-lucide="info"></i>
+                <span>Livraison du lundi au vendredi</span>
+              </div>
+            </div>
+
+            <div class="option-card featured">
+              <div class="option-badge">Populaire</div>
+              <div class="option-icon">
+                <i data-lucide="zap" size="32"></i>
+              </div>
+              <h4>Livraison Express</h4>
+              <div class="option-price">
+                <span class="price">9,90€</span>
+                <span class="details">ou 4,90€ dès 100€</span>
+              </div>
+              <ul class="option-features">
+                <li><i data-lucide="check"></i> Délai : 24-48h</li>
+                <li><i data-lucide="check"></i> Livraison Chronopost</li>
+                <li><i data-lucide="check"></i> Avant 13h ou 18h</li>
+                <li><i data-lucide="check"></i> Signature requise</li>
+              </ul>
+              <div class="option-note">
+                <i data-lucide="clock"></i>
+                <span>Commandez avant 14h pour livraison lendemain</span>
+              </div>
+            </div>
+
+            <div class="option-card">
+              <div class="option-icon">
+                <i data-lucide="store" size="32"></i>
+              </div>
+              <h4>Retrait en boutique</h4>
+              <div class="option-price">
+                <span class="price">Gratuit</span>
+                <span class="details">Sur rendez-vous</span>
+              </div>
+              <ul class="option-features">
+                <li><i data-lucide="check"></i> Délai : 24h de préparation</li>
+                <li><i data-lucide="check"></i> 12 rue des Brasseurs, Lille</li>
+                <li><i data-lucide="check"></i> Conseils personnalisés</li>
+                <li><i data-lucide="check"></i> Dégustation gratuite</li>
+              </ul>
+              <div class="option-note">
+                <i data-lucide="map-pin"></i>
+                <span>Du lundi au samedi, 10h-19h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Livraison internationale particuliers -->
+        <div class="international-delivery">
+          <h3 class="options-title">Livraison Internationale (particuliers)</h3>
+          <div class="info-card">
+            <div class="info-icon">
+              <i data-lucide="globe" size="24"></i>
+            </div>
+            <div class="info-content">
+              <h4>Nous livrons dans toute l'Union Européenne</h4>
+              <p>Pour les particuliers, nous assurons la livraison dans tous les pays de l'Union Européenne. 
+                Les délais varient de 2 à 6 jours ouvrés selon la destination.</p>
+              
+              <div class="eu-countries">
+                <div class="country-tag">
+                  <img src="https://flagcdn.com/be.svg" alt="Belgique" width="20">
+                  <span>Belgique</span>
+                  <span class="delivery-time">2-3 jours</span>
+                </div>
+                <div class="country-tag">
+                  <img src="https://flagcdn.com/de.svg" alt="Allemagne" width="20">
+                  <span>Allemagne</span>
+                  <span class="delivery-time">3-4 jours</span>
+                </div>
+                <div class="country-tag">
+                  <img src="https://flagcdn.com/es.svg" alt="Espagne" width="20">
+                  <span>Espagne</span>
+                  <span class="delivery-time">4-6 jours</span>
+                </div>
+                <div class="country-tag">
+                  <img src="https://flagcdn.com/it.svg" alt="Italie" width="20">
+                  <span>Italie</span>
+                  <span class="delivery-time">4-5 jours</span>
+                </div>
+                <div class="country-tag">
+                  <img src="https://flagcdn.com/nl.svg" alt="Pays-Bas" width="20">
+                  <span>Pays-Bas</span>
+                  <span class="delivery-time">2-3 jours</span>
+                </div>
+                <div class="country-tag">
+                  <img src="https://flagcdn.com/lu.svg" alt="Luxembourg" width="20">
+                  <span>Luxembourg</span>
+                  <span class="delivery-time">2-3 jours</span>
+                </div>
+              </div>
+
+              <div class="info-alert">
+                <i data-lucide="alert-triangle" size="18"></i>
+                <div>
+                  <strong>Important pour les particuliers :</strong>
+                  <p>Les commandes internationales pour les particuliers sont limitées à 6 bouteilles maximum. 
+                  Pour des commandes plus importantes, merci de nous contacter pour un devis professionnel.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Professionnels -->
+      <section class="client-section" id="section-professionnels">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i data-lucide="building" size="28"></i>
+            Solutions pour professionnels
+          </h2>
+          <p class="section-subtitle">
+            Importateurs, cavistes, restaurants, hôtels : découvrez nos solutions logistiques sur mesure.
+          </p>
+        </div>
+
+        <!-- Avantages professionnels -->
+        <div class="pro-advantages">
+          <div class="advantage-card">
+            <div class="advantage-icon">
+              <i data-lucide="truck" size="32"></i>
+            </div>
+            <h4>Logistique dédiée</h4>
+            <ul>
+              <li>Palettes sécurisées et chauffées</li>
+              <li>Transport réfrigéré optionnel</li>
+              <li>Stockage en entrepôt douanier</li>
+              <li>Groupage de commandes</li>
+            </ul>
+          </div>
+
+          <div class="advantage-card">
+            <div class="advantage-icon">
+              <i data-lucide="file-text" size="32"></i>
+            </div>
+            <h4>Documents fournis</h4>
+            <ul>
+              <li>Certificat d'origine</li>
+              <li>Facture commerciale</li>
+              <li>Certificat d'analyse</li>
+              <li>Documents douaniers complets</li>
+            </ul>
+          </div>
+
+          <div class="advantage-card">
+            <div class="advantage-icon">
+              <i data-lucide="shield" size="32"></i>
+            </div>
+            <h4>Assurance et garanties</h4>
+            <ul>
+              <li>Assurance tous risques</li>
+              <li>Garantie casse 100%</li>
+              <li>Traçabilité complète</li>
+              <li>Contrôle qualité avant expédition</li>
+            </ul>
+          </div>
+
+          <div class="advantage-card">
+            <div class="advantage-icon">
+              <i data-lucide="headphones" size="32"></i>
+            </div>
+            <h4>Accompagnement</h4>
+            <ul>
+              <li>Conseiller dédié</li>
+              <li>Assistance 7j/7</li>
+              <li>Suivi en temps réel</li>
+              <li>Support multi-langues</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Conditions professionnelles -->
+        <div class="pro-conditions">
+          <h3>Conditions commerciales</h3>
+          <div class="conditions-grid">
+            <div class="condition-card">
+              <h5>Quantités minimales</h5>
+              <ul>
+                <li>Europe : 1 palette (72 caisses)</li>
+                <li>Amérique : 2 palettes</li>
+                <li>Asie : 3 palettes</li>
+                <li>Moyen-Orient : 2 palettes</li>
+              </ul>
+            </div>
+
+            <div class="condition-card">
+              <h5>Modalités de paiement</h5>
+              <ul>
+                <li>30% à la commande</li>
+                <li>70% avant expédition</li>
+                <li>Virement bancaire uniquement</li>
+                <li>Devise : EUR, USD, GBP</li>
+              </ul>
+            </div>
+
+            <div class="condition-card">
+              <h5>Incoterms proposés</h5>
+              <ul>
+                <li><strong>EXW</strong> Lille (France)</li>
+                <li><strong>FCA</strong> Aéroport CDG</li>
+                <li><strong>CIF</strong> Port de destination</li>
+                <li><strong>DDP</strong> Entrepôt client</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Export détaillé -->
+      <section class="client-section" id="section-export">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i data-lucide="map" size="28"></i>
+            Export détaillé par pays
+          </h2>
+          <p class="section-subtitle">
+            Découvrez nos conditions spécifiques pour chaque pays. 15 destinations, 4 continents.
+          </p>
+        </div>
+
+        <!-- Carte interactive -->
+        <div class="export-map-container">
+          <div class="map-header">
+            <h3>Carte de nos destinations</h3>
+            <div class="map-filters">
+              <button class="filter-btn active" data-continent="all">Tous</button>
+              <button class="filter-btn" data-continent="europe">Europe</button>
+              <button class="filter-btn" data-continent="amerique">Amérique</button>
+              <button class="filter-btn" data-continent="asie">Asie</button>
+              <button class="filter-btn" data-continent="moyen-orient">Moyen-Orient</button>
+            </div>
+          </div>
+          <div id="worldMap"></div>
+          <div class="map-legend">
+            <div class="legend-item">
+              <span class="legend-dot europe"></span>
+              <span>Europe (7 pays)</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot amerique"></span>
+              <span>Amérique (2 pays)</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot asie"></span>
+              <span>Asie (2 pays)</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot moyen-orient"></span>
+              <span>Moyen-Orient (1 pays)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tableau détaillé des pays -->
+        <div class="countries-table-container">
+          <h3>Détails par pays</h3>
+          <div class="table-responsive">
+            <table class="countries-table">
+              <thead>
+                <tr>
+                  <th>Pays</th>
+                  <th>Depuis</th>
+                  <th>Clients actifs</th>
+                  <th>Délai moyen</th>
+                  <th>Produits populaires</th>
+                  <th>Restrictions</th>
+                  <th>Contacts</th>
+                </tr>
+              </thead>
+              <tbody id="countriesTableBody">
+                <!-- Les données seront injectées par JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Détails douaniers -->
+        <div class="customs-details">
+          <h3>Informations douanières par zone</h3>
+          <div class="customs-grid">
+            <div class="customs-card">
+              <h4><i data-lucide="flag" size="20"></i> Union Européenne</h4>
+              <ul>
+                <li><strong>Douane :</strong> Libre circulation (pas de droits)</li>
+                <li><strong>TVA :</strong> Applicable selon pays de destination</li>
+                <li><strong>Documents :</strong> Facture commerciale uniquement</li>
+                <li><strong>Contrôles :</strong> Sanitaires occasionnels</li>
+              </ul>
+            </div>
+
+            <div class="customs-card">
+              <h4><i data-lucide="anchor" size="20"></i> Royaume-Uni</h4>
+              <ul>
+                <li><strong>Douane :</strong> Droits selon valeur (>135£)</li>
+                <li><strong>TVA :</strong> 20% (UK VAT)</li>
+                <li><strong>Documents :</strong> Certificat d'origine requis</li>
+                <li><strong>Contrôles :</strong> Phytosanitaires systématiques</li>
+              </ul>
+            </div>
+
+            <div class="customs-card">
+              <h4><i data-lucide="plane" size="20"></i> États-Unis / Canada</h4>
+              <ul>
+                <li><strong>Douane :</strong> Droits variables par État/Province</li>
+                <li><strong>Licence :</strong> Importer's Permit obligatoire</li>
+                <li><strong>Âge légal :</strong> 21 ans (US) / 19 ans (CA)</li>
+                <li><strong>Étiquettes :</strong> Conformité FDA/CFIA requise</li>
+              </ul>
+            </div>
+
+            <div class="customs-card">
+              <h4><i data-lucide="sun" size="20"></i> Asie / Moyen-Orient</h4>
+              <ul>
+                <li><strong>Douane :</strong> Droits élevés (30-100%)</li>
+                <li><strong>Certificats :</strong> Halal/Kosher optionnels</li>
+                <li><strong>Transport :</strong> Aérien recommandé</li>
+                <li><strong>Stockage :</strong> Climatisation obligatoire</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Calculateur de devis -->
+      <section class="quote-calculator">
+        <div class="calculator-card">
+          <div class="calculator-header">
+            <h3><i data-lucide="calculator" size="24"></i> Calculateur de devis</h3>
+            <p>Estimez le coût de votre livraison internationale</p>
+          </div>
+          
+          <div class="calculator-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="countrySelect">Pays de destination</label>
+                <select id="countrySelect" class="form-select">
+                  <option value="">Sélectionnez un pays</option>
+                  <!-- Options injectées par JS -->
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="productType">Type de produit</label>
+                <select id="productType" class="form-select">
+                  <option value="vin">Vins</option>
+                  <option value="biere">Bières</option>
+                  <option value="mixte">Mixte</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="quantity">Quantité (caisses)</label>
+                <div class="quantity-input">
+                  <button type="button" class="qty-btn" id="decreaseQty">-</button>
+                  <input type="number" id="quantity" min="1" max="1000" value="10">
+                  <button type="button" class="qty-btn" id="increaseQty">+</button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="clientType">Type de client</label>
+                <select id="clientType" class="form-select">
+                  <option value="particulier">Particulier</option>
+                  <option value="professionnel">Professionnel</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="transportType">Mode de transport</label>
+                <select id="transportType" class="form-select">
+                  <option value="terrestre">Terrestre (Europe)</option>
+                  <option value="maritime">Maritime</option>
+                  <option value="aerien">Aérien</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="insurance">Assurance</label>
+                <select id="insurance" class="form-select">
+                  <option value="base">Base (1% de la valeur)</option>
+                  <option value="complete">Complète (2% de la valeur)</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="calculator-result">
+              <div class="result-header">
+                <h4>Estimation du coût</h4>
+                <button type="button" id="calculateBtn" class="btn btn-primary">
+                  <i data-lucide="refresh-cw"></i>
+                  Calculer
+                </button>
+              </div>
+              
+              <div class="result-details">
+                <div class="result-item">
+                  <span>Transport</span>
+                  <span id="transportCost">--</span>
+                </div>
+                <div class="result-item">
+                  <span>Douane & Taxes</span>
+                  <span id="dutyCost">--</span>
+                </div>
+                <div class="result-item">
+                  <span>Assurance</span>
+                  <span id="insuranceCost">--</span>
+                </div>
+                <div class="result-item total">
+                  <strong>Total estimé</strong>
+                  <strong id="totalCost">--</strong>
+                </div>
+              </div>
+              
+              <div class="result-note">
+                <i data-lucide="info"></i>
+                <span>Cette estimation est indicative. Un devis précis vous sera envoyé sous 24h.</span>
+              </div>
+            </div>
+            
+            <div class="calculator-actions">
+              <button type="button" id="requestQuoteBtn" class="btn btn-primary">
+                <i data-lucide="mail"></i>
+                Demander un devis complet
+              </button>
+              <a href="tel:+33123456789" class="btn btn-outline">
+                <i data-lucide="phone"></i>
+                Nous appeler
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Témoignages -->
+      <section class="testimonials-section">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i data-lucide="message-square" size="28"></i>
+            Ils nous font confiance
+          </h2>
+        </div>
+        
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"La livraison au Japon s'est parfaitement déroulée. Les bouteilles sont arrivées en parfait état malgré le long voyage."</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop" alt="Yuki Tanaka">
+              <div>
+                <strong>Yuki Tanaka</strong>
+                <span>Importateur, Tokyo</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"Service export irréprochable. Les documents étaient complets et la communication quotidienne."</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Thomas Schmidt">
+              <div>
+                <strong>Thomas Schmidt</strong>
+                <span>Caviste, Berlin</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"Commande de 100 caisses livrée en 5 jours à New York. Professionnalisme et réactivité exemplaires."</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop" alt="Sarah Johnson">
+              <div>
+                <strong>Sarah Johnson</strong>
+                <span>Restauratrice, New York</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       CTA FINAL
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="livraison-cta">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-content">
+          <h3>Prêt à commander ?</h3>
+          <p>Notre équipe export est à votre disposition pour étudier votre projet et vous proposer la solution la plus adaptée.</p>
+          <div class="cta-actions">
+            <a href="mailto:export@echoppe-gauloise.com" class="btn btn-outline">
+              <i data-lucide="mail"></i>
+              Contact Export
+            </a>
+            <a href="tel:+33123456789" class="btn btn-outline">
+              <i data-lucide="phone"></i>
+              01 23 45 67 89
+            </a>
+          </div>
+          <div class="cta-info">
+            <div class="info-item">
+              <i data-lucide="clock"></i>
+              <span>Réponse sous 24h</span>
+            </div>
+            <div class="info-item">
+              <i data-lucide="languages"></i>
+              <span>Français, Anglais, Espagnol</span>
+            </div>
+            <div class="info-item">
+              <i data-lucide="shield"></i>
+              <span>Devis gratuit et sans engagement</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="/assets/logo.svg" alt="Logo L'Échoppe Gauloise" class="logo-img">
+            <span>L'Échoppe Gauloise</span>
+          </div>
+          <p>L'excellence française depuis 1995. Bières artisanales et vins d'exception exportés vers 15 pays.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="instagram" size="20"></i>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="facebook" size="20"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i data-lucide="linkedin" size="20"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Produits</h4>
+            <ul>
+              <li><a href="/Pages/bieres/bieres.html">Bières</a></li>
+              <li><a href="/Pages/vins/vins.html">Vins</a></li>
+              <li><a href="/index.html#products">Nouveautés</a></li>
+              <li><a href="/index.html#products">Promotions</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Livraison & Export</h4>
+            <ul>
+              <li><a href="/Pages/livraison.html" class="active">Livraison France</a></li>
+              <li><a href="/Pages/livraison.html#section-export">Export International</a></li>
+              <li><a href="/Pages/livraison.html#section-professionnels">Professionnels</a></li>
+              <li><a href="/Pages/livraison.html#section-particuliers">Particuliers</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Entreprise</h4>
+            <ul>
+              <li><a href="/Pages/Entreprise/notre-histoire.html">Notre Histoire</a></li>
+              <li><a href="/Pages/Entreprise/export.html">Export</a></li>
+              <li><a href="/Pages/Entreprise/export.html#contact">Contact</a></li>
+              <li><a href="/Pages/faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="/Pages/faq.html">FAQ</a></li>
+              <li><a href="/Pages/livraison.html">Livraison</a></li>
+              <li><a href="#">Retours</a></li>
+              <li><a href="#">CGV</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 L'Échoppe Gauloise. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="#">Mentions légales</a>
+          <a href="#">Confidentialité</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════════════════════════════ -->
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+  <!-- App Scripts -->
+  <script src="/js/navigation.js"></script>
+  <script src="/Pages/support/livraisons.js"></script>
+
+</body>
+</html>

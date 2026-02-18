@@ -1,0 +1,606 @@
+/**
+ * PAGE PANIER - Version Minimaliste & Moderne
+ * Styles spécifiques pour panier.html
+ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HERO PANIER
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+
+
+.panier-hero {
+    padding: var(--space-20) 0 var(--space-12); /* Plus d'espace en haut */
+    background: var(--bg-primary); /* Fond blanc simple au lieu du dégradé pour le minimalisme */
+    margin-top: var(--header-height);
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-tertiary);
+    margin-bottom: var(--space-8);
+}
+
+.breadcrumbs a {
+    color: var(--text-tertiary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.breadcrumbs a:hover {
+    color: var(--primary);
+}
+
+.breadcrumbs span {
+    color: var(--text-primary);
+}
+
+.panier-hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: var(--text-5xl);
+    font-weight: 500; /* Plus fin pour être plus élégant */
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.panier-hero-subtitle {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    font-weight: 300;
+    max-width: 600px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MAIN CONTENT
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.panier-main {
+    padding: 0 0 var(--space-24);
+    background: var(--bg-primary);
+}
+
+.panier-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-16); /* Espacement plus grand entre colonnes */
+}
+
+@media (min-width: 1024px) {
+    .panier-grid {
+        grid-template-columns: 1.8fr 1fr; /* Ratio ajusté */
+    }
+}
+
+/* Section Articles */
+.panier-articles {
+    background: transparent; /* Suppression du fond blanc conteneur */
+    box-shadow: none; /* Suppression de l'ombre */
+    padding: 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Alignement bas pour le texte */
+    margin-bottom: var(--space-8);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border);
+}
+
+.section-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: var(--text-2xl);
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.section-header h2 span {
+    font-family: 'Inter', sans-serif;
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+    font-weight: 400;
+    margin-left: var(--space-2);
+}
+
+.btn-text {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: none;
+    border: none;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--text-tertiary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    padding: var(--space-2) 0;
+}
+
+.btn-text:hover {
+    color: #d44242;
+}
+
+/* Panier vide */
+.panier-vide {
+    padding: var(--space-24) 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panier-vide-content i {
+    color: var(--text-tertiary);
+    opacity: 0.5;
+    margin-bottom: var(--space-6);
+}
+
+.panier-vide-content h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: var(--text-2xl);
+    margin: 0 0 var(--space-2);
+}
+
+/* Liste des articles - STYLE MODERNE */
+.liste-articles {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: var(--space-6);
+    padding: var(--space-8) 0;
+    border: none;
+    border-bottom: 1px solid var(--border); /* Séparateur minimaliste */
+    background: transparent;
+    transition: background-color var(--transition-fast);
+}
+
+/* Suppression du dernier border */
+.article-item:last-child {
+    border-bottom: none;
+}
+
+.article-image {
+    width: 100px;
+    height: 120px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-tertiary);
+    mix-blend-mode: multiply; /* Intégration douce de l'image */
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mieux pour les bouteilles */
+    padding: var(--space-2);
+}
+
+.article-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-4);
+}
+
+.article-name { /* Correction selector .article-nom -> .article-name (match JS) */
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: var(--text-lg);
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.article-category {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+/* NOUVEAU DESIGN DES ACTIONS */
+.article-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6); /* Espace entre quantité et poubelle */
+    margin-top: var(--space-2);
+}
+
+/* Boutons Quantité : Cercles minimalistes */
+.btn-quantity {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 50%; /* Cercle parfait */
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-quantity:hover:not(:disabled) {
+    border-color: var(--text-primary);
+    background: var(--text-primary);
+    color: white;
+}
+
+.btn-quantity:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    border-color: var(--border);
+}
+
+.article-quantity {
+    font-family: 'Space Grotesk', sans-serif; /* Police moderne pour les chiffres */
+    font-variant-numeric: tabular-nums;
+    min-width: 20px;
+    text-align: center;
+    font-weight: 500;
+    font-size: var(--text-base);
+}
+
+/* Bouton Supprimer : Discret */
+.btn-remove {
+    background: none;
+    border: none;
+    color: var(--text-tertiary); /* Gris clair par défaut */
+    cursor: pointer;
+    padding: var(--space-2);
+    transition: all 0.2s ease;
+    opacity: 0.6;
+}
+
+.btn-remove:hover {
+    color: var(--error);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* PRIX */
+.article-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: var(--space-1);
+}
+
+.article-price-total {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.article-price-unit {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION RÉCAPITULATIF
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.panier-recapitulatif {
+    position: sticky;
+    top: var(--space-8);
+    height: fit-content;
+}
+
+.recapitulatif-card {
+    background: var(--bg-tertiary); /* Fond gris très léger */
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    border: 1px solid transparent; /* Pas de bordure visible */
+}
+
+.recapitulatif-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: var(--text-xl);
+    font-weight: 500;
+    margin: 0 0 var(--space-6) 0;
+    color: var(--text-primary);
+}
+
+.recapitulatif-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+}
+
+.recapitulatif-ligne {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+.recapitulatif-ligne.total {
+    margin-top: var(--space-6);
+    padding-top: var(--space-6);
+    border-top: 1px dashed var(--border); /* Ligne pointillée plus moderne */
+    font-size: var(--text-xl);
+    color: var(--text-primary);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Code promo - Input minimaliste */
+.code-promo {
+    margin-bottom: var(--space-8);
+}
+
+.code-promo label {
+    display: none; /* On cache le label pour le minimalisme (placeholder suffit) */
+}
+
+.code-promo-input {
+    display: flex;
+    gap: var(--space-2);
+    position: relative;
+}
+
+.code-promo-input input {
+    flex: 1;
+    background: white;
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+}
+
+.code-promo-input input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--bg-secondary), 0 0 0 4px white;
+}
+
+.code-promo-input button {
+    padding: 0 var(--space-4);
+    font-weight: 500;
+}
+
+/* Bouton Commande */
+.btn-large {
+    width: 100%;
+    padding: var(--space-4);
+    font-size: var(--text-base);
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-large:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.paiement-securise {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+    margin-bottom: 0;
+}
+
+/* Livraison info simplifiée */
+.livraison-info {
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.livraison-info h4 {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-4);
+}
+
+.livraison-options {
+    gap: var(--space-3);
+}
+
+.livraison-option {
+    background: white;
+    border: 1px solid transparent;
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+}
+
+.livraison-option:hover {
+    border-color: var(--border);
+}
+
+.livraison-option input:checked + label strong {
+    color: var(--primary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION SUGGESTIONS (Version Horizontale & Épurée)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.suggestions {
+    padding: var(--space-12) 0;
+    background: transparent;
+    border-top: 1px solid var(--border);
+}
+
+.suggestions .section-header {
+    text-align: left; /* Alignement à gauche plus moderne */
+    margin-bottom: var(--space-8);
+}
+
+.suggestions .section-header h2 {
+    font-size: var(--text-lg); /* Titre plus discret */
+    font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: var(--space-1);
+}
+
+.produits-suggestions {
+    display: grid;
+    /* Grille responsive : 1 colonne sur mobile, 2 ou 3 sur desktop */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-6);
+}
+
+/* La carte devient horizontale grâce à display: flex */
+.produit-suggestion {
+    display: flex; 
+    align-items: center;
+    gap: var(--space-4);
+    background: white;
+    padding: var(--space-3);
+    border: 1px solid transparent; /* Bordure invisible par défaut */
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.produit-suggestion:hover {
+    transform: translateY(-2px);
+    border-color: var(--border); /* Apparition subtile de la bordure au survol */
+    background: white;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Image plus petite et à gauche */
+.produit-suggestion-image {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0; /* Empêche l'image de s'écraser */
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    margin-bottom: 0; /* Annule la marge du style précédent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.produit-suggestion-image img {
+    max-width: 40px;
+    max-height: 40px;
+    mix-blend-mode: multiply;
+}
+
+/* Contenu à droite de l'image */
+.produit-suggestion-content {
+    flex: 1; /* Prend tout l'espace restant */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.produit-suggestion h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    margin: 0 0 var(--space-1) 0;
+    color: var(--text-primary);
+}
+
+.produit-suggestion-category {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+    margin-bottom: var(--space-2);
+    display: block;
+}
+
+/* Footer (Prix + Bouton) alignés sur une ligne */
+.produit-suggestion-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.produit-suggestion-price {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Bouton minimaliste "Outline" */
+.produit-suggestion .btn {
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--text-xs);
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    border-radius: var(--radius-full); /* Bouton pilule */
+    transition: all 0.2s;
+}
+
+.produit-suggestion .btn:hover {
+    background: var(--text-primary);
+    color: white;
+    border-color: var(--text-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    .article-item {
+        grid-template-columns: 80px 1fr; /* Image + Contenu */
+        grid-template-areas: 
+            "img details"
+            "img price";
+        gap: var(--space-4);
+    }
+
+    .article-image {
+        grid-area: img;
+        width: 80px;
+        height: 100px;
+    }
+
+    .article-details {
+        grid-area: details;
+    }
+
+    .article-price {
+        grid-area: price;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: var(--space-2);
+    }
+    
+    .article-actions {
+        /* Sur mobile, on remonte les actions sous le nom */
+        margin-top: var(--space-2);
+    }
+    
+    .article-price-total {
+        font-size: var(--text-base);
+    }
+}
+
+/* Animation douce à l'apparition */
+@keyframes fadeInSlide {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.liste-articles .article-item {
+    animation: fadeInSlide 0.4s ease-out forwards;
+}

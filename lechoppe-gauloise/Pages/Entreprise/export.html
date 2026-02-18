@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!--SEO Meta Tags -->
+  <title>Export International | L'Échoppe Gauloise - 15+ Pays Desservis</title>
+  <meta name="description" content="Exportez l'excellence française avec L'Échoppe Gauloise. Solutions logistiques clé en main vers 15+ pays. Expertise douanière, certifications internationales.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Polices modernes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../css/design-system.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="/css/pages/export.css">
+</head>
+
+<body>
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <!-- Logo minimaliste -->
+        <a href="../../index.html" class="logo">
+          <img src="../../../../assets/logo.svg" class="logo">
+          <span>L'Échoppe</span>
+        </a>
+
+        <!-- Navigation -->
+        <ul class="nav-links">
+          <li><a href="/../../index.html">Accueil</a></li>
+          <li><a href="/Pages/bieres/bieres.html">Bières</a></li>
+          <li><a href="/Pages/vins/vins.html">Vins</a></li>
+          <li><a href="/Pages/Entreprise/export.html" class="active">Export</a></li>
+          <li><a href="/Pages/Entreprise/notre-histoire.html">Notre Histoire</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Rechercher">
+            <i data-lucide="search" stroke-width="1.5"></i>
+          </button>
+          <button class="icon-btn" aria-label="Panier">
+            <i data-lucide="shopping-bag" stroke-width="1.5"></i>
+            <span class="badge" id="cartBadge">0</span>
+          </button>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <i data-lucide="menu" stroke-width="1.5"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HERO EXPORT
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="export-hero">
+    <div class="container">
+      <div class="export-hero-content">
+        <div class="badge-pill">
+          <i data-lucide="globe" size="14"></i>
+          <span>Export International</span>
+        </div>
+        
+        <h1 class="export-hero-title">
+          L'Excellence Française
+          <span class="gradient-text">dans le Monde</span>
+        </h1>
+        
+        <p class="export-hero-subtitle">
+          Exportez nos bières artisanales et vins d'exception vers votre marché.
+          Solutions logistiques clé en main, certifications internationales, 
+          expertise douanière depuis 1995.
+        </p>
+        
+        <!-- CTA Principal -->
+        <div class="export-hero-cta">
+          <button class="btn btn-secondary" id="devisBtn">
+            <i data-lucide="file-text" size="18"></i>
+            Demander un devis
+          </button>
+          <button class="btn btn-secondary" id="contactExportBtn">
+            <i data-lucide="headphones" size="18"></i>
+            Parler à un expert
+          </button>
+        </div>
+        
+        <!-- Avantages rapides -->
+        <div class="avantages-rapides">
+          <div class="avantage-rapide">
+            <i data-lucide="check-circle" size="20"></i>
+            <span>15+ pays desservis</span>
+          </div>
+          <div class="avantage-rapide">
+            <i data-lucide="check-circle" size="20"></i>
+            <span>Livraison sous 72h UE</span>
+          </div>
+          <div class="avantage-rapide">
+            <i data-lucide="check-circle" size="20"></i>
+            <span>Accords douaniers</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Globe animé -->
+      <div class="export-hero-visual">
+        <div class="globe-container">
+          <div class="globe" id="interactiveGlobe">
+            <!-- Les marqueurs de pays seront injectés via JavaScript -->
+          </div>
+          <div class="globe-stats">
+            <div class="globe-stat">
+              <strong>15+</strong>
+              <span>Pays</span>
+            </div>
+            <div class="globe-stat">
+              <strong>500+</strong>
+              <span>Clients B2B</span>
+            </div>
+            <div class="globe-stat">
+              <strong>99%</strong>
+              <span>Livraisons réussies</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION PAYS DESSERVIS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="pays-desservis">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Notre Réseau</span>
+        <h2 class="section-title">Pays Desservis</h2>
+        <p class="section-subtitle">Nous exportons vers 15+ pays avec une logistique optimisée et des partenariats locaux solides.</p>
+      </div>
+
+      <div class="pays-grid" id="paysGrid">
+        <!-- Les cartes de pays seront injectées via JavaScript -->
+      </div>
+
+      <!-- Légende zones -->
+      <div class="zones-legend">
+        <div class="zone">
+          <span class="zone-dot" style="background: #3B82F6;"></span>
+          <span>Union Européenne</span>
+        </div>
+        <div class="zone">
+          <span class="zone-dot" style="background: #10B981;"></span>
+          <span>Amérique du Nord</span>
+        </div>
+        <div class="zone">
+          <span class="zone-dot" style="background: #F59E0B;"></span>
+          <span>Asie-Pacifique</span>
+        </div>
+        <div class="zone">
+          <span class="zone-dot" style="background: #8B5CF6;"></span>
+          <span>Moyen-Orient</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION AVANTAGES EXPORT
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="avantages-export">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Notre Expertise</span>
+        <h2 class="section-title">Pourquoi Nous Choisir</h2>
+      </div>
+
+      <div class="avantages-grid">
+        <article class="avantage-card">
+          <div class="avantage-icon">
+            <i data-lucide="package" size="32" stroke-width="1.5"></i>
+          </div>
+          <h3>Logistique Clé en Main</h3>
+          <p>Gestion complète de la chaîne logistique : emballage, transport, dédouanement, livraison finale.</p>
+          <ul class="avantage-list">
+            <li><i data-lucide="check" size="16"></i> Transport réfrigéré</li>
+            <li><i data-lucide="check" size="16"></i> Suivi en temps réel</li>
+            <li><i data-lucide="check" size="16"></i> Assurance tous risques</li>
+          </ul>
+        </article>
+
+        <article class="avantage-card">
+          <div class="avantage-icon">
+            <i data-lucide="file-check" size="32" stroke-width="1.5"></i>
+          </div>
+          <h3>Certifications Internationales</h3>
+          <p>Toutes les certifications nécessaires pour l'exportation de produits alimentaires et alcoolisés.</p>
+          <ul class="avantage-list">
+            <li><i data-lucide="check" size="16"></i> HACCP</li>
+            <li><i data-lucide="check" size="16"></i> ISO 22000</li>
+            <li><i data-lucide="check" size="16"></i> Certifications locales</li>
+          </ul>
+        </article>
+
+        <article class="avantage-card">
+          <div class="avantage-icon">
+            <i data-lucide="users" size="32" stroke-width="1.5"></i>
+          </div>
+          <h3>Réseau de Distribution</h3>
+          <p>Partenariats avec des distributeurs locaux de confiance dans chaque pays desservi.</p>
+          <ul class="avantage-list">
+            <li><i data-lucide="check" size="16"></i> Grossistes spécialisés</li>
+            <li><i data-lucide="check" size="16"></i> Cavistes premium</li>
+            <li><i data-lucide="check" size="16"></i> Restaurants étoilés</li>
+          </ul>
+        </article>
+
+        <article class="avantage-card">
+          <div class="avantage-icon">
+            <i data-lucide="headphones" size="32" stroke-width="1.5"></i>
+          </div>
+          <h3>Support Dédié</h3>
+          <p>Un expert export vous accompagne de la première commande à la livraison finale.</p>
+          <ul class="avantage-list">
+            <li><i data-lucide="check" size="16"></i> Consultant personnel</li>
+            <li><i data-lucide="check" size="16"></i> Support multilingue</li>
+            <li><i data-lucide="check" size="16"></i> Assistance 24/7</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION PROCESSUS EXPORT
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="processus-export">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Comment ça marche</span>
+        <h2 class="section-title">Notre Processus en 5 Étapes</h2>
+      </div>
+
+      <div class="processus-steps">
+        <div class="processus-track"></div>
+        
+        <div class="processus-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Consultation Initiale</h3>
+            <p>Analyse de vos besoins, marché cible et réglementations locales. Évaluation des volumes.</p>
+            <span class="step-duration">24-48h</span>
+          </div>
+        </div>
+
+        <div class="processus-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Devis Personnalisé</h3>
+            <p>Proposition détaillée incluant tous les coûts : produits, transport, douane, certifications.</p>
+            <span class="step-duration">48h</span>
+          </div>
+        </div>
+
+        <div class="processus-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Préparation & Emballage</h3>
+            <p>Conditionnement spécialisé pour l'export, étiquetage multilingue, documentation douanière.</p>
+            <span class="step-duration">3-5 jours</span>
+          </div>
+        </div>
+
+        <div class="processus-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Transport & Dédouanement</h3>
+            <p>Expédition avec suivi en temps réel. Gestion complète des formalités douanières.</p>
+            <span class="step-duration">2-10 jours</span>
+          </div>
+        </div>
+
+        <div class="processus-step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Livraison & Suivi</h3>
+            <p>Livraison chez vous ou votre client final. Suivi post-vente et préparation réapprovisionnement.</p>
+            <span class="step-duration">24-72h après dédouanement</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION FORMULAIRE DEVIS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="formulaire-devis" id="formulaireDevis">
+    <div class="container">
+      <div class="devis-content">
+        <div class="devis-text">
+          <span class="section-label">Demande de Devis</span>
+          <h2 class="section-title">Un Projet d'Export ?</h2>
+          <p>Obtenez un devis personnalisé en 48h. Notre équipe vous accompagne dans votre projet d'importation de produits français d'exception.</p>
+          
+          <div class="devis-avantages">
+            <div class="devis-avantage">
+              <i data-lucide="clock" size="20"></i>
+              <div>
+                <strong>Réponse sous 48h</strong>
+                <span>Devis détaillé et personnalisé</span>
+              </div>
+            </div>
+            <div class="devis-avantage">
+              <i data-lucide="shield" size="20"></i>
+              <div>
+                <strong>Sans engagement</strong>
+                <span>Étude gratuite de votre projet</span>
+              </div>
+            </div>
+            <div class="devis-avantage">
+              <i data-lucide="user-check" size="20"></i>
+              <div>
+                <strong>Expert dédié</strong>
+                <span>Consultant export assigné à votre dossier</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="devis-form-wrapper">
+          <form class="devis-form" id="exportForm">
+            <div class="form-header">
+              <h3>Demande de Devis Export</h3>
+              <p>Remplissez ce formulaire pour recevoir une proposition personnalisée</p>
+            </div>
+            
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="entreprise">
+                  <i data-lucide="building" size="16"></i>
+                  Entreprise *
+                </label>
+                <input type="text" id="entreprise" name="entreprise" required placeholder="Nom de votre entreprise">
+              </div>
+              
+              <div class="form-group">
+                <label for="pays">
+                  <i data-lucide="map-pin" size="16"></i>
+                  Pays de destination *
+                </label>
+                <select id="pays" name="pays" required>
+                  <option value="">Sélectionnez un pays</option>
+                  <!-- Les options seront injectées via JavaScript -->
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="nom">
+                  <i data-lucide="user" size="16"></i>
+                  Nom complet *
+                </label>
+                <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+              </div>
+              
+              <div class="form-group">
+                <label for="email">
+                  <i data-lucide="mail" size="16"></i>
+                  Email *
+                </label>
+                <input type="email" id="email" name="email" required placeholder="votre@email.com">
+              </div>
+              
+              <div class="form-group">
+                <label for="telephone">
+                  <i data-lucide="phone" size="16"></i>
+                  Téléphone *
+                </label>
+                <input type="tel" id="telephone" name="telephone" required placeholder="+XX XXX XXX XXX">
+              </div>
+              
+              <div class="form-group">
+                <label for="type-produit">
+                  <i data-lucide="package" size="16"></i>
+                  Type de produit *
+                </label>
+                <select id="type-produit" name="type-produit" required>
+                  <option value="">Sélectionnez</option>
+                  <option value="bieres">Bières artisanales</option>
+                  <option value="vins">Vins d'exception</option>
+                  <option value="les-deux">Les deux</option>
+                  <option value="autre">Autre (précisez)</option>
+                </select>
+              </div>
+              
+              <div class="form-group full-width">
+                <label for="volume">
+                  <i data-lucide="shopping-cart" size="16"></i>
+                  Volume estimé (par mois)
+                </label>
+                <div class="volume-slider">
+                  <input type="range" id="volume" name="volume" min="50" max="10000" step="50" value="500">
+                  <div class="volume-labels">
+                    <span>50 unités</span>
+                    <span id="volumeValue">500 unités</span>
+                    <span>10,000+ unités</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-group full-width">
+                <label for="message">
+                  <i data-lucide="message-square" size="16"></i>
+                  Informations complémentaires
+                </label>
+                <textarea id="message" name="message" rows="4" placeholder="Décrivez votre projet, vos besoins spécifiques, vos contraintes..."></textarea>
+              </div>
+            </div>
+            
+            <div class="form-footer">
+              <div class="form-consent">
+                <input type="checkbox" id="consent" name="consent" required>
+                <label for="consent">
+                  J'accepte que mes données soient utilisées pour traiter ma demande et recevoir des informations commerciales.
+                </label>
+              </div>
+              
+              <button type="submit" class="btn btn-secondary submit-btn">
+                <i data-lucide="send" size="18"></i>
+                Envoyer la demande
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION FAQ EXPORT
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="faq-export">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Questions Fréquentes</span>
+        <h2 class="section-title">FAQ Export</h2>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-column">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Quels sont les délais de livraison moyens ?</span>
+              <i data-lucide="chevron-down" size="20"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Les délais varient selon la destination :</p>
+              <ul>
+                <li>Union Européenne : 3-5 jours ouvrables</li>
+                <li>Amérique du Nord : 7-10 jours</li>
+                <li>Asie : 10-15 jours</li>
+                <li>Moyen-Orient : 8-12 jours</li>
+              </ul>
+              <p>Tous les envois sont suivis en temps réel.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Quelles certifications proposez-vous ?</span>
+              <i data-lucide="chevron-down" size="20"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Nous fournissons toutes les certifications nécessaires :</p>
+              <ul>
+                <li>Certificats d'origine</li>
+                <li>Certificats sanitaires</li>
+                <li>Documentation douanière complète</li>
+                <li>Certifications spécifiques pays (FDA, HALAL, etc.)</li>
+                <li>Factures commerciales et documents de transport</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Proposez-vous des solutions de stockage ?</span>
+              <i data-lucide="chevron-down" size="20"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Oui, nous proposons plusieurs options :</p>
+              <ul>
+                <li><strong>Stockage en France :</strong> Entreposage réfrigéré jusqu'à expédition</li>
+                <li><strong>Stockage local :</strong> Solutions dans certains pays via nos partenaires</li>
+                <li><strong>Cross-docking :</strong> Transfert direct sans stockage intermédiaire</li>
+                <li><strong>Gestion des stocks :</strong> Suivi et réapprovisionnement automatisés</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-column">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Quels sont les tarifs minimums ?</span>
+              <i data-lucide="chevron-down" size="20"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Les minimums de commande varient selon la destination :</p>
+              <ul>
+                <li>UE : 50 unités minimum</li>
+                <li>Hors UE : 100 unités minimum</li>
+                <li>Commandes personnalisables : à partir de 500 unités</li>
+                <li>Tarifs dégressifs selon volumes</li>
+              </ul>
+              <p>Nous étudions également les petits projets sur demande.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Comment gérez-vous les retours ?</span>
+              <i data-lucide="chevron-down" size="20"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Notre politique retour est claire :</p>
+              <ul>
+                <li><strong>Produits défectueux :</strong> Remboursement ou remplacement intégral</li>
+                <li><strong>Erreur de commande :</strong> Prise en charge complète</li>
+                <li><strong>Dommages transport :</strong> Réclamation auprès de l'assurance</li>
+                <li><strong>Retours commerciaux :</strong> Étude au cas par cas</li>
+              </ul>
+              <p>Tous les retours sont gérés par notre équipe export.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Proposez-vous un accompagnement marketing ?</span>
+              <i data-lucide="chevron-down" size="20"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Oui, nous offrons plusieurs services marketing :</p>
+              <ul>
+                <li>Photographies produits professionnelles</li>
+                <li>Descriptions produits multilingues</li>
+                <li>Matériel promotionnel (dégustations, événements)</li>
+                <li>Support formation produits pour vos équipes</li>
+                <li>Visibilité sur nos réseaux internationaux</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION TEMOIGNAGES CLIENTS EXPORT
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="temoignages-export">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nos Clients</span>
+        <h2 class="section-title">Ils Nous Font Confiance</h2>
+      </div>
+
+      <div class="temoignages-slider">
+        <div class="temoignages-track" id="temoignagesTrack">
+          <!-- Les témoignages seront injectés via JavaScript -->
+        </div>
+        
+        <div class="slider-controls">
+          <button class="slider-btn prev-btn" id="prevTemoignage">
+            <i data-lucide="chevron-left" size="20"></i>
+          </button>
+          <div class="slider-dots" id="sliderDots">
+            <!-- Les dots seront injectés via JavaScript -->
+          </div>
+          <button class="slider-btn next-btn" id="nextTemoignage">
+            <i data-lucide="chevron-right" size="20"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       NEWSLETTER EXPORT
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="newsletter newsletter-export">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-icon">
+          <i data-lucide="globe" size="32" stroke-width="1.5"></i>
+        </div>
+        <div class="newsletter-text">
+          <h2>Guide Export Gratuit</h2>
+          <p>Téléchargez notre guide complet sur l'exportation de produits français. <strong>+10% de réduction</strong> sur votre première commande export.</p>
+        </div>
+        <form class="newsletter-form" id="exportNewsletterForm">
+          <input 
+            type="email" 
+            placeholder="votre@email.com" 
+            required
+            aria-label="Email">
+          <button type="submit" class="btn btn-secondary">
+            Télécharger le guide
+            <i data-lucide="download" size="18"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 14 L16 10 L20 14 L20 22 L12 22 Z" fill="currentColor" opacity="0.2"/>
+            </svg>
+            <span>L'Échoppe Gauloise</span>
+          </div>
+          <p>L'excellence française depuis 1995. Bières artisanales et vins d'exception exportés vers 15 pays.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="instagram" size="20"></i>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="facebook" size="20"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i data-lucide="linkedin" size="20"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Export</h4>
+            <ul>
+              <li><a href="/Pages/Entreprise/pays-desservis.html">Pays desservis</a></li>
+              <li><a href="/Pages/Entreprise/processus-export.html">Processus d'export</a></li>
+              <li><a href="/Pages/Entreprise/certifications.html">Certifications</a></li>
+              <li><a href="/Pages/Entreprise/devis.html">Demande de devis</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Ressources</h4>
+            <ul>
+              <li><a href="#">Guide d'exportation</a></li>
+              <li><a href="#">Réglementations</a></li>
+              <li><a href="#">Calculateur de frais</a></li>
+              <li><a href="#">FAQ Export</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Contact Export</h4>
+            <ul>
+              <li><a href="#">Notre équipe</a></li>
+              <li><a href="#">Devenir partenaire</a></li>
+              <li><a href="#">Demande d'information</a></li>
+              <li><a href="#">Suivi de commande</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 L'Échoppe Gauloise. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="#">Mentions légales</a>
+          <a href="#">Confidentialité</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       MODAL CONTACT EXPERT
+       ═══════════════════════════════════════════════════════════════════ -->
+  <div class="modal" id="contactExpertModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">
+        <i data-lucide="x" size="20"></i>
+      </button>
+      <div class="modal-header">
+        <i data-lucide="headphones" size="32"></i>
+        <h3>Contactez un Expert Export</h3>
+        <p>Un consultant vous rappelle sous 24h pour étudier votre projet</p>
+      </div>
+      <div class="modal-body">
+        <form class="expert-form" id="expertForm">
+          <div class="form-group">
+            <label for="expert-nom">Nom complet *</label>
+            <input type="text" id="expert-nom" name="expert-nom" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="expert-email">Email *</label>
+            <input type="email" id="expert-email" name="expert-email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="expert-telephone">Téléphone *</label>
+            <input type="tel" id="expert-telephone" name="expert-telephone" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="expert-pays">Pays d'intérêt</label>
+            <select id="expert-pays" name="expert-pays">
+              <option value="">Sélectionnez un pays</option>
+              <!-- Les options seront injectées via JavaScript -->
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="expert-creneau">Meilleur créneau pour vous appeler</label>
+            <select id="expert-creneau" name="expert-creneau">
+              <option value="">Sélectionnez</option>
+              <option value="9-12">9h-12h</option>
+              <option value="12-14">12h-14h</option>
+              <option value="14-17">14h-17h</option>
+              <option value="17-19">17h-19h</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="expert-message">Message</label>
+            <textarea id="expert-message" name="expert-message" rows="3" placeholder="Décrivez brièvement votre projet"></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-secondary">
+            <i data-lucide="phone" size="18"></i>
+            Demander un rappel
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════════════════════════════ -->
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+  
+  <!-- App Scripts -->
+  <script src="/js/carousel.js"></script>
+  <script src="/js/navigation.js"></script>
+  <script src="/js/navigation.js"></script>
+  <script src="/js/newsletter.js"></script>  
+  <script src="/js/utils.js"></script>
+  <script src="/js/cart-module.js"></script>
+  <script src="/Pages/Entreprise/export.js"></script>
+</body>
+</html>

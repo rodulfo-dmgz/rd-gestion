@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda</title>
+  <link rel="icon" type="image/svg+xml" href="../../../assets/icons/icon.svg?v=2">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Architecture modulaire -->
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages/clients.css">
+
+  <style>
+    /* Styles spécifiques Agenda */
+    .agenda-container {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .calendar-sidebar {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      height: fit-content;
+      position: sticky;
+      top: 1rem;
+    }
+    
+    .mini-calendar {
+      margin-bottom: 1.5rem;
+    }
+    
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .calendar-header h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    
+    .calendar-nav {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .calendar-nav button {
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--border-light);
+      background: white;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    
+    .calendar-nav button:hover {
+      background: #8b5cf6;
+      color: white;
+      border-color: #8b5cf6;
+    }
+    
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      margin-top: 1rem;
+    }
+    
+    .calendar-day-header {
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 0.5rem 0;
+    }
+    
+    .calendar-day {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+    }
+    
+    .calendar-day:hover {
+      background: rgba(139, 92, 246, 0.1);
+    }
+    
+    .calendar-day.today {
+      background: #8b5cf6;
+      color: white;
+      font-weight: 600;
+    }
+    
+    .calendar-day.has-events::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      background: #8b5cf6;
+      border-radius: 50%;
+    }
+    
+    .calendar-day.today.has-events::after {
+      background: white;
+    }
+    
+    .calendar-day.other-month {
+      color: var(--text-muted);
+      opacity: 0.3;
+    }
+    
+    .filter-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .filter-group h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .filter-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-bottom: 0.25rem;
+    }
+    
+    .filter-option:hover {
+      background: rgba(139, 92, 246, 0.05);
+    }
+    
+    .filter-option input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+    
+    .filter-option label {
+      flex: 1;
+      font-size: 0.875rem;
+      color: var(--text-primary);
+      cursor: pointer;
+    }
+    
+    .event-badge {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      margin-right: 0.5rem;
+    }
+    
+    .badge-meeting { background: #8b5cf6; }
+    .badge-call { background: #3b82f6; }
+    .badge-event { background: #10b981; }
+    .badge-appointment { background: #f59e0b; }
+    
+    .events-list {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+    }
+    
+    .event-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    
+    .event-item:hover {
+      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
+      border-color: #8b5cf6;
+    }
+    
+    .event-time {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 80px;
+      padding: 1rem;
+      background: rgba(139, 92, 246, 0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .event-time .day {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #8b5cf6;
+    }
+    
+    .event-time .month {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+    
+    .event-time .time {
+      font-size: 0.875rem;
+      color: var(--text-primary);
+      margin-top: 0.25rem;
+    }
+    
+    .event-content {
+      flex: 1;
+    }
+    
+    .event-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .event-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    
+    .event-type {
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    
+    .type-meeting { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+    .type-call { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+    .type-event { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+    .type-appointment { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+    
+    .event-description {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    
+    .event-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    
+    .event-meta i {
+      width: 14px;
+      height: 14px;
+    }
+    
+    .event-actions {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    
+    .event-actions button {
+      padding: 0.5rem;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    
+    .event-actions button:hover {
+      background: rgba(139, 92, 246, 0.1);
+    }
+    
+    .priority-high {
+      border-left: 4px solid #ef4444;
+    }
+    
+    .priority-normal {
+      border-left: 4px solid #3b82f6;
+    }
+    
+    .priority-low {
+      border-left: 4px solid #94a3b8;
+    }
+  </style>
+</head>
+<body class="dashboard-page">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="../../../assets/images/logo.svg" alt="CRM" class="sidebar-logo">
+      <h2 id="company-name"></h2>
+    </div>
+    <nav class="sidebar-nav" id="sidebar-nav">
+      <!-- Navigation générée dynamiquement par JS -->
+    </nav>
+  </aside>
+
+  <!-- Main Dashboard -->
+  <div class="dashboard-main">
+    
+    <!-- Header -->
+    <header class="topbar">
+      <span class="brand"></span>
+      <div class="topbar-right">
+        <span id="user-info"><i data-lucide="user"></i> </span>
+        <button id="logout"><i data-lucide="log-out"></i> Quitter</button>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="dashboard">
+
+      <!-- Page header -->
+      <section class="page-header">
+        <div>
+          <h1><i data-lucide="calendar"></i> Agenda</h1>
+          <p>Gestion des rendez-vous et événements</p>
+        </div>
+      </section>
+
+      <!-- Actions bar -->
+      <section class="actions-bar">
+        <input type="text" id="search-event" placeholder="🔍 Rechercher un rendez-vous...">
+        <button id="add-event-btn"><i data-lucide="plus"></i> Nouveau rendez-vous</button>
+      </section>
+
+      <!-- Agenda Container -->
+      <div class="agenda-container">
+        
+        <!-- Sidebar Calendar & Filters -->
+        <aside class="calendar-sidebar">
+          
+          <!-- Mini Calendar -->
+          <div class="mini-calendar">
+            <div class="calendar-header">
+              <h3 id="current-month"></h3>
+              <div class="calendar-nav">
+                <button id="prev-month"><i data-lucide="chevron-left"></i></button>
+                <button id="next-month"><i data-lucide="chevron-right"></i></button>
+              </div>
+            </div>
+            <div class="calendar-grid" id="calendar-grid">
+              <!-- Généré par JS -->
+            </div>
+          </div>
+
+          <!-- Filters -->
+          <div class="filter-group">
+            <h4>Type d'événement</h4>
+            <div class="filter-option">
+              <input type="checkbox" id="filter-meeting" value="meeting" checked>
+              <label for="filter-meeting">
+                <span class="event-badge badge-meeting"></span>
+                Réunions
+              </label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="filter-call" value="call" checked>
+              <label for="filter-call">
+                <span class="event-badge badge-call"></span>
+                Appels
+              </label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="filter-event" value="event" checked>
+              <label for="filter-event">
+                <span class="event-badge badge-event"></span>
+                Événements
+              </label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="filter-appointment" value="appointment" checked>
+              <label for="filter-appointment">
+                <span class="event-badge badge-appointment"></span>
+                RDV
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h4>Statut</h4>
+            <div class="filter-option">
+              <input type="checkbox" id="filter-confirmed" value="confirmed" checked>
+              <label for="filter-confirmed">Confirmé</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="filter-pending" value="pending" checked>
+              <label for="filter-pending">En attente</label>
+            </div>
+            <div class="filter-option">
+              <input type="checkbox" id="filter-cancelled" value="cancelled">
+              <label for="filter-cancelled">Annulé</label>
+            </div>
+          </div>
+
+        </aside>
+
+        <!-- Events List -->
+        <div class="events-list">
+          <h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--text-primary);">
+            <i data-lucide="list"></i> Rendez-vous à venir
+          </h2>
+          <div id="events-container">
+            <!-- Généré par JS -->
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Modal Ajouter/Modifier -->
+  <div class="modal" id="event-modal">
+    <div class="modal-content" style="max-width: 600px;">
+      <span class="modal-close" id="modal-close">&times;</span>
+      <h3 id="modal-title">Nouveau rendez-vous</h3>
+      <form id="event-form">
+        
+        <label for="event-title">Titre *</label>
+        <input type="text" id="event-title" required>
+
+        <label for="event-description">Description</label>
+        <textarea id="event-description" rows="3"></textarea>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div>
+            <label for="event-date">Date *</label>
+            <input type="date" id="event-date" required>
+          </div>
+          <div>
+            <label for="event-time">Heure</label>
+            <input type="time" id="event-time">
+          </div>
+        </div>
+
+        <label for="event-location">Lieu</label>
+        <input type="text" id="event-location" placeholder="Salle de réunion, adresse...">
+
+        <label for="event-type">Type *</label>
+        <select id="event-type" required>
+          <option value="meeting">Réunion</option>
+          <option value="call">Appel</option>
+          <option value="event">Événement</option>
+          <option value="appointment">Rendez-vous</option>
+        </select>
+
+        <label for="event-priority">Priorité</label>
+        <select id="event-priority">
+          <option value="low">Faible</option>
+          <option value="normal" selected>Normale</option>
+          <option value="high">Haute</option>
+        </select>
+
+        <label for="event-status">Statut</label>
+        <select id="event-status">
+          <option value="pending">En attente</option>
+          <option value="confirmed" selected>Confirmé</option>
+          <option value="cancelled">Annulé</option>
+        </select>
+
+        <button type="submit">Enregistrer</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Voir Détails -->
+  <div class="modal" id="view-event-modal">
+    <div class="modal-content" style="max-width: 700px;">
+      <span class="modal-close" id="modal-view-close">&times;</span>
+      <h3 id="view-modal-title">Détails du rendez-vous</h3>
+      <div id="view-modal-body" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+        <!-- Généré par JS -->
+      </div>
+      <div style="display: flex; gap: 1rem; margin-top: 1.5rem; justify-content: flex-end;">
+        <button onclick="editEventFromView()" style="background: #8b5cf6;">
+          <i data-lucide="edit"></i> Modifier
+        </button>
+        <button onclick="deleteEventFromView()" style="background: #ef4444;">
+          <i data-lucide="trash-2"></i> Supprimer
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS - ORDRE CRITIQUE ! -->
+  <!-- 1. Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- 2. SDK Supabase (DOIT être chargé en premier) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- 3. Configuration Supabase (initialise supabaseClient) -->
+  <script src="../../../core/supabase-config.js"></script>
+  
+  <!-- 4. Configuration générale -->
+  <script src="../../../core/config.js"></script>
+  
+  <!-- 5. Module agenda (DERNIER - utilise supabaseClient) -->
+  <script src="agenda.js"></script>
+
+</body>
+</html>

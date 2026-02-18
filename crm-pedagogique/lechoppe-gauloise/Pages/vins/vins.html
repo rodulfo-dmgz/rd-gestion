@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Vins d'Exception | L'Échoppe Gauloise - Sélection Premium</title>
+  <meta name="description" content="Découvrez notre sélection exclusive de vins français d'exception. Bordeaux, Bourgogne, Champagne - des terroirs uniques et des vignerons passionnés depuis 1995.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Polices modernes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome pour les icônes du panier -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages/vins.css">
+</head>
+
+<body>
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <!-- Logo minimaliste -->
+        <a href="index.html" class="logo">
+          <img src="/assets/logo.svg" class="logo">
+          <span>L'Échoppe</span>
+        </a>
+
+        <!-- Navigation -->
+        <ul class="nav-links">
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/Pages/bieres/bieres.html">Bières</a></li>
+          <li><a href="/Pages/vins/vins.html" class="active">Vins</a></li>
+          <li><a href="/Pages/Entreprise/export.html">Export</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Rechercher">
+            <i data-lucide="search" stroke-width="1.5"></i>
+          </button>
+          <a href="/Pages/commande/panier.html" class="icon-btn" aria-label="Panier">
+            <i data-lucide="shopping-bag" stroke-width="1.5"></i>
+            <span class="badge cart-badge" id="cartBadge">0</span>
+          </a>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <i data-lucide="menu" stroke-width="1.5"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HERO SPÉCIFIQUE VINS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="vins-hero">
+    <div class="container">
+      <div class="vins-hero-content">
+        <div class="badge-pill">
+          <i data-lucide="grape" size="14"></i>
+          <span>Terroir Français</span>
+        </div>
+        
+        <h1 class="vins-hero-title">
+          Nos Vins
+          <span class="gradient-text">d'Exception</span>
+        </h1>
+        
+        <p class="vins-hero-subtitle">
+          Sélection exclusive de vins français d'exception. Des terroirs uniques, 
+          des vignerons passionnés, des saveurs mémorables.
+        </p>
+        
+        <!-- Filtres rapides -->
+        <div class="quick-filters">
+          <button class="filter-btn active" data-filter="all">
+            <i data-lucide="wine" size="16"></i>
+            Tous
+          </button>
+          <button class="filter-btn" data-filter="rouge">
+            <i data-lucide="droplet" size="16"></i>
+            Vins Rouges
+          </button>
+          <button class="filter-btn" data-filter="blanc">
+            <i data-lucide="cloud" size="16"></i>
+            Vins Blancs
+          </button>
+          <button class="filter-btn" data-filter="rose">
+            <i data-lucide="sunrise" size="16"></i>
+            Rosés
+          </button>
+          <button class="filter-btn" data-filter="champagne">
+            <i data-lucide="sparkles" size="16"></i>
+            Champagnes
+          </button>
+          <button class="filter-btn" data-filter="bio">
+            <i data-lucide="leaf" size="16"></i>
+            Biologiques
+          </button>
+        </div>
+      </div>
+      
+      <!-- Illustration vin -->
+      <div class="vins-hero-visual">
+        <div class="vins-hero-image-wrapper">
+          <img 
+            src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=800&h=600&fit=crop" 
+            alt="Sélection de vins d'exception"
+            class="vins-hero-image">
+          <div class="floating-card">
+            <i data-lucide="award" size="24" stroke-width="1.5"></i>
+            <div>
+              <strong>95+</strong>
+              <span>Parker</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION TERROIRS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="terroirs">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nos Terroirs</span>
+        <h2 class="section-title">Les Grands Vignobles Français</h2>
+      </div>
+
+      <div class="terroirs-grid">
+        <article class="terroir-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1533237264986-2c863008d0a5?w=400&h=300&fit=crop');">
+          <div class="terroir-content">
+            <h3>Bordeaux</h3>
+            <p>Vins structurés et élégants, grands crus classés.</p>
+            <span class="terroir-count">24 références</span>
+          </div>
+        </article>
+
+        <article class="terroir-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1502101872923-d48509bff386?w=400&h=300&fit=crop');">
+          <div class="terroir-content">
+            <h3>Bourgogne</h3>
+            <p>Pinot Noir et Chardonnay d'exception, terroirs d'exception.</p>
+            <span class="terroir-count">18 références</span>
+          </div>
+        </article>
+
+        <article class="terroir-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1498550744921-75f79806b8a7?w=400&h=300&fit=crop');">
+          <div class="terroir-content">
+            <h3>Champagne</h3>
+            <p>Bulles de prestige, maisons historiques et grower.</p>
+            <span class="terroir-count">12 références</span>
+          </div>
+        </article>
+
+        <article class="terroir-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1601352208521-1c3d4209b52e?w=400&h=300&fit=crop');">
+          <div class="terroir-content">
+            <h3>Vallée du Rhône</h3>
+            <p>Vins puissants et épicés, Syrah et Grenache.</p>
+            <span class="terroir-count">16 références</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION VINS - GRID AVEC FILTRES
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="vins-grid-section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-label">Notre Sélection</span>
+          <h2 class="title-golden">Nos Vins</h2>
+        </div>
+        
+        <!-- Filtres avancés -->
+        <div class="advanced-filters">
+          <div class="filter-group">
+            <label for="region-filter">
+              <i data-lucide="map-pin" size="16"></i>
+              Région
+            </label>
+            <select id="region-filter" class="filter-select">
+              <option value="all">Toutes les régions</option>
+              <option value="bordeaux">Bordeaux</option>
+              <option value="bourgogne">Bourgogne</option>
+              <option value="champagne">Champagne</option>
+              <option value="rhone">Vallée du Rhône</option>
+              <option value="loire">Val de Loire</option>
+              <option value="alsace">Alsace</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="year-filter">
+              <i data-lucide="calendar" size="16"></i>
+              Millésime
+            </label>
+            <select id="year-filter" class="filter-select">
+              <option value="all">Tous millésimes</option>
+              <option value="2020">2020 et +</option>
+              <option value="2018">2018-2019</option>
+              <option value="2016">2016-2017</option>
+              <option value="2015">2015 et -</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="sort-filter">
+              <i data-lucide="arrow-up-down" size="16"></i>
+              Trier par
+            </label>
+            <select id="sort-filter" class="filter-select">
+              <option value="popular">Popularité</option>
+              <option value="price-asc">Prix croissant</option>
+              <option value="price-desc">Prix décroissant</option>
+              <option value="rating">Meilleures notes</option>
+              <option value="year-desc">Millésime récent</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grille de vins -->
+      <div class="vins-grid" id="vinsGrid">
+        <!-- Les vins seront injectés via JavaScript -->
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button class="pagination-btn" id="prevPage" disabled>
+          <i data-lucide="chevron-left" size="16"></i>
+          Précédent
+        </button>
+        <div class="pagination-numbers">
+          <span class="pagination-current">1</span>
+          <span>sur</span>
+          <span class="pagination-total">3</span>
+        </div>
+        <button class="pagination-btn" id="nextPage">
+          Suivant
+          <i data-lucide="chevron-right" size="16"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION ACCORDS METS & VINS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="accords">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Conseils d'Expert</span>
+        <h2 class="section-title">Accords Mets & Vins</h2>
+      </div>
+
+      <div class="accords-grid">
+        <article class="accord-card">
+          <div class="accord-icon" style="background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);">
+            <i data-lucide="beef" size="24" stroke-width="1.5"></i>
+          </div>
+          <h3>Viandes Rouges</h3>
+          <p>Bordeaux, Côtes-du-Rhône, vins tanniques et structurés.</p>
+          <ul class="accord-list">
+            <li><strong>Entrecôte:</strong> Saint-Émilion</li>
+            <li><strong>Gibier:</strong> Cahors</li>
+            <li><strong>Agneau:</strong> Châteauneuf-du-Pape</li>
+          </ul>
+        </article>
+
+        <article class="accord-card">
+          <div class="accord-icon" style="background: linear-gradient(135deg, #DCFCE7 0%, #BBF7D0 100%);">
+            <i data-lucide="fish" size="24" stroke-width="1.5"></i>
+          </div>
+          <h3>Poissons & Fruits de Mer</h3>
+          <p>Vins blancs secs, bulles légères, minéralité.</p>
+          <ul class="accord-list">
+            <li><strong>Saumon:</strong> Meursault</li>
+            <li><strong>Coquillages:</strong> Chablis</li>
+            <li><strong>Homard:</strong> Champagne Blanc de Blancs</li>
+          </ul>
+        </article>
+
+        <article class="accord-card">
+          <div class="accord-icon" style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);">
+            <i data-lucide="chef-hat" size="24" stroke-width="1.5"></i>
+          </div>
+          <h3>Fromages</h3>
+          <p>Accords régionaux, puissance et équilibre.</p>
+          <ul class="accord-list">
+            <li><strong>Comté:</strong> Vin Jaune</li>
+            <li><strong>Chèvre:</strong> Sancerre</li>
+            <li><strong>Bleu:</strong> Sauternes</li>
+          </ul>
+        </article>
+
+        <article class="accord-card">
+          <div class="accord-icon" style="background: linear-gradient(135deg, #E0E7FF 0%, #C7D2FE 100%);">
+            <i data-lucide="cake" size="24" stroke-width="1.5"></i>
+          </div>
+          <h3>Desserts</h3>
+          <p>Vins liquoreux, effervescents doux.</p>
+          <ul class="accord-list">
+            <li><strong>Chocolat:</strong> Banyuls</li>
+            <li><strong>Tarte aux fruits:</strong> Muscat</li>
+            <li><strong>Crème brûlée:</strong> Champagne Demi-Sec</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION CAVES & CONSERVATION
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="conservation">
+    <div class="container">
+      <div class="conservation-content">
+        <div class="conservation-text">
+          <span class="section-label">Service & Conservation</span>
+          <h2>L'Art de la Cave</h2>
+          <p>Nos conseils pour une conservation optimale et un service parfait. Température, verrerie, carafage - l'excellence dans les détails.</p>
+          
+          <div class="conservation-tips">
+            <div class="tip">
+              <i data-lucide="thermometer" size="20"></i>
+              <div>
+                <strong>Température de service</strong>
+                <span>Rouges: 14-18°C • Blancs: 8-12°C</span>
+              </div>
+            </div>
+            <div class="tip">
+              <i data-lucide="droplets" size="20"></i>
+              <div>
+                <strong>Humidité de cave</strong>
+                <span>70-75% pour un vieillissement optimal</span>
+              </div>
+            </div>
+            <div class="tip">
+              <i data-lucide="clock" size="20"></i>
+              <div>
+                <strong>Temps de carafage</strong>
+                <span>30 min à 2h selon le vin</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="conservation-actions">
+            <button class="btn btn-secondary">
+              <i data-lucide="download" size="18"></i>
+              Guide PDF
+            </button>
+            <button class="btn btn-secondary">
+              <i data-lucide="phone" size="18"></i>
+              Conseiller personnel
+            </button>
+          </div>
+        </div>
+        
+        <div class="conservation-image">
+          <img 
+            src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=600&h=800&fit=crop" 
+            alt="Cave à vin professionnelle">
+          <div class="conservation-badge">
+            <i data-lucide="shield-check" size="20"></i>
+            <span>Conseils certifiés</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+       NEWSLETTER MINIMALISTE
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-icon">
+          <i data-lucide="mail" size="32" stroke-width="1.5"></i>
+        </div>
+        <div class="newsletter-text">
+          <h2>Restez Informé</h2>
+          <p>Recevez nos offres exclusives et actualités. <strong>-10%</strong> sur votre première commande.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm">
+          <input 
+            type="email" 
+            placeholder="votre@email.com" 
+            required
+            aria-label="Email">
+          <button type="submit" class="btn btn-secondary">
+            S'inscrire
+            <i data-lucide="arrow-right" size="18"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FOOTER MINIMALISTE
+       ═══════════════════════════════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="/assets/logo.svg" alt="Logo L'Échoppe Gauloise" class="logo-img">
+                        <span>L'Échoppe Gauloise</span>
+                    </div>
+                    <p>L'excellence française depuis 1995. Bières artisanales et vins d'exception exportés vers 15 pays.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">
+                            <i data-lucide="instagram" size="20"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <i data-lucide="facebook" size="20"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <i data-lucide="linkedin" size="20"></i>
+                        </a>
+                    </div>
+                </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Produits</h4>
+            <ul>
+              <li><a href="/Pages/bieres/bieres.html">Bières</a></li>
+              <li><a href="/Pages/vins/vins.html">Vins</a></li>
+              <li><a href="#">Nouveautés</a></li>
+              <li><a href="#">Promotions</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Entreprise</h4>
+            <ul>
+              <li><a href="/Pages/Entreprise/notre-histoire.html">Notre Histoire</a></li>
+              <li><a href="/Pages/Entreprise/export.html">Export</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Carrières</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Livraison</a></li>
+              <li><a href="#">Retours</a></li>
+              <li><a href="#">CGV</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 L'Échoppe Gauloise. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="#">Mentions légales</a>
+          <a href="#">Confidentialité</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════════════════════════════ -->
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+  
+  <!--Supabase-->
+  <!-- 2. SDK Supabase (DOIT être chargé en premier) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- 3. Configuration Supabase (initialise supabaseClient) -->
+  <script src="/js/supabase-config.js"></script>
+
+  <!-- App Scripts -->
+  <script src="/js/carousel.js"></script>
+  <script src="/js/navigation.js"></script>
+  <script src="/js/newsletter.js"></script>  
+  <script src="/js/utils.js"></script>
+  <script src="/js/cart-module.js"></script>
+  <script src="/Pages/vins/vins.js"></script>
+
+  <script>
+console.log('Scripts chargés:');
+console.log('- Supabase:', typeof window.supabase);
+console.log('- VinsModule:', typeof window.VinsModule);
+console.log('- CartModule:', typeof window.CartModule);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard SA — Secrétariat</title>
+  <link rel="icon" type="image/svg+xml" href="../../../assets/icons/icon.svg?v=2">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Architecture modulaire -->
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages/dashboard.css">
+
+  <style>
+    /* Styles spécifiques Dashboard SA */
+    .dashboard-sa {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.02) 0%, rgba(59, 130, 246, 0.02) 100%);
+    }
+    
+    .stat-card {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      transform: translate(30%, -30%);
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(139, 92, 246, 0.2);
+      border-color: #8b5cf6;
+    }
+    
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #8b5cf6;
+      font-family: var(--font-title);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+    
+    .stat-icon {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(139, 92, 246, 0.1);
+      border-radius: 12px;
+      color: #8b5cf6;
+    }
+    
+    .quick-actions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    
+    .action-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .action-card:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+      border-color: #8b5cf6;
+    }
+    
+    .action-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      flex-shrink: 0;
+    }
+    
+    .action-content h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+    
+    .action-content p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    
+    .section-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      margin-top: 1.5rem;
+    }
+    
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--border-light);
+    }
+    
+    .section-header h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .task-item, .mail-item, .rdv-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border-bottom: 1px solid var(--border-light);
+      transition: background 0.2s;
+    }
+    
+    .task-item:last-child, .mail-item:last-child, .rdv-item:last-child {
+      border-bottom: none;
+    }
+    
+    .task-item:hover, .mail-item:hover, .rdv-item:hover {
+      background: rgba(139, 92, 246, 0.02);
+    }
+    
+    .task-checkbox {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #8b5cf6;
+      border-radius: 4px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    
+    .task-content {
+      flex: 1;
+    }
+    
+    .task-content h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+    
+    .task-content p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    
+    .priority-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    
+    .priority-high { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+    .priority-medium { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+    .priority-low { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+    
+    .status-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    
+    .status-new { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+    .status-pending { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+    .status-done { background: rgba(148, 163, 184, 0.1); color: #64748b; }
+    
+    .calendar-widget {
+      background: white;
+      border-radius: 12px;
+      padding: 1rem;
+      border: 1px solid var(--border-light);
+    }
+    
+    .mini-calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.5rem;
+      text-align: center;
+    }
+    
+    .calendar-day {
+      padding: 0.5rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .calendar-day:hover {
+      background: rgba(139, 92, 246, 0.1);
+    }
+    
+    .calendar-day.today {
+      background: #8b5cf6;
+      color: white;
+      font-weight: 600;
+    }
+    
+    .calendar-day.has-event {
+      position: relative;
+    }
+    
+    .calendar-day.has-event::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      background: #8b5cf6;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body class="dashboard-page dashboard-sa">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="../../assets/images/logo.svg" alt="CRM" class="sidebar-logo">
+      <h2 id="company-name"></h2>
+    </div>
+    <nav class="sidebar-nav" id="sidebar-nav">
+      <!-- Navigation générée dynamiquement par JS -->
+    </nav>
+  </aside>
+
+  <!-- Main Dashboard -->
+  <div class="dashboard-main">
+    
+    <!-- Header -->
+    <header class="topbar">
+      <span class="brand"></span>
+      <div class="topbar-right">
+        <span id="user-info"><i data-lucide="user"></i> </span>
+        <button id="logout"><i data-lucide="log-out"></i> Quitter</button>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="dashboard">
+
+      <!-- Page header -->
+      <section class="page-header">
+        <div>
+          <h1><i data-lucide="briefcase"></i> Dashboard Secrétariat</h1>
+          <p>Gestion administrative et organisation</p>
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <span id="current-date" style="font-size: 0.9rem; color: var(--text-muted);"></span>
+        </div>
+      </section>
+
+      <!-- KPI Cards -->
+      <section class="kpi-grid" style="margin-bottom: 2rem;">
+        <div class="stat-card">
+          <div class="stat-icon"><i data-lucide="calendar-check"></i></div>
+          <div class="stat-value" id="stat-rdv">—</div>
+          <div class="stat-label">RDV Aujourd'hui</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i data-lucide="list-checks"></i></div>
+          <div class="stat-value" id="stat-tasks">—</div>
+          <div class="stat-label">Tâches en cours</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i data-lucide="mail"></i></div>
+          <div class="stat-value" id="stat-mails">—</div>
+          <div class="stat-label">Courriers à traiter</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i data-lucide="phone-incoming"></i></div>
+          <div class="stat-value" id="stat-calls">—</div>
+          <div class="stat-label">Appels reçus (jour)</div>
+        </div>
+      </section>
+
+      <!-- Actions Rapides -->
+      <section>
+        <h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-primary);">
+          <i data-lucide="zap"></i> Actions Rapides
+        </h2>
+        <div class="quick-actions">
+          <div class="action-card" onclick="window.location.href='modules/agenda.html'">
+            <div class="action-icon"><i data-lucide="calendar"></i></div>
+            <div class="action-content">
+              <h3>Agenda</h3>
+              <p>Gérer les rendez-vous</p>
+            </div>
+          </div>
+          
+          <div class="action-card" onclick="window.location.href='modules/courrier.html'">
+            <div class="action-icon"><i data-lucide="mail"></i></div>
+            <div class="action-content">
+              <h3>Courrier</h3>
+              <p>Entrant / Sortant</p>
+            </div>
+          </div>
+          
+          <div class="action-card" onclick="window.location.href='modules/communication.html'">
+            <div class="action-icon"><i data-lucide="phone"></i></div>
+            <div class="action-content">
+              <h3>Communication</h3>
+              <p>Appels et emails</p>
+            </div>
+          </div>
+          
+          <div class="action-card" onclick="window.location.href='modules/documents.html'">
+            <div class="action-icon"><i data-lucide="file-text"></i></div>
+            <div class="action-content">
+              <h3>Documents</h3>
+              <p>Modèles et contrats</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contenu principal en 2 colonnes -->
+      <section style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-top: 2rem;">
+        
+        <!-- Colonne gauche -->
+        <div>
+          
+          <!-- Tâches du jour -->
+          <div class="section-card">
+            <div class="section-header">
+              <h3><i data-lucide="list-checks"></i> Mes tâches du jour</h3>
+              <button class="btn-secondary" onclick="window.location.href='modules/taches.html'" style="padding: 0.5rem 1rem; font-size: 0.875rem;">
+                <i data-lucide="plus"></i> Nouvelle tâche
+              </button>
+            </div>
+            <div id="tasks-list">
+              <!-- Généré par JS -->
+            </div>
+          </div>
+
+          <!-- Rendez-vous à venir -->
+          <div class="section-card">
+            <div class="section-header">
+              <h3><i data-lucide="calendar-clock"></i> Rendez-vous à venir</h3>
+              <a href="modules/agenda.html" style="font-size: 0.875rem; color: #8b5cf6; text-decoration: none;">
+                Voir tout →
+              </a>
+            </div>
+            <div id="rdv-list">
+              <!-- Généré par JS -->
+            </div>
+          </div>
+
+          <!-- Courriers récents -->
+          <div class="section-card">
+            <div class="section-header">
+              <h3><i data-lucide="mail-open"></i> Courriers récents</h3>
+              <a href="modules/courrier.html" style="font-size: 0.875rem; color: #8b5cf6; text-decoration: none;">
+                Voir tout →
+              </a>
+            </div>
+            <div id="mails-list">
+              <!-- Généré par JS -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Colonne droite -->
+        <div>
+          
+          <!-- Mini calendrier -->
+          <div class="section-card">
+            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-primary);">
+              <i data-lucide="calendar-days"></i> Février 2026
+            </h3>
+            <div class="mini-calendar" id="mini-calendar">
+              <!-- Généré par JS -->
+            </div>
+          </div>
+
+          <!-- Messages internes -->
+          <div class="section-card">
+            <div class="section-header">
+              <h3><i data-lucide="message-square"></i> Messages internes</h3>
+            </div>
+            <div id="messages-list">
+              <p style="text-align: center; color: var(--text-muted); padding: 1rem;">
+                Aucun nouveau message
+              </p>
+            </div>
+          </div>
+
+          <!-- Rappels -->
+          <div class="section-card">
+            <div class="section-header">
+              <h3><i data-lucide="bell"></i> Rappels</h3>
+            </div>
+            <div id="reminders-list">
+              <!-- Généré par JS -->
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../../core/config.js"></script>
+  <script src="../../core/supabase-config.js"></script>
+  <script src="../../core/auth.js"></script>
+  <script src="index-sa.js"></script>
+
+</body>
+</html>

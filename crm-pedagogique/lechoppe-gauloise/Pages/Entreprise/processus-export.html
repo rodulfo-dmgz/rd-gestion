@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Processus d'Export | L'Échoppe Gauloise - Guide Complet Exportation</title>
+  <meta name="description" content="Découvrez notre processus d'export clé en main. De la consultation initiale à la livraison, chaque étape est optimisée pour votre succès à l'international.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Polices modernes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages/processus-export.css">
+</head>
+
+<body>
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <!-- Logo minimaliste -->
+        <a href="index.html" class="logo">
+          <img src="/assets/logo.svg" class="logo">
+          <span>L'Échoppe</span>
+        </a>
+
+        <!-- Navigation -->
+        <ul class="nav-links">
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/Pages/bieres/bieres.html">Bières</a></li>
+          <li><a href="/Pages/vins/vins.html">Vins</a></li>
+          <li><a href="/Pages/Entreprise/export.html">Export</a></li>
+          <li><a href="/Pages/Entreprise/processus-export.html" class="active">Processus</a></li>
+          <li><a href="/Pages/Entreprise/notre-histoire.html">Notre Histoire</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Rechercher">
+            <i data-lucide="search" stroke-width="1.5"></i>
+          </button>
+          <button class="icon-btn" aria-label="Panier">
+            <i data-lucide="shopping-bag" stroke-width="1.5"></i>
+            <span class="badge" id="cartBadge">0</span>
+          </button>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <i data-lucide="menu" stroke-width="1.5"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HERO PROCESSUS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="processus-hero">
+    <div class="container">
+      <div class="processus-hero-content">
+        <div class="badge-pill">
+          <i data-lucide="layers" size="14"></i>
+          <span>Processus d'Export</span>
+        </div>
+        
+        <h1 class="processus-hero-title">
+          Votre Succès à l'International,
+          <span class="gradient-text">Étape par Étape</span>
+        </h1>
+        
+        <p class="processus-hero-subtitle">
+          Découvrez notre méthodologie éprouvée depuis 1995. 
+          Chaque phase est conçue pour minimiser les risques et maximiser 
+          votre réussite sur les marchés internationaux.
+        </p>
+        
+        <!-- CTA Principal -->
+        <div class="processus-hero-cta">
+          <a href="#processus-detaille" class="btn btn-secondary">
+            <i data-lucide="list-ordered" size="18"></i>
+            Explorer les étapes
+          </a>
+          <button class="btn btn-secondary" id="contactExpertBtn">
+            <i data-lucide="headphones" size="18"></i>
+            Discuter avec un expert
+          </button>
+        </div>
+        
+        <!-- Stats rapides -->
+        <div class="processus-stats">
+          <div class="processus-stat">
+            <strong>5</strong>
+            <span>Étapes claires</span>
+          </div>
+          <div class="processus-stat">
+            <strong>48h</strong>
+            <span>Devis personnalisé</span>
+          </div>
+          <div class="processus-stat">
+            <strong>99.7%</strong>
+            <span>Taux de réussite</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Illustration processus -->
+      <div class="processus-hero-visual">
+        <div class="processus-timeline">
+          <div class="timeline-dots">
+            <div class="timeline-dot active" data-step="1">
+              <div class="dot-inner"></div>
+              <span>Consultation</span>
+            </div>
+            <div class="timeline-dot" data-step="2">
+              <div class="dot-inner"></div>
+              <span>Devis</span>
+            </div>
+            <div class="timeline-dot" data-step="3">
+              <div class="dot-inner"></div>
+              <span>Préparation</span>
+            </div>
+            <div class="timeline-dot" data-step="4">
+              <div class="dot-inner"></div>
+              <span>Transport</span>
+            </div>
+            <div class="timeline-dot" data-step="5">
+              <div class="dot-inner"></div>
+              <span>Livraison</span>
+            </div>
+          </div>
+          <div class="timeline-bar">
+            <div class="timeline-progress"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION PROCESSUS DÉTAILLÉ
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="processus-detaille" id="processus-detaille">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Notre Méthodologie</span>
+        <h2 class="section-title">Les 5 Étapes de Notre Processus</h2>
+        <p class="section-subtitle">Chaque étape est conçue avec précision pour garantir la sécurité et l'efficacité de vos exportations.</p>
+      </div>
+
+      <div class="processus-etapes">
+        <!-- Étape 1 -->
+        <article class="etape-card" id="etape-1">
+          <div class="etape-header">
+            <div class="etape-number">
+              <span>01</span>
+            </div>
+            <div class="etape-icon">
+              <i data-lucide="users" size="32"></i>
+            </div>
+            <h3 class="etape-title">Consultation Initiale & Analyse</h3>
+          </div>
+          
+          <div class="etape-content">
+            <p class="etape-description">
+              Notre équipe d'experts analyse vos besoins spécifiques, votre marché cible, 
+              et les réglementations locales. Nous établissons ensemble les objectifs 
+              et contraintes de votre projet.
+            </p>
+            
+            <div class="etape-details">
+              <div class="detail-item">
+                <h4>Durée</h4>
+                <p>24-48 heures</p>
+              </div>
+              <div class="detail-item">
+                <h4>Livrables</h4>
+                <p>Analyse de marché, étude des réglementations</p>
+              </div>
+              <div class="detail-item">
+                <h4>Équipe</h4>
+                <p>Expert export + conseiller juridique</p>
+              </div>
+            </div>
+            
+            <div class="etape-checkpoints">
+              <h4>Points Clés de Cette Étape :</h4>
+              <ul>
+                <li><i data-lucide="check" size="16"></i> Analyse approfondie du marché cible</li>
+                <li><i data-lucide="check" size="16"></i> Évaluation des réglementations locales</li>
+                <li><i data-lucide="check" size="16"></i> Définition des volumes et fréquences</li>
+                <li><i data-lucide="check" size="16"></i> Identification des certifications nécessaires</li>
+                <li><i data-lucide="check" size="16"></i> Étude des coûts préliminaires</li>
+              </ul>
+            </div>
+            
+            <div class="etape-tools">
+              <h4>Outils Utilisés :</h4>
+              <div class="tools-list">
+                <span class="tool-badge">Base de données réglementations</span>
+                <span class="tool-badge">Analyseur de marchés</span>
+                <span class="tool-badge">Calculateur de coûts</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Étape 2 -->
+        <article class="etape-card" id="etape-2">
+          <div class="etape-header">
+            <div class="etape-number">
+              <span>02</span>
+            </div>
+            <div class="etape-icon">
+              <i data-lucide="file-text" size="32"></i>
+            </div>
+            <h3 class="etape-title">Devis Personnalisé & Contrat</h3>
+          </div>
+          
+          <div class="etape-content">
+            <p class="etape-description">
+              Nous vous fournissons un devis détaillé incluant tous les coûts prévisibles 
+              et établissons un contrat clair définissant les responsabilités de chaque partie.
+            </p>
+            
+            <div class="etape-details">
+              <div class="detail-item">
+                <h4>Durée</h4>
+                <p>48 heures maximum</p>
+              </div>
+              <div class="detail-item">
+                <h4>Livrables</h4>
+                <p>Devis détaillé, contrat d'exportation</p>
+              </div>
+              <div class="detail-item">
+                <h4>Équipe</h4>
+                <p>Commercial + expert juridique</p>
+              </div>
+            </div>
+            
+            <div class="etape-checkpoints">
+              <h4>Points Clés de Cette Étape :</h4>
+              <ul>
+                <li><i data-lucide="check" size="16"></i> Devis transparent sans coûts cachés</li>
+                <li><i data-lucide="check" size="16"></i> Contrat juridiquement sécurisé</li>
+                <li><i data-lucide="check" size="16"></i> Détail des assurances et garanties</li>
+                <li><i data-lucide="check" size="16"></i> Modalités de paiement flexibles</li>
+                <li><i data-lucide="check" size="16"></i> Conditions de révision du contrat</li>
+              </ul>
+            </div>
+            
+            <div class="etape-tools">
+              <h4>Documents Fournis :</h4>
+              <div class="tools-list">
+                <span class="tool-badge">Devis détaillé</span>
+                <span class="tool-badge">Contrat d'exportation</span>
+                <span class="tool-badge">Plan de financement</span>
+                <span class="tool-badge">Calendrier des paiements</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Étape 3 -->
+        <article class="etape-card" id="etape-3">
+          <div class="etape-header">
+            <div class="etape-number">
+              <span>03</span>
+            </div>
+            <div class="etape-icon">
+              <i data-lucide="package" size="32"></i>
+            </div>
+            <h3 class="etape-title">Préparation & Conditionnement</h3>
+          </div>
+          
+          <div class="etape-content">
+            <p class="etape-description">
+              Nos équipes spécialisées préparent vos produits avec le plus grand soin, 
+              en utilisant des matériaux adaptés aux contraintes du transport international.
+            </p>
+            
+            <div class="etape-details">
+              <div class="detail-item">
+                <h4>Durée</h4>
+                <p>3-5 jours ouvrables</p>
+              </div>
+              <div class="detail-item">
+                <h4>Livrables</h4>
+                <p>Produits conditionnés, documentation complète</p>
+              </div>
+              <div class="detail-item">
+                <h4>Équipe</h4>
+                <p>Logisticiens + agents douaniers</p>
+              </div>
+            </div>
+            
+            <div class="etape-checkpoints">
+              <h4>Points Clés de Cette Étape :</h4>
+              <ul>
+                <li><i data-lucide="check" size="16"></i> Conditionnement spécifique à chaque produit</li>
+                <li><i data-lucide="check" size="16"></i> Contrôle qualité avant emballage</li>
+                <li><i data-lucide="check" size="16"></i> Établissement des documents douaniers</li>
+                <li><i data-lucide="check" size="16"></i> Marquage et étiquetage multilingue</li>
+                <li><i data-lucide="check" size="16"></i> Scan des produits pour suivi</li>
+              </ul>
+            </div>
+            
+            <div class="etape-gallery">
+              <h4>Types de Conditionnement :</h4>
+              <div class="gallery-grid">
+                <div class="gallery-item">
+                  <i data-lucide="box" size="24"></i>
+                  <span>Conteneurs réfrigérés</span>
+                </div>
+                <div class="gallery-item">
+                  <i data-lucide="shield" size="24"></i>
+                  <span>Emballage anti-choc</span>
+                </div>
+                <div class="gallery-item">
+                  <i data-lucide="thermometer" size="24"></i>
+                  <span>Suivi température</span>
+                </div>
+                <div class="gallery-item">
+                  <i data-lucide="lock" size="24"></i>
+                  <span>Sécurité renforcée</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Étape 4 -->
+        <article class="etape-card" id="etape-4">
+          <div class="etape-header">
+            <div class="etape-number">
+              <span>04</span>
+            </div>
+            <div class="etape-icon">
+              <i data-lucide="truck" size="32"></i>
+            </div>
+            <h3 class="etape-title">Transport & Dédouanement</h3>
+          </div>
+          
+          <div class="etape-content">
+            <p class="etape-description">
+              Nous gérons intégralement le transport et toutes les formalités douanières, 
+              avec un suivi en temps réel de votre marchandise.
+            </p>
+            
+            <div class="etape-details">
+              <div class="detail-item">
+                <h4>Durée</h4>
+                <p>2-10 jours selon destination</p>
+              </div>
+              <div class="detail-item">
+                <h4>Livrables</h4>
+                <p>Certificat de dédouanement, suivi en direct</p>
+              </div>
+              <div class="detail-item">
+                <h4>Équipe</h4>
+                <p>Transitaires + agents de douane</p>
+              </div>
+            </div>
+            
+            <div class="etape-checkpoints">
+              <h4>Points Clés de Cette Étape :</h4>
+              <ul>
+                <li><i data-lucide="check" size="16"></i> Choix du mode de transport optimal</li>
+                <li><i data-lucide="check" size="16"></i> Gestion complète des formalités</li>
+                <li><i data-lucide="check" size="16"></i> Suivi GPS en temps réel</li>
+                <li><i data-lucide="check" size="16"></i> Assurance tous risques incluse</li>
+                <li><i data-lucide="check" size="16"></i> Communication proactive</li>
+              </ul>
+            </div>
+            
+            <div class="etape-tracking">
+              <h4>Suivi en Temps Réel :</h4>
+              <div class="tracking-steps">
+                <div class="tracking-step completed">
+                  <div class="tracking-dot"></div>
+                  <span>Chargement</span>
+                </div>
+                <div class="tracking-step completed">
+                  <div class="tracking-dot"></div>
+                  <span>Départ usine</span>
+                </div>
+                <div class="tracking-step active">
+                  <div class="tracking-dot"></div>
+                  <span>En transit</span>
+                </div>
+                <div class="tracking-step">
+                  <div class="tracking-dot"></div>
+                  <span>Contrôle douane</span>
+                </div>
+                <div class="tracking-step">
+                  <div class="tracking-dot"></div>
+                  <span>Livraison</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Étape 5 -->
+        <article class="etape-card" id="etape-5">
+          <div class="etape-header">
+            <div class="etape-number">
+              <span>05</span>
+            </div>
+            <div class="etape-icon">
+              <i data-lucide="check-circle" size="32"></i>
+            </div>
+            <h3 class="etape-title">Livraison & Suivi Post-Vente</h3>
+          </div>
+          
+          <div class="etape-content">
+            <p class="etape-description">
+              Votre commande est livrée à destination et notre équipe assure 
+              un suivi post-vente pour garantir votre satisfaction totale.
+            </p>
+            
+            <div class="etape-details">
+              <div class="detail-item">
+                <h4>Durée</h4>
+                <p>24-72h après dédouanement</p>
+              </div>
+              <div class="detail-item">
+                <h4>Livrables</h4>
+                <p>Accusé de réception, rapport de livraison</p>
+              </div>
+              <div class="detail-item">
+                <h4>Équipe</h4>
+                <p>Service client + expert export</p>
+              </div>
+            </div>
+            
+            <div class="etape-checkpoints">
+              <h4>Points Clés de Cette Étape :</h4>
+              <ul>
+                <li><i data-lucide="check" size="16"></i> Livraison à l'adresse exacte</li>
+                <li><i data-lucide="check" size="16"></i> Vérification de l'état des produits</li>
+                <li><i data-lucide="check" size="16"></i> Signature numérique de réception</li>
+                <li><i data-lucide="check" size="16"></i> Enquête de satisfaction</li>
+                <li><i data-lucide="check" size="16"></i> Planification du réapprovisionnement</li>
+              </ul>
+            </div>
+            
+            <div class="etape-support">
+              <h4>Support Post-Livraison :</h4>
+              <div class="support-grid">
+                <div class="support-card">
+                  <i data-lucide="phone-call" size="20"></i>
+                  <h5>Hotline dédiée</h5>
+                  <p>Support 24/7 pendant 30 jours</p>
+                </div>
+                <div class="support-card">
+                  <i data-lucide="file-text" size="20"></i>
+                  <h5>Rapport complet</h5>
+                  <p>Analyse détaillée de la livraison</p>
+                </div>
+                <div class="support-card">
+                  <i data-lucide="calendar" size="20"></i>
+                  <h5>Suivi continu</h5>
+                  <p>Points réguliers avec votre expert</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION TIMELINE INTERACTIVE
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="timeline-interactive">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Vue d'ensemble</span>
+        <h2 class="section-title">Timeline Interactive du Processus</h2>
+        <p class="section-subtitle">Suivez visuellement le cheminement de votre commande d'export</p>
+      </div>
+
+      <div class="timeline-container">
+        <div class="timeline">
+          <div class="timeline-progress-bar" id="timelineProgress"></div>
+          
+          <div class="timeline-items">
+            <div class="timeline-item active" data-step="1">
+              <div class="timeline-marker">
+                <span>1</span>
+              </div>
+              <div class="timeline-content">
+                <h4>Consultation</h4>
+                <p>Analyse des besoins et du marché</p>
+                <span class="timeline-duration">24-48h</span>
+              </div>
+            </div>
+            
+            <div class="timeline-item" data-step="2">
+              <div class="timeline-marker">
+                <span>2</span>
+              </div>
+              <div class="timeline-content">
+                <h4>Devis</h4>
+                <p>Proposition commerciale détaillée</p>
+                <span class="timeline-duration">48h</span>
+              </div>
+            </div>
+            
+            <div class="timeline-item" data-step="3">
+              <div class="timeline-marker">
+                <span>3</span>
+              </div>
+              <div class="timeline-content">
+                <h4>Préparation</h4>
+                <p>Conditionnement et documentation</p>
+                <span class="timeline-duration">3-5j</span>
+              </div>
+            </div>
+            
+            <div class="timeline-item" data-step="4">
+              <div class="timeline-marker">
+                <span>4</span>
+              </div>
+              <div class="timeline-content">
+                <h4>Transport</h4>
+                <p>Expédition et dédouanement</p>
+                <span class="timeline-duration">2-10j</span>
+              </div>
+            </div>
+            
+            <div class="timeline-item" data-step="5">
+              <div class="timeline-marker">
+                <span>5</span>
+              </div>
+              <div class="timeline-content">
+                <h4>Livraison</h4>
+                <p>Distribution et suivi post-vente</p>
+                <span class="timeline-duration">1-3j</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline-controls">
+          <button class="btn btn-secondary" id="prevStep">
+            <i data-lucide="chevron-left" size="18"></i>
+            Étape précédente
+          </button>
+          <button class="btn btn-secondary" id="nextStep">
+            Étape suivante
+            <i data-lucide="chevron-right" size="18"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION TEMOIGNAGES PROCESSUS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="temoignages-processus">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Témoignages</span>
+        <h2 class="section-title">Ce Que Disent Nos Clients du Processus</h2>
+      </div>
+
+      <div class="temoignages-grid">
+        <div class="temoignage-card">
+          <div class="temoignage-rating">
+            ★★★★★
+          </div>
+          <p class="temoignage-text">
+            "Le processus est d'une clarté remarquable. Chaque étape nous était expliquée 
+            et nous recevions des mises à jour régulières. Une transparence rare dans le secteur."
+          </p>
+          <div class="temoignage-author">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Jean Dubois">
+            <div>
+              <strong>Jean Dubois</strong>
+              <span>Importateur - Canada</span>
+            </div>
+          </div>
+          <div class="temoignage-etape">
+            <i data-lucide="package" size="16"></i>
+            <span>Processus complet suivi</span>
+          </div>
+        </div>
+
+        <div class="temoignage-card">
+          <div class="temoignage-rating">
+            ★★★★★
+          </div>
+          <p class="temoignage-text">
+            "La phase de dédouanement était notre crainte principale. L'équipe a tout géré 
+            parfaitement, avec une expertise impressionnante des réglementations locales."
+          </p>
+          <div class="temoignage-author">
+            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop" alt="Marie Chen">
+            <div>
+              <strong>Marie Chen</strong>
+              <span>Restauratrice - Singapour</span>
+            </div>
+          </div>
+          <div class="temoignage-etape">
+            <i data-lucide="file-check" size="16"></i>
+            <span>Dédouanement simplifié</span>
+          </div>
+        </div>
+
+        <div class="temoignage-card">
+          <div class="temoignage-rating">
+            ★★★★★
+          </div>
+          <p class="temoignage-text">
+            "Le suivi en temps réel nous a permis de rassurer nos propres clients. 
+            Une visibilité totale du départ à l'arrivée. Service exceptionnel !"
+          </p>
+          <div class="temoignage-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Thomas Schmidt">
+            <div>
+              <strong>Thomas Schmidt</strong>
+              <span>Distributeur - Allemagne</span>
+            </div>
+          </div>
+          <div class="temoignage-etape">
+            <i data-lucide="map-pin" size="16"></i>
+            <span>Suivi géolocalisé</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION FAQ PROCESSUS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="faq-processus">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Questions Fréquentes</span>
+        <h2 class="section-title">FAQ du Processus d'Export</h2>
+      </div>
+
+      <div class="faq-processus-grid">
+        <div class="faq-column">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Combien de temps dure le processus complet ?</span>
+              <i data-lucide="chevron-down" size="20"></i>
+            </button>
+            <div class="faq-answer">
+              <p>La durée totale varie selon la destination :</p>
+              <ul>
+                <li><strong>Union Européenne :</strong> 7-10 jours ouvrables</li>
+                <li><strong>Amérique du Nord :</strong> 14-18 jours</li>
+                <li><strong>Asie :</strong> 18-25 jours</li>
+                <li><strong>Moyen-Orient :</strong> 12-20 jours</li>
+              </ul>
+              <p>Ce délai inclut toutes les étapes de consultation à livraison.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Puis-je suivre l'avancement en temps réel ?</span>
+              <i data-lucide="chevron-down" size="20"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Oui, nous fournissons plusieurs moyens de suivi :</p>
+              <ul>
+                <li>Tableau de bord client avec statuts mis à jour</li>
+                <li>Notifications par email à chaque étape clé</li>
+                <li>Suivi GPS pour la phase de transport</li>
+                <li>Accès aux documents scannés (douane, livraison)</li>
+                <li>Contact direct avec votre expert dédié</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-column">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Que se passe-t-il en cas de problème à la douane ?</span>
+              <i data-lucide="chevron-down" size="20"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Notre équipe gère intégralement les problèmes douaniers :</p>
+              <ul>
+                <li><strong>Intervention immédiate :</strong> Nos agents sur place résolvent les problèmes dans les 24h</li>
+                <li><strong>Communication transparente :</strong> Vous êtes informé en temps réel de la situation</li>
+                <li><strong>Solutions alternatives :</strong> Nous proposons des options pour minimiser les retards</li>
+                <li><strong>Couverture financière :</strong> Nos assurances couvrent les frais imprévus</li>
+                <li><strong>Analyse post-événement :</strong> Nous améliorons nos processus pour éviter les récidives</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Puis-je modifier ma commande pendant le processus ?</span>
+              <i data-lucide="chevron-down" size="20"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Les modifications sont possibles selon l'étape :</p>
+              <ul>
+                <li><strong>Étape 1-2 :</strong> Modifications illimitées sans frais</li>
+                <li><strong>Étape 3 :</strong> Modifications possibles avec frais de réorganisation</li>
+                <li><strong>Étape 4 :</strong> Modifications limitées (destinataire uniquement)</li>
+                <li><strong>Étape 5 :</strong> Aucune modification possible</li>
+              </ul>
+              <p>Votre expert vous conseille sur les impacts des modifications.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SECTION CTA PROCESSUS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="cta-processus">
+    <div class="container">
+      <div class="cta-content">
+        <div class="cta-icon">
+          <i data-lucide="play-circle" size="48"></i>
+        </div>
+        <h2 class="cta-title">Prêt à Démarrer Votre Projet d'Export ?</h2>
+        <p class="cta-subtitle">
+          Notre processus éprouvé vous garantit tranquillité d'esprit et succès à l'international.
+          Discutez avec un expert pour une analyse personnalisée de votre projet.
+        </p>
+        <div class="cta-buttons">
+          <button class="btn btn-secondary" id="ctaExpertBtn">
+            <i data-lucide="calendar" size="18"></i>
+            Planifier un appel
+          </button>
+          <button class="btn btn-secondary" id="ctaExpertBtn">
+          <a href="/Pages/Entreprise/export.html#formulaireDevis" class="btn">
+            <i data-lucide="file-text" size="18"></i>
+            Demander un devis
+          </a>
+          </button>
+        </div>
+        <div class="cta-features">
+          <div class="feature">
+            <i data-lucide="shield-check" size="20"></i>
+            <span>Processus 100% sécurisé</span>
+          </div>
+          <div class="feature">
+            <i data-lucide="clock" size="20"></i>
+            <span>Premier contact sous 24h</span>
+          </div>
+          <div class="feature">
+            <i data-lucide="users" size="20"></i>
+            <span>Expert dédié à votre projet</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+       MODAL CONTACT EXPERT
+       ═══════════════════════════════════════════════════════════════════ -->
+  <div class="modal" id="contactExpertModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">
+        <i data-lucide="x" size="20"></i>
+      </button>
+      <div class="modal-header">
+        <i data-lucide="headphones" size="32"></i>
+        <h3>Discutez de Votre Processus d'Export</h3>
+        <p>Un expert vous rappelle pour analyser votre projet et optimiser votre processus</p>
+      </div>
+      <div class="modal-body">
+        <form class="verification-form" id="verification-form">
+          <div class="form-group">
+            <label for="verification-nom">Nom complet *</label>
+            <input type="text" id="verification-nom" name="verification-nom" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="verification-email">Email *</label>
+            <input type="email" id="verification-email" name="verification-email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="expert-telephone">Téléphone *</label>
+            <input type="tel" id="expert-telephone" name="expert-telephone" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="expert-pays">Pays d'intérêt</label>
+            <select id="expert-pays" name="expert-pays">
+              <option value="">Sélectionnez un pays</option>
+              <!-- Les options seront injectées via JavaScript -->
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="expert-etape">Étape qui vous intéresse</label>
+            <select id="expert-etape" name="expert-etape">
+              <option value="">Sélectionnez</option>
+              <option value="consultation">Consultation initiale</option>
+              <option value="devis">Devis et contrat</option>
+              <option value="preparation">Préparation</option>
+              <option value="transport">Transport</option>
+              <option value="livraison">Livraison</option>
+              <option value="complet">Processus complet</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="expert-message">Votre projet</label>
+            <textarea id="expert-message" name="expert-message" rows="3" placeholder="Décrivez votre projet d'export..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-secondary">
+            <i data-lucide="calendar" size="18"></i>
+            Planifier l'appel
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 14 L16 10 L20 14 L20 22 L12 22 Z" fill="currentColor" opacity="0.2"/>
+            </svg>
+            <span>L'Échoppe Gauloise</span>
+          </div>
+          <p>L'excellence française depuis 1995. Bières artisanales et vins d'exception exportés vers 15 pays.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="instagram" size="20"></i>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="facebook" size="20"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i data-lucide="linkedin" size="20"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Export</h4>
+            <ul>
+              <li><a href="/Pages/Entreprise/pays-desservis.html">Pays desservis</a></li>
+              <li><a href="/Pages/Entreprise/processus-export.html">Processus d'export</a></li>
+              <li><a href="/Pages/Entreprise/certifications.html">Certifications</a></li>
+              <li><a href="/Pages/Entreprise/export.html#formulaireDevis">Demande de devis</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Ressources</h4>
+            <ul>
+              <li><a href="#">Guide d'exportation</a></li>
+              <li><a href="#">Réglementations</a></li>
+              <li><a href="#">Calculateur de frais</a></li>
+              <li><a href="#">FAQ Export</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Contact Export</h4>
+            <ul>
+              <li><a href="#">Notre équipe</a></li>
+              <li><a href="#">Devenir partenaire</a></li>
+              <li><a href="#">Demande d'information</a></li>
+              <li><a href="#">Suivi de commande</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 L'Échoppe Gauloise. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="#">Mentions légales</a>
+          <a href="#">Confidentialité</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════════════════════════════ -->
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+  
+  <!-- App Scripts -->
+  <script src="/js/carousel.js"></script>
+  <script src="/js/navigation.js"></script>
+  <script src="/js/navigation.js"></script>
+  <script src="/js/newsletter.js"></script>  
+  <script src="/js/utils.js"></script>
+  <script src="/js/cart-module.js"></script>
+  <script src="/Pages/Entreprise/processus-export.js"></script>
+</body>
+</html>

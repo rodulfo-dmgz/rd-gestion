@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARH - Salariés — CRM</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/icon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Architecture modulaire -->
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href=".../css/components.css">
+  <link rel="stylesheet" href="../css/pages/clients.css">
+
+  <style>
+    /* Styles spécifiques ARH */
+    .stat-card {
+      background: linear-gradient(135deg, rgba(255, 87, 10, 0.1) 0%, rgba(255, 87, 10, 0.05) 100%);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 87, 10, 0.2);
+      transition: all 0.3s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 87, 10, 0.15);
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      font-family: var(--font-title);
+    }
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.5rem;
+    }
+    .filter-tags {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .filter-tag {
+      padding: 0.5rem 1rem;
+      background: rgba(18, 53, 91, 0.05);
+      border: 1px solid rgba(18, 53, 91, 0.1);
+      border-radius: 20px;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-tag:hover {
+      background: rgba(255, 87, 10, 0.1);
+      border-color: var(--accent);
+    }
+    .filter-tag.active {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+    .employee-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-actif { background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2); }
+    .badge-conge { background: rgba(245, 158, 11, 0.1); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.2); }
+    .badge-inactif { background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2); }
+  </style>
+</head>
+<body class="dashboard-page">
+
+<!-- Sidebar -->
+  <aside class="sidebar">
+      <div class="sidebar-brand">
+        <img src="../assets/images/login.svg" alt="CRM" class="sidebar-logo">
+        <h2 id="company-name"></h2>
+      </div>
+    <nav class="sidebar-nav" id="sidebar-nav">
+      <!-- Navigation générée dynamiquement par JS selon les permissions -->
+    </nav>
+  </aside>
+
+    <!-- Header -->
+  <div class="dashboard-main">
+    <header class="topbar">
+      <span class="brand"></span>
+      <div class="topbar-right">
+        <span id="user-info"><i data-lucide="user"></i> </span>
+        <button id="logout"><i data-lucide="log-out"></i> Quitter</button>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="dashboard">
+
+      <!-- Page header -->
+      <section class="page-header">
+        <h1 id="employes"><i data-lucide="idCardLanyard"></i> Gestion Comptable et Financière</h1>
+        <p>Système d'Information de Gestion Comptable et Financière</p>
+      </section>
+
+      <!-- KPI Cards -->
+      <section class="kpi-grid" style="margin-bottom: 2rem;">
+        <div class="stat-card">
+          <div class="stat-value" id="stat-total">—</div>
+          <div class="stat-label">Total Salariés</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-actifs">—</div>
+          <div class="stat-label">Salariés Actifs</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-services">—</div>
+          <div class="stat-label">Services</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-recrutements">—</div>
+          <div class="stat-label">Recrutements (mois)</div>
+        </div>
+      </section>
+
+      <!-- Filtres -->
+      <section class="filter-tags">
+        <button class="filter-tag active" data-filter="all"><i data-lucide="chart-column-big"></i> Tous</button>
+        <button class="filter-tag" data-filter="Direction"><i data-lucide="Goal"></i> Direction</button>
+        <button class="filter-tag" data-filter="RH"><i data-lucide="users"></i> RH</button> 
+        <button class="filter-tag" data-filter="Comptabilité"><i data-lucide="euro"></i> Comptabilité</button>
+        <button class="filter-tag" data-filter="Commercial"><i data-lucide="chart-no-axes-combined"></i> Commercial</button>
+        <button class="filter-tag" data-filter="Administration"><i data-lucide="folder-open"></i> Administration</button>
+      </section>
+
+      <!-- Actions -->
+      <section class="actions-bar">
+        <input type="text" id="search-employee" placeholder="🔍 Rechercher un employé...">
+        <button id="add-employee-btn">+ Ajouter un employé</button>
+      </section>
+
+      <!-- Tableau Salariés -->
+      <section class="table-section">
+        <table id="employees-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Employé</th>
+              <th>Poste</th>
+              <th>Service</th>
+              <th>Email</th>
+              <th>Date d'entrée</th>
+              <th>Statut</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rempli par JS -->
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Modal Ajouter -->
+  <div class="modal" id="employee-modal">
+    <div class="modal-content">
+      <span class="modal-close" id="modal-close">&times;</span>
+      <h3 id="modal-title">Ajouter un employé</h3>
+      <form id="employee-form">
+        <label for="employee-lastname">Nom</label>
+        <input type="text" id="employee-lastname" required>
+
+        <label for="employee-firstname">Prénom</label>
+        <input type="text" id="employee-firstname" required>
+
+        <label for="employee-position">Poste</label>
+        <input type="text" id="employee-position" required>
+
+        <label for="employee-service">Service</label>
+        <select id="employee-service" required>
+          <option value="">Sélectionner...</option>
+          <option value="Direction">Direction</option>
+          <option value="RH">RH</option>
+          <option value="Comptabilité">Comptabilité</option>
+          <option value="Commercial">Commercial</option>
+          <option value="Administration">Administration</option>
+        </select>
+
+        <label for="employee-email">Email</label>
+        <input type="email" id="employee-email" required>
+
+        <label for="employee-phone">Téléphone</label>
+        <input type="tel" id="employee-phone">
+
+        <label for="employee-date">Date d'entrée</label>
+        <input type="date" id="employee-date" required>
+
+        <button type="submit">Enregistrer</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Voir Détails -->
+  <div class="modal" id="view-employee-modal" style="display: none;">
+    <div class="modal-content" style="max-width: 800px;">
+      <span class="modal-close" id="modal-view-close">&times;</span>
+      <h3 id="view-modal-title" style="margin-bottom: 0.5rem;">📋 Fiche Employé</h3>
+      <p id="view-modal-subtitle" style="color: var(--text-muted); font-size: 14px; margin-bottom: 1.5rem;"></p>
+      <div id="view-modal-body" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+        <!-- Contenu généré dynamiquement -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/Gestion.js"></script>
+
+</body>
+</html>

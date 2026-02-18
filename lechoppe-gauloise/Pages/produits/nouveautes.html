@@ -1,0 +1,240 @@
+[file name]: nouveautes.html
+[file content begin]
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Nouveautés | L'Échoppe Gauloise</title>
+  <meta name="description" content="Découvrez les dernières bières artisanales et vins d'exception ajoutés à notre catalogue. Sélection exclusive de nouveautés.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+  
+  <!-- Polices modernes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages/nouveautes.css">
+
+  <!-- FontAwesome (pour certaines icônes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Translate -->
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+<body>
+  <!-- Google Translate Widget -->
+  <div id="google_translate_element" style="position:absolute;top:10px;right:10px;z-index:1000;"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HEADER MINIMALISTE
+       ═══════════════════════════════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <!-- Logo minimaliste -->
+        <a href="../index.html" class="logo">
+          <img src="/assets/logo.svg" alt="Logo L'Échoppe Gauloise">
+          <span>L'Échoppe</span>
+        </a>
+
+        <!-- Navigation -->
+        <ul class="nav-links">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="/Pages/bieres/bieres.html">Bières</a></li>
+          <li><a href="/Pages/vins/vins.html">Vins</a></li>
+          <li><a href="/Pages/Entreprise/export.html">Export</a></li>
+          <li><a href="/Pages/Entreprise/carrières.html">Carrières</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Rechercher">
+            <i data-lucide="search" stroke-width="1.5"></i>
+          </button>
+          <a href="/Pages/commande/panier.html" class="icon-btn" aria-label="Panier">
+            <i data-lucide="shopping-bag" stroke-width="1.5"></i>
+            <span class="badge cart-badge" id="cartBadge">0</span>
+          </a>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <i data-lucide="menu" stroke-width="1.5"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HERO NOUVEAUTÉS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <section class="nouveautes-hero" id="main-content">
+    <div class="container">
+      <div class="nouveautes-hero-content">
+        <div class="badge-pill">
+          <i data-lucide="sparkles" size="14"></i>
+          <span>Nouveautés</span>
+        </div>
+        <h1 class="nouveautes-hero-title">
+          Les Dernières Arrivées
+        </h1>
+        <p class="nouveautes-hero-subtitle">
+          Découvrez nos toutes nouvelles cuvées, éditions limitées et sélections exclusives. 
+          Des produits fraîchement ajoutés à notre catalogue pour éveiller vos papilles.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FILTRES & COMPTOIR
+       ═══════════════════════════════════════════════════════════════════ -->
+  <div class="nouveautes-toolbar">
+    <div class="container">
+      <div class="toolbar-wrapper">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">Tous les produits</button>
+          <button class="filter-btn" data-filter="beer">Bières</button>
+          <button class="filter-btn" data-filter="wine">Vins</button>
+        </div>
+        <div class="products-count">
+          <span id="productsCount">0</span> nouveautés
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       GRILLE PRODUITS NOUVEAUTÉS
+       ═══════════════════════════════════════════════════════════════════ -->
+  <main class="nouveautes-main">
+    <div class="container">
+      
+      <!-- Grille de produits -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Les cartes seront injectées par JavaScript -->
+      </div>
+
+      <!-- Message si aucun produit -->
+      <div class="no-products-message" id="noProductsMessage" style="display: none;">
+        <i data-lucide="package-x" size="48"></i>
+        <h3>Aucune nouveauté pour le moment</h3>
+        <p>Revenez bientôt pour découvrir nos prochaines arrivées !</p>
+      </div>
+
+      <!-- Bouton voir plus (simulation) -->
+      <div class="view-more-container">
+        <button class="btn btn-outline" id="loadMoreBtn">
+          Voir plus de nouveautés
+          <i data-lucide="chevron-down" size="18"></i>
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FOOTER MINIMALISTE
+       ═══════════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="/assets/logo.svg" alt="Logo L'Échoppe Gauloise" class="logo-img">
+            <span>L'Échoppe Gauloise</span>
+          </div>
+          <p>L'excellence française depuis 1995. Bières artisanales et vins d'exception exportés vers 15 pays.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="instagram" size="20"></i>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="facebook" size="20"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i data-lucide="linkedin" size="20"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Produits</h4>
+            <ul>
+              <li><a href="/Pages/bieres/bieres.html">Bières</a></li>
+              <li><a href="/Pages/vins/vins.html">Vins</a></li>
+              <li><a href="#" class="active">Nouveautés</a></li>
+              <li><a href="/index.html#products">Promotions</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Entreprise</h4>
+            <ul>
+              <li><a href="/Pages/Entreprise/notre-histoire.html">Notre Histoire</a></li>
+              <li><a href="/Pages/Entreprise/export.html">Export</a></li>
+              <li><a href="/Pages/Entreprise/carrières.html">Carrières</a></li>
+              <li><a href="/Pages/support/contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="/Pages/support/FAQ.html">FAQ</a></li>
+              <li><a href="/Pages/support/livraisons.html">Livraison</a></li>
+              <li><a href="/Pages/support/retours.html">Retours</a></li>
+              <li><a href="/Pages/support/cgv.html">CGV</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Légal</h4>
+            <ul>
+              <li><a href="/Pages/support/mentions-legales.html">Mentions légales</a></li>
+              <li><a href="/Pages/support/confidentialite.html">Confidentialité</a></li>
+              <li><a href="/Pages/support/cookies.html">Cookies</a></li>
+              <li><a href="/Pages/support/cgv.html">CGV</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 L'Échoppe Gauloise. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="/Pages/support/mentions-legales.html">Mentions légales</a>
+          <a href="/Pages/support/confidentialite.html">Confidentialité</a>
+          <a href="/Pages/support/cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════════════════════════════ -->
+  
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../../js/supabase-config.js"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <!-- App Scripts -->
+  <script src="../../js/utils.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script src="../../Pages/produits/nouveautes.js"></script>
+
+  </script>
+</body>
+</html>

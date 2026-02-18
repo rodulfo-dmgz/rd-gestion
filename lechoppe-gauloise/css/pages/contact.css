@@ -1,0 +1,562 @@
+/**
+ * PAGE CONTACT - L'Échoppe Gauloise
+ * Styles spécifiques pour la page Contact
+ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HERO CONTACT
+   ═══════════════════════════════════════════════════════════════════════════ */
+.pedagogical-note {
+    text-align: justify;
+    color: var(--text-light); /* En option, pour adoucir le texte */
+    font-size: 0.85rem;      /* En option, pour une taille plus discrète */
+    line-height: 1.6;        /* Améliore la lisibilité du texte justifié */
+}
+
+
+.contact-hero {
+  padding: var(--space-20) 0 var(--space-12);
+  margin-top: var(--header-height);
+  background: linear-gradient(135deg, #1e3c4a 0%, #2a5a6a 100%);
+  color: white;
+  text-align: center;
+}
+
+.contact-hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.contact-hero-title {
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  line-height: 1.1;
+  margin: var(--space-6) 0 var(--space-4);
+  font-weight: 700;
+  color: #d6f5ff ;
+}
+
+.contact-hero-subtitle {
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   NOTICE PÉDAGOGIQUE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.contact-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background: linear-gradient(135deg, rgba(178, 119, 16, 0.08) 0%, rgba(212, 160, 23, 0.08) 100%);
+  border-left: 6px solid var(--accent);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-12);
+}
+
+.notice-icon {
+  flex-shrink: 0;
+  color: #1e3c4a;
+}
+
+.notice-text h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+  color: var(--text-primary);
+}
+
+.notice-text p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .contact-notice {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CONTACT GRID
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.contact-main {
+  padding: var(--space-16) 0;
+  background: white;
+}
+
+.contact-main .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  margin-bottom: var(--space-12);
+}
+
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FORMULAIRE DE CONTACT
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.form-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+  height: 100%;
+}
+
+.form-title {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+  color: var(--text-primary);
+}
+
+.form-subtitle {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 576px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-group label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #1e3c4a;
+  box-shadow: 0 0 0 3px rgba(30, 60, 74, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+.consent-group {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.consent-group input {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+}
+
+.consent-group label {
+  font-weight: normal;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.consent-group a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.btn-submit {
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-6);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-size: var(--text-base);
+  background: #1e3c4a;
+  color: white;
+  border: none;
+}
+
+.btn-submit:hover {
+  background: #2a5a6a;
+  transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COLONNE INFORMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.contact-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.info-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.info-card h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+  color: var(--text-primary);
+}
+
+.info-card h3 i {
+  color: #1e3c4a;
+}
+
+.info-card address {
+  font-style: normal;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-4);
+}
+
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+  color: var(--text-secondary);
+}
+
+.contact-detail i {
+  color: #1e3c4a;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contact-detail a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-detail a:hover {
+  color: #1e3c4a;
+  text-decoration: underline;
+}
+
+/* Horaires */
+.schedule-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.schedule-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-secondary);
+}
+
+.schedule-list li:last-child {
+  border-bottom: none;
+}
+
+.schedule-list li span {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.schedule-note {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  margin-top: var(--space-3);
+  font-style: italic;
+}
+
+/* Export card */
+.export-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, white 100%);
+  border-left: 4px solid var(--accent);
+}
+
+.export-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.export-header i {
+  color: var(--accent);
+}
+
+.export-card p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.btn-block {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Carte */
+.map-card .map-placeholder {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-lg);
+  height: 200px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-2);
+  background-image: url('https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=600&h=400&fit=crop');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.map-overlay {
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  backdrop-filter: blur(4px);
+  width: 80%;
+  max-width: 280px;
+}
+
+.map-overlay i {
+  color: #1e3c4a;
+  margin-bottom: var(--space-2);
+}
+
+.map-overlay p {
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+  color: var(--text-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION FAQ
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.contact-faq {
+  margin: var(--space-12) 0;
+  padding: var(--space-8);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-xl);
+  text-align: center;
+}
+
+.faq-prompt {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq-prompt i {
+  color: #1e3c4a;
+  margin-bottom: var(--space-3);
+}
+
+.faq-prompt h3 {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+  color: var(--text-primary);
+}
+
+.faq-prompt p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SIGNATURE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Signature finale */
+/* Conteneur du nom pour l'ancrage */
+.name-wrapper {
+    position: relative;
+    display: inline-block;
+    /* On ajoute une marge à droite pour que la signature 
+       ne chevauche pas l'élément suivant dans le flex */
+    margin-right: 40px; 
+}
+
+/* La signature manuscrite */
+.handwritten-signature {
+    position: absolute;
+    /* Positionnement : on la place à droite du nom */
+    left: 100%; 
+    bottom: -22px;
+    
+    /* Taille de la signature */
+    width: 90px; 
+    height: auto;
+    
+    /* L'effet "naturel" */
+    rotate: -5deg; /* Légère inclinaison pour le réalisme */
+    pointer-events: none; /* Pour que l'image ne gêne pas le clic sur le texte */
+    opacity: 0.85;
+    
+    /* Si ta signature est sur fond blanc, ce mode de fusion la rend transparente */
+    mix-blend-mode: multiply; 
+}
+
+/* Ajustement du conteneur global pour laisser de la place à la signature qui dépasse */
+.legal-signature {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    
+    width: 100%;             
+    max-width: 1136px;       
+    margin: var(--space-12) auto 0 auto; /* Fusion des marges */
+    
+    gap: var(--space-6);
+    padding: var(--space-6) 0;
+    border-top: 1px solid var(--border);
+    color: var(--text-light);
+    
+    /* Empêche la signature de créer un scroll horizontal si elle dépasse trop */
+    overflow: hidden; 
+}
+
+/* Garde ton reste de CSS inchangé ici... */
+
+.signature-logo {
+    width: 60px; /* Taille ajustable selon tes préférences */
+    height: auto;
+    opacity: 0.8; /* Un peu plus discret pour ne pas voler la vedette au contenu */
+    filter: grayscale(100%); /* Optionnel : pour un look plus "archive/officiel" */
+}
+
+.signature-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.signature-mention {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.signature-credit {
+    font-style: italic;
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+/* On retire le grayscale au survol pour redonner vie au logo */
+.legal-signature:hover .signature-logo {
+    filter: grayscale(0%);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ACCESSIBILITÉ
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:focus-visible {
+  outline: 2px solid #1e3c4a;
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

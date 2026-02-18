@@ -1,0 +1,862 @@
+/**
+ * PAGE BIÈRES - Styles Unifiés
+ * Aligné sur la structure de vins.css
+ * L'Échoppe Gauloise
+ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   1. HERO SECTION - BIÈRES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.bieres-hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: var(--space-24) 0 var(--space-16);
+  margin-top: var(--header-height);
+  background: linear-gradient(135deg, #FEF3C7 0%, #FEFCE8 100%);
+}
+
+.bieres-hero .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .bieres-hero .container {
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-16);
+  }
+}
+
+.bieres-hero-content {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.bieres-hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin: var(--space-6) 0 var(--space-4);
+  font-weight: 700;
+}
+
+.bieres-hero-subtitle {
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  max-width: 560px;
+  margin-bottom: var(--space-8);
+  color: var(--gray-600);
+}
+
+/* Illustration Hero */
+.bieres-hero-visual {
+  position: relative;
+  animation: slideUp 0.8s ease-out 0.2s both;
+}
+
+.bieres-hero-image-wrapper {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.bieres-hero-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Floating Card dans le Hero */
+.floating-card {
+  position: absolute;
+  bottom: .5rem;
+  left: .5rem;
+  background: white;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   2. FILTRES (Rapides & Avancés)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Filtres Rapides (Pillules) */
+.quick-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: white;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.filter-btn i {
+  color: var(--accent);
+}
+
+.filter-btn:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.filter-btn.active i {
+  color: white;
+}
+
+/* Filtres Avancés (Selects) */
+.advanced-filters {
+  display: flex;
+  gap: var(--space-6);
+  align-items: flex-end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.filter-group label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.filter-group i {
+  color: var(--accent);
+}
+
+.filter-select {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  background: white;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  min-width: 180px;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   3. SECTION SAVOIR-FAIRE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.savoir-faire {
+  padding: var(--space-20) 0;
+  background: var(--bg-secondary);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-8);
+}
+
+.process-card {
+  padding: var(--space-8);
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.process-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.process-number {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--bg-tertiary);
+  line-height: 1;
+}
+
+.process-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+  border-radius: var(--radius-lg);
+  color: var(--accent-dark);
+  margin-bottom: var(--space-4);
+}
+
+.process-card h3 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-3);
+}
+
+.process-card p {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   4. GRILLE DE BIÈRES & CARTE PRODUIT
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.bieres-grid-section {
+  padding: var(--space-20) 0;
+  background: white;
+}
+
+.bieres-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-8);
+  margin: var(--space-12) 0;
+}
+
+/* === Carte Bière (Générée par JS) === */
+.beer-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.beer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.beer-card:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Image container */
+.beer-image-container {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  background-color: #f8f8f8;
+}
+
+.beer-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+  content-visibility: auto;
+}
+
+.beer-card:hover .beer-image-container img {
+  transform: scale(1.05);
+}
+
+/* Infos de la bière */
+.beer-info {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.beer-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  font-weight: 600;
+}
+
+.beer-name {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+  color: var(--text-primary);
+  min-height: 2.5em;
+  max-height: 2.5em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.beer-description {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.beer-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.beer-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  text-align: center;
+}
+
+.beer-detail i {
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.beer-detail-label {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.beer-detail-value {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.beer-footer {
+  margin-top: auto;
+  min-height: 56px;
+}
+
+.beer-price-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.beer-price {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Rating stars */
+.beer-rating {
+  color: #fbbf24;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: var(--space-2);
+}
+
+.rating-value {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  margin-left: 4px;
+}
+
+/* === Badges & Styles === */
+
+/* Badge unifié */
+.beer-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  color: white;
+}
+
+/* Couleurs des badges (correspondant au JS BADGE_CONFIG) */
+.badge-primary { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
+.badge-success { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+.badge-warning { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+.badge-danger { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
+.badge-info { background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); }
+
+/* Style badge (remplace beer-badge de l'ancien CSS) */
+.beer-style-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 2;
+  backdrop-filter: blur(8px);
+}
+
+/* Bouton wishlist */
+.wishlist-btn {
+  position: absolute;
+  top: 12px;
+  right: 50px;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.2s ease;
+}
+
+.wishlist-btn:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+.wishlist-btn i {
+  color: var(--text-secondary);
+}
+
+.wishlist-btn i[fill="currentColor"] {
+  color: var(--primary);
+}
+
+/* === Bouton Ajouter au panier === */
+.btn-add-to-cart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--text-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-add-to-cart:hover {
+  background-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.btn-add-to-cart:active {
+  transform: scale(0.95);
+}
+
+/* État "Ajouté" (Activé par JS) */
+.btn-add-to-cart.added {
+  background-color: #10B981 !important;
+  pointer-events: none;
+}
+
+/* Rotation de l'icône */
+.btn-add-to-cart i {
+  transition: transform 0.3s ease;
+}
+.btn-add-to-cart.added i {
+  transform: rotate(360deg);
+}
+
+/* === Pagination === */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+.pagination-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background: var(--bg-primary);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  border-color: var(--text-primary);
+  background: var(--bg-tertiary);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-numbers {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.pagination-current {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Messages "Pas de résultats" ou "Erreur" */
+.no-results, .error-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-16);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+}
+
+.no-results i, .error-message i {
+  margin-bottom: var(--space-4);
+  color: var(--accent);
+}
+
+.no-results button {
+  margin-top: var(--space-4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   5. SECTION DÉGUSTATION
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.degustation {
+  padding: var(--space-20) 0;
+  background: var(--bg-tertiary);
+}
+
+.degustation-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .degustation-content {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+  }
+}
+
+.degustation-text h2 {
+  font-size: var(--text-4xl);
+  margin-bottom: var(--space-4);
+}
+
+.degustation-text > p {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-8);
+  color: var(--text-secondary);
+}
+
+.degustation-tips {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin: var(--space-8) 0 var(--space-12);
+}
+
+.tip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: white;
+  border-radius: var(--radius-md);
+}
+
+.tip i {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+  border-radius: var(--radius-md);
+  color: var(--accent-dark);
+}
+
+.tip div {
+  display: flex;
+  flex-direction:column;
+  gap: var(--space-1);
+}
+
+.tip strong {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.tip span {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.degustation-image {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.degustation-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.degustation-badge {
+  position: absolute;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: white;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.degustation-badge i {
+  color: var(--accent);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   6. ANIMATIONS & UI ELEMENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutRight {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes beerPour {
+  0% { transform: translateY(-100%) rotate(0deg); opacity: 0; }
+  50% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(0) rotate(360deg); }
+}
+
+/* Notification Toast */
+.toast-notification {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  background: var(--primary, #10B981);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  animation: slideInRight 0.3s ease-out;
+  max-width: 300px;
+}
+
+/* Badge Panier Pulse */
+.cart-badge.pulse {
+  animation: pulse 0.5s ease-in-out 2;
+}
+
+/* Animation spéciale bière */
+.beer-pour-animation {
+  animation: beerPour 1.5s ease-out;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   7. RESPONSIVE / MEDIA QUERIES (Global)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .advanced-filters {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hero */
+  .bieres-hero {
+    min-height: auto;
+    padding: var(--space-16) 0;
+  }
+  
+  /* Filtres */
+  .quick-filters {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+    flex-wrap: nowrap;
+  }
+  
+  .filter-btn {
+    flex-shrink: 0;
+  }
+  
+  .advanced-filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-4);
+  }
+
+  .filter-select {
+    width: 100%;
+  }
+
+  /* Grilles */
+  .bieres-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .degustation-content {
+    grid-template-columns: 1fr;
+  }
+
+  /* Cartes */
+  .beer-meta {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  
+  .beer-detail {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  
+  .beer-detail i {
+    margin-bottom: 0;
+    margin-right: 8px;
+  }
+
+  /* Notifications */
+  .toast-notification {
+    top: auto;
+    bottom: 20px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+    justify-content: center;
+  }
+}
+
+@media print {
+  .bieres-hero,
+  .quick-filters,
+  .advanced-filters,
+  .pagination,
+  .btn-add-to-cart,
+  .wishlist-btn {
+    display: none !important;
+  }
+  
+  .bieres-grid {
+    display: block;
+  }
+  
+  .beer-card {
+    break-inside: avoid;
+    margin-bottom: 1cm;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+}

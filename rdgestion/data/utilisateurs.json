@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "nom": "DOMINGUEZ",
+    "prenom": "Rodulfo",
+    "login": "rodulfodominguez",
+    "password": "1234",
+    "role": "Directeur Général",
+    "service": "Direction",
+    "acces_total": true
+  },
+  {
+    "id": 2,
+    "nom": "Martin",
+    "prenom": "Claire",
+    "login": "martinclaire",
+    "password": "1234",
+    "role": "Gestionnaire de Paie",
+    "service": "GP"
+  },
+  {
+    "id": 3,
+    "nom": "Bernard",
+    "prenom": "Sophie",
+    "login": "bernardsophie",
+    "password": "1234",
+    "role": "Assistant Ressources Humaines",
+    "service": "ARH"
+  },
+  {
+    "id": 4,
+    "nom": "Dubois",
+    "prenom": "Thomas",
+    "login": "duboisthomas",
+    "password": "1234",
+    "role": "Gestionnaire Comptable et Fiscal",
+    "service": "GCF"
+  },
+  {
+    "id": 5,
+    "nom": "Leroy",
+    "prenom": "Camille",
+    "login": "leroycamille",
+    "password": "1234",
+    "role": "Assistant Commercial",
+    "service": "AC"
+  },
+  {
+    "id": 6,
+    "nom": "Moreau",
+    "prenom": "Lucas",
+    "login": "moreaulucas",
+    "password": "1234",
+    "role": "Comptable Assistant",
+    "service": "CA"
+  },
+  {
+    "id": 7,
+    "nom": "Petit",
+    "prenom": "Marie",
+    "login": "petitmarie",
+    "password": "1234",
+    "role": "Secrétaire Assistant",
+    "service": "SA"
+  },
+  {
+    "id": 8,
+    "nom": "Roux",
+    "prenom": "Alexandre",
+    "login": "rouxalexandre",
+    "password": "1234",
+    "role": "Secrétaire Comptable",
+    "service": "SC"
+  },
+  {
+    "id": 9,
+    "nom": "Dupont",
+    "prenom": "Julie",
+    "login": "dupontjulie",
+    "password": "1234",
+    "role": "Assistant de Direction",
+    "service": "AD"
+  },
+  {
+    "id": 10,
+    "nom": "Garcia",
+    "prenom": "Emma",
+    "login": "garciaemma",
+    "password": "1234",
+    "role": "Gestionnaire de Paie",
+    "service": "GP"
+  },
+  {
+    "id": 11,
+    "nom": "Lambert",
+    "prenom": "Hugo",
+    "login": "lamberthugo",
+    "password": "1234",
+    "role": "Assistant Ressources Humaines",
+    "service": "ARH"
+  }
+]

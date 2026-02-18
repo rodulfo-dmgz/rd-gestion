@@ -1,0 +1,51 @@
+:root {
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Roboto Mono', monospace;
+    --gold: #d4af37;
+    --dark: #111;
+}
+
+body {
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container { width: 900px; height: 600px; perspective: 1500px; }
+
+.page { background-color: #fff; padding: 30px; }
+
+.page-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    padding: 20px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Effet de pliure interne */
+.page:nth-child(even) .page-content::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 10px; height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.05), transparent);
+}
+
+.page-cover { background: var(--dark); color: white; border: none; }
+.page-cover h1 { font-family: var(--font-heading); font-size: 3rem; text-align: center; }
+
+h2.page-header { font-family: var(--font-heading); text-transform: uppercase; font-size: 1.4rem; }
+
+.item { display: flex; align-items: flex-end; margin: 15px 0; }
+.item-info { display: flex; flex-direction: column; }
+.name { font-weight: bold; font-family: var(--font-heading); }
+.desc { font-size: 0.7rem; opacity: 0.6; }
+.dots { flex-grow: 1; border-bottom: 1px dotted #ccc; margin: 0 10px; height: 1px; }
+.price { font-family: var(--font-body); color: var(--gold); font-weight: bold; }
+
+.img-page { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); }
+
+.badge { background: var(--gold); color: black; padding: 5px; width: fit-content; font-size: 0.7rem; font-weight: bold; margin-bottom: 20px; }

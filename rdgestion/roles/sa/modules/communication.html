@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Communication — Secrétariat</title>
+  <link rel="icon" type="image/svg+xml" href="../../../assets/icons/icon.svg?v=2">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Architecture modulaire -->
+  <link rel="stylesheet" href="../../../css/theme.css">
+  <link rel="stylesheet" href="../../../css/base.css">
+  <link rel="stylesheet" href="../../../css/layout.css">
+  <link rel="stylesheet" href="../../.../css/components.css">
+  <link rel="stylesheet" href="../../../css/pages/clients.css">
+
+  <style>
+    /* Container principal */
+    .communication-container {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    /* Sidebar WebPhone */
+    .webphone-sidebar {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      height: fit-content;
+      position: sticky;
+      top: 1rem;
+    }
+    
+    .webphone-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--border-light);
+    }
+    
+    .webphone-header h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+    
+    .webphone-header p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    
+    /* Écran du téléphone */
+    .phone-screen {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.2);
+    }
+    
+    .phone-number-display {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #10b981;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+      min-height: 2rem;
+    }
+    
+    .phone-status {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .phone-timer {
+      font-size: 1.25rem;
+      color: #3b82f6;
+      font-family: 'Courier New', monospace;
+      margin-top: 0.5rem;
+    }
+    
+    /* Animation appel en cours */
+    @keyframes pulse-ring {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    
+    .calling-indicator {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #10b981;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto;
+      animation: pulse-ring 1.5s ease-in-out infinite;
+    }
+    
+    .calling-indicator i {
+      color: white;
+      font-size: 1.5rem;
+    }
+    
+    /* Clavier numérique */
+    .phone-keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .key {
+      aspect-ratio: 1;
+      border: 1px solid var(--border-light);
+      background: white;
+      border-radius: 12px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .key:hover {
+      background: rgba(139, 92, 246, 0.1);
+      border-color: #8b5cf6;
+      transform: translateY(-2px);
+    }
+    
+    .key:active {
+      transform: translateY(0);
+    }
+    
+    .key small {
+      font-size: 0.625rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.125rem;
+      letter-spacing: 0.05em;
+    }
+    
+    /* Boutons d'action */
+    .phone-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    
+    .btn-call {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    
+    .btn-call:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+    }
+    
+    .btn-call:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    .btn-hangup {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    
+    .btn-hangup:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(239, 68, 68, 0.3);
+    }
+    
+    .btn-hangup:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    .btn-clear {
+      grid-column: 1 / -1;
+      background: var(--border-light);
+      color: var(--text-muted);
+      border: none;
+      padding: 0.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 0.5rem;
+    }
+    
+    .btn-clear:hover {
+      background: #e2e8f0;
+    }
+    
+    /* Liste des communications */
+    .communications-list {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      padding: 0.5rem;
+    }
+    
+    .comm-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+    
+    .comm-item:hover {
+      background: rgba(139, 92, 246, 0.02);
+      border-color: rgba(139, 92, 246, 0.2);
+    }
+    
+    .comm-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .comm-icon.appel_entrant {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.05) 100%);
+      color: #10b981;
+    }
+    
+    .comm-icon.appel_sortant {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 100%);
+      color: #3b82f6;
+    }
+    
+    .comm-icon.email {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.05) 100%);
+      color: #f59e0b;
+    }
+    
+    .comm-content {
+      flex: 1;
+      min-width: 0;
+    }
+    
+    .comm-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+    
+    .comm-name {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    
+    .comm-badge {
+      padding: 0.125rem 0.5rem;
+      border-radius: 6px;
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    .badge-nouveau { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+    .badge-traite { background: rgba(148, 163, 184, 0.1); color: #64748b; }
+    .badge-rappeler { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+    
+    .comm-subject {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+    
+    .comm-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    
+    /* Modal WebPhone Détails */
+    .webphone-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      max-width: 500px;
+      width: 90%;
+      z-index: 1001;
+      display: none;
+    }
+    
+    .webphone-modal.active {
+      display: block;
+    }
+    
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      display: none;
+    }
+    
+    .modal-overlay.active {
+      display: block;
+    }
+    
+    /* Lecteur audio */
+    .audio-player {
+      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin: 1rem 0;
+    }
+    
+    .audio-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .audio-play-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #8b5cf6;
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    
+    .audio-play-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+    }
+    
+    .audio-progress {
+      flex: 1;
+    }
+    
+    .audio-time {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      font-family: 'Courier New', monospace;
+    }
+    
+    /* Animation pulse pour l'enregistrement */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    
+    /* Instructions pédagogiques */
+    .pedagogical-instructions {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid #8b5cf6;
+      margin-bottom: 1rem;
+    }
+    
+    .pedagogical-instructions h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #8b5cf6;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+    
+    .pedagogical-instructions p {
+      font-size: 0.875rem;
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body class="dashboard-page">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="../../../assets/images/logo.svg" alt="CRM" class="sidebar-logo">
+      <h2 id="company-name">CRM</h2>
+    </div>
+    <nav class="sidebar-nav" id="sidebar-nav"></nav>
+  </aside>
+
+  <!-- Main Dashboard -->
+  <div class="dashboard-main">
+    
+    <!-- Header -->
+    <header class="topbar">
+      <span class="brand"></span>
+      <div class="topbar-right">
+        <span id="user-info"><i data-lucide="user"></i> </span>
+        <button id="logout"><i data-lucide="log-out"></i> Quitter</button>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="dashboard">
+
+      <!-- Page header -->
+      <section class="page-header">
+        <div>
+          <h1><i data-lucide="phone"></i> Gestion des Communications</h1>
+          <p>Appels, emails et messages</p>
+        </div>
+      </section>
+
+      <!-- Actions bar -->
+      <section class="actions-bar">
+        <input type="text" id="search-comm" placeholder="🔍 Rechercher une communication...">
+        <button id="add-comm-btn"><i data-lucide="plus"></i> Nouvelle communication</button>
+      </section>
+
+      <!-- Communication Container -->
+      <div class="communication-container">
+        
+        <!-- WebPhone Sidebar -->
+        <aside class="webphone-sidebar">
+          <div class="webphone-header">
+            <h3>📞 WebPhone</h3>
+            <p>Simulateur d'appels pédagogiques</p>
+          </div>
+          
+          <!-- Écran téléphone -->
+          <div class="phone-screen" id="phone-screen">
+            <div class="phone-number-display" id="phone-number">—</div>
+            <div class="phone-status" id="phone-status">En attente</div>
+            <div class="phone-timer" id="phone-timer" style="display: none;">00:00</div>
+          </div>
+          
+          <!-- Clavier numérique -->
+          <div class="phone-keypad">
+            <button class="key" data-digit="1"><span>1</span><small></small></button>
+            <button class="key" data-digit="2"><span>2</span><small>ABC</small></button>
+            <button class="key" data-digit="3"><span>3</span><small>DEF</small></button>
+            <button class="key" data-digit="4"><span>4</span><small>GHI</small></button>
+            <button class="key" data-digit="5"><span>5</span><small>JKL</small></button>
+            <button class="key" data-digit="6"><span>6</span><small>MNO</small></button>
+            <button class="key" data-digit="7"><span>7</span><small>PQRS</small></button>
+            <button class="key" data-digit="8"><span>8</span><small>TUV</small></button>
+            <button class="key" data-digit="9"><span>9</span><small>WXYZ</small></button>
+            <button class="key" data-digit="*"><span>*</span><small></small></button>
+            <button class="key" data-digit="0"><span>0</span><small>+</small></button>
+            <button class="key" data-digit="#"><span>#</span><small></small></button>
+          </div>
+
+          
+          
+          <!-- Actions -->
+          <div class="phone-actions">
+            <button class="btn-call" id="btn-call">
+              <i data-lucide="phone-call"></i> Appeler
+            </button>
+            <button class="btn-hangup" id="btn-hangup" disabled>
+              <i data-lucide="phone-off"></i> Raccrocher
+            </button>
+            <button class="btn-clear" id="btn-clear">
+              <i data-lucide="delete"></i> Effacer
+            </button>
+          </div>
+        </aside>
+
+        <!-- Liste des communications -->
+        <div class="communications-list" id="comm-container">
+          <!-- Généré par JS -->
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Modal Appel en cours -->
+  <div class="modal-overlay" id="call-modal-overlay"></div>
+  <div class="webphone-modal" id="call-modal">
+    <div style="text-align: center; margin-bottom: 1.5rem;">
+      <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;" id="modal-contact-name">Appel en cours...</h3>
+      <p style="font-size: 1rem; color: var(--text-muted); font-family: 'Courier New', monospace;" id="modal-phone-number">0123456789</p>
+    </div>
+    
+    <!-- Indicateur appel -->
+    <div class="calling-indicator" id="calling-indicator">
+      <i data-lucide="phone"></i>
+    </div>
+    
+    <!-- Instructions pédagogiques -->
+    <div class="pedagogical-instructions" id="pedagogical-box" style="display: none;">
+      <h4>📚 Consignes</h4>
+      <p id="pedagogical-text"></p>
+    </div>
+    
+    <!-- Lecteur audio -->
+    <div class="audio-player" id="audio-player" style="display: none;">
+      <audio id="call-audio" preload="auto"></audio>
+      <div class="audio-controls">
+        <button class="audio-play-btn" id="audio-play">
+          <i data-lucide="play"></i>
+        </button>
+        <div class="audio-progress">
+          <input type="range" id="audio-progress" min="0" max="100" value="0" style="width: 100%;">
+        </div>
+        <span class="audio-time" id="audio-time">00:00 / 00:00</span>
+      </div>
+    </div>
+    
+    <!-- Boutons d'action selon le scénario -->
+    <div id="scenario-actions" style="display: none; gap: 0.75rem; margin-top: 1.5rem;">
+      <!-- Généré par JS : "Laisser un message" ou "Raccrocher" -->
+    </div>
+    
+    <!-- Formulaire notes -->
+    <div id="notes-form" style="display: none; margin-top: 1rem;">
+      
+      <!-- Contrôles d'enregistrement vocal -->
+      <div id="recording-controls" style="display: none; margin-bottom: 1rem;">
+        <div style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%); padding: 1rem; border-radius: 8px; border: 1px solid rgba(239, 68, 68, 0.2);">
+          <h4 style="font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i data-lucide="mic"></i> Enregistrer votre réponse vocale
+          </h4>
+          
+          
+          <!-- Dans la section "Contrôles d'enregistrement vocal" -->
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+              <button type="button" id="btn-start-recording" 
+                      style="background: #ef4444; color: white; padding: 0.5rem 1rem; border: none; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+                <i data-lucide="circle"></i> Démarrer l'enregistrement
+              </button>
+              
+              <button type="button" id="btn-stop-recording" 
+                      style="display: none; background: #64748b; color: white; padding: 0.5rem 1rem; border: none; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+                <i data-lucide="square"></i> Arrêter l'enregistrement
+              </button>
+            </div>
+            
+            <div id="recording-indicator" style="display: none; flex: 1; text-align: center;">
+              <span style="display: inline-flex; align-items: center; gap: 0.5rem; color: #ef4444; font-weight: 600; font-size: 0.875rem;">
+                <span style="width: 12px; height: 12px; background: #ef4444; border-radius: 50%; animation: pulse 1s infinite;"></span>
+                Enregistrement en cours...
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Prévisualisation de l'enregistrement -->
+        <div id="recording-preview" style="display: none; background: #f3f4f6; padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <i data-lucide="file-audio" style="color: #ef4444;"></i>
+            <div style="flex: 1;">
+              <p style="margin: 0; font-weight: 600; font-size: 0.875rem;">✅ Enregistrement capturé</p>
+              <audio id="recorded-audio" controls style="width: 100%; margin-top: 0.5rem;"></audio>
+            </div>
+            <button type="button" onclick="deleteRecording()" style="background: #94a3b8; color: white; padding: 0.5rem; border: none; border-radius: 6px; cursor: pointer;">
+              <i data-lucide="trash-2"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <label for="call-notes" style="font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; display: block;">Notes de l'appel</label>
+      <textarea id="call-notes" rows="4" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-light); border-radius: 8px; resize: vertical;" placeholder="Résumé de l'appel, actions à prendre..."></textarea>
+      <button onclick="saveCallNotes()" style="width: 100%; margin-top: 0.75rem; background: #8b5cf6; color: white; padding: 0.75rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
+        💾 Enregistrer et fermer
+      </button>
+    </div>
+    
+    <button onclick="closeCallModal()" style="width: 100%; margin-top: 1rem; background: var(--border-light); color: var(--text-muted); padding: 0.75rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
+      Fermer
+    </button>
+  </div>
+
+  <!-- Modal Ajouter Communication manuelle -->
+  <div class="modal" id="comm-modal">
+    <div class="modal-content" style="max-width: 600px;">
+      <span class="modal-close" id="modal-close">&times;</span>
+      <h3 id="modal-title">Nouvelle communication</h3>
+      <form id="comm-form">
+        <label for="comm-type">Type *</label>
+        <select id="comm-type" required>
+          <option value="appel_entrant">📞 Appel entrant</option>
+          <option value="appel_sortant">📞 Appel sortant</option>
+          <option value="email">📧 Email</option>
+          <option value="message">💬 Message</option>
+        </select>
+
+        <label for="comm-contact">Contact *</label>
+        <input type="text" id="comm-contact" required placeholder="Nom du contact">
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div>
+            <label for="comm-entreprise">Entreprise</label>
+            <input type="text" id="comm-entreprise">
+          </div>
+          <div>
+            <label for="comm-telephone">Téléphone</label>
+            <input type="tel" id="comm-telephone">
+          </div>
+        </div>
+
+        <label for="comm-objet">Objet</label>
+        <input type="text" id="comm-objet" placeholder="Sujet de la communication">
+
+        <label for="comm-message">Message / Notes</label>
+        <textarea id="comm-message" rows="4"></textarea>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div>
+            <label for="comm-status">Statut</label>
+            <select id="comm-status">
+              <option value="nouveau">Nouveau</option>
+              <option value="traite">Traité</option>
+              <option value="rappeler">À rappeler</option>
+              <option value="archive">Archivé</option>
+            </select>
+          </div>
+          <div>
+            <label for="comm-priority">Priorité</label>
+            <select id="comm-priority">
+              <option value="faible">Faible</option>
+              <option value="normal" selected>Normal</option>
+              <option value="urgent">Urgent</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit">Enregistrer</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Détails Communication -->
+  <div class="modal" id="comm-details-modal">
+    <div class="modal-content" style="max-width: 800px;">
+      <span class="modal-close" onclick="closeCommDetailsModal()">&times;</span>
+      <h3>📋 Détails de la communication</h3>
+      <div id="comm-details-body" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0;">
+        <!-- Généré par JS -->
+      </div>
+      <div id="comm-details-actions" style="display: flex; gap: 1rem; justify-content: flex-end;">
+        <!-- Généré par JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../../../core/supabase-config.js"></script>
+  <script src="../../../core/config.js"></script>
+  <script src="communication.js"></script>
+
+</body>
+</html>

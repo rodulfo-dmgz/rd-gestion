@@ -1,0 +1,45 @@
+/**
+ * RD GESTION - Design System
+ * Point d'entrée principal CSS
+ * 
+ * Architecture basée sur CSS @layer pour une gestion propre de la spécificité
+ */
+
+/* ========================================
+   1. DÉCLARATION DE L'ORDRE DES COUCHES
+   ======================================== */
+
+@layer reset, base, layout, components, modules;
+
+
+/* ========================================
+   2. IMPORT DES FICHIERS PAR COUCHE
+   ======================================== */
+
+/* Reset & Base */
+@import url("base/reset.css") layer(reset);
+@import url("base/typography.css") layer(base);
+
+/* Layout */
+@import url("layout/grid.css") layer(layout);
+@import url("layout/navigation.css") layer(layout);
+
+/* Components */
+@import url("components/buttons.css") layer(components);
+@import url("components/forms.css") layer(components);
+@import url("components/tables.css") layer(components);
+@import url("components/cards.css") layer(components);
+@import url("components/alerts.css") layer(components);
+@import url("components/badges.css") layer(components);
+
+/* Modules - Commun */
+@import url("modules/dashboard.css") layer(modules);
+@import url("modules/login.css") layer(modules);
+
+/* Modules - Admin */
+
+/* Modules - Commercial (CA) 
+@import url("modules/ca/dashboard.css") layer(modules);
+@import url("modules/ca/tresorerie.css") layer(modules);
+
+/* Les autres modules seront ajoutés au fur et à mesure */

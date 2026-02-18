@@ -1,0 +1,299 @@
+/**
+ * RD GESTION - Badges
+ * Étiquettes et indicateurs de statut
+ */
+
+@layer components {
+  
+  /* ========================================
+     BASE BADGE
+     ======================================== */
+  
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-1);
+    
+    padding: var(--space-1) var(--space-3);
+    
+    font-family: var(--font-body);
+    font-size: var(--font-caption-size);
+    font-weight: var(--font-weight-medium);
+    line-height: 1;
+    
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+  }
+  
+  .badge__icon {
+    width: 12px;
+    height: 12px;
+  }
+  
+  
+  /* ========================================
+     SUCCESS
+     ======================================== */
+  
+  .badge--success {
+    background-color: var(--color-success-100);
+    color: var(--color-success-700);
+  }
+  
+  
+  /* ========================================
+     WARNING
+     ======================================== */
+  
+  .badge--warning {
+    background-color: var(--color-warning-100);
+    color: var(--color-warning-700);
+  }
+  
+  
+  /* ========================================
+     DANGER
+     ======================================== */
+  
+  .badge--danger {
+    background-color: var(--color-danger-100);
+    color: var(--color-danger-700);
+  }
+  
+  
+  /* ========================================
+     INFO
+     ======================================== */
+  
+  .badge--info {
+    background-color: var(--color-info-100);
+    color: var(--color-info-700);
+  }
+  
+  
+  /* ========================================
+     PRIMARY
+     ======================================== */
+  
+  .badge--primary {
+    background-color: var(--color-primary-100);
+    color: var(--color-primary-700);
+  }
+  
+  
+  /* ========================================
+     SECONDARY
+     ======================================== */
+  
+  .badge--secondary {
+    background-color: var(--color-secondary-100);
+    color: var(--color-secondary-700);
+  }
+  
+  
+  /* ========================================
+     NEUTRAL / DEFAULT
+     ======================================== */
+  
+  .badge--neutral {
+    background-color: var(--surface-subtle);
+    color: var(--text-secondary);
+  }
+  
+  
+  /* ========================================
+     SIZES
+     ======================================== */
+  
+  .badge--small {
+    padding: var(--space-0-5) var(--space-2);
+    font-size: 0.625rem; /* 10px */
+  }
+  
+  .badge--large {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--font-body2-size);
+  }
+  
+  
+  /* ========================================
+     OUTLINED VARIANTS
+     ======================================== */
+  
+  .badge--outlined {
+    background-color: transparent;
+    border: 1px solid currentColor;
+  }
+  
+  .badge--outlined.badge--success {
+    color: var(--color-success-600);
+  }
+  
+  .badge--outlined.badge--warning {
+    color: var(--color-warning-600);
+  }
+  
+  .badge--outlined.badge--danger {
+    color: var(--color-danger-600);
+  }
+  
+  .badge--outlined.badge--info {
+    color: var(--color-info-600);
+  }
+  
+  .badge--outlined.badge--primary {
+    color: var(--color-primary-600);
+  }
+  
+  
+  /* ========================================
+     DOT BADGE (avec point indicateur)
+     ======================================== */
+  
+  .badge--dot {
+    padding-left: var(--space-2);
+  }
+  
+  .badge--dot::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: currentColor;
+    display: inline-block;
+  }
+  
+  
+  /* ========================================
+     PILL BADGE (forme plus arrondie)
+     ======================================== */
+  
+  .badge--pill {
+    padding: var(--space-1-5) var(--space-4);
+    border-radius: var(--radius-full);
+  }
+  
+  
+  /* ========================================
+     NOTIFICATION BADGE (compteur)
+     ======================================== */
+  
+  .badge--notification {
+    min-width: 20px;
+    height: 20px;
+    padding: 0 var(--space-1-5);
+    
+    background-color: var(--color-danger-600);
+    color: white;
+    
+    font-size: 0.625rem;
+    font-weight: var(--font-weight-bold);
+    
+    border-radius: var(--radius-full);
+  }
+  
+  .badge--notification.badge--large {
+    min-width: 24px;
+    height: 24px;
+    padding: 0 var(--space-2);
+    font-size: var(--font-caption-size);
+  }
+  
+  
+  /* ========================================
+     STATUS BADGE (statuts métier)
+     ======================================== */
+  
+  /* Statuts de facture */
+  .badge--brouillon {
+    background-color: var(--surface-subtle);
+    color: var(--text-secondary);
+  }
+  
+  .badge--validee,
+  .badge--payee {
+    background-color: var(--color-success-100);
+    color: var(--color-success-700);
+  }
+  
+  .badge--envoyee,
+  .badge--en-attente {
+    background-color: var(--color-warning-100);
+    color: var(--color-warning-700);
+  }
+  
+  .badge--impayee,
+  .badge--annulee {
+    background-color: var(--color-danger-100);
+    color: var(--color-danger-700);
+  }
+  
+  /* Statuts RH */
+  .badge--actif {
+    background-color: var(--color-success-100);
+    color: var(--color-success-700);
+  }
+  
+  .badge--inactif {
+    background-color: var(--surface-subtle);
+    color: var(--text-tertiary);
+  }
+  
+  .badge--conge {
+    background-color: var(--color-info-100);
+    color: var(--color-info-700);
+  }
+  
+  
+  /* ========================================
+     BADGE GROUP
+     ======================================== */
+  
+  .badge-group {
+    display: inline-flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+  
+  
+  /* ========================================
+     INTERACTIVE BADGE (cliquable/supprimable)
+     ======================================== */
+  
+  .badge--interactive {
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+  
+  .badge--interactive:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+  
+  .badge--removable {
+    padding-right: var(--space-2);
+  }
+  
+  .badge__remove {
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    margin-left: var(--space-1);
+    
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+  }
+  
+  .badge__remove:hover {
+    opacity: 1;
+  }
+}

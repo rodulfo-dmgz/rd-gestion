@@ -1,0 +1,300 @@
+/**
+ * RD GESTION - Alerts
+ * Système d'alertes et notifications
+ */
+
+@layer components {
+  
+  /* ========================================
+     BASE ALERT
+     ======================================== */
+  
+  .alert {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    border-left: 4px solid;
+    
+    font-family: var(--font-body);
+    font-size: var(--font-body2-size);
+    line-height: 1.5;
+  }
+  
+  .alert__icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+  }
+  
+  .alert__content {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .alert__title {
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-1);
+  }
+  
+  .alert__message {
+    margin: 0;
+  }
+  
+  .alert__close {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity var(--transition-fast);
+  }
+  
+  .alert__close:hover {
+    opacity: 1;
+  }
+  
+  
+  /* ========================================
+     SUCCESS
+     ======================================== */
+  
+  .alert--success {
+    background-color: var(--color-success-100);
+    border-left-color: var(--color-success-600);
+    color: var(--color-success-700);
+  }
+  
+  .alert--success .alert__icon {
+    color: var(--color-success-600);
+  }
+  
+  
+  /* ========================================
+     WARNING
+     ======================================== */
+  
+  .alert--warning {
+    background-color: var(--color-warning-100);
+    border-left-color: var(--color-warning-600);
+    color: var(--color-warning-700);
+  }
+  
+  .alert--warning .alert__icon {
+    color: var(--color-warning-600);
+  }
+  
+  
+  /* ========================================
+     DANGER / ERROR
+     ======================================== */
+  
+  .alert--danger,
+  .alert--error {
+    background-color: var(--color-danger-100);
+    border-left-color: var(--color-danger-600);
+    color: var(--color-danger-700);
+  }
+  
+  .alert--danger .alert__icon,
+  .alert--error .alert__icon {
+    color: var(--color-danger-600);
+  }
+  
+  
+  /* ========================================
+     INFO
+     ======================================== */
+  
+  .alert--info {
+    background-color: var(--color-info-100);
+    border-left-color: var(--color-info-600);
+    color: var(--color-info-700);
+  }
+  
+  .alert--info .alert__icon {
+    color: var(--color-info-600);
+  }
+  
+  
+  /* ========================================
+     ALERT ACTIONS
+     ======================================== */
+  
+  .alert__actions {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+  }
+  
+  .alert__action {
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--font-caption-size);
+    font-weight: var(--font-weight-medium);
+    border-radius: var(--radius-sm);
+    border: 1px solid currentColor;
+    background: transparent;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+  
+  .alert__action:hover {
+    background-color: currentColor;
+    color: white;
+  }
+  
+  
+  /* ========================================
+     TOAST NOTIFICATION
+     ======================================== */
+  
+  .toast {
+    position: fixed;
+    z-index: var(--z-tooltip);
+    
+    min-width: 300px;
+    max-width: 500px;
+    
+    background-color: var(--surface-base);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    
+    animation: slideIn var(--transition-base);
+  }
+  
+  .toast--top-right {
+    top: var(--space-6);
+    right: var(--space-6);
+  }
+  
+  .toast--top-left {
+    top: var(--space-6);
+    left: var(--space-6);
+  }
+  
+  .toast--bottom-right {
+    bottom: var(--space-6);
+    right: var(--space-6);
+  }
+  
+  .toast--bottom-left {
+    bottom: var(--space-6);
+    left: var(--space-6);
+  }
+  
+  .toast--top-center {
+    top: var(--space-6);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .toast--bottom-center {
+    bottom: var(--space-6);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  /* ========================================
+     TOAST CONTAINER
+     ======================================== */
+  
+  .toast-container {
+    position: fixed;
+    z-index: var(--z-tooltip);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    pointer-events: none;
+  }
+  
+  .toast-container > * {
+    pointer-events: auto;
+  }
+  
+  .toast-container--top-right {
+    top: var(--space-6);
+    right: var(--space-6);
+  }
+  
+  .toast-container--top-left {
+    top: var(--space-6);
+    left: var(--space-6);
+  }
+  
+  .toast-container--bottom-right {
+    bottom: var(--space-6);
+    right: var(--space-6);
+  }
+  
+  .toast-container--bottom-left {
+    bottom: var(--space-6);
+    left: var(--space-6);
+  }
+  
+  
+  /* ========================================
+     BANNER ALERT
+     ======================================== */
+  
+  .alert--banner {
+    border-radius: 0;
+    border-left: none;
+    border-bottom: 4px solid;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .alert--banner.alert--success {
+    border-bottom-color: var(--color-success-600);
+  }
+  
+  .alert--banner.alert--warning {
+    border-bottom-color: var(--color-warning-600);
+  }
+  
+  .alert--banner.alert--danger {
+    border-bottom-color: var(--color-danger-600);
+  }
+  
+  .alert--banner.alert--info {
+    border-bottom-color: var(--color-info-600);
+  }
+  
+  
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  
+  @media (max-width: 640px) {
+    .toast,
+    .toast-container {
+      left: var(--space-4) !important;
+      right: var(--space-4) !important;
+      max-width: calc(100% - var(--space-8));
+      min-width: auto;
+    }
+    
+    .toast--top-center,
+    .toast--bottom-center {
+      transform: none;
+    }
+  }
+}

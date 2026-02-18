@@ -1,0 +1,184 @@
+/* ===============================
+   DASHBOARD PAGE
+   =============================== */
+
+.dashboard-page {
+  background-color: var(--background);
+}
+
+/* ─────────────────────────────
+   INTRO SECTION
+───────────────────────────── */
+.dashboard-intro {
+  position: relative;
+  padding: var(--space-xl) 0;
+}
+
+.dashboard-intro::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blaze-orange), transparent);
+  border-radius: var(--radius-full);
+}
+
+/* ─────────────────────────────
+   KPI GRID SPÉCIFIQUE
+───────────────────────────── */
+.dashboard .kpi-grid {
+  margin-top: var(--space-3xl);
+  margin-bottom: var(--space-3xl);
+}
+
+.dashboard .kpi {
+  position: relative;
+}
+
+/* Animation au chargement */
+.dashboard .kpi {
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.dashboard .kpi:nth-child(1) { animation-delay: 0.1s; }
+.dashboard .kpi:nth-child(2) { animation-delay: 0.2s; }
+.dashboard .kpi:nth-child(3) { animation-delay: 0.3s; }
+.dashboard .kpi:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─────────────────────────────
+   GRAPHIQUES
+───────────────────────────── */
+.charts-grid {
+  margin-top: var(--space-3xl);
+  margin-bottom: var(--space-3xl);
+}
+
+.chart-card canvas {
+  max-height: 300px;
+}
+
+/* Styles spécifiques pour les graphiques Chart.js */
+.chart-card {
+  position: relative;
+}
+
+/* ─────────────────────────────
+   TABLES SECTION
+───────────────────────────── */
+.tables-grid {
+  margin-top: var(--space-3xl);
+}
+
+/* Transactions table styling */
+#transactions {
+  font-size: var(--font-size-sm);
+}
+
+#transactions th {
+  background: linear-gradient(135deg, var(--oxford-navy))
+}
+
+#transactions td {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Support tickets styling */
+.table-card:has(#tickets) {
+  background: linear-gradient(135deg, 
+    rgba(255, 87, 10, 0.02) 0%, 
+    rgba(255, 255, 255, 1) 100%);
+}
+
+#tickets li {
+  position: relative;
+  padding-left: var(--space-xl);
+}
+
+#tickets li::before {
+  content: '•';
+  position: absolute;
+  left: var(--space-md);
+  color: var(--accent);
+  font-weight: bold;
+  font-size: var(--font-size-lg);
+}
+
+/* ─────────────────────────────
+   WELCOME MESSAGE
+───────────────────────────── */
+#welcome {
+  position: relative;
+  display: inline-block;
+}
+
+#welcome::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blaze-orange), var(--classic-crimson));
+  border-radius: var(--radius-full);
+}
+
+/* ─────────────────────────────
+   MAP CONTAINER
+───────────────────────────── */
+.chart-card:has(#map) {
+  padding: 0;
+  overflow: hidden;
+}
+
+.chart-card:has(#map) h3 {
+  padding: var(--space-xl);
+  padding-bottom: var(--space-md);
+  margin: 0;
+}
+
+#map {
+  height: 400px;
+  border-radius: 0;
+}
+
+/* ─────────────────────────────
+   RESPONSIVE DASHBOARD
+───────────────────────────── */
+@media (max-width: 1200px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-intro h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .kpi-value {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARH - Congés — CRM</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages/clients.css">
+
+  <style>
+    .stat-card {
+      background: linear-gradient(135deg, rgba(255, 87, 10, 0.1) 0%, rgba(255, 87, 10, 0.05) 100%);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 87, 10, 0.2);
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      font-family: var(--font-title);
+    }
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+    .status-badge {
+      display: inline-flex;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-approuve { background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2); }
+    .badge-attente { background: rgba(245, 158, 11, 0.1); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.2); }
+    .badge-refuse { background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2); }
+  </style>
+</head>
+<body class="dashboard-page">
+
+<!-- Sidebar -->
+  <aside class="sidebar">
+      <div class="sidebar-brand">
+        <img src="../assets/images/login.svg" alt="CRM" class="sidebar-logo">
+        <h2 id="company-name"></h2>
+      </div>
+    <nav class="sidebar-nav" id="sidebar-nav">
+      <!-- Navigation générée dynamiquement par JS selon les permissions -->
+    </nav>
+  </aside>
+
+
+    <!-- Header -->
+  <div class="dashboard-main">
+    <header class="topbar">
+      <span class="brand"></span>
+      <div class="topbar-right">
+        <span id="user-info"><i data-lucide="user"></i> </span>
+        <button id="logout"><i data-lucide="log-out"></i> Quitter</button>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <section class="page-header">
+        <h1 id="conges"><i data-lucide="tree-palm"></i> Gestion des Congés</h1>
+        <p>Gestion des demandes de congés et absences.</p>
+      </section>
+
+      <!-- KPI Cards -->
+      <section class="kpi-grid" style="margin-bottom: 2rem;">
+        <div class="stat-card">
+          <div class="stat-value" id="stat-total">—</div>
+          <div class="stat-label">Total Demandes</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-attente">—</div>
+          <div class="stat-label">En attente</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-approuve">—</div>
+          <div class="stat-label">Approuvées</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-jours">—</div>
+          <div class="stat-label">Jours utilisés</div>
+        </div>
+      </section>
+
+      <section class="actions-bar">
+        <input type="text" id="search-conge" placeholder="🔍 Rechercher...">
+        <button id="add-conge-btn">+ Nouvelle demande</button>
+      </section>
+
+      <section class="table-section">
+        <table id="conges-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Employé</th>
+              <th>Type</th>
+              <th>Date début</th>
+              <th>Date fin</th>
+              <th>Jours</th>
+              <th>Statut</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal Ajouter -->
+  <div class="modal" id="conge-modal">
+    <div class="modal-content">
+      <span class="modal-close" id="modal-close">&times;</span>
+      <h3>Nouvelle demande de congé</h3>
+      <form id="conge-form">
+        <label for="conge-employee">Employé</label>
+        <input type="text" id="conge-employee" required>
+
+        <label for="conge-type">Type de congé</label>
+        <select id="conge-type" required>
+          <option value="">Sélectionner...</option>
+          <option value="Congés payés">Congés payés</option>
+          <option value="RTT">RTT</option>
+          <option value="Maladie">Maladie</option>
+          <option value="Formation">Formation</option>
+          <option value="Autre">Autre</option>
+        </select>
+
+        <label for="conge-debut">Date début</label>
+        <input type="date" id="conge-debut" required>
+
+        <label for="conge-fin">Date fin</label>
+        <input type="date" id="conge-fin" required>
+
+        <button type="submit">Enregistrer</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Voir -->
+  <div class="modal" id="view-conge-modal" style="display: none;">
+    <div class="modal-content" style="max-width: 600px;">
+      <span class="modal-close" id="modal-view-close">&times;</span>
+      <h3 id="view-modal-title">Détails du congé</h3>
+      <p id="view-modal-subtitle" style="color: var(--text-muted); margin-bottom: 1.5rem;"></p>
+      <div id="view-modal-body" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;"></div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/arh-conges.js"></script>
+</body>
+</html>

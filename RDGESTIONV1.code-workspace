@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "crm-pedagogique",
+			"path": "crm-pedagogique"
+		},
+		{
+			"name": "lechoppe-gauloise",
+			"path": "lechoppe-gauloise"
+		},
+		{
+			"name": "rdgestion",
+			"path": "rdgestion"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "rdgestion"
+	}
+}

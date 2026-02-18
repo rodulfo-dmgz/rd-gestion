@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - L'Échoppe Gauloise</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Finalisez votre commande chez L'Échoppe Gauloise. Paiement sécurisé et livraison rapide.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/design-system.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/pages/checkout.css">
+    
+    <!-- Icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         HEADER
+         ═══════════════════════════════════════════════════════════════════ -->
+    <header class="header" id="header">
+        <div class="container">
+        <nav class="nav">
+            <!-- Logo minimaliste -->
+            <a href="index.html" class="logo">
+            <img src="/assets/logo.svg" class="logo">
+            <span>L'Échoppe</span>
+            </a>
+
+                <!-- Étapes de commande -->
+                <nav class="checkout-steps" aria-label="Étapes de commande">
+                    <div class="step completed" aria-current="false">
+                        <span class="step-number" aria-hidden="true">✓</span>
+                        <span class="step-label">Panier</span>
+                    </div>
+                    <div class="step-divider" aria-hidden="true"></div>
+                    <div class="step active" aria-current="step">
+                        <span class="step-number">2</span>
+                        <span class="step-label">Livraison</span>
+                    </div>
+                    <div class="step-divider" aria-hidden="true"></div>
+                    <div class="step" aria-current="false">
+                        <span class="step-number">3</span>
+                        <span class="step-label">Paiement</span>
+                    </div>
+                    <div class="step-divider" aria-hidden="true"></div>
+                    <div class="step" aria-current="false">
+                        <span class="step-number">4</span>
+                        <span class="step-label">Confirmation</span>
+                    </div>
+                </nav>
+
+                <!-- Actions -->
+                <div class="nav-actions">
+                    <a href="panier.html" class="icon-btn" aria-label="Voir le panier">
+                        <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+                        <span class="badge" id="cartBadge">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         HERO CHECKOUT
+         ═══════════════════════════════════════════════════════════════════ -->
+    <section class="checkout-hero">
+        <div class="container">
+            <div class="checkout-hero-content">
+                <nav class="breadcrumbs" aria-label="Fil d'Ariane">
+                    <a href="index.html">Accueil</a> / 
+                    <a href="panier.html">Panier</a> / 
+                    <span aria-current="page">Checkout</span>
+                </nav>
+                
+                <h1 class="checkout-hero-title">
+                    Finalisez votre commande
+                </h1>
+                
+                <p class="checkout-hero-subtitle">
+                    Sécurisez vos achats en quelques étapes simples
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SECTION CHECKOUT
+         ═══════════════════════════════════════════════════════════════════ -->
+    <main class="checkout-main" id="checkout-main">
+        <div class="container">
+            <div class="checkout-grid">
+                <!-- Formulaire de livraison et paiement -->
+                <div class="checkout-form-container">
+                    <section class="checkout-section" aria-labelledby="shipping-title">
+                        <div class="section-header">
+                            <h2 id="shipping-title">
+                                <i class="fas fa-truck" aria-hidden="true"></i>
+                                Adresse de livraison
+                            </h2>
+                        </div>
+                        
+                        <form id="shippingForm" class="checkout-form" novalidate autocomplete="on">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">Prénom <span class="required" aria-label="obligatoire">*</span></label>
+                                    <input type="text" id="firstName" name="firstName" required
+                                           autocomplete="given-name" placeholder="Jean"
+                                           minlength="2" maxlength="50">
+                                    <div class="error-message" id="firstNameError" role="alert" aria-live="polite"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Nom <span class="required" aria-label="obligatoire">*</span></label>
+                                    <input type="text" id="lastName" name="lastName" required
+                                           autocomplete="family-name" placeholder="Dupont"
+                                           minlength="2" maxlength="50">
+                                    <div class="error-message" id="lastNameError" role="alert" aria-live="polite"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email <span class="required" aria-label="obligatoire">*</span></label>
+                                <input type="email" id="email" name="email" required
+                                       autocomplete="email" placeholder="jean.dupont@exemple.fr"
+                                       inputmode="email">
+                                <div class="error-message" id="emailError" role="alert" aria-live="polite"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Téléphone <span class="required" aria-label="obligatoire">*</span></label>
+                                <input type="tel" id="phone" name="phone" required
+                                       autocomplete="tel" placeholder="06 12 34 56 78"
+                                       inputmode="tel">
+                                <div class="error-message" id="phoneError" role="alert" aria-live="polite"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="country">Pays <span class="required" aria-label="obligatoire">*</span></label>
+                                <div class="autocomplete-wrapper" id="countryAutocomplete">
+                                    <select id="country" name="country" required autocomplete="country">
+                                        <option value="">Sélectionnez un pays</option>
+                                        <option value="FR" selected>🇫🇷 France</option>
+                                        <option value="BE">🇧🇪 Belgique</option>
+                                        <option value="CH">🇨🇭 Suisse</option>
+                                        <option value="LU">🇱🇺 Luxembourg</option>
+                                        <option value="DE">🇩🇪 Allemagne</option>
+                                    </select>
+                                </div>
+                                <div class="error-message" id="countryError" role="alert" aria-live="polite"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address">Adresse <span class="required" aria-label="obligatoire">*</span></label>
+                                <input type="text" id="address" name="address" required
+                                       autocomplete="street-address" placeholder="123 Avenue des Champs-Élysées">
+                                <div class="error-message" id="addressError" role="alert" aria-live="polite"></div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="postalCode">Code postal <span class="required" aria-label="obligatoire">*</span></label>
+                                    <input type="text" id="postalCode" name="postalCode" required
+                                           autocomplete="postal-code" placeholder="75008"
+                                           inputmode="numeric" maxlength="10">
+                                    <div class="error-message" id="postalCodeError" role="alert" aria-live="polite"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="city">Ville <span class="required" aria-label="obligatoire">*</span></label>
+                                    <div class="autocomplete-wrapper" id="cityAutocomplete">
+                                        <input type="text" id="city" name="city" required
+                                               autocomplete="address-level2" placeholder="Paris"
+                                               role="combobox" aria-autocomplete="list"
+                                               aria-expanded="false" aria-controls="cityDropdown">
+                                        <div class="autocomplete-dropdown" id="cityDropdown" role="listbox"></div>
+                                    </div>
+                                    <div class="error-message" id="cityError" role="alert" aria-live="polite"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="deliveryInstructions">Instructions de livraison <span style="font-weight:400;color:var(--text-secondary)">(optionnel)</span></label>
+                                <textarea id="deliveryInstructions" name="deliveryInstructions" rows="3" 
+                                          placeholder="Ex: Sonner à l'interphone, déposer chez le voisin..."
+                                          maxlength="500"></textarea>
+                            </div>
+                        </form>
+                    </section>
+                    
+                    <section class="checkout-section" aria-labelledby="payment-title">
+                        <div class="section-header">
+                            <h2 id="payment-title">
+                                <i class="fas fa-credit-card" aria-hidden="true"></i>
+                                Mode de paiement
+                            </h2>
+                        </div>
+                        
+                        <div class="payment-methods" role="radiogroup" aria-labelledby="payment-title">
+                            <div class="payment-method active" data-method="card">
+                                <div class="payment-method-header">
+                                    <input type="radio" id="card" name="payment" checked
+                                           aria-describedby="card-desc">
+                                    <label for="card">
+                                        <i class="fas fa-credit-card" aria-hidden="true"></i>
+                                        <span>Carte bancaire</span>
+                                    </label>
+                                </div>
+                                <div class="payment-method-content" id="card-desc">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="cardNumber">Numéro de carte <span class="required" aria-label="obligatoire">*</span></label>
+                                            <div class="card-input">
+                                                <input type="text" id="cardNumber" 
+                                                       placeholder="1234 5678 9012 3456" 
+                                                       maxlength="19" inputmode="numeric"
+                                                       autocomplete="cc-number"
+                                                       aria-label="Numéro de carte bancaire">
+                                                <i class="fas fa-credit-card card-iconch" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="card-logos" aria-label="Cartes acceptées">
+                                                <i class="fab fa-cc-visa" title="Visa"></i>
+                                                <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                                                <i class="fab fa-cc-amex" title="American Express"></i>
+                                            </div>
+                                            <div class="error-message" id="cardNumberError" role="alert" aria-live="polite"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="cardName">Nom sur la carte <span class="required" aria-label="obligatoire">*</span></label>
+                                            <input type="text" id="cardName" placeholder="JEAN DUPONT"
+                                                   autocomplete="cc-name"
+                                                   style="text-transform: uppercase;">
+                                            <div class="error-message" id="cardNameError" role="alert" aria-live="polite"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="cardExpiry">Date d'expiration <span class="required" aria-label="obligatoire">*</span></label>
+                                            <input type="text" id="cardExpiry" placeholder="MM/AA" 
+                                                   maxlength="5" inputmode="numeric"
+                                                   autocomplete="cc-exp">
+                                            <div class="error-message" id="cardExpiryError" role="alert" aria-live="polite"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cardCVC">CVC <span class="required" aria-label="obligatoire">*</span></label>
+                                            <div class="cvc-input">
+                                                <input type="text" id="cardCVC" placeholder="123" 
+                                                       maxlength="4" inputmode="numeric"
+                                                       autocomplete="cc-csc">
+                                                <span class="cvc-info" aria-label="3 chiffres au dos de votre carte">
+                                                    <i class="fas fa-question-circle" aria-hidden="true"></i>
+                                                </span>
+                                            </div>
+                                            <div class="error-message" id="cardCVCError" role="alert" aria-live="polite"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-method" data-method="paypal">
+                                <div class="payment-method-header">
+                                    <input type="radio" id="paypal" name="payment"
+                                           aria-describedby="paypal-desc">
+                                    <label for="paypal">
+                                        <i class="fab fa-paypal" aria-hidden="true"></i>
+                                        <span>PayPal</span>
+                                    </label>
+                                </div>
+                                <div class="payment-method-content" id="paypal-desc">
+                                    <p>Vous serez redirigé vers PayPal pour compléter votre paiement de manière sécurisée.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-method" data-method="transfer">
+                                <div class="payment-method-header">
+                                    <input type="radio" id="transfer" name="payment"
+                                           aria-describedby="transfer-desc">
+                                    <label for="transfer">
+                                        <i class="fas fa-university" aria-hidden="true"></i>
+                                        <span>Virement bancaire</span>
+                                    </label>
+                                </div>
+                                <div class="payment-method-content" id="transfer-desc">
+                                    <p>Les détails de virement vous seront envoyés par email. La commande sera expédiée après réception du paiement.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <div class="checkout-actions">
+                        <a href="panier.html" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                            Retour au panier
+                        </a>
+                        <button type="button" id="submitOrder" class="btn btn-primary">
+                            <i class="fas fa-lock" aria-hidden="true"></i>
+                            Payer et confirmer la commande
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Récapitulatif de commande -->
+                <aside class="checkout-summary" aria-label="Récapitulatif de commande">
+                    <div class="summary-card">
+                        <h3 class="summary-title">
+                            <i class="fas fa-receipt" aria-hidden="true"></i>
+                            Récapitulatif de commande
+                        </h3>
+                        
+                        <div class="order-items" id="orderItems" aria-label="Articles commandés">
+                            <!-- Les articles seront injectés ici -->
+                        </div>
+                        
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span>Sous-total</span>
+                                <span id="summarySubtotal">0,00 €</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Livraison</span>
+                                <span id="summaryShipping">0,00 €</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>TVA (20%)</span>
+                                <span id="summaryTax">0,00 €</span>
+                            </div>
+                            <div class="summary-row total">
+                                <strong>Total</strong>
+                                <strong id="summaryTotal">0,00 €</strong>
+                            </div>
+                        </div>
+                        
+                        <div class="shipping-info">
+                            <h4><i class="fas fa-shipping-fast" aria-hidden="true"></i> Livraison estimée</h4>
+                            <p id="deliveryDate">Date de livraison estimée : --/--/----</p>
+                            <div class="shipping-method">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                <span>Livraison Standard — 2-3 jours ouvrés</span>
+                            </div>
+                        </div>
+                        
+                        <div class="security-info" aria-label="Garanties de sécurité">
+                            <div class="security-item">
+                                <i class="fas fa-lock" aria-hidden="true"></i>
+                                <span>Paiement 100% sécurisé</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                                <span>Données cryptées SSL</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-undo" aria-hidden="true"></i>
+                                <span>Retour gratuit sous 30 jours</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="need-help">
+                        <h4><i class="fas fa-question-circle" aria-hidden="true"></i> Besoin d'aide ?</h4>
+                        <p>Notre équipe est à votre disposition pour toute question.</p>
+                        <div class="contact-options">
+                            <a href="tel:+33123456789" class="contact-link">
+                                <i class="fas fa-phone" aria-hidden="true"></i>
+                                <span>01 23 45 67 89</span>
+                            </a>
+                            <a href="/cdn-cgi/l/email-protection#33505c5d475250477356505b5c4343561e5452465f5c5a40561d5541" class="contact-link">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                <span>Nous écrire</span>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         MODAL DE CONFIRMATION
+         ═══════════════════════════════════════════════════════════════════ -->
+    <div id="confirmationModal" class="modal" role="dialog" aria-modal="true" 
+         aria-labelledby="confirmationTitle" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="modal-close" id="modalClose" 
+                        aria-label="Fermer la fenêtre de confirmation">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="confirmation-icon">
+                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                </div>
+                
+                <h2 class="confirmation-title" id="confirmationTitle">Commande confirmée !</h2>
+                
+                <div class="confirmation-details">
+                    <div class="confirmation-row">
+                        <span>Référence commande</span>
+                        <strong id="orderReference">ECHO-<span id="orderNumber">000000</span></strong>
+                    </div>
+                    <div class="confirmation-row">
+                        <span>Montant payé</span>
+                        <strong id="orderAmount">0,00 €</strong>
+                    </div>
+                    <div class="confirmation-row">
+                        <span>Date de livraison estimée</span>
+                        <strong id="estimatedDelivery">--/--/----</strong>
+                    </div>
+                </div>
+                
+                <p class="confirmation-message">
+                    Un email de confirmation a été envoyé à <span id="customerEmail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="84e7e8ede1eaf0c4e1fce1e9f4e8e1aae2f6">[email&#160;protected]</a></span>. 
+                    Vous recevrez un email de suivi avec les détails de livraison.
+                </p>
+                
+                <div class="confirmation-actions">
+                    <button type="button" id="continueShopping" class="btn btn-primary">
+                        <i class="fas fa-home" aria-hidden="true"></i>
+                        Retour à l'accueil
+                    </button>
+                    <button type="button" id="trackOrder" class="btn btn-secondary">
+                        <i class="fas fa-shipping-fast" aria-hidden="true"></i>
+                        Suivre ma commande
+                    </button>
+                    <button type="button" id="viewInvoice" class="btn btn-secondary">
+                        <i class="fas fa-file-invoice" aria-hidden="true"></i>
+                        Voir ma facture
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         MODAL DE CHARGEMENT PAIEMENT
+         ═══════════════════════════════════════════════════════════════════ -->
+    <div id="paymentLoadingModal" role="dialog" aria-modal="true" aria-labelledby="paymentLoadingTitle" aria-hidden="true">
+        <div class="payment-loading-content">
+            <div class="payment-spinner">
+                <div class="payment-spinner-circle"></div>
+                <i class="fas fa-university payment-spinner-icon" aria-hidden="true"></i>
+            </div>
+            
+            <h2 class="payment-loading-title" id="paymentLoadingTitle">
+                Communication avec votre banque
+            </h2>
+            
+            <p class="payment-loading-message">
+                Veuillez patienter pendant la sécurisation de votre transaction...
+            </p>
+            
+            <p class="payment-loading-step" id="paymentStep">
+                Vérification des informations bancaires
+            </p>
+            
+            <div class="payment-loading-secure">
+                <i class="fas fa-lock" aria-hidden="true"></i>
+                <span>Connexion sécurisée SSL/TLS 256-bit</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="/assets/logo.svg" alt="Logo L'Échoppe Gauloise" class="logo-img">
+                        <span>L'Échoppe Gauloise</span>
+                    </div>
+                    <p>L'excellence française depuis 1995. Bières artisanales et vins d'exception exportés vers 15 pays.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">
+                            <i data-lucide="instagram" size="20"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <i data-lucide="facebook" size="20"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <i data-lucide="linkedin" size="20"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Aide & Support</h4>
+                        <ul>
+                            <li><a href="#">Centre d'aide</a></li>
+                            <li><a href="#">Suivi de commande</a></li>
+                            <li><a href="#">Retours & Remboursements</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Entreprise</h4>
+                        <ul>
+                            <li><a href="#">À propos</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Carrières</a></li>
+                            <li><a href="#">Presse</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Légal</h4>
+                        <ul>
+                            <li><a href="#">Mentions légales</a></li>
+                            <li><a href="#">Confidentialité</a></li>
+                            <li><a href="#">CGV</a></li>
+                            <li><a href="#">Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 L'Échoppe Gauloise. Tous droits réservés.</p>
+                <div class="payment-icons" aria-label="Moyens de paiement acceptés">
+                    <i class="fab fa-cc-visa" title="Visa"></i>
+                    <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fab fa-cc-amex" title="American Express"></i>
+                    <i class="fab fa-cc-paypal" title="PayPal"></i>
+                    <i class="fas fa-credit-card" title="Carte bancaire"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SCRIPTS
+         ═══════════════════════════════════════════════════════════════════ -->
+
+
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Dans la section <head> -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/js/supabase-config.js"></script>
+
+    <script src="/js/utils.js"></script>
+    <script src="/js/cart-module.js"></script>
+    <script src="/Pages/commande/checkout.js"></script>
+    <script src="/Pages/commande/panier.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "client": "Dupont Jean",
+    "produit": "Ordinateur portable",
+    "quantite": 2,
+    "montant": 2400.00,
+    "date": "2026-01-15"
+  },
+  {
+    "id": 2,
+    "client": "Martin Claire",
+    "produit": "Smartphone",
+    "quantite": 1,
+    "montant": 799.99,
+    "date": "2026-01-20"
+  },
+  {
+    "id": 3,
+    "client": "Bernard Paul",
+    "produit": "Casque audio",
+    "quantite": 3,
+    "montant": 450.00,
+    "date": "2026-01-22"
+  },
+  {
+    "id": 4,
+    "client": "Lefevre Marie",
+    "produit": "Clavier mécanique",
+    "quantite": 1,
+    "montant": 120.00,
+    "date": "2026-01-25"
+  },
+  {
+    "id": 5,
+    "client": "Moreau Luc",
+    "produit": "Écran 27 pouces",
+    "quantite": 2,
+    "montant": 600.00,
+    "date": "2026-01-28"
+  }
+]
