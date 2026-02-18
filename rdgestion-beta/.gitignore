@@ -3,7 +3,7 @@
 # ============================================================================
 
 # ⚠️ Configuration sensible (DÉCOMMENTER si vous ne voulez pas commiter les clés)
-core/config/config.js
+#core/config/config.js
 
 # Variables d'environnement
 .env
