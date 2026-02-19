@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 3 — Cas Pratique TechInnov | Masterclass Comptabilité</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <meta name="description" content="Mise en situation professionnelle avec données réelles et tâches à réaliser.">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="progress-bar" id="progress-bar"></div>
+
+<nav class="toolbar">
+  <button id="btn-sidebar-toggle" class="btn btn-ghost btn-sm">
+    <i data-lucide="menu"></i>
+  </button>
+  <div class="toolbar-logo"><a href="index.html"><img src="assets/logo.svg" alt="RD Formation" class="header-logo-img"></a></div>
+  <ul class="toolbar-nav">
+    <li><a href="index.html"><i data-lucide="book-open"></i> Module 1</a></li>
+    <li><a href="module2.html"><i data-lucide="layers"></i> Module 2 — 20 Indicateurs</a></li>
+    <li><a href="module3.html" class="active"><i data-lucide="zap"></i> Module 3 — TechInnov</a></li>
+    <li><a href="corrige.html"><i data-lucide="check-circle"></i> Corrigé</a></li>
+  </ul>
+  <div class="toolbar-module-badge">Cas pratique</div>
+</nav>
+
+<div id="sidebar-overlay" class="sidebar-overlay" style="display:none;"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-head">
+    <h3>Navigation</h3>
+    <button id="btn-sidebar-close" class="btn btn-ghost btn-sm"><i data-lucide="x"></i></button>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Module 3 — TechInnov</div>
+    <a href="#cas-pratique" class="sidebar-link"><i data-lucide="zap"></i> Données & tâches</a>
+    <a href="corrige.html" class="sidebar-link"><i data-lucide="check-circle"></i> Voir le corrigé</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Outils</div>
+    <a href="#checklist" class="sidebar-link"><i data-lucide="check-square"></i> Checklist des tâches</a>
+    <a href="#calc-tva" class="sidebar-link"><i data-lucide="calculator"></i> Calculatrice TVA</a>
+    <a href="#calc-hs" class="sidebar-link"><i data-lucide="calculator"></i> Heures sup.</a>
+  </div>
+</aside>
+
+<div class="timer-widget no-print">
+  <div class="timer-lbl"><i data-lucide="timer"></i> Temps de travail</div>
+  <div class="timer-disp" id="timer-disp">00:00:00</div>
+  <div class="timer-acts">
+    <button class="timer-btn go" id="timer-go"><i data-lucide="play"></i><span>Démarrer</span></button>
+    <button class="timer-btn" id="timer-pause"><i data-lucide="pause"></i></button>
+    <button class="timer-btn" id="timer-reset"><i data-lucide="rotate-ccw"></i></button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+  <!-- ===== MODULE 3 HEADER ===== -->
+  <div id="cas-pratique" class="case-hdr">
+    <div class="case-deco"><i data-lucide="zap"></i></div>
+    <div class="case-badge"><i data-lucide="award"></i> Module 3 · Mise en situation professionnelle</div>
+    <h2>TechInnov SARL — Préparation du Point Mensuel</h2>
+    <p>Vous êtes assistant(e) comptable. Dans une semaine, vous avez un point mensuel avec votre chef comptable. Il vous demande de préparer une analyse complète de mai. Durée estimée de travail en autonomie : <strong>3h30 minimum.</strong></p>
+  </div>
+
+  <section class="section">
+    <div class="section-tag"><i data-lucide="database"></i> 3.1 · Jeu de données fourni</div>
+    <div class="section-title">Données <span class="accent">TechInnov</span> — Mois de Mai</div>
+
+    <h3>Balance clients — avant et après mai</h3>
+    <div class="dt-wrap">
+      <table class="data-table">
+        <thead><tr><th>Client</th><th>Solde 30/04</th><th>Factures mai</th><th>Règlements mai</th><th>Solde 31/05</th><th>Échéance</th><th>Statut</th></tr></thead>
+        <tbody>
+          <tr><td>MARTIN SARL</td><td>5 200 €</td><td>0 €</td><td>5 200 €</td><td class="t-ok">0 €</td><td>—</td><td class="t-ok">Réglé</td></tr>
+          <tr><td>DUPONT & Fils</td><td>8 600 €</td><td>12 400 €</td><td>8 600 €</td><td class="t-warn">12 400 €</td><td>30/06</td><td>Non échu</td></tr>
+          <tr><td>BUREAU PLUS</td><td>8 400 €</td><td>0 €</td><td>0 €</td><td class="t-err">8 400 €</td><td>25/03</td><td>72j retard</td></tr>
+          <tr><td>LEROI Informatique</td><td>3 100 €</td><td>7 600 €</td><td>3 100 €</td><td class="t-warn">7 600 €</td><td>15/06</td><td>Non échu</td></tr>
+          <tr><td>GARCIA PRO</td><td>0 €</td><td>18 000 €</td><td>0 €</td><td class="t-warn">18 000 €</td><td>30/06</td><td>Non échu</td></tr>
+          <tr><td>ANCIEN CLIENT X</td><td>2 800 €</td><td>0 €</td><td>0 €</td><td class="t-err">2 800 €</td><td>15/01</td><td>135j retard</td></tr>
+        </tbody>
+        <tfoot><tr><td colspan="4">TOTAUX</td><td>49 200 €</td><td></td><td></td></tr></tfoot>
+      </table>
+    </div>
+
+    <h3>Relevé bancaire simplifié — Mai</h3>
+    <div class="dt-wrap">
+      <table class="data-table">
+        <thead><tr><th>Date</th><th>Libellé</th><th>Débit</th><th>Crédit</th><th>Solde</th></tr></thead>
+        <tbody>
+          <tr><td>01/05</td><td>Solde initial</td><td></td><td></td><td>9 800 €</td></tr>
+          <tr><td>05/05</td><td>Virt. MARTIN SARL</td><td></td><td>5 200 €</td><td>15 000 €</td></tr>
+          <tr><td>08/05</td><td>Virt. salaires mai</td><td>18 600 €</td><td></td><td>-3 600 €</td></tr>
+          <tr><td>09/05</td><td>Virt. URSSAF</td><td>9 200 €</td><td></td><td>-12 800 €</td></tr>
+          <tr><td>10/05</td><td>Virt. DUPONT</td><td></td><td>8 600 €</td><td>-4 200 €</td></tr>
+          <tr><td>12/05</td><td>Virt. LEROI</td><td></td><td>3 100 €</td><td>-1 100 €</td></tr>
+          <tr><td>15/05</td><td>Paiement TVA avril</td><td>4 820 €</td><td></td><td>-5 920 €</td></tr>
+          <tr><td>20/05</td><td>Loyer bureaux</td><td>2 400 €</td><td></td><td>-8 320 €</td></tr>
+          <tr><td>22/05</td><td>Virt. GARCIA PRO</td><td></td><td>9 000 €</td><td>680 €</td></tr>
+          <tr><td>25/05</td><td>Leasing véhicule</td><td>620 €</td><td></td><td>60 €</td></tr>
+          <tr><td>28/05</td><td>Règlements fournisseurs</td><td>3 800 €</td><td></td><td>-3 740 €</td></tr>
+          <tr><td>31/05</td><td>Virt. GARCIA PRO</td><td></td><td>5 000 €</td><td>1 260 €</td></tr>
+        </tbody>
+        <tfoot><tr><td colspan="4">Solde bancaire au 31/05</td><td>1 260 €</td></tr></tfoot>
+      </table>
+    </div>
+
+    <h3>Ventes de mai (TVA)</h3>
+    <div class="dt-wrap">
+      <table class="data-table">
+        <thead><tr><th>Nature</th><th>HT</th><th>TVA 20%</th><th>TTC</th></tr></thead>
+        <tbody>
+          <tr><td>Matériel informatique</td><td>68 400 €</td><td>13 680 €</td><td>82 080 €</td></tr>
+          <tr><td>Périphériques</td><td>12 800 €</td><td>2 560 €</td><td>15 360 €</td></tr>
+          <tr><td>Prestations SAV</td><td>18 600 €</td><td>3 720 €</td><td>22 320 €</td></tr>
+          <tr><td>Consommables</td><td>3 200 €</td><td>640 €</td><td>3 840 €</td></tr>
+        </tbody>
+        <tfoot><tr><td>TOTAL</td><td>103 000 €</td><td>20 600 €</td><td>123 600 €</td></tr></tfoot>
+      </table>
+    </div>
+
+    <h3>Achats de mai (TVA déductible)</h3>
+    <div class="dt-wrap">
+      <table class="data-table">
+        <thead><tr><th>Nature</th><th>HT</th><th>TVA 20%</th><th>TTC</th></tr></thead>
+        <tbody>
+          <tr><td>Achats marchandises</td><td>58 390 €</td><td>11 678 €</td><td>70 068 €</td></tr>
+          <tr><td>Charges externes</td><td>3 200 €</td><td>640 €</td><td>3 840 €</td></tr>
+          <tr><td>Immobilisation (matériel)</td><td>4 200 €</td><td>840 €</td><td>5 040 €</td></tr>
+        </tbody>
+        <tfoot><tr><td>TOTAL</td><td>65 790 €</td><td>13 158 €</td><td>78 948 €</td></tr></tfoot>
+      </table>
+    </div>
+
+    <h3>Effectifs & absences — Mai (22 jours ouvrés)</h3>
+    <div class="dt-wrap">
+      <table class="data-table">
+        <thead><tr><th>Salarié</th><th>Absences</th><th>Motif</th><th>CP pris</th><th>HS 25%</th><th>HS 50%</th></tr></thead>
+        <tbody>
+          <tr><td>MARTIN Sophie</td><td>0</td><td>—</td><td>3</td><td>4h</td><td>0</td></tr>
+          <tr><td>DURRAND Paul</td><td>2</td><td>Maladie</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><td>LEBRUN Aline</td><td>0</td><td>—</td><td>5</td><td>6h</td><td>2h</td></tr>
+          <tr><td>GARCIA Tom</td><td>0</td><td>—</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><td>PETIT Claire</td><td>0</td><td>—</td><td>10</td><td>0</td><td>0</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- TÂCHES -->
+  <section class="section">
+    <div class="section-tag"><i data-lucide="clipboard-list"></i> 3.2 · Vos tâches — Travail en autonomie</div>
+    <div class="section-title">Ce que vous devez <span class="accent">préparer</span></div>
+    <div class="section-sub">Durée estimée : 3h30 minimum. Travaillez avec les données ci-dessus. Notez vos calculs et analyses par écrit.</div>
+
+    <div id="checklist" class="task-card">
+      <div class="task-num">1</div>
+      <div class="task-content">
+        <h4>Calculez 5 indicateurs clés du mois de mai <span class="time-bdg"><i data-lucide="clock"></i> 45 min</span></h4>
+        <p>(a) solde de trésorerie réel, (b) TVA à déclarer (CA3), (c) taux de marge commerciale, (d) taux d'absentéisme, (e) HS de LEBRUN Aline en euros.</p>
+        <label class="task-check-wrap"><input type="checkbox" class="task-chk"> Fait</label>
+      </div>
+    </div>
+    <div class="task-card">
+      <div class="task-num">2</div>
+      <div class="task-content">
+        <h4>Rédigez une analyse de la situation en 10 lignes <span class="time-bdg"><i data-lucide="clock"></i> 45 min</span></h4>
+        <p>Identifiez les 3 anomalies ou points de vigilance les plus importants. Style professionnel.</p>
+        <label class="task-check-wrap"><input type="checkbox" class="task-chk"> Fait</label>
+      </div>
+    </div>
+    <div class="task-card">
+      <div class="task-num">3</div>
+      <div class="task-content">
+        <h4>Balance âgée au 31 mai <span class="time-bdg"><i data-lucide="clock"></i> 30 min</span></h4>
+        <p>Construisez un tableau avec tranches 0–30j, 31–60j, 61–90j, +90j. Identifiez les clients à relancer.</p>
+        <label class="task-check-wrap"><input type="checkbox" class="task-chk"> Fait</label>
+      </div>
+    </div>
+    <div class="task-card">
+      <div class="task-num">4</div>
+      <div class="task-content">
+        <h4>Rapprochement bancaire simplifié <span class="time-bdg"><i data-lucide="clock"></i> 30 min</span></h4>
+        <p>Solde comptable 512 = 1 540 €, relevé = 1 260 €. Expliquez l'écart.</p>
+        <label class="task-check-wrap"><input type="checkbox" class="task-chk"> Fait</label>
+      </div>
+    </div>
+    <div class="task-card">
+      <div class="task-num">5</div>
+      <div class="task-content">
+        <h4>3 diapositives pour le point mensuel <span class="time-bdg"><i data-lucide="clock"></i> 60 min</span></h4>
+        <p>Décrivez le contenu de chaque diapo : chiffres clés, graphiques, messages.</p>
+        <label class="task-check-wrap"><input type="checkbox" class="task-chk"> Fait</label>
+      </div>
+    </div>
+
+    <div class="progress-task">
+      <div class="progress-task-bar" id="task-bar" style="width:0%"></div>
+    </div>
+    <div class="progress-task-lbl" id="task-lbl">0 / 5 tâches complétées</div>
+    <div id="all-done" hidden class="box box-green" style="margin-top:16px;">✓ Toutes les tâches sont cochées — vous pouvez maintenant <a href="corrige.html" style="color: var(--green); font-weight: 700;">consulter le corrigé</a>.</div>
+  </section>
+
+  <!-- Calculatrices pour le module 3 -->
+  <section class="section">
+    <div id="calc-tva" class="calc-widget">
+      <div class="calc-hdr"><i data-lucide="calculator"></i><h4>Calculatrice TVA (pour vérifier la tâche 1)</h4></div>
+      <div class="calc-body">
+        <div class="calc-row">
+          <div class="calc-field"><label>Ventes HT</label><input type="number" id="c-ventes-ht" value="103000"></div>
+          <div class="calc-field"><label>Achats HT (courants)</label><input type="number" id="c-achats-ht" value="65300"></div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field"><label>Immobilisations HT</label><input type="number" id="c-immo-ht" value="4200"></div>
+          <div class="calc-field"><label>Taux TVA %</label><input type="number" id="c-tva-taux" value="20"></div>
+        </div>
+        <button class="btn-calc" onclick="calcTVA()"><i data-lucide="play"></i> Calculer TVA</button>
+        <div class="calc-result">
+          <div><span class="calc-result-lbl">TVA nette</span><span class="calc-result-val" id="r-tva-val">—</span></div>
+          <div class="calc-result-detail" id="r-tva-detail"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="calc-hs" class="calc-widget">
+      <div class="calc-hdr"><i data-lucide="calculator"></i><h4>Calculatrice Heures Supplémentaires (LEBRUN)</h4></div>
+      <div class="calc-body">
+        <div class="calc-row">
+          <div class="calc-field"><label>Salaire brut mensuel</label><input type="number" id="hs-salaire" value="1900"></div>
+          <div class="calc-field"><label>HS à 25% (h)</label><input type="number" id="hs-25" value="6"></div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field"><label>HS à 50% (h)</label><input type="number" id="hs-50" value="2"></div>
+        </div>
+        <button class="btn-calc" onclick="calcHS()"><i data-lucide="play"></i> Calculer</button>
+        <div class="calc-result">
+          <div><span class="calc-result-lbl">Montant HS</span><span class="calc-result-val" id="r-hs-val">—</span></div>
+          <div class="calc-result-detail" id="r-hs-detail"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <div class="footer-top">
+        <span class="footer-logo"><i class="fas fa-chart-line"></i> RD Formation</span>
+        <span class="footer-separator-pipe">|</span>
+        <span class="footer-tagline">Indicateurs Clés de Performance</span>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RD Formation — <strong>Dominez vos chiffres, pilotez votre succès.</strong></p>
+        <p class="copyright-notice">Toute reproduction interdite. Ce contenu est une création intellectuelle exclusive de l'auteur.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="js/masterclass.js"></script>
+<script>
+  lucide.createIcons();
+  // Initialisation de la checklist
+  (function() {
+    const checks = document.querySelectorAll('.task-chk');
+    const bar = document.getElementById('task-bar');
+    const lbl = document.getElementById('task-lbl');
+    const done = document.getElementById('all-done');
+    function update() {
+      const checked = document.querySelectorAll('.task-chk:checked').length;
+      const total = checks.length;
+      const p = Math.round(checked / total * 100);
+      if (bar) bar.style.width = p + '%';
+      if (lbl) lbl.textContent = `${checked} / ${total} tâches complétées (${p} %)`;
+      if (done) done.hidden = (checked < total);
+    }
+    checks.forEach(c => c.addEventListener('change', update));
+  })();
+</script>
+</body>
+</html>

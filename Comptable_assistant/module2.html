@@ -1,0 +1,1504 @@
+<!-- module2.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 2 — 20 Indicateurs Clés | Masterclass Comptabilité</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <meta name="description" content="Catalogue des 20 points de contrôle pour assistants comptables : définitions, formules, exemples concrets et conseils de pro.">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="progress-bar" id="progress-bar"></div>
+
+<nav class="toolbar">
+  <button id="btn-sidebar-toggle" class="btn btn-ghost btn-sm">
+    <i data-lucide="menu"></i>
+  </button>
+  <div class="toolbar-logo"><a href="index.html"><img src="assets/logo.svg" alt="RD Formation" class="header-logo-img"></a></div>
+  <ul class="toolbar-nav">
+    <li><a href="index.html"><i data-lucide="book-open"></i> Module 1</a></li>
+    <li><a href="module2.html" class="active"><i data-lucide="layers"></i> Module 2 — 20 Indicateurs</a></li>
+    <li><a href="module3.html"><i data-lucide="zap"></i> Module 3 — TechInnov</a></li>
+  </ul>
+  <div class="toolbar-module-badge">Indicateurs</div>
+</nav>
+
+<div id="sidebar-overlay" class="sidebar-overlay" style="display:none;"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-head">
+    <h3>Navigation</h3>
+    <button id="btn-sidebar-close" class="btn btn-ghost btn-sm"><i data-lucide="x"></i></button>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Module 2 — Indicateurs</div>
+    <a href="#famille-1" class="sidebar-link"><span class="fam-dot fd-f1"></span> Famille 1 — Quotidien (1–7)</a>
+    <a href="#famille-2" class="sidebar-link"><span class="fam-dot fd-f2"></span> Famille 2 — Périodique (8–15)</a>
+    <a href="#famille-3" class="sidebar-link"><span class="fam-dot fd-f3"></span> Famille 3 — Fin d'exercice (16–20)</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Outils interactifs</div>
+    <a href="#calc-tva" class="sidebar-link"><i data-lucide="calculator"></i> Calculatrice TVA</a>
+    <a href="#calc-bfr" class="sidebar-link"><i data-lucide="calculator"></i> Calculatrice BFR</a>
+    <a href="#calc-hs" class="sidebar-link"><i data-lucide="calculator"></i> Heures sup.</a>
+  </div>
+</aside>
+
+<div class="timer-widget no-print">
+  <div class="timer-lbl"><i data-lucide="timer"></i> Temps de travail</div>
+  <div class="timer-disp" id="timer-disp">00:00:00</div>
+  <div class="timer-acts">
+    <button class="timer-btn go" id="timer-go"><i data-lucide="play"></i><span>Démarrer</span></button>
+    <button class="timer-btn" id="timer-pause"><i data-lucide="pause"></i></button>
+    <button class="timer-btn" id="timer-reset"><i data-lucide="rotate-ccw"></i></button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+  <!-- ===== MODULE 2 HEADER ===== -->
+  <div class="mod-header" data-num="02">
+    <div class="mod-num"><i data-lucide="layers"></i> Module 2 · Les 20 Points de Contrôle</div>
+    <h2>Catalogue des Indicateurs Clés de l'Assistant Comptable</h2>
+    <p>Pour chaque indicateur : objectif, sources, formule, 3 exemples concrets et un conseil de pro. À utiliser comme référence permanente.</p>
+  </div>
+
+  <!-- ===== FAMILLE 1 ===== -->
+  <div id="famille-1" class="family-div f1">
+    <div class="fam-ico"><i data-lucide="calendar"></i></div>
+    <div>
+      <h3>Famille 1 · Opérations comptables quotidiennes</h3>
+      <p>Indicateurs 1 à 7 — Suivi journalier de la trésorerie, des clients et des fournisseurs</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <!-- INDICATEUR 1 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f1">1</div>
+        <div class="ind-head-text">
+          <h3>Échéancier Clients & Balance Âgée</h3>
+          <div class="ind-fam"><i data-lucide="users"></i> Famille 1 · Gestion clients</div>
+        </div>
+      </div>
+
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab1-1"><i data-lucide="info"></i> Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab1-2"><i data-lucide="calculator"></i> Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab1-3"><i data-lucide="list"></i> Exemples & Pro Tip</div>
+      </div>
+
+      <div class="ind-pane active" data-pane="tab1-1">
+        <div class="ind-grid">
+          <div class="ind-box">
+            <div class="ind-box-t"><i data-lucide="target"></i> Objectif</div>
+            La balance âgée classe les créances clients par tranches de retard (0–30j, 30–60j, +60j). Elle permet de détecter immédiatement les impayés, d'anticiper les tensions de trésorerie et de déclencher les relances au bon moment.
+          </div>
+          <div class="ind-box">
+            <div class="ind-box-t"><i data-lucide="database"></i> Sources de données</div>
+            Balance auxiliaire clients (compte 411), journal de vente, dates d'échéances des factures, logiciel comptable (Sage, EBP, Cador) ou extraction Excel. Données rafraîchies quotidiennement.
+          </div>
+        </div>
+      </div>
+
+      <div class="ind-pane" data-pane="tab1-2">
+        <div class="formula-box">
+          <div class="formula-lbl"><i data-lucide="hash"></i> Méthode de calcul</div>
+          Taux de retard client = (Créances échues / Total créances) × 100<br>
+          Délai moyen de paiement (DMP) = (Créances clients / CA TTC) × 365<br>
+          → Exemple : (38 400 / (262 000 × 1,20)) × 365 = <span class="res">44,4 jours</span>
+        </div>
+      </div>
+
+      <div class="ind-pane" data-pane="tab1-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle">
+            <span class="ex-num">Exemple 1</span>
+            <span>BUREAU PLUS – 8 400 € échus 72j</span>
+            <span class="ex-chevron"><i data-lucide="chevron-down"></i></span>
+          </div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> En extrayant la balance âgée du 15 mai, vous constatez que le client BUREAU PLUS affiche 8 400 € avec une facture FA-2024-078 échue depuis 72 jours.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Trois causes possibles : oubli de règlement du client, litige sur la prestation, ou difficulté de trésorerie. À 72 jours, la créance entre dans la zone à risque.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Relance téléphonique immédiate, envoi d'un courrier de mise en demeure, signalement au chef comptable pour envisager une provision pour dépréciation si pas de réponse sous 15 jours.</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle">
+            <span class="ex-num">Exemple 2</span>
+            <span>Dégradation soudaine du taux de retard (12% → 28%)</span>
+            <span class="ex-chevron"><i data-lucide="chevron-down"></i></span>
+          </div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Le taux de retard global passe de 12% à 28% en un seul mois. Les retards concernent 5 clients différents.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Une dégradation aussi large et rapide peut signaler un problème systémique : facturation en retard du côté de l'entreprise, conditions de paiement trop longues, ou période de vaches maigres chez vos clients.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Vérifier que toutes les factures ont bien été émises et envoyées. Présenter l'évolution de l'indicateur sur 3 mois glissants au chef comptable avec recommandation d'une revue des conditions de paiement.</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle">
+            <span class="ex-num">Exemple 3</span>
+            <span>Paiement sans affectation</span>
+            <span class="ex-chevron"><i data-lucide="chevron-down"></i></span>
+          </div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Un client règle 6 000 € mais votre balance indique deux factures ouvertes : 4 200 € et 1 800 €. Le virement ne porte aucune référence de facture.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Sans référence, impossible de lettrer automatiquement. Si mal affecté, les deux factures resteront "ouvertes" et gonfleront artificiellement le retard client.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Contacter le client pour confirmer quelles factures sont soldées, lettrer manuellement dans le logiciel. Ne jamais laisser un paiement sans lettrage en attente plus de 48h.</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> Ne regardez jamais la balance âgée seule. Comparez-la avec le plan de relance envoyé le mois précédent. Un client qui n'a pas réagi à deux relances écrites est potentiellement un client douteux — votre chef comptable doit le savoir avant la clôture.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICATEUR 2 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f1">2</div>
+        <div class="ind-head-text">
+          <h3>Échéancier Fournisseurs — Gestion des Dettes</h3>
+          <div class="ind-fam"><i data-lucide="truck"></i> Famille 1 · Gestion fournisseurs</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab2-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab2-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab2-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab2-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>Anticiper les décaissements à venir, éviter les pénalités de retard (2,5% au-delà des délais légaux en BtoB, article L441-10 du Code de Commerce), et préserver la relation fournisseur.</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Sources de données</div>Balance auxiliaire fournisseurs (compte 401), bons de réception, factures d'achat, conditions de paiement des contrats. Croisement avec le plan de trésorerie (indicateur n°7).</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab2-2">
+        <div class="formula-box">
+          <div class="formula-lbl">Méthode de calcul</div>
+          Délai moyen de paiement fournisseur (DMP) = (Dettes fournisseurs / Achats TTC) × 365<br>
+          → Exemple : (18 600 / (131 200 × 1,20)) × 365 = <span class="res">43,2 jours</span><br>
+          Délai légal maximum en France : 60 jours calendaires (ou 45 jours fin de mois)
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab2-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> Tension de trésorerie <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> En consultant l'échéancier, vous voyez que 4 factures fournisseurs totalisant 12 000 € sont à régler d'ici 5 jours. Le solde bancaire est de 9 800 €.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Déficit de trésorerie imminent de 2 200 €. Sans action, certaines factures ne pourront pas être réglées dans les délais.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Alerter le chef comptable immédiatement. Vérifier si des encaissements clients sont attendus dans les 5 jours (balance âgée). Prioriser les paiements selon les contrats et les risques de rupture de service.</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Relance fournisseur injustifiée <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Le fournisseur IMPRIM'PLUS vous envoie une relance pour une facture de 2 800 € prétendument impayée. En consultant votre balance, vous trouvez cette facture avec un solde à zéro.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Soit le fournisseur a oublié le paiement, soit le paiement a été affecté à un autre compte, soit un avoir a soldé la facture mais n'a pas été communiqué au fournisseur.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Envoyer la preuve de paiement (avis de virement) ou l'avoir correspondant. Vérifier que le lettrage est correct dans votre logiciel.</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> Délai fournisseur proche de la limite légale <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Vous constatez que le délai moyen fournisseur est passé de 42 à 58 jours sur 3 mois. Vous approchez de la limite légale.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Soit l'entreprise a des difficultés de trésorerie et retarde ses paiements, soit les validations de factures en interne prennent trop de temps.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Alerter sur le risque légal et proposer une revue du circuit de validation des factures. Identifier les fournisseurs prioritaires à ne pas dépasser 60j.</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> Classez vos fournisseurs par criticité : un fournisseur unique pour une matière première essentielle ne doit jamais être payé en retard, même si un autre peut attendre quelques jours. Créez une liste des "fournisseurs sensibles" pour les cas de tension de trésorerie.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICATEUR 3 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f1">3</div>
+        <div class="ind-head-text">
+          <h3>État de Rapprochement Bancaire</h3>
+          <div class="ind-fam"><i data-lucide="landmark"></i> Famille 1 · Fiabilité de la trésorerie</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab3-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab3-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab3-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab3-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>S'assurer que le solde bancaire dans le logiciel de comptabilité (compte 512) correspond exactement au relevé de banque, en expliquant chaque écart.</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Données nécessaires</div>Relevé bancaire du mois, grand livre du compte 512, liste des chèques émis non encaissés, virements en transit.</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab3-2">
+        <div class="formula-box">
+          <div class="formula-lbl">Méthode de rapprochement</div>
+          Solde banque (relevé) ± Éléments en transit = Solde comptable (compte 512)<br><br>
+          Éléments en transit (côté banque) : chèques émis non encaissés, virements non crédités<br>
+          Éléments en transit (côté compta) : écriture oubliée, frais bancaires non saisis
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab3-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> Écart de 1 400 € <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Solde relevé banque : 9 800 €. Solde compte 512 en compta : 11 200 €. Écart de 1 400 €.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> L'écart peut être dû à un chèque émis et comptabilisé mais pas encore encaissé par le fournisseur, ou à des frais bancaires du mois non encore saisis.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Pointer ligne par ligne le relevé vs le grand livre. Identifier le chèque en suspens (vérifier s'il date de plus de 2 mois → risque de chèque perdu). Saisir les frais bancaires si non comptabilisés.</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Prélèvement inconnu de 350 € <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Après rapprochement, un débit de 350 € apparaît sur le relevé mais aucune écriture correspondante en compta. Le libellé est cryptique.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Prélèvement non identifié. Peut être un abonnement oublié, un prélèvement automatique sur un contrat ancien, voire un prélèvement frauduleux.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Contacter la banque pour identification du bénéficiaire. Si non reconnu, signaler immédiatement au responsable financier et à la banque pour opposition.</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> Solde identique mais mouvements erronés <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Le rapprochement est équilibré en solde, mais vous constatez que le total des débits compta est de 42 000 € et le total des débits bancaires est de 39 500 €.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Deux débits ont peut-être été comptabilisés deux fois, ou une écriture a été passée pour le mauvais montant. Le solde est correct par hasard mais les mouvements ne le sont pas.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Ne jamais se limiter au solde final. Toujours vérifier que le total des mouvements correspond. Pointer chaque ligne individuellement.</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> Ne jamais se limiter au solde. Comparez aussi le total des débits et le total des crédits sur la période. Un solde identique peut masquer deux erreurs qui se compensent — c'est l'erreur classique que l'audit détecte en quelques minutes.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICATEUR 4 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f1">4</div>
+        <div class="ind-head-text">
+          <h3>Régularisation de TVA — Factures Intracommunautaires</h3>
+          <div class="ind-fam"><i data-lucide="globe"></i> Famille 1 · TVA & conformité</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab4-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab4-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab4-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab4-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>Vérifier que les achats intracommunautaires (UE hors France) génèrent bien l'auto-liquidation de la TVA : TVA collectée ET TVA déductible dans la même déclaration, pour un impact neutre.</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Données nécessaires</div>Factures d'achat UE (sans TVA du pays vendeur), numéro de TVA intra du fournisseur, comptes 445661/44521, formulaire CA3.</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab4-2">
+        <div class="formula-box">
+          <div class="formula-lbl">Méthode d'auto-liquidation</div>
+          Débit 60xxx (charge) / Crédit 401 (dette fournisseur) = montant HT<br>
+          Débit 44521 TVA déductible / Crédit 44566 TVA collectée = montant TVA calculé<br><br>
+          TVA à auto-liquider = Montant HT × Taux TVA français applicable (20% ou 10%)
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab4-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> Fournisseur allemand – auto-liquidation <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Facture d'un fournisseur allemand pour 5 000 € HT, sans TVA mentionnée. Mention "Reverse Charge" présente sur la facture.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Régime d'auto-liquidation applicable. TVA à calculer : 5 000 × 20% = 1 000 €. À déclarer à la fois en TVA collectée et en TVA déductible sur la CA3.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Passer l'écriture complète (4 lignes), vérifier que les cases adéquates de la CA3 sont renseignées (lignes A2 et 20 pour l'intracommunautaire).</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Oubli d'auto-liquidation <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Une facture d'achat UE a été saisie sans l'auto-liquidation de TVA. Elle a été déclarée en CA3 le mois précédent.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Erreur déclarative. La TVA collectée n'a pas été déclarée, ce qui constitue une irrégularité fiscale pouvant entraîner une pénalité de 5% des droits éludés.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Préparer une déclaration rectificative CA3 et informer le chef comptable. Passer les écritures de régularisation sur l'exercice en cours.</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> Fournisseur espagnol avec TVA étrangère <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Un fournisseur espagnol vous facture avec TVA espagnole à 21%. Vous ne savez pas si vous pouvez récupérer cette TVA.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Si votre entreprise est assujettie à la TVA française et que les conditions d'auto-liquidation sont remplies, le fournisseur ne devait pas facturer sa TVA nationale. Vous pouvez demander le remboursement via la procédure de remboursement de TVA étrangère.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Contacter le fournisseur pour correction de la facture. En attendant, comptabiliser avec la TVA espagnole mais ne pas la mettre en déductible. Informer le chef comptable.</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> Vérifiez systématiquement le numéro de TVA intracommunautaire de votre fournisseur sur le site VIES (ec.europa.eu/vies) avant toute commande. Sans numéro valide, vous ne pouvez pas appliquer la TVA à taux zéro, et l'achat doit être traité en TTC.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICATEUR 5 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f1">5</div>
+        <div class="ind-head-text">
+          <h3>Lettrage des Comptes Clients & Fournisseurs</h3>
+          <div class="ind-fam"><i data-lucide="link-2"></i> Famille 1 · Contrôle et prévention</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab5-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab5-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab5-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab5-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>Associer chaque règlement à la facture qu'il solde. Un compte non lettré contient des écritures "en suspens" qui gonflent artificiellement les créances et les dettes, et rendent la balance âgée inutilisable.</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Données nécessaires</div>Grand livre auxiliaire clients (411) et fournisseurs (401), bordereaux de remise de chèques, avis de virements, rapprochement bancaire.</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab5-2">
+        <div class="formula-box">
+          <div class="formula-lbl">Règle d'or du lettrage</div>
+          Facture (débit 411) + Règlement (crédit 411) = Solde lettré = 0<br>
+          Un compte bien lettré ne doit contenir QUE des écritures non encore réglées<br><br>
+          Taux de lettrage = Écritures lettrées / Total écritures × 100 (objectif : > 95%)
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab5-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> 35 000 € de créances fantômes <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> La balance auxiliaire clients affiche 120 000 € de créances ouvertes. Après vérification, 35 000 € sont des écritures non lettrées datant de plus de 6 mois correspondant à des factures réglées.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Le BFR apparent est sur-évalué de 35 000 €. Les relances ont peut-être été envoyées pour rien à des clients ayant déjà réglé — risque de détérioration de la relation client.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Session de lettrage de rattrapage. Pour les écritures de plus d'un an, vérifier avec le banquier les encaissements réels. Documenter pour expliquer à l'expert-comptable lors de la clôture.</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Escompte spontané <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Un client règle 9 800 € pour deux factures de 5 000 € et 5 000 €. Il manque 200 €. Escompte spontané non prévu au contrat.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Le client a déduit un escompte qu'il n'avait pas le droit de prendre. Il faut solder proprement : soit accepter l'escompte et le comptabiliser (665), soit relancer pour les 200 € manquants.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Consulter le contrat ou les conditions générales de vente. Si escompte non prévu → relance pour le solde. Si toléré → saisir un avoir ou un produit exceptionnel et lettrer le tout.</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> Doublons de factures <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> En préparant la clôture, vous trouvez 15 écritures en double sur le compte 411, créant des débits fictifs de 28 000 €.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Des factures ont été saisies deux fois (import automatique + saisie manuelle, par exemple). Le résultat et la TVA ont peut-être été déclarés deux fois.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Extourner les doublons, vérifier la CA3 correspondante, et mettre en place un contrôle de détection des doublons dans le logiciel (alerte sur même numéro de facture + même fournisseur).</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> Faites un lettrage hebdomadaire plutôt que mensuel. Chaque semaine non lettrée crée une "dette d'entretien" des comptes qui explose au moment de la clôture. 30 minutes par semaine valent mieux que 3 jours en décembre.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICATEUR 6 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f1">6</div>
+        <div class="ind-head-text">
+          <h3>Suivi des Notes de Frais — Conformité & TVA Récupérable</h3>
+          <div class="ind-fam"><i data-lucide="receipt"></i> Famille 1 · Conformité & TVA</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab6-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab6-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab6-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab6-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>Contrôler que les notes de frais sont justifiées (justificatifs originaux, motif professionnel), correctement imputées, et que la TVA récupérable est bien identifiée selon les règles spécifiques (restaurant, carburant, transport).</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Données nécessaires</div>Formulaires de notes de frais remplis par les salariés, justificatifs originaux (tickets, factures), barème kilométrique de l'administration fiscale, grille des taux de TVA récupérables.</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab6-2">
+        <div class="formula-box">
+          <div class="formula-lbl">TVA récupérable selon la nature des frais</div>
+          Repas d'affaires : TVA 20% récupérable à 100% si justificatif et convives identifiés<br>
+          Carburant essence : TVA récupérable à 80% (véhicule de tourisme)<br>
+          Carburant diesel : TVA récupérable à 80% (véhicule de tourisme)<br>
+          Hôtel (nuitée) : TVA non récupérable sur la nuit, récupérable sur le petit-déjeuner
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab6-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> Repas d'affaires sans justificatif <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Un commercial dépose une note de frais de 480 € pour un repas d'affaires. Le ticket de caisse est absent — il a perdu le justificatif. Le montant semble élevé pour 2 personnes.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Sans justificatif original, la TVA n'est pas récupérable. De plus, en cas de contrôle fiscal, la charge peut être requalifiée en avantage en nature si non justifiée.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Refuser le remboursement TVA. Demander si le restaurant peut fournir un duplicata de facture. Vérifier le plafond de remboursement repas de la convention collective applicable. Signaler si le montant est hors normes.</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Barème kilométrique sous-évalué <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Un salarié utilise son véhicule personnel pour des déplacements professionnels. Il demande 0,35 €/km alors que le barème fiscal pour sa puissance fiscale est de 0,548 €/km.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Remboursement inférieur au barème : la différence non remboursée peut être déduite par le salarié dans sa déclaration d'impôts personnelle. Pas d'anomalie côté entreprise mais sous-remboursement injuste pour le salarié.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Vérifier la politique de remboursement interne. Informer le DRH si l'entreprise sous-rembourse systématiquement — risque de contentieux prud'homal.</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> Pic inhabituel des notes de frais <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> En analysant le compte 625 (déplacements), vous constatez que les notes de frais de janvier représentent 8 500 € contre une moyenne mensuelle de 2 200 €.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Anomalie significative (+287%). Peut s'expliquer par un salon professionnel, un déplacement exceptionnel, ou des fraudes aux notes de frais.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Extraire le détail par salarié, vérifier les justificatifs, et présenter l'analyse à la direction si aucune explication évidente. Proposer la mise en place de plafonds par catégorie de frais.</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> Créez un tableau récapitulatif mensuel par nature de frais (repas, transport, hébergement) et par salarié. En 10 minutes par mois, vous identifiez les anomalies et vous constituez un dossier propre en cas de contrôle URSSAF.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICATEUR 7 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f1">7</div>
+        <div class="ind-head-text">
+          <h3>Prévision de Trésorerie à Court Terme (30 jours)</h3>
+          <div class="ind-fam"><i data-lucide="trending-up"></i> Famille 1 · Pilotage de la trésorerie</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab7-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab7-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab7-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab7-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>Anticiper les positions bancaires à 30 jours pour éviter les découverts imprévus, optimiser les placements de trésorerie excédentaire, et alerter la direction suffisamment tôt en cas de tension.</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Données nécessaires</div>Solde bancaire du jour, échéancier clients (encaissements attendus), échéancier fournisseurs (décaissements prévus), charges fixes récurrentes (loyers, salaires, charges sociales).</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab7-2">
+        <div class="formula-box">
+          <div class="formula-lbl">Structure du tableau de trésorerie 30 jours</div>
+          Trésorerie J = Trésorerie J-1 + Encaissements J − Décaissements J<br><br>
+          Encaissements : règlements clients + autres recettes<br>
+          Décaissements : fournisseurs + salaires + charges sociales + TVA + emprunt
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab7-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> Découvert prévu le 8 mai <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Le tableau prévisionnel montre un solde négatif de -1 200 € le 8 mai (jour des salaires). Solde actuel : 9 800 €. Encaissements attendus insuffisants.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Sans action, l'entreprise sera en découvert le 8 mai. Les agios de découvert et les éventuels incidents de paiement (salaires refusés) sont des risques sérieux.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Informer le chef comptable 10 jours à l'avance. Options : activer la ligne de crédit court terme, accélérer la relance du client DUPONT attendu le 9 mai, ou décaler un paiement fournisseur non critique.</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Trésorerie excédentaire dormante <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> La trésorerie atteint 45 000 € à la fin du mois, bien au-dessus du besoin opérationnel de 10 000 €. L'excédent est sur le compte courant à 0%.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Trésorerie dormante. Même un placement court terme (livret, DAT) à 3% annuel sur 35 000 € rapporte environ 1 750 € par an.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Signaler l'opportunité de placement au chef comptable ou au directeur financier. Préparer une analyse simple avec les options disponibles (livret entreprise, dépôt à terme).</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> Charge fiscale récurrente non anticipée <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Chaque mois de janvier, la trésorerie chute brutalement à cause du paiement de la taxe d'apprentissage et de la CFE (taxe foncière entreprise).</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Charges fiscales prévisibles mais non anticipées dans le plan de trésorerie. Récurrence identifiable.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Intégrer systématiquement ces charges dans le plan prévisionnel annuel. Proposer la mise en place d'une provision mensuelle pour lisser l'impact.</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> Distinguez trésorerie "certaine" (encaissements déjà reçus, charges fixes connues) et trésorerie "probable" (encaissements attendus selon l'échéancier). Présentez toujours deux scénarios à votre chef comptable : le pessimiste et le réaliste.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAMILLE 2 ===== -->
+  <div id="famille-2" class="family-div f2">
+    <div class="fam-ico"><i data-lucide="repeat"></i></div>
+    <div>
+      <h3>Famille 2 · Opérations comptables périodiques</h3>
+      <p>Indicateurs 8 à 15 — TVA mensuelle, paie, tableaux de bord et soldes intermédiaires</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <!-- INDICATEUR 8 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f2">8</div>
+        <div class="ind-head-text">
+          <h3>Taux de TVA Collectée / Déductible — Calcul & Justification</h3>
+          <div class="ind-fam"><i data-lucide="percent"></i> Famille 2 · TVA</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab8-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab8-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab8-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab8-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>Vérifier la cohérence entre la TVA enregistrée dans les comptes et le montant à déclarer sur la CA3. Un écart non expliqué signale une saisie incorrecte ou une omission.</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Données nécessaires</div>Grand livre des comptes 44571 (TVA collectée), 44566 (TVA intracommunautaire), 44521 (TVA déductible sur biens), 44526 (TVA déductible sur services), journal de vente et d'achat.</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab8-2">
+        <div class="formula-box">
+          <div class="formula-lbl">Contrôle croisé TVA</div>
+          TVA collectée théorique = Σ (Ventes HT × Taux applicable)<br>
+          TVA déductible théorique = Σ (Achats HT × Taux × % de déductibilité)<br>
+          TVA à payer = TVA collectée − TVA déductible (si positif → paiement, si négatif → crédit)
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab8-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> Écart de 1 200 € sur la collectée <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Les ventes HT du mois s'élèvent à 85 000 €. La TVA collectée comptabilisée est de 15 800 €. Théoriquement, à 20%, elle devrait être de 17 000 €. Écart de 1 200 €.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Soit une vente a été saisie HT au lieu de TTC, soit une facture avec TVA à taux réduit (10%) a été comptabilisée à 20%. Vérifier les ventilations par taux dans le journal de ventes.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Extraire les ventes par taux de TVA, identifier la facture discordante, régulariser avant d'envoyer la CA3. Ne jamais déposer une déclaration TVA sans ce contrôle préalable.</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Crédit de TVA inhabituel <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Vous constatez un crédit de TVA de 8 000 € ce mois-ci, inhabituel pour votre activité.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Causes possibles : grosse facture d'investissement encaissée, mois de faible activité commerciale, ou erreur de saisie (TVA déductible comptabilisée deux fois).</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Vérifier si un achat d'immobilisation a bien été effectué ce mois. Si tout est correct, vous avez le droit à un remboursement de crédit de TVA à demander via la CA3 (case 26).</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> Facture de vente oubliée après dépôt CA3 <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> La CA3 a été déposée mais vous réalisez 48h après qu'une facture de vente de 12 000 € HT a été oubliée.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> La TVA collectée de 2 400 € n'a pas été déclarée. Risque de redressement en cas de contrôle, avec majoration de 10% si régularisation spontanée avant mise en demeure.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Déposer une CA3 rectificative immédiatement. La régularisation spontanée est toujours plus clémente qu'une déclaration tardive subie. Informer le chef comptable.</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> Avant de valider la CA3, faites toujours le "contrôle 3 colonnes" : CA déclaré en TVA vs CA du journal de ventes vs CA de la balance. Les trois doivent coïncider. Cela prend 5 minutes et évite 90% des erreurs déclaratives.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICATEUR 9 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f2">9</div>
+        <div class="ind-head-text">
+          <h3>Déclaration de TVA — Lien avec le Grand Livre</h3>
+          <div class="ind-fam"><i data-lucide="file-text"></i> Famille 2 · TVA</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab9-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab9-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab9-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab9-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>Vérifier que le montant à payer figurant sur la CA3 correspond exactement au solde du compte 44551 (TVA à décaisser) dans la balance. Tout écart doit être expliqué et documenté.</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Données nécessaires</div>Formulaire CA3 du mois, balance des comptes 445xx, grand livre, journal de TVA (si existant dans le logiciel).</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab9-2">
+        <div class="formula-box">
+          <div class="formula-lbl">Vérification</div>
+          Solde du compte 44551 (TVA à décaisser) = Montant de la CA3 à payer.
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab9-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> Écart de 300 € avant paiement <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Vous préparez le paiement de la TVA du mois d'avril : la CA3 indique 4 820 € à payer. Le virement est prêt. En vérifiant le compte 44551, vous lisez 4 520 €.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Écart de 300 €. Soit la CA3 contient une erreur, soit une écriture en compta n'a pas été prise en compte dans la déclaration. Payer le montant incorrect crée une irrégularité.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Rapprocher ligne par ligne avant tout paiement. Identifier l'origine de l'écart. Ne jamais payer la TVA sans ce rapprochement final.</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Soldes cohérents mais doute <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Le compte 44551 présente un solde créditeur de 6 200 € alors que la CA3 déposée affiche 6 200 €. Tout semble correct. Vous avez cependant un doute sur une facture.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Si les soldes correspondent, c'est rassurant mais ne garantit pas que chaque ligne est correcte (deux erreurs peuvent se compenser). Le doute mérite d'être levé.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Vérifier la facture en question séparément. Si elle est correcte, noter votre contrôle dans un tableur de suivi mensuel TVA pour le dossier de clôture.</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> TVA exceptionnellement élevée justifiée <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> La TVA de mai est exceptionnellement élevée (12 000 € vs 4 000 € en moyenne). Cela correspond à la livraison d'une grosse commande client de 60 000 € HT.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> La hausse est justifiée. Mais le décaissement de 12 000 € va peser sur la trésorerie du 15 mai. Ce n'est pas une erreur — c'est une information de pilotage à partager.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Intégrer ce décaissement dans le plan de trésorerie et alerter si nécessaire. Mentionner l'explication dans votre note de synthèse mensuelle.</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> Archivez chaque CA3 avec l'extrait de balance correspondant. En cas de contrôle fiscal (qui peut intervenir jusqu'à 3 ans après), vous pourrez justifier instantanément chaque déclaration sans fouiller dans des archives dispersées.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICATEUR 10 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f2">10</div>
+        <div class="ind-head-text">
+          <h3>Base Imposable & Calcul de l'IS — Préparation Déclarative</h3>
+          <div class="ind-fam"><i data-lucide="landmark"></i> Famille 2 · Impôt sur les Sociétés</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab10-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab10-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab10-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab10-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>Préparer les éléments permettant au chef comptable ou à l'expert-comptable de calculer les acomptes d'IS et d'anticiper la charge fiscale de l'exercice. L'assistant n'arrête pas le résultat fiscal mais alerte sur les grandes tendances.</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Données nécessaires</div>Résultat comptable intermédiaire, retraitements fiscaux courants (amortissements non déductibles, dons, amendes), tableau des réintégrations et déductions, taux d'IS en vigueur.</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab10-2">
+        <div class="formula-box">
+          <div class="formula-lbl">Calcul simplifié de l'IS</div>
+          Résultat fiscal = Résultat comptable + Réintégrations − Déductions fiscales<br>
+          IS au taux normal = Résultat fiscal × 25%<br>
+          PME : taux réduit 15% sur les 42 500 premiers euros de bénéfice (si CA &lt; 10M€)<br><br>
+          Acompte IS = IS estimé N × 25% (versé en mars, juin, sept, déc)
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab10-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> Amende non déductible <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Le résultat comptable intermédiaire à fin septembre est de 28 000 €. L'entreprise a reçu une amende de la DGCCRF de 1 500 €, comptabilisée en charges.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Les amendes et pénalités ne sont pas déductibles fiscalement. La base imposable est de 28 000 + 1 500 = 29 500 €. Sur l'année entière, le résultat fiscal sera supérieur au comptable.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Lister tous les éléments non déductibles de l'année et les communiquer au chef comptable pour le calcul du 3ème acompte de septembre.</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Suramortissement sur investissement <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> L'entreprise a investi 30 000 € en matériel éligible à la déduction exceptionnelle ("suramortissement"). Cela n'est pas reflété dans les amortissements comptables.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Déduction supplémentaire de 15% à 40% (selon dispositif) applicable sur la base fiscale, réduisant l'IS. Opportunité à ne pas rater.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Signaler l'investissement au chef comptable et demander si le dispositif de suramortissement est applicable. Préparer les éléments du tableau n°2033-D de la liasse fiscale.</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> Trop-perçu d'IS <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Fin d'année, le résultat comptable est de 6 300 €. Les acomptes IS versés dans l'année totalisent 4 200 €. Solde IS dû en avril N+1 ?</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Sur les 42 500 premiers euros, taux de 15%. IS = 6 300 × 15% = 945 €. Acomptes versés : 4 200 €. Trop-perçu : 4 200 − 945 = 3 255 € → remboursement par l'État.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Informer le chef comptable du remboursement attendu et l'intégrer dans la prévision de trésorerie d'avril.</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> Tenez un tableau annuel des réintégrations fiscales dès janvier. En listant au fur et à mesure les amendes, cadeaux clients > 69 €, et dépenses somptuaires, vous évitez le stress de fin d'année où personne ne se souvient plus de rien.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICATEUR 11 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f2">11</div>
+        <div class="ind-head-text">
+          <h3>Éléments Variables de la Paie — Collecte & Contrôle Avant Traitement</h3>
+          <div class="ind-fam"><i data-lucide="users"></i> Famille 2 · Gestion de la paie</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab11-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab11-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab11-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab11-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>Collecter et vérifier les éléments variables avant transmission au gestionnaire de paie : heures supplémentaires, absences, primes, acomptes. Une erreur à cette étape se retrouvera directement sur le bulletin du salarié.</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Données nécessaires</div>Fiches de pointage ou logiciel de temps (SIRH), contrats de travail, accord d'entreprise, tableau des congés validés par les managers, notes de frais remboursées hors paie.</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab11-2">
+        <div class="formula-box">
+          <div class="formula-lbl">Calcul des heures supplémentaires</div>
+          HS à 25% (de la 36e à la 43e heure) = HS × (Salaire horaire × 1,25)<br>
+          HS à 50% (au-delà de la 43e heure) = HS × (Salaire horaire × 1,50)<br>
+          Salaire horaire = Salaire mensuel brut / 151,67 (durée mensuelle pour 35h)
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab11-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> Calcul HS de LEBRUN Aline <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> LEBRUN Aline a effectué 6h à 25% et 2h à 50%. Son salaire brut de base est de 1 900 €. Calcul des heures supplémentaires.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Salaire horaire = 1 900 / 151,67 = 12,53 €/h. HS 25% = 6 × (12,53 × 1,25) = 93,98 €. HS 50% = 2 × (12,53 × 1,50) = 37,59 €. Total HS = 131,57 €. Salaire brut total de mai = 1 900 + 131,57 = 2 031,57 €.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Transmettre ce calcul au gestionnaire de paie avec les justificatifs de pointage signés. Vérifier que les HS ont été autorisées par le manager avant de les intégrer.</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Absence maladie : maintien ou déduction ? <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> DURRAND Paul a été absent 2 jours pour maladie. Il est en CDI depuis 3 ans. Doit-on déduire ces jours de son salaire ?</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> En France, pour les arrêts maladie, les 3 premiers jours (carence CPAM) peuvent être maintenus ou non selon la convention collective ou un accord d'entreprise. À vérifier dans le contrat de travail ou la CCN applicable.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Consulter la convention collective. Si maintien de salaire prévu : aucune déduction. Sinon : déduction de 2/21,67 du salaire mensuel pour les 2 jours de carence. Vérifier les attestations de l'arrêt maladie.</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> HS non validées par le manager <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Vous recevez les variables de paie le 25 du mois pour un traitement le 28. Parmi les données, les heures de GARCIA Tom ne sont pas signées par son manager.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Les heures supplémentaires non validées hiérarchiquement peuvent être contestées. Si vous les intégrez sans validation, l'entreprise s'expose à un litige en cas d'erreur.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Bloquer l'intégration des HS de GARCIA, contacter le manager en urgence pour validation. Traiter avec les données validées disponibles et faire un bulletin rectificatif si nécessaire.</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> Créez une checklist de réception des variables de paie : pour chaque salarié, cochez "pointage reçu", "absence justifiée", "validation manager", "éléments variables calculés". Zéro case vide avant de transmettre au service paie.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICATEUR 12 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f2">12</div>
+        <div class="ind-head-text">
+          <h3>Analyse du Bulletin de Paie — Haut, Bas & Cumuls Annuels</h3>
+          <div class="ind-fam"><i data-lucide="file-text"></i> Famille 2 · Contrôle de la paie</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab12-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab12-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab12-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab12-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>Savoir lire, vérifier et expliquer un bulletin de salaire : décomposer le brut, les cotisations sociales (salariales et patronales), le net à payer et les cumuls. Détecter les anomalies avant paiement.</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Données nécessaires</div>Bulletin de paie imprimé ou extrait du logiciel de paie, DADS-U ou DSN, tableaux de taux de cotisations (Urssaf, retraite, prévoyance), plafond de la Sécurité Sociale (PSS : 3 864 €/mois en 2024).</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab12-2">
+        <div class="formula-box">
+          <div class="formula-lbl">Structure d'un bulletin — les clés essentielles</div>
+          Salaire brut = Base mensuelle + Éléments variables (HS, primes)<br>
+          Net imposable = Brut − Cotisations non imposables (prévoyance patronale…)<br>
+          Net à payer = Brut − Cotisations salariales − CSG/CRDS non déductible<br><br>
+          Vérification : Net à payer ÷ Brut ≈ 75-78% (CDI moyen, non cadre)
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab12-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> Ratio net/brut plus bas que la normale <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Le bulletin de MARTIN Sophie indique : Brut 2 800 €, Net à payer 2 038 €. Ratio : 2 038 / 2 800 = 72,8%. Légèrement en dessous du ratio attendu.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Un ratio plus bas peut s'expliquer par un statut cadre (cotisations plus élevées), une prévoyance complémentaire importante, ou une cotisation retraite supplémentaire.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Vérifier la convention collective et le statut cadre/non-cadre. Si le ratio est anormalement bas sans explication, signaler au gestionnaire de paie.</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Écart sur cumul annuel <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> En vérification annuelle des cumuls, le salaire brut annuel de GARCIA Tom affiche 31 200 € sur le bulletin de décembre, mais votre tableur de suivi indique 29 800 €. Écart de 1 400 €.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Possible oubli d'un mois de primes dans votre suivi, ou régularisation non documentée dans le logiciel de paie. L'écart impactera la DADS (déclaration annuelle) et potentiellement la fiche fiscale.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Réconcilier mois par mois. Identifier le mois de l'écart. Si erreur logiciel de paie, corriger avant édition de la DSN annuelle de décembre.</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> Contestation de jours fériés <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Un salarié conteste son bulletin : il dit avoir travaillé 5 jours fériés mais n'avoir été rémunéré que pour 3.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> La rémunération des jours fériés dépend de la convention collective et du planning. Si le salarié a raison, l'entreprise doit un rappel de salaire et les charges sociales correspondantes.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Vérifier les plannings et les pointages des 5 dates concernées. Consulter la CCN. Si le salarié a raison, préparer un bulletin de rappel pour le mois suivant.</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> En fin d'année, faites un rapprochement entre les cumuls des bulletins de tous les salariés et le compte 641 (rémunérations du personnel) de la balance. Ces deux sources doivent être parfaitement égales. Tout écart = une erreur comptable ou paie à corriger avant le bilan.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICATEUR 13 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f2">13</div>
+        <div class="ind-head-text">
+          <h3>Tableau de Bord des Ventes — CA, Marges & Analyse Mensuelle</h3>
+          <div class="ind-fam"><i data-lucide="bar-chart-2"></i> Famille 2 · Pilotage commercial</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab13-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab13-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab13-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab13-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>Produire mensuellement un tableau synthétique des ventes par famille de produits/services, comparer au mois précédent et à l'objectif, calculer les taux de marge et identifier les dérives.</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Données nécessaires</div>Journal de ventes, journal d'achats, compte 707 (ventes marchandises), 706 (prestations), 600/601 (achats), paramétrage analytique si disponible.</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab13-2">
+        <div class="formula-box">
+          <div class="formula-lbl">Indicateurs clés du tableau de bord</div>
+          Taux de marge brute = (CA − Coût d'achat des marchandises) / CA × 100<br>
+          Taux de marge nette = Résultat net / CA × 100<br>
+          Évolution CA = (CA mois N − CA mois N-1) / CA mois N-1 × 100
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab13-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> Baisse tendancielle du taux de marge sur 5 mois <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Le taux de marge sur le matériel informatique est de 35% en mai vs 42% en janvier. Une tendance à la baisse sur 5 mois.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Plusieurs causes : remises commerciales accordées trop généreusement, prix d'achat fournisseur en hausse non répercutée sur les tarifs de vente, ou mix produit défavorable (vente de produits moins rentables).</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Préparer un graphique d'évolution mensuelle du taux de marge sur 12 mois et le présenter au chef comptable. Suggérer une analyse des remises accordées par commercial.</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Chute des ventes sur une famille peu rentable <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Les ventes de consommables chutent de 33,3% en un mois et le taux de marge de cette famille n'est que de 30%.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Double problème : perte de volume ET faible rentabilité. Cette famille de produits pèse peu en CA mais mobilise du stock et de la logistique. Question à poser : est-elle rentable à maintenir ?</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Calculer la contribution nette de cette gamme (en intégrant les coûts logistiques et de stockage) et présenter une analyse coûts-bénéfices à la direction.</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> Suivi de l'objectif annuel <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Le CA total de mai est de 103 000 € vs un objectif annuel de 1 100 000 €. Vous êtes à fin mai (5/12e de l'année).</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Objectif à 5 mois = 1 100 000 × 5/12 = 458 333 €. CA cumulé réel = à calculer depuis janvier. Si inférieur, l'entreprise risque de manquer son objectif annuel.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Construire un tableau comparatif "Réalisé vs Objectif" cumulé mois par mois. C'est l'outil le plus simple et le plus puissant pour piloter l'activité commerciale.</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> Ne présentez jamais un chiffre sans sa référence. "68 400 € de ventes en mai" ne veut rien dire seul. "68 400 € en mai, +31,5% vs avril, taux de marge en baisse de 7 points sur 5 mois" — voilà de l'information de pilotage.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICATEUR 14 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f2">14</div>
+        <div class="ind-head-text">
+          <h3>Soldes Intermédiaires de Gestion (SIG) Simplifiés</h3>
+          <div class="ind-fam"><i data-lucide="pie-chart"></i> Famille 2 · Analyse de la performance</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab14-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab14-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab14-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab14-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>Décomposer le résultat en étapes successives pour comprendre "où l'entreprise gagne et où elle perd de l'argent". Les SIG permettent de répondre à des questions précises : est-ce que la politique commerciale est bonne ? Les charges de personnel sont-elles maîtrisées ?</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Données nécessaires</div>Compte de résultat intermédiaire du mois (balance par classe), répartition des charges par nature, données N-1 pour comparaison.</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab14-2">
+        <div class="formula-box">
+          <div class="formula-lbl">Calcul des SIG (cascade)</div>
+          Marge commerciale = Ventes de marchandises − Coût d'achat des marchandises vendues<br>
+          Valeur ajoutée = Marge commerciale + Production de l'exercice − Consommations en provenance de tiers<br>
+          EBE = Valeur ajoutée + Subventions d'exploitation − Impôts et taxes − Charges de personnel<br>
+          Résultat d'exploitation = EBE − Dotations aux amortissements et provisions<br>
+          Résultat courant avant impôt = Résultat d'exploitation + Résultat financier<br>
+          Résultat net = Résultat courant + Résultat exceptionnel − Participation − Impôt
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab14-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> Dégradation de l'EBE malgré hausse du CA <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> L'EBE passe de 15 000 € en mars à 8 200 € en mai malgré un CA en hausse de 14%.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Les charges de personnel ou les charges externes ont augmenté proportionnellement plus vite que le CA. L'EBE mesure la performance "avant" amortissements et charges financières — sa dégradation est un signal d'alarme structurel.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Analyser l'évolution des charges externes et de personnel sur les 3 mois concernés. Identifier la(les) ligne(s) en dérive et alerter la direction.</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Résultat d'exploitation positif, résultat net négatif <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Le résultat d'exploitation est positif (+5 700 €) mais le résultat net est négatif (-1 200 €) à cause de charges financières élevées (remboursement d'emprunt).</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> L'exploitation est saine mais le financement pèse trop lourd. L'entreprise gagne de l'argent par son activité mais le rembourse aux banques. Question de structure financière, pas de performance opérationnelle.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Présenter les deux résultats séparément au chef comptable. La solution n'est pas commerciale (on vend bien) mais financière (renégociation de l'emprunt ?).</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> Baisse de la valeur ajoutée <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> La valeur ajoutée (CA − achats − charges externes) représente 32% du CA, contre 38% en N-1.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> L'entreprise externalise de plus en plus (ou achète plus), ce qui réduit sa valeur ajoutée interne. Ce peut être une stratégie délibérée (sous-traitance) ou un problème de coûts d'achat.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Comparer avec les données N-1 sur les mêmes périodes. Si la baisse est tendancielle, préparer une note d'analyse pour le chef comptable ou l'expert-comptable lors de la clôture.</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> L'EBE est l'indicateur favori des banquiers. Lorsque votre entreprise cherche un emprunt ou une ligne de crédit, l'EBE sert de base au calcul de la capacité de remboursement. Un EBE solide = un dossier bancaire solide.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICATEUR 15 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f2">15</div>
+        <div class="ind-head-text">
+          <h3>Taux d'Absentéisme — Calcul & Analyse RH</h3>
+          <div class="ind-fam"><i data-lucide="user-minus"></i> Famille 2 · Gestion des ressources humaines</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab15-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab15-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab15-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab15-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>Mesurer la proportion du temps de travail perdu pour cause d'absence (maladie, accident, absences injustifiées), identifier les services ou les périodes à risque, et alerter la direction RH.</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Données nécessaires</div>Variables de paie (nombre de jours d'absence par salarié et par motif), tableau des effectifs, nombre de jours ouvrés du mois, convention collective pour la distinction des absences.</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab15-2">
+        <div class="formula-box">
+          <div class="formula-lbl">Formule du taux d'absentéisme</div>
+          Taux d'absentéisme = (Nb jours d'absence / Nb jours théoriques travaillés) × 100<br><br>
+          Nb jours théoriques = Effectif × Nb jours ouvrés du mois<br>
+          Exemple TechInnov Mai (5 salariés, 22 jours ouvrés) :<br>
+          Jours théoriques = 5 × 22 = 110 jours<br>
+          Jours absents : DURRAND 2j maladie = 2 jours<br>
+          Taux = (2 / 110) × 100 = <span class="res">1,82%</span> (excellent : normal = 4-5%)
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab15-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> Pic d'absentéisme à 8,5% en janvier <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Le taux d'absentéisme de janvier passe à 8,5% (vs 3% en moyenne). La plupart des absences sont des arrêts maladie de moins de 3 jours sur le même département.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Pic hivernal classique (grippe), mais la concentration sur un département peut aussi signaler un problème de management, de conditions de travail, ou une épidémie localisée.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Présenter le graphique d'évolution mensuelle par département à la DRH. Proposer une analyse croisée avec le turnover du département concerné.</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Absences répétées les lundis et vendredis <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Un salarié a cumulé 18 jours d'absence sur 3 mois différents, toujours les lundis et vendredis. Aucun justificatif médical pour 8 de ces jours.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Schéma suspect d'absences "à la carte" autour des week-ends. Absences injustifiées potentiellement répétées. Impact sur le coût de remplacement et le moral de l'équipe.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Signaler le cas (avec données chiffrées) au DRH uniquement, sans jugement. Ce sont les RH et le manager qui ont compétence pour gérer l'entretien de recadrage. Votre rôle est de fournir les données.</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> Coût caché de l'absentéisme <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Malgré un taux d'absentéisme faible, le coût des absences (remplacement intérim, heures supplémentaires) représente 4,2% de la masse salariale totale.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Le taux bas masque des absences stratégiques sur des postes critiques qui nécessitent des remplacements coûteux. La vraie mesure est le coût, pas seulement le nombre de jours.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Proposer de compléter le tableau de bord RH avec un indicateur "coût de l'absentéisme en € par trimestre".</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> Distinguez toujours les absences "légitimes" (congés maternité, accident du travail) des absences "à risque" (arrêts de moins de 3 jours, absences injustifiées) dans votre tableau. Un taux global mélange des réalités très différentes.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAMILLE 3 ===== -->
+  <div id="famille-3" class="family-div f3">
+    <div class="fam-ico"><i data-lucide="archive"></i></div>
+    <div>
+      <h3>Famille 3 · Opérations de fin d'exercice</h3>
+      <p>Indicateurs 16 à 20 — Immobilisations, stocks, dépréciations, emprunts et clôture des comptes</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <!-- INDICATEUR 16 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f3">16</div>
+        <div class="ind-head-text">
+          <h3>Tableau de Suivi des Immobilisations — Acquisitions, Cessions & Dotations</h3>
+          <div class="ind-fam"><i data-lucide="hard-drive"></i> Famille 3 · Immobilisations</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab16-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab16-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab16-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab16-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>Tenir à jour le registre de toutes les immobilisations (biens durables > 500 € HT) : date d'acquisition, valeur brute, durée d'amortissement, amortissements cumulés, valeur nette comptable (VNC). Outil central pour la clôture.</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Données nécessaires</div>Factures d'investissement, contrats de crédit-bail, procès-verbaux de cession ou de mise au rebut, logiciel de comptabilité ou Excel dédié, comptes 21xxx (immobilisations), 28xxx (amortissements).</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab16-2">
+        <div class="formula-box">
+          <div class="formula-lbl">Structure du tableau</div>
+          Colonnes : Désignation, compte, date acquisition, valeur brute, durée, amortissements cumulés, VNC, observations.
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab16-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> Cession d'un véhicule avec moins-value <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> L'entreprise vend le véhicule Renault pour 15 000 € alors que sa VNC est de 17 600 €. Quelle est la conséquence comptable ?</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> La cession génère une perte : VNC (17 600) − Prix de vente (15 000) = 2 600 € de moins-value. Cette charge exceptionnelle impacte le résultat et doit figurer au compte de résultat.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Comptabiliser la sortie d'immobilisation (extourne de la valeur brute et de l'amortissement cumulé), la cession (débit 512/crédit 775), et la moins-value (débit 675). Mettre à jour le tableau.</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Immobilisation totalement amortie toujours en service <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Lors de l'inventaire physique de fin d'exercice, vous constatez que le matériel de bureau (VNC 0 €) est toujours utilisé et n'a jamais été sorti du tableau d'immobilisations.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Bien amorti = valeur brute et amortissements cumulés identiques, VNC = 0. Tant que le bien est en service, il doit rester au tableau. Aucun problème comptable, mais le bien doit être sorti si mis au rebut.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Maintenir au tableau si encore en service. Passer l'écriture de sortie (sans impact résultat car VNC = 0) uniquement si le bien est physiquement éliminé. Documenter avec un PV de mise au rebut.</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> Achats immobilisés comptabilisés en charge <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Un nouvel équipement informatique de 4 200 € a été acheté en octobre et comptabilisé en charges (6044). Il aurait dû être immobilisé.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Erreur d'imputation : les biens dont la durée de vie dépasse 1 an et le coût > 500 € doivent être immobilisés et amortis, pas passés directement en charge. L'impôt a été sous-estimé (charges surévaluées).</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Régularisation comptable : extourner la charge, créer l'immobilisation, calculer l'amortissement d'octobre à décembre (3 mois). Prévenir le chef comptable pour la correction fiscale.</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> Faites un inventaire physique annuel des immobilisations. Il suffit de 2 heures avec une liste imprimée pour confirmer que chaque bien est toujours en service, en état, et dans les locaux de l'entreprise. Évite les surprises lors de l'audit de l'expert-comptable.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICATEUR 17 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f3">17</div>
+        <div class="ind-head-text">
+          <h3>Calcul des Dotations aux Amortissements — Économique vs Fiscal</h3>
+          <div class="ind-fam"><i data-lucide="trending-down"></i> Famille 3 · Immobilisations</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab17-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab17-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab17-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab17-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>Calculer les dotations annuelles pour chaque immobilisation, distinguer l'amortissement linéaire (économique) du dégressif (fiscal optionnel), et vérifier que les charges comptabilisées correspondent aux calculs théoriques.</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Données nécessaires</div>Tableau des immobilisations (indicateur 16), dates de mise en service, taux d'amortissement selon la nature du bien (voir tableau réglementaire), logiciel comptable ou Excel.</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab17-2">
+        <div class="formula-box">
+          <div class="formula-lbl">Méthodes de calcul des amortissements</div>
+          LINÉAIRE : Annuité = Valeur brute / Durée de vie<br>
+          → Véhicule Renault : 22 000 / 5 = 4 400 €/an<br><br>
+          DÉGRESSIF : Annuité = VNC × (1/Durée × Coefficient dégressif)<br>
+          → Coeff : 1,25 si 3 ans, 1,75 si 4-5 ans, 2,25 si 6+ ans<br>
+          → Serveur NAS (5 ans, coeff 1,75) : 12 500 × (1/5 × 1,75) = 12 500 × 35% = 4 375 € (année 1)<br><br>
+          Pro rata temporis : si acquisition en cours d'année → (Annuité / 12) × mois restants
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab17-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> Logiciel ERP : calcul avec prorata <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Le logiciel ERP (8 000 €, 3 ans, linéaire, acquis le 01/03/N-2) — calcul de la dotation pour l'exercice N en cours.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Annuité complète = 8 000 / 3 = 2 666,67 €/an. En N-2 (10 mois) : 2 222 €. En N-1 : 2 667 €. En N (2 mois restants jusqu'au 28/02) : 2 666,67 × 2/12 = 444 €. Total cumulé après N = 7 333 €. VNC = 667 €. Entièrement amorti le 28/02 N+1.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Comptabiliser 444 € en dotation de l'exercice N. Vérifier que la dotation du logiciel est cohérente avec ce calcul dans le logiciel. Prévoir la sortie complète en N+1.</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Amortissement dégressif sur serveur <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Vous optez pour l'amortissement dégressif pour le Serveur NAS (12 500 €, 5 ans). Calcul sur 3 ans.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Coeff 1,75. Taux dégressif = 20% × 1,75 = 35%. An 1 : 12 500 × 35% = 4 375 €. VNC = 8 125 €. An 2 : 8 125 × 35% = 2 844 €. VNC = 5 281 €. An 3 : comparer avec linéaire (5 281/3 = 1 760 €) → passer au linéaire si plus avantageux.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Documenter le choix dégressif (mention dans l'annexe du bilan). Créer une colonne "méthode retenue" dans le tableau d'immobilisations. L'option est irrévocable.</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> Écart entre dotations comptabilisées et calcul théorique <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> En comparant les dotations aux amortissements du compte 681 (4 820 €) avec votre tableau de calcul (5 244 €), vous trouvez un écart de 424 €.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Une immobilisation est peut-être oubliée dans le logiciel, ou une dotation a été calculée sur la mauvaise base. L'écart génère un résultat comptable et fiscal incorrect.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Pointer immobilisation par immobilisation. Identifier le bien manquant, passer l'écriture de régularisation de dotation avant la clôture définitive.</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> L'amortissement dégressif est fiscalement plus avantageux en début de vie du bien (charge plus élevée = impôt plus faible). Mais il n'est applicable qu'aux biens neufs et à certaines catégories (matériel, outillage). Ne l'appliquez jamais aux constructions ou aux véhicules de tourisme.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICATEUR 18 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f3">18</div>
+        <div class="ind-head-text">
+          <h3>Rapprochement Inventaire Physique / Inventaire Comptable des Stocks</h3>
+          <div class="ind-fam"><i data-lucide="package"></i> Famille 3 · Stocks</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab18-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab18-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab18-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab18-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>Comparer le stock compté physiquement (inventaire terrain) avec le stock enregistré dans le logiciel de gestion (inventaire comptable), expliquer et régulariser tous les écarts.</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Données nécessaires</div>Feuilles de comptage signées par les équipes, stock informatique par référence (logiciel de gestion ou ERP), valorisation au prix moyen pondéré (PMP) ou FIFO selon la méthode retenue.</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab18-2">
+        <div class="formula-box">
+          <div class="formula-lbl">Écriture de variation de stocks</div>
+          Si stock final > stock initial : Débit 37/Crédit 6037 (diminution des charges)<br>
+          Si stock final &lt; stock initial : Débit 6037/Crédit 37 (augmentation des charges)<br><br>
+          Variation de stocks = Stock initial − Stock final<br>
+          → Si SI = 22 500 € et SF = 19 800 € : variation = +2 700 € en charges (déstockage)
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab18-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> Switches manquants : perte de stock de 420 € <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Les 2 switches SC-045 manquants représentent 420 € de perte de stock. Aucune sortie n'a été enregistrée dans le logiciel.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Pistes : vol, erreur de livraison non retournée, sortie pour usage interne non enregistrée, erreur de comptage. Si vol probable, impact sur la police d'assurance et dépôt de plainte.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Enquête interne avec le responsable logistique. Si cause non trouvée sous 48h : passer l'écriture de dépréciation (voir indicateur 19) et signaler à la direction. Améliorer les procédures de sortie de stock.</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Excédent de stock : câbles HDMI +50 € <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> 2 lots de câbles HDMI supplémentaires (+50 €) sont en stock physique mais absents du logiciel. Une livraison a peut-être été mal réceptionnée.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Entrée de stock non enregistrée = facture fournisseur potentiellement non comptabilisée. Le stock est réel mais la dette n'existe pas dans les comptes.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Retrouver le bon de livraison correspondant. Saisir la facture d'achat manquante (débit stock/crédit fournisseur). Ne jamais régulariser sans trouver la pièce justificative.</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> Écart net de 478 € à régulariser <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> L'écart net de 478 € doit être régularisé comptablement avant la clôture.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> L'inventaire comptable doit être ramené à la valeur physique réelle. L'écart se comptabilise : si perte nette (478 €) → passer en charge (débit 6037 ou dépréciation si perte structurelle).</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Écriture de régularisation : Débit 6037 (variation de stocks) 478 € / Crédit 37 (stocks de marchandises) 478 €. Archiver le tableau d'inventaire signé comme pièce justificative.</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> Un écart de stock inférieur à 0,5% de la valeur totale est généralement acceptable (erreurs de comptage). Au-delà de 1%, une enquête est nécessaire. Documentez systématiquement l'inventaire avec des feuilles de comptage co-signées par deux personnes.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICATEUR 19 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f3">19</div>
+        <div class="ind-head-text">
+          <h3>Calcul des Dépréciations — Stocks & Créances Clients Douteuses</h3>
+          <div class="ind-fam"><i data-lucide="alert-circle"></i> Famille 3 · Dépréciations</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab19-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab19-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab19-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab19-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>Constater comptablement la perte probable de valeur d'un actif (stock obsolète ou détérioré, créance client non recouvrée). La dépréciation est un travail de prudence imposé par le Plan Comptable Général.</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Données nécessaires</div>Balance âgée clients, liste des clients en litige ou procédure collective, inventaire physique avec état de conservation, devis ou cours de marché pour valorisation des stocks dépréciés.</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab19-2">
+        <div class="formula-box">
+          <div class="formula-lbl">Calcul des dépréciations</div>
+          Dépréciation créance = Montant TTC de la créance × % de risque estimé<br>
+          → Débit 6817 / Crédit 4917 (provision pour dépréciation créances)<br><br>
+          Dépréciation stock = (Valeur inventaire − Valeur marchande actuelle)<br>
+          → Débit 6817 / Crédit 397 (dépréciation des stocks)<br><br>
+          Reprise si recouvrement : Débit 4917 / Crédit 7817
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab19-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> Client en redressement judiciaire <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Le client BUREAU PLUS (8 400 € de créance, 72 jours de retard) est en procédure de redressement judiciaire. Son mandataire ne répond plus.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Risque de non-recouvrement très élevé. Par prudence, il faut déprécier à hauteur de 80% minimum : 8 400 × 80% = 6 720 €. Le risque de perte est matérialisé.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Passer la dépréciation : débit 6817 pour 6 720 € / crédit 4917 pour 6 720 €. Suivre le dossier. Si perte confirmée (plan de redressement arrêté) → passage en charge définitive (654 créances irrécouvrables).</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Cartouches d'encre périmées <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> L'inventaire révèle 15 cartouches d'encre INK-XXX périmées (date de péremption dépassée) valorisées à 18 €/unité en stock.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Stock sans valeur marchande (ne peut plus être vendu). Dépréciation totale : 15 × 18 € = 270 €. Si le stock est encore comptabilisé, l'actif est sur-évalué.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Constater la dépréciation de 270 €. Si destruction physique constatée → sortie de stock définitive (débit 6037/crédit 37). Conserver le PV de destruction comme justificatif fiscal.</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> Reprise de provision <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> Une dépréciation créance de 3 000 € avait été passée l'an dernier pour le client LEROI. Ce mois-ci, le client règle la totalité de sa dette.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Le risque estimé ne s'est pas concrétisé. La provision passée n'a plus lieu d'être. Il faut la "reprendre" (annuler) → produit exceptionnel.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Reprise de provision : débit 4917 3 000 € / crédit 7817 (reprise sur dépréciation) 3 000 €. L'encaissement de la créance est enregistré normalement par ailleurs.</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> Les dépréciations sont fiscalement déductibles si elles respectent des critères précis (risque individualisé, justifiable, documenté). Une dépréciation "forfaitaire" sur l'ensemble des créances n'est pas déductible fiscalement. Individualisez chaque dossier client.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICATEUR 20 -->
+    <div class="ind-card">
+      <div class="ind-card-head">
+        <div class="ind-num f3">20</div>
+        <div class="ind-head-text">
+          <h3>Calcul des Intérêts Courus Non Échus (ICNE) sur Emprunts</h3>
+          <div class="ind-fam"><i data-lucide="percent"></i> Famille 3 · Emprunts & régularisations</div>
+        </div>
+      </div>
+      <div class="ind-tabs">
+        <div class="ind-tab active" data-tab="tab20-1">Objectif & Sources</div>
+        <div class="ind-tab" data-tab="tab20-2">Formule & Calcul</div>
+        <div class="ind-tab" data-tab="tab20-3">Exemples & Pro Tip</div>
+      </div>
+      <div class="ind-pane active" data-pane="tab20-1">
+        <div class="ind-grid">
+          <div class="ind-box"><div class="ind-box-t">🎯 Objectif</div>Constater les intérêts d'emprunt courus à la date de clôture (31/12) mais pas encore décaissés. Sans cette régularisation, les charges de l'exercice sont sous-évaluées et le bilan est incomplet.</div>
+          <div class="ind-box"><div class="ind-box-t">🛠️ Données nécessaires</div>Tableau d'amortissement de l'emprunt bancaire, solde restant dû à la date de clôture, taux d'intérêt annuel, date de la prochaine échéance.</div>
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab20-2">
+        <div class="formula-box">
+          <div class="formula-lbl">Calcul des ICNE</div>
+          ICNE = Capital restant dû × Taux annuel × (Nb jours courus / 365)<br><br>
+          Exemple : Emprunt TechInnov — Capital restant dû : 22 000 €, taux 3,5%, échéance le 31/01<br>
+          Jours courus du 01/12 au 31/12 = 31 jours<br>
+          ICNE = 22 000 × 3,5% × (31/365) = 22 000 × 0,035 × 0,0849 = <span class="res">65,32 €</span><br><br>
+          Écriture : Débit 6616 (intérêts des emprunts) / Crédit 1688 (intérêts courus)
+        </div>
+      </div>
+      <div class="ind-pane" data-pane="tab20-3">
+        <!-- Exemple 1 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 1</span> ICNE sur un emprunt classique <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> TechInnov a un emprunt de 22 000 € restant dû au 01/12, taux 3,5%, échéance mensuelle le 31 de chaque mois. Clôture au 31/12.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Si l'échéance du 31/12 est déjà payée et comptabilisée, les intérêts du mois sont déjà en charges. Si l'échéance est en janvier, les ICNE de décembre doivent être constatés.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Vérifier la date de la dernière échéance payée. Si la prochaine échéance est en janvier : passer les ICNE de 65,32 € en charge de décembre. Au 01/01 N+1 : extourner l'écriture.</div>
+          </div>
+        </div>
+        <!-- Exemple 2 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 2</span> Deux emprunts : ICNE cumulés <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> L'entreprise a deux emprunts : l'un au taux de 3,5% (22 000 € restant dû) et un crédit-bail de matériel au taux de 4,8% (8 500 € restant dû). ICNE totaux à calculer.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> Emprunt 1 : 22 000 × 3,5% × 31/365 = 65,32 €. Crédit-bail : 8 500 × 4,8% × 31/365 = 34,64 €. ICNE total = 99,96 €. Même si la somme paraît petite, l'omission crée une anomalie dans le bilan.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Passer une écriture unique cumulée ou deux écritures distinctes selon les pratiques du cabinet. Documenter le calcul et l'archiver dans le dossier de clôture.</div>
+          </div>
+        </div>
+        <!-- Exemple 3 -->
+        <div class="ex-item">
+          <div class="ex-toggle"><span class="ex-num">Exemple 3</span> Omission des ICNE <span class="ex-chevron"><i data-lucide="chevron-down"></i></span></div>
+          <div class="ex-body">
+            <div class="ex-step"><span class="ex-lbl l-ctx">CONTEXTE</span> En N+1, l'expert-comptable constate que les ICNE n'ont pas été calculés lors de la clôture N. Impact : les charges de N sont sous-évaluées de 100 €.</div>
+            <div class="ex-step"><span class="ex-lbl l-ana">ANALYSE</span> L'impact sur le résultat est faible (100 €) mais l'omission systématique sur plusieurs années peut créer un écart cumulé significatif et révéler une faille dans le processus de clôture.</div>
+            <div class="ex-step"><span class="ex-lbl l-act">ACTION</span> Mettre en place une checklist de clôture incluant systématiquement le calcul des ICNE. C'est une étape rapide (15 minutes) qui ne doit jamais être oubliée.</div>
+          </div>
+        </div>
+
+        <div class="pro-tip">
+          <i data-lucide="star"></i>
+          <div><strong>Conseil de Pro</strong> Demandez toujours le tableau d'amortissement complet à votre banque lors de la mise en place d'un emprunt. Ce document détaille mois par mois la part capital et la part intérêts de chaque échéance — il est indispensable pour le calcul des ICNE et pour le bilan.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATRICES INTERACTIVES (supplémentaires) -->
+  <section class="section">
+    <div id="calc-bfr" class="calc-widget">
+      <div class="calc-hdr"><i data-lucide="calculator"></i><h4>Calculatrice BFR & Trésorerie nette</h4></div>
+      <div class="calc-body">
+        <div class="source-trail">
+          <span class="src-chip src-logiciel"><i data-lucide="package"></i> Stocks Cpt 37</span>
+          <span class="src-chip src-logiciel"><i data-lucide="users"></i> Clients Cpt 411</span>
+          <span class="src-chip src-logiciel"><i data-lucide="truck"></i> Fournisseurs Cpt 401</span>
+          <span class="src-chip src-logiciel"><i data-lucide="trending-up"></i> FRNG</span>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field"><label>Stocks (Cpt 37)</label><input type="number" id="bfr-stocks" value="22500"></div>
+          <div class="calc-field"><label>Créances clients (Cpt 411)</label><input type="number" id="bfr-clients" value="38400"></div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field"><label>Dettes fournisseurs (Cpt 401)</label><input type="number" id="bfr-fourn" value="18600"></div>
+          <div class="calc-field"><label>FRNG calculé</label><input type="number" id="bfr-frng" value="45800"></div>
+        </div>
+        <button class="btn-calc" onclick="calcBFR()"><i data-lucide="play"></i> Calculer BFR & Trésorerie</button>
+        <div class="calc-result">
+          <div><span class="calc-result-lbl">BFR</span><span class="calc-result-val" id="r-bfr-val">—</span></div>
+          <div class="calc-result-detail" id="r-bfr-detail"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="calc-hs" class="calc-widget">
+      <div class="calc-hdr"><i data-lucide="calculator"></i><h4>Calculatrice Heures Supplémentaires</h4></div>
+      <div class="calc-body">
+        <div class="calc-row">
+          <div class="calc-field"><label>Salaire brut mensuel</label><input type="number" id="hs-salaire" value="1900"></div>
+          <div class="calc-field"><label>HS à 25% (nombre d'heures)</label><input type="number" id="hs-25" value="6"></div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field"><label>HS à 50% (nombre d'heures)</label><input type="number" id="hs-50" value="2"></div>
+        </div>
+        <button class="btn-calc" onclick="calcHS()"><i data-lucide="play"></i> Calculer</button>
+        <div class="calc-result">
+          <div><span class="calc-result-lbl">Montant HS</span><span class="calc-result-val" id="r-hs-val">—</span></div>
+          <div class="calc-result-detail" id="r-hs-detail"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="calc-tva" class="calc-widget">
+      <div class="calc-hdr"><i data-lucide="calculator"></i><h4>Calculatrice TVA mensuelle</h4></div>
+      <div class="calc-body">
+        <div class="calc-row">
+          <div class="calc-field"><label>Ventes HT</label><input type="number" id="c-ventes-ht" value="103000"></div>
+          <div class="calc-field"><label>Achats HT (courants)</label><input type="number" id="c-achats-ht" value="65790"></div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field"><label>Immobilisations HT</label><input type="number" id="c-immo-ht" value="4200"></div>
+          <div class="calc-field"><label>Taux TVA %</label><input type="number" id="c-tva-taux" value="20"></div>
+        </div>
+        <button class="btn-calc" onclick="calcTVA()"><i data-lucide="play"></i> Calculer TVA à payer</button>
+        <div class="calc-result">
+          <div><span class="calc-result-lbl">TVA nette</span><span class="calc-result-val" id="r-tva-val">—</span></div>
+          <div class="calc-result-detail" id="r-tva-detail"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <div class="footer-top">
+        <span class="footer-logo"><i class="fas fa-chart-line"></i> RD Formation</span>
+        <span class="footer-separator-pipe">|</span>
+        <span class="footer-tagline">Indicateurs Clés de Performance</span>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RD Formation — <strong>Dominez vos chiffres, pilotez votre succès.</strong></p>
+        <p class="copyright-notice">Toute reproduction interdite. Ce contenu est une création intellectuelle exclusive de l'auteur.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="js/masterclass.js"></script>
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>

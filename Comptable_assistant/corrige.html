@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corrigé — TechInnov | Masterclass Comptabilité</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+    <meta name="description" content="Corrigé détaillé du cas pratique TechInnov.">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="progress-bar" id="progress-bar"></div>
+
+<nav class="toolbar">
+  <button id="btn-sidebar-toggle" class="btn btn-ghost btn-sm">
+    <i data-lucide="menu"></i>
+  </button>
+  <div class="toolbar-logo">Masterclass <span>Comptabilité</span></div>
+  <ul class="toolbar-nav">
+    <li><a href="index.html"><i data-lucide="book-open"></i> Module 1</a></li>
+    <li><a href="module2.html"><i data-lucide="layers"></i> Module 2 — 20 Indicateurs</a></li>
+    <li><a href="module3.html"><i data-lucide="zap"></i> Module 3 — TechInnov</a></li>
+    <li><a href="corrige.html" class="active"><i data-lucide="check-circle"></i> Corrigé</a></li>
+  </ul>
+  <div class="toolbar-module-badge">Corrigé</div>
+</nav>
+
+<div id="sidebar-overlay" class="sidebar-overlay" style="display:none;"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-head">
+    <h3>Navigation</h3>
+    <button id="btn-sidebar-close" class="btn btn-ghost btn-sm"><i data-lucide="x"></i></button>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Corrigé TechInnov</div>
+    <a href="#correction" class="sidebar-link"><i data-lucide="check-circle"></i> Éléments de correction</a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Retour</div>
+    <a href="module3.html" class="sidebar-link"><i data-lucide="zap"></i> Retour au cas pratique</a>
+  </div>
+</aside>
+
+<div class="timer-widget no-print">
+  <div class="timer-lbl"><i data-lucide="timer"></i> Temps de travail</div>
+  <div class="timer-disp" id="timer-disp">00:00:00</div>
+  <div class="timer-acts">
+    <button class="timer-btn go" id="timer-go"><i data-lucide="play"></i><span>Démarrer</span></button>
+    <button class="timer-btn" id="timer-pause"><i data-lucide="pause"></i></button>
+    <button class="timer-btn" id="timer-reset"><i data-lucide="rotate-ccw"></i></button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+  <!-- ===== CORRIGÉ HEADER ===== -->
+  <div id="correction" class="mod-header" data-num="✓">
+    <div class="mod-num"><i data-lucide="check-circle"></i> Corrigé type</div>
+    <h2>Éléments de Correction — TechInnov Mai</h2>
+    <p>À n'ouvrir qu'après avoir terminé vos tâches.</p>
+  </div>
+
+  <section class="section">
+    <div class="corr-section">
+      <div class="corr-title"><i data-lucide="check"></i> Tâche 1 — Calcul des 5 indicateurs clés</div>
+      <p><strong>(a) Trésorerie réelle :</strong> 1 260 € (solde bancaire).<br>
+      <strong>(b) TVA à déclarer :</strong> 20 600 - 13 158 = 7 442 €.<br>
+      <strong>(c) Taux de marge :</strong> (103 000 - 58 390) / 103 000 = 43,3%.<br>
+      <strong>(d) Taux d'absentéisme :</strong> 2 jours / (5×22) = 1,82%.<br>
+      <strong>(e) HS LEBRUN :</strong> taux horaire 12,53 € → 6×15,66 + 2×18,80 = 131,57 €.</p>
+    </div>
+
+    <div class="corr-section">
+      <div class="corr-title"><i data-lucide="check"></i> Tâche 2 — Analyse (10 lignes)</div>
+      <div class="slide-card">
+        <p>Le mois de mai affiche un CA de 103 000 € en progression de 14,3% par rapport à avril, porté par GARCIA PRO (18 000 €). Le taux de marge de 43,3% est conforme. Cependant, la trésorerie est tendue (1 260 €) et la TVA de 7 442 € à payer en juin aggravera la situation si aucun encaissement n'intervient. Deux clients sont à risque : BUREAU PLUS (8 400 €, 72j) et ANCIEN CLIENT X (2 800 €, 135j) – soit 22,8% du portefeuille. Une provision de 9 520 € est à envisager. L'absentéisme est faible (1,82%) et les HS de LEBRUN sont justifiées.</p>
+      </div>
+    </div>
+
+    <div class="corr-section">
+      <div class="corr-title"><i data-lucide="check"></i> Tâche 3 — Balance âgée</div>
+      <div class="dt-wrap">
+        <table class="data-table">
+          <thead><tr><th>Client</th><th>0–30j</th><th>31–60j</th><th>61–90j</th><th>+90j</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>DUPONT</td><td>12 400 €</td><td></td><td></td><td></td><td>Aucune</td></tr>
+            <tr><td>GARCIA</td><td>18 000 €</td><td></td><td></td><td></td><td>Aucune</td></tr>
+            <tr><td>LEROI</td><td>7 600 €</td><td></td><td></td><td></td><td>Aucune</td></tr>
+            <tr><td>BUREAU PLUS</td><td></td><td></td><td>8 400 €</td><td></td><td>Relance + provision</td></tr>
+            <tr><td>ANCIEN X</td><td></td><td></td><td></td><td>2 800 €</td><td>Mise en demeure</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Créances saines : 77,2% ; à risque : 22,8%.</p>
+    </div>
+
+    <div class="corr-section">
+      <div class="corr-title"><i data-lucide="check"></i> Tâche 4 — Rapprochement bancaire</div>
+      <p>Écart de 280 € : le prélèvement leasing de 620 € a été comptabilisé pour 900 € (erreur de saisie). À régulariser.</p>
+    </div>
+
+    <div class="corr-section">
+      <div class="corr-title"><i data-lucide="check"></i> Tâche 5 — 3 diapositives</div>
+      <div class="slide-card">
+        <div class="slide-num"><i data-lucide="bar-chart-2"></i> DIAPO 1</div>
+        <div class="slide-title">Synthèse Trésorerie & Activité</div>
+        <div class="slide-content">Graphique du solde bancaire sur le mois. CA 103k€, marge 43,3%, encaissements 16,9k€, solde 1 260€. Message : CA en hausse mais trésorerie tendue — anticiper la TVA.</div>
+      </div>
+      <div class="slide-card">
+        <div class="slide-num"><i data-lucide="users"></i> DIAPO 2</div>
+        <div class="slide-title">Analyse des comptes clients</div>
+        <div class="slide-content">Balance âgée en histogramme. 11 200 € de créances à risque (22,8%). Proposition de provision 9 520 €. Actions : relance BUREAU PLUS, mise en demeure ANCIEN X.</div>
+      </div>
+      <div class="slide-card">
+        <div class="slide-num"><i data-lucide="file-text"></i> DIAPO 3</div>
+        <div class="slide-title">Point paie & clôture</div>
+        <div class="slide-content">HS LEBRUN validées, absence DURRAND, CP pris. TVA 7 442 € à payer. Immobilisation à créer (4 200 €). Écart de 280 € sur leasing à régulariser.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculatrices pour vérification -->
+  <section class="section">
+    <div id="calc-tva" class="calc-widget">
+      <div class="calc-hdr"><i data-lucide="calculator"></i><h4>Calculatrice TVA</h4></div>
+      <div class="calc-body">
+        <div class="calc-row">
+          <div class="calc-field"><label>Ventes HT</label><input type="number" id="c-ventes-ht" value="103000"></div>
+          <div class="calc-field"><label>Achats HT (courants)</label><input type="number" id="c-achats-ht" value="65300"></div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field"><label>Immobilisations HT</label><input type="number" id="c-immo-ht" value="4200"></div>
+          <div class="calc-field"><label>Taux TVA %</label><input type="number" id="c-tva-taux" value="20"></div>
+        </div>
+        <button class="btn-calc" onclick="calcTVA()"><i data-lucide="play"></i> Calculer TVA</button>
+        <div class="calc-result">
+          <div><span class="calc-result-lbl">TVA nette</span><span class="calc-result-val" id="r-tva-val">—</span></div>
+          <div class="calc-result-detail" id="r-tva-detail"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <i data-lucide="check-circle"></i>
+  <strong>Masterclass Comptabilité — Corrigé TechInnov</strong>
+</footer>
+
+<script src="js/masterclass.js"></script>
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>

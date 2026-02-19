@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masterclass Comptabilité — De la Saisie au Pilotage</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <meta name="description" content="Manuel interactif pour assistants comptables. Bilan, compte de résultat, 20 indicateurs clés avec calculatrices, quiz et cas pratique TechInnov.">
+  <!-- Lucide Icons via CDN (SVG, pas d'emojis) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ── Barre de progression lecture ────────────────────── -->
+<div class="progress-bar" id="progress-bar"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     TOOLBAR
+     ══════════════════════════════════════════════════════ -->
+<nav class="toolbar">
+  <button id="btn-sidebar-toggle" class="btn btn-ghost btn-sm">
+    <i data-lucide="menu"></i>
+  </button>
+  <div class="toolbar-logo"><a href="index.html"><img src="assets/logo.svg" alt="RD Formation" class="header-logo-img"></a></div> 
+  <ul class="toolbar-nav">
+    <li><a href="#fondamentaux"><i data-lucide="book-open"></i> Module 1</a></li>
+    <li><a href="module2.html"><i data-lucide="layers"></i> Module 2 — 20 Indicateurs</a></li>
+    <li><a href="module3.html"><i data-lucide="zap"></i> Module 3 — TechInnov</a></li>
+  </ul>
+  <div class="toolbar-module-badge">Index</div>
+</nav>
+
+<!-- ── Overlay sidebar ─────────────────────────────────── -->
+<div id="sidebar-overlay" class="sidebar-overlay" style="display:none;"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     SIDEBAR
+     ══════════════════════════════════════════════════════ -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-head">
+    <h3>Navigation</h3>
+    <button id="btn-sidebar-close" class="btn btn-ghost btn-sm"><i data-lucide="x"></i></button>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label">Module 1 — Fondamentaux</div>
+    <a href="#fondamentaux" class="sidebar-link"><i data-lucide="book-open"></i> Introduction REAC</a>
+    <a href="#bilan" class="sidebar-link"><i data-lucide="scale"></i> Bilan comptable</a>
+    <a href="#resultat" class="sidebar-link"><i data-lucide="trending-up"></i> Compte de résultat</a>
+    <a href="#sig" class="sidebar-link"><i data-lucide="bar-chart-2"></i> SIG & ratios</a>
+    <a href="#familles" class="sidebar-link"><i data-lucide="layout-grid"></i> 3 familles REAC</a>
+    <a href="#calc-bfr" class="sidebar-link"><i data-lucide="calculator"></i> Calculatrice BFR</a>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label">Module 2 — Indicateurs</div>
+    <a href="module2.html#famille-1" class="sidebar-link"><span class="fam-dot fd-f1"></span> Famille 1 — Quotidien (1–7)</a>
+    <a href="module2.html#famille-2" class="sidebar-link"><span class="fam-dot fd-f2"></span> Famille 2 — Périodique (8–15)</a>
+    <a href="module2.html#famille-3" class="sidebar-link"><span class="fam-dot fd-f3"></span> Famille 3 — Fin d'exercice (16–20)</a>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label">Module 3 — Cas Pratique</div>
+    <a href="module3.html" class="sidebar-link"><i data-lucide="zap"></i> TechInnov SARL</a>
+    <a href="module3.html#correction" class="sidebar-link"><i data-lucide="check-circle"></i> Corrigé type</a>
+  </div>
+</aside>
+
+<!-- ── Timer de travail ─────────────────────────────────── -->
+<div class="timer-widget no-print">
+  <div class="timer-lbl"><i data-lucide="timer"></i> Temps de travail</div>
+  <div class="timer-disp" id="timer-disp">00:00:00</div>
+  <div class="timer-acts">
+    <button class="timer-btn go" id="timer-go">
+      <i data-lucide="play"></i><span>Démarrer</span>
+    </button>
+    <button class="timer-btn" id="timer-pause"><i data-lucide="pause"></i></button>
+    <button class="timer-btn" id="timer-reset"><i data-lucide="rotate-ccw"></i></button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     COVER
+     ══════════════════════════════════════════════════════ -->
+<section class="cover">
+  <div class="cover-badge">
+    <i data-lucide="award"></i>
+    REAC TP Comptable Assistant · Niveau 4 · Millésime 09-2023
+  </div>
+  <h1>De la Saisie au<br><span>Pilotage Comptable</span></h1>
+  <p class="cover-sub">Manuel interactif d'une journée. Maîtrisez le contrôle, l'analyse et la communication des données comptables. Calculatrices intégrées, quiz de vérification et un cas pratique complet avec corrigé.</p>
+  <div class="cover-stats">
+    <div class="stat-item"><label>Autonomie</label><span>3h30 minimum</span></div>
+    <div class="stat-item"><label>Indicateurs</label><span>20 fiches détaillées</span></div>
+    <div class="stat-item"><label>Calculatrices</label><span>6 outils interactifs</span></div>
+    <div class="stat-item"><label>Quiz</label><span>8 questions</span></div>
+  </div>
+  <div class="cover-cards">
+    <a href="#fondamentaux" class="cover-card">
+      <i data-lucide="book-open"></i>
+      <div><div class="c-num">Module 1</div><div class="c-title">Bilan, Compte de Résultat & Fondamentaux REAC</div></div>
+    </a>
+    <a href="module2.html" class="cover-card">
+      <i data-lucide="layers"></i>
+      <div><div class="c-num">Module 2</div><div class="c-title">20 Points de Contrôle, Calculatrices & Quiz</div></div>
+    </a>
+    <a href="module3.html" class="cover-card">
+      <i data-lucide="zap"></i>
+      <div><div class="c-num">Module 3</div><div class="c-title">Cas Pratique TechInnov — Autonomie 3h30</div></div>
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     MODULE 1 — FONDAMENTAUX
+     ══════════════════════════════════════════════════════ -->
+<div id="fondamentaux" data-section="fondamentaux">
+
+  <div class="mod-header" data-num="01">
+    <div class="mod-num"><i data-lucide="book-open"></i> Module 1 · Fondamentaux</div>
+    <h2>De la Donnée à l'Information de Pilotage</h2>
+    <p>Comprendre les deux états financiers fondamentaux, distinguer saisie et analyse, et situer votre rôle dans le référentiel REAC.</p>
+  </div>
+
+  <!-- ── 1.1 Rôle REAC ───────────────────────────────────── -->
+  <section class="section reveal" id="role-reac">
+    <div class="section-tag">
+      <i data-lucide="user-check"></i> 1.1 · Rôle & Positionnement
+    </div>
+    <div class="section-title">L'assistant comptable, <span class="accent">garant de la fiabilité</span></div>
+    <div class="section-sub">Ce que dit le REAC — et pourquoi ça change votre façon de travailler au quotidien</div>
+
+    <div class="prose">
+      <p>Le REAC du titre professionnel "Comptable Assistant" positionne clairement ce métier au-delà de la saisie. Vous êtes le premier maillon du contrôle de l'information financière. Ce que vous enregistrez, contrôlez et analysez devient la base sur laquelle la direction prend ses décisions.</p>
+
+      <div class="box box-blue reveal" data-delay="0.1">
+        <div class="box-head"><i data-lucide="info"></i> Ce que dit le REAC — texte exact</div>
+        L'assistant comptable <em>"réalise les travaux comptables courants"</em> mais aussi <em>"participe à la préparation des arrêtés de comptes"</em> et <em>"contribue à la fiabilité de l'information comptable"</em>. La saisie sans contrôle n'est que la moitié du travail.
+      </div>
+
+      <h3><i data-lucide="layers"></i> Les 3 niveaux de lecture d'une donnée comptable</h3>
+      <p>Il est essentiel de distinguer ces trois niveaux car ils correspondent à trois responsabilités différentes. Le premier, l'<strong>enregistrement brut</strong>, c'est simplement "le client DUPONT a payé 12 400 €". Le second, le <strong>compte juste</strong>, c'est cette somme correctement affectée au compte 411-DUPONT et lettrée contre la facture FA-2024-042. Le troisième, l'<strong>indicateur de pilotage</strong>, c'est "le délai moyen de paiement de nos clients est passé de 42 à 58 jours ce trimestre — le BFR va augmenter de 18 000 €". Ce troisième niveau est l'objectif de ce manuel.</p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin:28px 0;">
+        <div class="reveal" data-delay="0" style="background:var(--gray-50);border-radius:8px;padding:18px;border-top:3px solid var(--gray-400);">
+          <div style="font-family:var(--font-h);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gray-400);margin-bottom:8px;">Niveau 1</div>
+          <div style="font-family:var(--font-h);font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px;">Enregistrement brut</div>
+          <p style="font-size:13px;color:var(--gray-600);line-height:1.6;">Saisie d'une facture, d'un encaissement. La donnée existe dans le système mais n'est pas encore exploitable.</p>
+        </div>
+        <div class="reveal" data-delay="0.1" style="background:#EFF6FF;border-radius:8px;padding:18px;border-top:3px solid var(--blue);">
+          <div style="font-family:var(--font-h);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:8px;">Niveau 2</div>
+          <div style="font-family:var(--font-h);font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px;">Compte juste</div>
+          <p style="font-size:13px;color:var(--gray-600);line-height:1.6;">Lettrage correct, rapprochement bancaire équilibré, TVA cohérente. Les comptes reflètent la réalité économique.</p>
+        </div>
+        <div class="reveal" data-delay="0.2" style="background:#FFFBEB;border-radius:8px;padding:18px;border-top:3px solid var(--accent);">
+          <div style="font-family:var(--font-h);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:8px;">Niveau 3</div>
+          <div style="font-family:var(--font-h);font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px;">Indicateur de pilotage</div>
+          <p style="font-size:13px;color:var(--gray-600);line-height:1.6;">Taux de marge, DMP clients, BFR, taux d'absentéisme. La donnée devient une aide concrète à la décision.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz 1 -->
+    <div class="quiz-widget reveal" data-delay="0.2"
+      data-correct="c"
+      data-ok="Exact. Le REAC positionne l'assistant comme un contributeur actif à la fiabilité, pas seulement un opérateur de saisie. Participer aux arrêtés de comptes fait partie des activités types du référentiel."
+      data-ko="Relisez le REAC : l'assistant comptable 'participe à la préparation des arrêtés de comptes' et 'contribue à la fiabilité de l'information'. La bonne réponse était C.">
+      <div class="quiz-hdr"><i data-lucide="help-circle"></i><span>Quiz — Vérifiez votre compréhension</span></div>
+      <div class="quiz-body">
+        <div class="quiz-q">Selon le REAC, quelle est la responsabilité de l'assistant comptable au-delà de la saisie ?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-val="a"><div class="quiz-letter">A</div> Gérer seul la relation commerciale avec les clients</div>
+          <div class="quiz-opt" data-val="b"><div class="quiz-letter">B</div> Établir et valider les déclarations fiscales annuelles</div>
+          <div class="quiz-opt" data-val="c"><div class="quiz-letter">C</div> Contribuer à la fiabilité de l'information et participer aux arrêtés de comptes</div>
+          <div class="quiz-opt" data-val="d"><div class="quiz-letter">D</div> Signer les bilans en lieu et place de l'expert-comptable</div>
+        </div>
+        <div class="quiz-fb"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 1.2 BILAN ───────────────────────────────────────── -->
+  <section class="section" id="bilan" data-section="bilan">
+    <div class="section-tag"><i data-lucide="scale"></i> 1.2 · État financier fondamental n°1</div>
+    <div class="section-title">Le <span class="accent">Bilan Comptable</span></div>
+    <div class="section-sub">La "photo" du patrimoine de l'entreprise à un instant T — généralement au 31 décembre de chaque exercice</div>
+
+    <!-- D'où viennent les données du bilan -->
+    <div class="box box-purple reveal">
+      <div class="box-head"><i data-lucide="database"></i> D'où viennent ces chiffres ?</div>
+      <p style="margin-bottom:10px;">Chaque ligne du bilan est alimentée par un journal ou un document précis. Comprendre cette chaîne est indispensable pour contrôler et fiabiliser les montants.</p>
+      <div class="source-trail">
+        <span class="src-chip src-logiciel" data-tip="Logiciel de comptabilité (Sage, EBP, Cador, Ciel...) — balance des comptes généraux. Extrait via : Grand Livre → Balance générale → filtrer sur les comptes 1xx, 2xx, 3xx, 4xx, 5xx">
+          <i data-lucide="monitor"></i> Logiciel comptable
+        </span>
+        <span class="src-chip src-facture" data-tip="Journal des achats (comptes 401, 60x, 61x, 62x) pour les dettes fournisseurs et les stocks. Journal des ventes (comptes 411, 70x) pour les créances clients.">
+          <i data-lucide="file-text"></i> Journaux achats & ventes
+        </span>
+        <span class="src-chip src-banque" data-tip="Relevé bancaire rapproché avec le compte 512 — permet de valider le poste Disponibilités du bilan. Le rapprochement bancaire est obligatoire avant toute clôture.">
+          <i data-lucide="landmark"></i> Relevé bancaire rapproché
+        </span>
+        <span class="src-chip src-terrain" data-tip="Tableau des immobilisations tenu manuellement ou dans le logiciel — alimente les comptes 21x (valeur brute) et 28x (amortissements cumulés) de l'actif immobilisé.">
+          <i data-lucide="clipboard-list"></i> Tableau des immobilisations
+        </span>
+        <span class="src-chip src-terrain" data-tip="Procès-verbal d'inventaire physique signé par l'équipe logistique — permet de valider le poste Stocks (compte 37) et d'identifier les dépréciations éventuelles.">
+          <i data-lucide="package"></i> PV d'inventaire physique
+        </span>
+      </div>
+    </div>
+
+    <!-- Diagramme de flux source → compte → bilan -->
+    <div class="source-flow reveal" data-delay="0.1">
+      <div class="flow-step">
+        <div class="f-ico"><i data-lucide="file-text"></i></div>
+        <div class="f-label">Facture achat / vente</div>
+        <div class="f-sub">Pièce justificative</div>
+      </div>
+      <div class="flow-arrow"><i data-lucide="chevron-right"></i></div>
+      <div class="flow-step">
+        <div class="f-ico"><i data-lucide="edit-3"></i></div>
+        <div class="f-label">Saisie journal</div>
+        <div class="f-sub">Achats · Ventes · OD</div>
+      </div>
+      <div class="flow-arrow"><i data-lucide="chevron-right"></i></div>
+      <div class="flow-step">
+        <div class="f-ico"><i data-lucide="book"></i></div>
+        <div class="f-label">Grand Livre</div>
+        <div class="f-sub">Mouvements par compte</div>
+      </div>
+      <div class="flow-arrow"><i data-lucide="chevron-right"></i></div>
+      <div class="flow-step">
+        <div class="f-ico"><i data-lucide="list"></i></div>
+        <div class="f-label">Balance</div>
+        <div class="f-sub">Soldes nets par compte</div>
+      </div>
+      <div class="flow-arrow"><i data-lucide="chevron-right"></i></div>
+      <div class="flow-step">
+        <div class="f-ico"><i data-lucide="scale"></i></div>
+        <div class="f-label">Bilan</div>
+        <div class="f-sub">Actif = Passif</div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>Le bilan répond à deux questions simultanées : <strong>ce que l'entreprise possède</strong> (Actif) et <strong>comment elle l'a financé</strong> (Passif). Par construction comptable — le principe de la <strong>partie double</strong> — Actif = Passif. Cette égalité est absolue et vérifiable à tout instant.</p>
+    </div>
+
+    <!-- Bilan TechInnov -->
+    <div class="fin-grid reveal" data-delay="0.1">
+      <!-- ACTIF -->
+      <div class="fin-col">
+        <div class="fin-col-head">ACTIF — Ce que l'entreprise possède</div>
+        <div class="fin-sec-head">ACTIF IMMOBILISÉ (long terme)</div>
+        <div class="fin-row">
+          <span>Immobilisations incorporelles (logiciels, brevets) <span class="src-inline" title="Comptes 205x, 206x — tableau des immobilisations">Cpt 205</span></span>
+          <span class="fin-amt" data-count="8000" data-prefix="" data-suffix=" €" data-dec="0">8 000 €</span>
+        </div>
+        <div class="fin-row">
+          <span>Immobilisations corporelles (matériel, véhicules) <span class="src-inline" title="Comptes 213x, 215x, 218x — tableau des immobilisations">Cpt 215</span></span>
+          <span class="fin-amt">45 000 €</span>
+        </div>
+        <div class="fin-row">
+          <span>Amortissements cumulés <span class="src-inline" title="Comptes 28x — dotations cumulées depuis la mise en service">Cpt 28x</span></span>
+          <span class="fin-amt neg">− 12 000 €</span>
+        </div>
+        <div class="fin-row subtot">
+          <span>Total Actif Immobilisé (net)</span>
+          <span class="fin-amt">41 000 €</span>
+        </div>
+        <div class="fin-sec-head">ACTIF CIRCULANT (court terme)</div>
+        <div class="fin-row">
+          <span>Stocks de marchandises <span class="src-inline" title="Compte 37 — valorisé au PMP ou FIFO, confirmé par le PV d'inventaire physique">PV inventaire</span></span>
+          <span class="fin-amt">22 500 €</span>
+        </div>
+        <div class="fin-row">
+          <span>Créances clients <span class="src-inline" title="Compte 411 — balance auxiliaire clients, après lettrage des règlements reçus">Cpte 411</span></span>
+          <span class="fin-amt">38 400 €</span>
+        </div>
+        <div class="fin-row">
+          <span>Autres créances & charges constatées d'avance</span>
+          <span class="fin-amt">2 100 €</span>
+        </div>
+        <div class="fin-row">
+          <span>Disponibilités (banque + caisse) <span class="src-inline" title="Compte 512 — solde du relevé bancaire après rapprochement + compte 531 caisse">Rapproch.</span></span>
+          <span class="fin-amt">9 800 €</span>
+        </div>
+        <div class="fin-row subtot">
+          <span>Total Actif Circulant</span>
+          <span class="fin-amt">72 800 €</span>
+        </div>
+        <div class="fin-row total">
+          <span>TOTAL ACTIF</span>
+          <span class="fin-amt">113 800 €</span>
+        </div>
+      </div>
+      <!-- PASSIF -->
+      <div class="fin-col">
+        <div class="fin-col-head">PASSIF — Comment c'est financé</div>
+        <div class="fin-sec-head">CAPITAUX PROPRES (financement interne)</div>
+        <div class="fin-row">
+          <span>Capital social <span class="src-inline" title="Compte 101 — apports des associés lors de la création ou augmentations de capital">Cpt 101</span></span>
+          <span class="fin-amt">50 000 €</span>
+        </div>
+        <div class="fin-row">
+          <span>Réserves (bénéfices non distribués des années passées)</span>
+          <span class="fin-amt">8 500 €</span>
+        </div>
+        <div class="fin-row">
+          <span>Résultat de l'exercice <span class="src-inline" title="Issu du Compte de Résultat — Produits − Charges de l'exercice">Cpt résultat</span></span>
+          <span class="fin-amt pos">+ 6 300 €</span>
+        </div>
+        <div class="fin-row subtot">
+          <span>Total Capitaux Propres</span>
+          <span class="fin-amt">64 800 €</span>
+        </div>
+        <div class="fin-sec-head">DETTES (financement externe)</div>
+        <div class="fin-row">
+          <span>Emprunts bancaires (long terme) <span class="src-inline" title="Compte 164 — tableau d'amortissement fourni par la banque">Tableau amort.</span></span>
+          <span class="fin-amt">22 000 €</span>
+        </div>
+        <div class="fin-row">
+          <span>Dettes fournisseurs <span class="src-inline" title="Compte 401 — balance auxiliaire fournisseurs, après lettrage des paiements effectués">Cpt 401</span></span>
+          <span class="fin-amt">18 600 €</span>
+        </div>
+        <div class="fin-row">
+          <span>Dettes fiscales & sociales <span class="src-inline" title="Comptes 44x (TVA à payer) et 43x (URSSAF, retraite) — déclarations CA3 et DSN">CA3 · DSN</span></span>
+          <span class="fin-amt">5 200 €</span>
+        </div>
+        <div class="fin-row">
+          <span>Autres dettes</span>
+          <span class="fin-amt">3 200 €</span>
+        </div>
+        <div class="fin-row subtot">
+          <span>Total Dettes</span>
+          <span class="fin-amt">49 000 €</span>
+        </div>
+        <div class="fin-row total">
+          <span>TOTAL PASSIF</span>
+          <span class="fin-amt">113 800 €</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <h3><i data-lucide="calculator"></i> 3 ratios fondamentaux à retenir sur le bilan</h3>
+      <p>Sans aller jusqu'à l'analyse financière complexe, trois calculs simples extraits du bilan permettent d'évaluer instantanément la santé de l'entreprise. Ce sont les premières questions que posera votre chef comptable ou expert-comptable lors d'une réunion de suivi.</p>
+    </div>
+
+    <div class="formula-box reveal" data-delay="0">
+      <div class="formula-lbl"><i data-lucide="hash"></i> Ratio 1 — Fonds de Roulement Net Global (FRNG)</div>
+      FRNG = Capitaux Permanents − Actif Immobilisé Net<br>
+      <span class="cmt">Capitaux permanents = Capitaux propres + Emprunts long terme = 64 800 + 22 000 = 86 800 €</span><br>
+      FRNG = 86 800 − 41 000 = <span class="res">+ 45 800 €</span><br>
+      <span class="cmt">Positif = l'entreprise finance son immobilisé ET dispose d'un excédent pour le court terme</span>
+    </div>
+
+    <div class="formula-box reveal" data-delay="0.1">
+      <div class="formula-lbl"><i data-lucide="hash"></i> Ratio 2 — Besoin en Fonds de Roulement (BFR)</div>
+      BFR = (Stocks + Créances clients) − Dettes fournisseurs<br>
+      BFR = (22 500 + 38 400) − 18 600 = <span class="res">42 300 €</span><br>
+      <span class="cmt">C'est le montant que l'entreprise doit financer elle-même pour faire tourner son cycle d'exploitation</span>
+    </div>
+
+    <div class="formula-box reveal" data-delay="0.2">
+      <div class="formula-lbl"><i data-lucide="hash"></i> Ratio 3 — Trésorerie Nette</div>
+      Trésorerie Nette = FRNG − BFR<br>
+      Trésorerie = 45 800 − 42 300 = <span class="res">+ 3 500 €</span><br>
+      <span class="cmt">Correspond au solde bancaire disponible. Doit être > 0 pour couvrir les dépenses immédiates</span>
+    </div>
+
+    <!-- Calculatrice BFR interactive -->
+    <div id="calc-bfr" class="calc-widget reveal" data-delay="0.1">
+      <div class="calc-hdr">
+        <i data-lucide="calculator"></i>
+        <h4>Calculatrice interactive — BFR & Trésorerie nette</h4>
+      </div>
+      <div class="calc-body">
+        <div class="box-head" style="margin-bottom:12px; color:var(--gray-600); font-size:12px;">
+          <i data-lucide="info"></i> Sources des données à saisir
+        </div>
+        <div class="source-trail" style="margin-bottom:16px;">
+          <span class="src-chip src-terrain" data-tip="Stocks : compte 37 — extrait de la balance générale du logiciel comptable après inventaire physique validé">
+            <i data-lucide="package"></i> Compte 37 — Stocks
+          </span>
+          <span class="src-chip src-logiciel" data-tip="Créances clients : solde du compte 411 dans la balance auxiliaire clients après lettrage complet des règlements du mois">
+            <i data-lucide="users"></i> Compte 411 — Clients
+          </span>
+          <span class="src-chip src-facture" data-tip="Dettes fournisseurs : solde du compte 401 dans la balance auxiliaire fournisseurs — somme des factures reçues non encore réglées">
+            <i data-lucide="truck"></i> Compte 401 — Fournisseurs
+          </span>
+          <span class="src-chip src-logiciel" data-tip="FRNG : calculé à partir de la balance générale — Capitaux propres (106x + résultat) + Emprunts LT (164x) − Actif immobilisé net (21x − 28x)">
+            <i data-lucide="bar-chart-2"></i> Balance générale
+          </span>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <label><i data-lucide="package"></i> Stocks (Cpt 37) <span class="src-hint">→ Balance générale</span></label>
+            <input type="number" id="bfr-stocks" value="22500" placeholder="ex : 22500">
+          </div>
+          <div class="calc-field">
+            <label><i data-lucide="users"></i> Créances clients (Cpt 411) <span class="src-hint">→ Balance auxiliaire clients</span></label>
+            <input type="number" id="bfr-clients" value="38400" placeholder="ex : 38400">
+          </div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <label><i data-lucide="truck"></i> Dettes fournisseurs (Cpt 401) <span class="src-hint">→ Balance auxiliaire fourn.</span></label>
+            <input type="number" id="bfr-fourn" value="18600" placeholder="ex : 18600">
+          </div>
+          <div class="calc-field">
+            <label><i data-lucide="trending-up"></i> FRNG calculé <span class="src-hint">→ Balance générale</span></label>
+            <input type="number" id="bfr-frng" value="45800" placeholder="ex : 45800">
+          </div>
+        </div>
+        <button class="btn-calc" onclick="calcBFR()">
+          <i data-lucide="play"></i> Calculer BFR & Trésorerie
+        </button>
+        <div class="calc-result">
+          <div>
+            <div class="calc-result-lbl">Besoin en Fonds de Roulement</div>
+            <div class="calc-result-val" id="r-bfr-val">—</div>
+          </div>
+          <div class="calc-result-detail" id="r-bfr-detail"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box box-amber reveal" data-delay="0.1">
+      <div class="box-head"><i data-lucide="alert-triangle"></i> Point de vigilance critique</div>
+      Le bilan montre les soldes <strong>nets après dépréciation</strong>. Un compte 411 peut afficher 38 400 € mais si certaines créances sont en litige, ce chiffre est sur-évalué. C'est votre rôle de signaler ces situations au chef comptable pour qu'il passe les dépréciations nécessaires (indicateur n°19 du Module 2).
+    </div>
+  </section>
+
+  <!-- ── 1.3 COMPTE DE RÉSULTAT ──────────────────────────── -->
+  <section class="section" id="resultat" data-section="resultat">
+    <div class="section-tag"><i data-lucide="trending-up"></i> 1.3 · État financier fondamental n°2</div>
+    <div class="section-title">Le <span class="accent">Compte de Résultat</span></div>
+    <div class="section-sub">Le "film" de l'activité de l'entreprise sur toute la durée de l'exercice — ce qu'elle a gagné et dépensé</div>
+
+    <div class="box box-purple reveal">
+      <div class="box-head"><i data-lucide="database"></i> D'où viennent ces chiffres ?</div>
+      <p style="margin-bottom:10px;">Contrairement au bilan qui consolidé une fois par an, le compte de résultat se construit <strong>tout au long de l'année</strong> à chaque saisie dans les journaux de ventes et d'achats.</p>
+      <div class="source-trail">
+        <span class="src-chip src-facture" data-tip="Journal des ventes : chaque facture émise aux clients (comptes 706, 707, 708...) alimente les produits d'exploitation. Exportable depuis le logiciel comptable en format .csv ou .pdf.">
+          <i data-lucide="file-text"></i> Journal des ventes (Cpt 7xx)
+        </span>
+        <span class="src-chip src-facture" data-tip="Journal des achats : chaque facture reçue des fournisseurs (comptes 60x, 61x, 62x) alimente les charges d'exploitation. Les factures papier ou électroniques (PDF, EDI) sont la pièce justificative obligatoire.">
+          <i data-lucide="shopping-cart"></i> Journal des achats (Cpt 6xx)
+        </span>
+        <span class="src-chip src-paie" data-tip="Journal de paie ou OD de paie : le logiciel de paie (Silae, PayFit, Sage Paie...) génère une écriture comptable mensuelle récapitulative — Débit 641 / Crédit 421 (net à payer) + Crédit 431 (URSSAF).">
+          <i data-lucide="users"></i> OD de paie (Cpt 641/43x)
+        </span>
+        <span class="src-chip src-logiciel" data-tip="Journal des opérations diverses (OD) : amortissements, provisions, régularisations de fin de période. Générés en partie automatiquement par le logiciel à partir du tableau des immobilisations.">
+          <i data-lucide="settings"></i> Journal OD — Amortissements
+        </span>
+      </div>
+    </div>
+
+    <div class="fin-grid reveal" data-delay="0.1">
+      <!-- CHARGES -->
+      <div class="fin-col">
+        <div class="fin-col-head">CHARGES — Ce que l'entreprise dépense</div>
+        <div class="fin-sec-head">CHARGES D'EXPLOITATION (Cpt 6xx)</div>
+        <div class="fin-row"><span>Achats de marchandises (Cpt 607) <span class="src-inline" title="Journal des achats — factures fournisseurs de marchandises destinées à la revente">Fact. achats</span></span><span class="fin-amt">128 000 €</span></div>
+        <div class="fin-row"><span>Variation de stocks (Cpt 603/713)</span><span class="fin-amt">3 200 €</span></div>
+        <div class="fin-row"><span>Charges externes (téléphone, loyer, assurance...) <span class="src-inline" title="Comptes 61x et 62x — factures de services, abonnements, loyers">Fact. services</span></span><span class="fin-amt">24 500 €</span></div>
+        <div class="fin-row"><span>Impôts & taxes hors IS (Cpt 63x)</span><span class="fin-amt">4 800 €</span></div>
+        <div class="fin-row"><span>Charges de personnel (Cpt 641 + 645) <span class="src-inline" title="OD de paie mensuelle générée par le logiciel de paie (Silae, Sage Paie, PayFit...)">OD de paie</span></span><span class="fin-amt">89 000 €</span></div>
+        <div class="fin-row"><span>Dotations aux amortissements (Cpt 681) <span class="src-inline" title="Tableau des immobilisations — calcul des dotations mensuelle ou annuelle selon la méthode choisie">Tableau immo.</span></span><span class="fin-amt">6 000 €</span></div>
+        <div class="fin-row subtot"><span>Total charges d'exploitation</span><span class="fin-amt">255 500 €</span></div>
+        <div class="fin-sec-head">CHARGES FINANCIÈRES (Cpt 66x)</div>
+        <div class="fin-row"><span>Intérêts d'emprunts <span class="src-inline" title="Tableau d'amortissement de l'emprunt fourni par la banque — colonne 'intérêts' de chaque échéance">Tableau amort.</span></span><span class="fin-amt">1 800 €</span></div>
+        <div class="fin-sec-head">CHARGES EXCEPTIONNELLES + IS</div>
+        <div class="fin-row"><span>Charges exceptionnelles (amendes, pénalités)</span><span class="fin-amt">200 €</span></div>
+        <div class="fin-row"><span>Impôt sur les Sociétés (IS) <span class="src-inline" title="Acomptes IS + solde — calculé à 15 % ou 25 % du résultat fiscal, déclaré via la liasse fiscale 2065">Liasse fiscale</span></span><span class="fin-amt">2 100 €</span></div>
+        <div class="fin-row total"><span>TOTAL CHARGES</span><span class="fin-amt">259 600 €</span></div>
+        <div class="fin-row" style="background:#F0FDF4;font-family:var(--font-h);font-weight:700;color:var(--green);padding:12px 20px;">
+          <span>RÉSULTAT NET (bénéfice)</span><span class="fin-amt pos">6 300 €</span>
+        </div>
+      </div>
+      <!-- PRODUITS -->
+      <div class="fin-col">
+        <div class="fin-col-head">PRODUITS — Ce que l'entreprise génère</div>
+        <div class="fin-sec-head">PRODUITS D'EXPLOITATION (Cpt 7xx)</div>
+        <div class="fin-row"><span>Ventes de marchandises (Cpt 707) <span class="src-inline" title="Journal des ventes — chaque facture émise aux clients, hors TVA. Export du logiciel comptable ou CRM.">Journal ventes</span></span><span class="fin-amt">224 000 €</span></div>
+        <div class="fin-row"><span>Prestations de services (Cpt 706)</span><span class="fin-amt">38 000 €</span></div>
+        <div class="fin-row"><span>Autres produits d'exploitation</span><span class="fin-amt">2 100 €</span></div>
+        <div class="fin-row subtot"><span>Total produits d'exploitation</span><span class="fin-amt">264 100 €</span></div>
+        <div class="fin-sec-head">PRODUITS FINANCIERS & EXCEPTIONNELS</div>
+        <div class="fin-row"><span>Produits financiers (intérêts reçus)</span><span class="fin-amt">300 €</span></div>
+        <div class="fin-row"><span>Produits exceptionnels (cession d'actif...)</span><span class="fin-amt">1 500 €</span></div>
+        <div class="fin-row total"><span>TOTAL PRODUITS</span><span class="fin-amt">265 900 €</span></div>
+      </div>
+    </div>
+
+    <!-- SIG -->
+    <div id="sig" class="prose reveal" data-delay="0.1">
+      <h3><i data-lucide="bar-chart-2"></i> Les Soldes Intermédiaires de Gestion (SIG)</h3>
+      <p>Le compte de résultat brut donne le résultat final, mais les SIG permettent de décomposer la performance en étapes successives. Chaque SIG répond à une question précise : la politique commerciale est-elle rentable ? Les charges de personnel sont-elles maîtrisées ? L'endettement pèse-t-il trop lourd ? C'est un outil que vous devez savoir construire pour présenter une analyse pertinente lors de vos points avec le chef comptable.</p>
+    </div>
+
+    <table class="sig-table reveal" data-delay="0.15">
+      <tr class="sig-h"><td>Solde Intermédiaire</td><td>Calcul</td><td>Montant TechInnov</td></tr>
+      <tr><td>Chiffre d'Affaires (CA)</td><td>Ventes + Prestations (Cpt 706+707)</td><td>262 000 €</td></tr>
+      <tr><td>— Coût d'achat des marchandises</td><td>Achats + Variation de stocks (Cpt 607+603)</td><td>131 200 €</td></tr>
+      <tr class="sig-r"><td><strong>= MARGE COMMERCIALE</strong></td><td>CA − Coût d'achat</td><td><strong>130 800 €</strong></td></tr>
+      <tr><td>Taux de marge commerciale</td><td>Marge / CA × 100</td><td><strong>49,9 %</strong></td></tr>
+      <tr><td>— Charges externes (Cpt 61x+62x)</td><td>Téléphone, loyer, assurances...</td><td>24 500 €</td></tr>
+      <tr><td>— Impôts & taxes (Cpt 63x)</td><td>Taxes diverses hors IS</td><td>4 800 €</td></tr>
+      <tr><td>— Charges de personnel (Cpt 641+645)</td><td>Salaires bruts + charges patronales</td><td>89 000 €</td></tr>
+      <tr class="sig-r"><td><strong>= EBE (Excédent Brut d'Exploitation)</strong></td><td>Marge − Personnel − Charges ext.</td><td><strong>12 500 €</strong></td></tr>
+      <tr><td>— Dotations aux amortissements (Cpt 681)</td><td>Usure économique des immobilisations</td><td>6 000 €</td></tr>
+      <tr class="sig-r"><td><strong>= RÉSULTAT D'EXPLOITATION</strong></td><td>EBE − Amortissements</td><td><strong>6 500 €</strong></td></tr>
+      <tr><td>+/− Résultat financier</td><td>Produits fin. − Charges fin. (intérêts)</td><td>− 1 500 €</td></tr>
+      <tr><td>+/− Résultat exceptionnel</td><td>Cessions d'actif, produits exceptionnels</td><td>+ 1 300 €</td></tr>
+      <tr><td>— Impôt sur les Sociétés</td><td>15 % ou 25 % du résultat fiscal</td><td>2 100 €</td></tr>
+      <tr class="sig-r"><td><strong>= RÉSULTAT NET</strong></td><td>Ce qui reste pour l'entreprise</td><td><strong>6 300 €</strong></td></tr>
+    </table>
+
+    <div class="box box-green reveal" data-delay="0.2">
+      <div class="box-head"><i data-lucide="check-circle"></i> À retenir pour votre pratique quotidienne</div>
+      L'EBE est l'indicateur que votre banquier regarde en premier lorsque vous demandez un financement. Il mesure la capacité de l'entreprise à générer des liquidités <strong>avant</strong> l'effet de l'endettement et des investissements. Un EBE positif et stable est la preuve d'un modèle économique sain.
+    </div>
+  </section>
+
+  <!-- ── 1.4 Les 3 familles ──────────────────────────────── -->
+  <section class="section" id="familles" data-section="familles">
+    <div class="section-tag"><i data-lucide="layout-grid"></i> 1.4 · Structure de la formation</div>
+    <div class="section-title">Les <span class="accent">3 Familles</span> d'Opérations du REAC</div>
+    <div class="section-sub">Le REAC organise votre travail en trois activités types qui correspondent à trois rythmes différents</div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; margin:32px 0;">
+      <div class="reveal" data-delay="0" style="background:var(--blue);border-radius:10px;padding:24px;color:white;">
+        <div style="width:44px;height:44px;background:rgba(255,255,255,.15);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+          <i data-lucide="calendar" style="width:20px;height:20px;stroke:white;"></i>
+        </div>
+        <div style="font-family:var(--font-h);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;opacity:.7;margin-bottom:6px;">Famille 1</div>
+        <div style="font-family:var(--font-h);font-size:19px;font-weight:800;margin-bottom:10px;">Quotidien</div>
+        <p style="font-size:13px;opacity:.85;line-height:1.6;">Saisie, lettrage, rapprochement bancaire, suivi clients/fournisseurs. <strong>7 indicateurs</strong> — les comptes reflètent la réalité chaque jour.</p>
+      </div>
+      <div class="reveal" data-delay="0.1" style="background:var(--teal);border-radius:10px;padding:24px;color:white;">
+        <div style="width:44px;height:44px;background:rgba(255,255,255,.15);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+          <i data-lucide="repeat" style="width:20px;height:20px;stroke:white;"></i>
+        </div>
+        <div style="font-family:var(--font-h);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;opacity:.7;margin-bottom:6px;">Famille 2</div>
+        <div style="font-family:var(--font-h);font-size:19px;font-weight:800;margin-bottom:10px;">Périodique</div>
+        <p style="font-size:13px;opacity:.85;line-height:1.6;">TVA mensuelle, variables de paie, tableaux de bord. <strong>8 indicateurs</strong> — obligations fiscales et analyse de performance.</p>
+      </div>
+      <div class="reveal" data-delay="0.2" style="background:var(--purple);border-radius:10px;padding:24px;color:white;">
+        <div style="width:44px;height:44px;background:rgba(255,255,255,.15);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+          <i data-lucide="archive" style="width:20px;height:20px;stroke:white;"></i>
+        </div>
+        <div style="font-family:var(--font-h);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;opacity:.7;margin-bottom:6px;">Famille 3</div>
+        <div style="font-family:var(--font-h);font-size:19px;font-weight:800;margin-bottom:10px;">Fin d'exercice</div>
+        <p style="font-size:13px;opacity:.85;line-height:1.6;">Immobilisations, stocks, dépréciations, emprunts. <strong>5 indicateurs</strong> — clôture fiable et complète.</p>
+      </div>
+    </div>
+
+    <div class="box box-blue reveal">
+      <div class="box-head"><i data-lucide="arrow-right-circle"></i> Passez au Module 2</div>
+      Le Module 2 contient les 20 fiches détaillées avec pour chacune : l'origine précise des données (quel logiciel, quel journal, quel fichier), les formules de calcul, 3 exemples pratiques avec analyse et action, et une calculatrice interactive. Chaque fiche est organisée en onglets pour faciliter la navigation.
+      <div style="margin-top:14px;">
+        <a href="module2.html" class="btn btn-primary">
+          <i data-lucide="layers"></i> Accéder au Module 2 — 20 Indicateurs
+        </a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end fondamentaux -->
+
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <div class="footer-top">
+        <span class="footer-logo"><i class="fas fa-chart-line"></i> RD Formation</span>
+        <span class="footer-separator-pipe">|</span>
+        <span class="footer-tagline">Indicateurs Clés de Performance</span>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RD Formation — <strong>Dominez vos chiffres, pilotez votre succès.</strong></p>
+        <p class="copyright-notice">Toute reproduction interdite. Ce contenu est une création intellectuelle exclusive de l'auteur.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="js/masterclass.js"></script>
+<script>
+  // Initialiser les icônes Lucide après le chargement du DOM
+  lucide.createIcons();
+</script>
+</body>
+</html>
