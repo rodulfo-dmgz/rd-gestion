@@ -1,0 +1,196 @@
+/* page6.css – Styles spécifiques à la page Exercice pratique */
+/* Tous les sélecteurs sont préfixés par .p6- */
+
+.p6-hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 55%, #2a65c7 100%);
+  padding: 60px 0 52px;
+  overflow: hidden;
+}
+.p6-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+.p6-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; right: -60px;
+  width: 340px; height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,158,11,.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+.p6-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.24);
+  color: rgba(255,255,255,.9);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  animation: p6FadeUp .5s ease both;
+}
+.p6-hero-tag svg { width: 13px; height: 13px; stroke: currentColor; }
+.p6-hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 4vw, 50px);
+  font-weight: 800;
+  color: white;
+  line-height: 1.08;
+  letter-spacing: -1px;
+  margin-bottom: 18px;
+  border-bottom: none !important;
+  display: block !important;
+  padding-bottom: 0 !important;
+  animation: p4FadeUp .55s ease .1s both;
+}
+.p6-hero-accent {
+  background: linear-gradient(90deg, var(--accent), #fb923c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.p6-hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,.72);
+  max-width: 600px;
+  line-height: 1.75;
+  margin-bottom: 36px;
+  font-weight: 300;
+  animation: p6FadeUp .55s ease .18s both;
+}
+.p6-hero-stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  animation: p6FadeUp .55s ease .26s both;
+}
+.p6-stat-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0 26px;
+}
+.p6-stat-item:first-child { padding-left: 0; }
+.p6-stat-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+}
+.p6-stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,.52);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-family: 'Space Grotesk', sans-serif;
+  margin-top: 4px;
+}
+.p6-stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,.2);
+  flex-shrink: 0;
+}
+
+/* Barre de progression */
+.p6-read-track {
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+.p6-read-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  border-radius: 2px;
+  transition: width .15s linear;
+}
+
+/* Animation d'entrée */
+.p6-card-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.p6-card-animate.p6-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Boutons de mode */
+#mode-guided, #mode-unguided {
+  transition: all 0.2s;
+}
+#mode-guided:hover, #mode-unguided:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* Zone d'exercice */
+#exercise-area {
+  background: var(--light);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border: 1px solid var(--border);
+}
+
+/* Navigation */
+.p6-nav-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0 3rem;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.p6-nav-footer .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.p6-nav-footer .btn svg { width: 15px; height: 15px; stroke: currentColor; }
+.p6-nav-dots-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.p6-nav-module-lbl {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.p6-nav-dots { display: flex; gap: 7px; }
+.p6-dot {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--border);
+  display: block;
+  transition: background .2s, transform .2s;
+}
+.p6-dot:hover       { background: var(--secondary); transform: scale(1.25); }
+.p6-dot-active      { background: var(--primary);   transform: scale(1.3);  }
+
+@keyframes p6FadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

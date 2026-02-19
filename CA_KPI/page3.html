@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comment calculer un KPI ? — Masterclass KPI</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons SVG — remplace Font Awesome, zéro emoji -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/page3.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       HEADER — identique à l'original, mot pour mot
+  ═══════════════════════════════════════════════ -->
+  <header>
+      <div class="container header-content">
+      <div class="logo"><a href="index.html"><img src="assets/logo.svg" alt="RD Formation" class="header-logo-img"></a></div>
+      <div id="welcome-message" style="font-weight: 600; color: var(--secondary);"></div>
+      <nav>
+        <ul>
+          <li><a href="page1.html">1. Le Cockpit</a></li>
+          <li><a href="page2.html">2. Définition KPI</a></li>
+          <li><a href="page3.html" class="active">3. Calculs</a></li>
+          <li><a href="page4.html">4. Méthode SMART</a></li>
+          <li><a href="page5.html">5. Cercles</a></li>
+          <li><a href="page6.html">6. Exercice</a></li>
+          <li><a href="page7.html">7. Sources</a></li>
+          <li><a href="page8.html">8. Bilan</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════
+       HERO — NOUVEAU, au-dessus du <main> original
+  ═══════════════════════════════════════════════ -->
+  <div class="p3-hero">
+    <div class="p3-hero-grid"></div>
+    <div class="container">
+      <div class="p3-hero-tag">
+        <i data-lucide="calculator"></i>
+        Module 3 — Méthodes & Formules de Calcul
+      </div>
+      <h1 class="p3-hero-title">
+        Comment <span class="p3-hero-accent">calculer</span> un KPI ?
+      </h1>
+      <p class="p3-hero-sub">
+        Le calcul d'un indicateur dépend de la maturité de votre outillage.
+        Une TPE avec Excel ne calcule pas comme un groupe avec un entrepôt de données.
+        Ce module vous donne <strong>les formules essentielles</strong> et un
+        <strong>calculateur interactif</strong> pour chacune d'elles.
+      </p>
+      <!-- Statistiques animées -->
+      <div class="p3-hero-stats">
+        <div class="p3-stat-item">
+          <span class="p3-stat-num" data-count="3">0</span>
+          <span class="p3-stat-label">Niveaux d'outillage</span>
+        </div>
+        <div class="p3-stat-divider"></div>
+        <div class="p3-stat-item">
+          <span class="p3-stat-num" data-count="4">0</span>
+          <span class="p3-stat-label">Formules calculables</span>
+        </div>
+        <div class="p3-stat-divider"></div>
+        <div class="p3-stat-item">
+          <span class="p3-stat-num" data-count="100" data-suffix="%">0</span>
+          <span class="p3-stat-label">Interactif & en direct</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       MAIN — STRUCTURE ORIGINALE CONSERVÉE À 100 %
+  ═══════════════════════════════════════════════ -->
+  <main class="container" style="margin-top: 2rem;">
+
+    <!-- Barre de lecture — AJOUT discret -->
+    <div class="p3-read-track">
+      <div class="p3-read-bar" id="p3-read-bar"></div>
+    </div>
+
+    <!-- ── .card CONSERVÉE, on ajoute seulement p3-card-animate ── -->
+    <div class="card p3-card-animate">
+
+      <!-- ·· Paragraphe intro ORIGINAL CONSERVÉ ·· -->
+      <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+        Le calcul d'un indicateur dépend de la maturité de votre outillage. Une TPE avec Excel
+        ne calcule pas comme un groupe avec un entrepôt de données. Voici comment adapter
+        la méthode à votre taille.
+      </p>
+
+      <!-- ·· Titre ORIGINAL CONSERVÉ ·· -->
+      <h2>Les trois niveaux de calcul</h2>
+
+      <!-- AJOUT : sous-titre pédagogique et visualisation comparative -->
+      <p class="p3-section-intro">
+        Chaque niveau correspond à une réalité d'entreprise. Cliquez sur un niveau
+        pour voir ses outils, ses forces et ses limites en détail.
+      </p>
+
+      <!-- AJOUT : visualisation pyramidale des 3 niveaux avant la grille -->
+      <div class="p3-level-vis">
+        <div class="p3-lv-item p3-lv-active" data-level="tpe">
+          <div class="p3-lv-icon" style="background: rgba(31,69,144,.12); color: var(--primary);">
+            <i data-lucide="table-2"></i>
+          </div>
+          <div class="p3-lv-text">
+            <span class="p3-lv-name">TPE / Artisan</span>
+            <span class="p3-lv-tool">Excel · Sheets</span>
+          </div>
+          <div class="p3-lv-badge p3-lv-badge-blue">Niveau 1</div>
+        </div>
+        <div class="p3-lv-arrow"><i data-lucide="chevron-right"></i></div>
+        <div class="p3-lv-item" data-level="pme">
+          <div class="p3-lv-icon" style="background: rgba(28,160,152,.12); color: var(--secondary);">
+            <i data-lucide="cloud"></i>
+          </div>
+          <div class="p3-lv-text">
+            <span class="p3-lv-name">PME / ETI</span>
+            <span class="p3-lv-tool">ERP · CRM · BI</span>
+          </div>
+          <div class="p3-lv-badge p3-lv-badge-teal">Niveau 2</div>
+        </div>
+        <div class="p3-lv-arrow"><i data-lucide="chevron-right"></i></div>
+        <div class="p3-lv-item" data-level="ge">
+          <div class="p3-lv-icon" style="background: rgba(245,158,11,.12); color: var(--accent);">
+            <i data-lucide="database"></i>
+          </div>
+          <div class="p3-lv-text">
+            <span class="p3-lv-name">Grande Entreprise</span>
+            <span class="p3-lv-tool">Data Warehouse · BI</span>
+          </div>
+          <div class="p3-lv-badge p3-lv-badge-amber">Niveau 3</div>
+        </div>
+      </div>
+
+      <!-- ·· .grid-2 CONSERVÉE — contenu des 3 .info-box enrichi ·· -->
+      <!-- RÈGLE STRICTE : les classes .info-box, le style inline border-left-color
+           sont CONSERVÉS mot pour mot. On ajoute p3-info-tile pour le hover seulement. -->
+      <div class="grid-2">
+
+        <!-- Niveau 1 : TPE — .info-box CONSERVÉE, style inline CONSERVÉ -->
+        <div class="info-box p3-info-tile" style="border-left-color: var(--primary);" id="tile-tpe">
+          <div class="p3-tile-header">
+            <!-- Lucide remplace fa-file-excel -->
+            <div class="p3-tile-icon" style="color: var(--primary);">
+              <i data-lucide="table-2"></i>
+            </div>
+            <div>
+              <h3 style="margin:0;">TPE / Artisan</h3>
+              <span class="p3-tile-badge" style="background:rgba(31,69,144,.1); color:var(--primary);">Niveau 1</span>
+            </div>
+          </div>
+          <!-- Contenu original CONSERVÉ -->
+          <p><strong>Outil :</strong> Tableur (Excel, Google Sheets)</p>
+          <p><strong>Exemple :</strong> Marge brute mensuelle = Somme des ventes – Somme des achats</p>
+          <p><em>Avantage :</em> Flexibilité totale. <em>Inconvénient :</em> Risque d'erreur manuelle, absence d'historique fiable.</p>
+          <!-- AJOUT : formule visuelle et barre avantage/inconvénient -->
+          <div class="p3-formula-chip">
+            <i data-lucide="function-square"></i>
+            <code>Marge brute = Ventes − Achats</code>
+          </div>
+          <div class="p3-pros-cons">
+            <div class="p3-pro"><i data-lucide="check"></i> Gratuit &amp; immédiat</div>
+            <div class="p3-pro"><i data-lucide="check"></i> Modifiable à volonté</div>
+            <div class="p3-con"><i data-lucide="x"></i> Erreurs de saisie fréquentes</div>
+            <div class="p3-con"><i data-lucide="x"></i> Pas de mise à jour auto</div>
+          </div>
+        </div>
+
+        <!-- Niveau 2 : PME — .info-box CONSERVÉE, style inline CONSERVÉ -->
+        <div class="info-box p3-info-tile" style="border-left-color: var(--secondary);" id="tile-pme">
+          <div class="p3-tile-header">
+            <!-- Lucide remplace fa-cloud -->
+            <div class="p3-tile-icon" style="color: var(--secondary);">
+              <i data-lucide="cloud"></i>
+            </div>
+            <div>
+              <h3 style="margin:0;">PME / ETI</h3>
+              <span class="p3-tile-badge" style="background:rgba(28,160,152,.1); color:var(--secondary);">Niveau 2</span>
+            </div>
+          </div>
+          <!-- Contenu original CONSERVÉ -->
+          <p><strong>Outil :</strong> ERP (Sage, EBP, Cegid), CRM, BI légère</p>
+          <p><strong>Exemple :</strong> Taux de marge = (CA – Coût de revient) / CA × 100</p>
+          <p><em>Avantage :</em> Automatisation, fiabilité. <em>Inconvénient :</em> Coût et paramétrage.</p>
+          <!-- AJOUT -->
+          <div class="p3-formula-chip" style="border-color: rgba(28,160,152,.3);">
+            <i data-lucide="function-square"></i>
+            <code>Taux marge = (CA − Coût) ÷ CA × 100</code>
+          </div>
+          <div class="p3-pros-cons">
+            <div class="p3-pro"><i data-lucide="check"></i> Données fiables &amp; historisées</div>
+            <div class="p3-pro"><i data-lucide="check"></i> Calcul automatique</div>
+            <div class="p3-con"><i data-lucide="x"></i> Coût de licence &amp; formation</div>
+            <div class="p3-con"><i data-lucide="x"></i> Paramétrage initial long</div>
+          </div>
+        </div>
+
+        <!-- Niveau 3 : Grande entreprise — .info-box CONSERVÉE, style inline CONSERVÉ -->
+        <div class="info-box p3-info-tile" style="border-left-color: var(--accent);" id="tile-ge">
+          <div class="p3-tile-header">
+            <!-- Lucide remplace fa-database -->
+            <div class="p3-tile-icon" style="color: var(--accent);">
+              <i data-lucide="database"></i>
+            </div>
+            <div>
+              <h3 style="margin:0;">Grande entreprise</h3>
+              <span class="p3-tile-badge" style="background:rgba(245,158,11,.1); color:var(--accent);">Niveau 3</span>
+            </div>
+          </div>
+          <!-- Contenu original CONSERVÉ -->
+          <p><strong>Outil :</strong> Data Warehouse, API, Tableau/Power BI</p>
+          <p><strong>Exemple :</strong> Besoin en Fonds de Roulement (BFR) = Stocks + Créances – Dettes fournisseurs</p>
+          <p><em>Avantage :</em> Temps réel, prédictif. <em>Inconvénient :</em> Complexité technique.</p>
+          <!-- AJOUT -->
+          <div class="p3-formula-chip" style="border-color: rgba(245,158,11,.3);">
+            <i data-lucide="function-square"></i>
+            <code>BFR = Stocks + Créances − Dettes frs</code>
+          </div>
+          <div class="p3-pros-cons">
+            <div class="p3-pro"><i data-lucide="check"></i> Temps réel &amp; prédictif</div>
+            <div class="p3-pro"><i data-lucide="check"></i> Croisement multi-sources</div>
+            <div class="p3-con"><i data-lucide="x"></i> Complexité technique élevée</div>
+            <div class="p3-con"><i data-lucide="x"></i> Équipe data dédiée requise</div>
+          </div>
+        </div>
+
+      </div><!-- /grid-2 CONSERVÉE -->
+
+
+      <!-- ══════════════════════════════════════════
+           CALCULATEUR — bloc original CONSERVÉ,
+           étendu avec 4 onglets de formules
+      ═══════════════════════════════════════════ -->
+
+      <!-- ·· Titre original CONSERVÉ ·· -->
+      <h2 style="margin-top: 3rem;">Calculateur interactif</h2>
+      <!-- ·· Texte original CONSERVÉ ·· -->
+      <p>Testez le calcul de la marge brute (un des KPI les plus fondamentaux).</p>
+
+      <!-- AJOUT : sélecteur de formule (4 onglets) au-dessus du bloc original -->
+      <div class="p3-calc-tabs" role="tablist" aria-label="Choisir une formule à calculer">
+        <button class="p3-calc-tab active" data-calc="marge" role="tab">
+          <i data-lucide="trending-up"></i> Marge brute
+        </button>
+        <button class="p3-calc-tab" data-calc="taux" role="tab">
+          <i data-lucide="percent"></i> Taux de marge
+        </button>
+        <button class="p3-calc-tab" data-calc="bfr" role="tab">
+          <i data-lucide="activity"></i> BFR
+        </button>
+        <button class="p3-calc-tab" data-calc="cac" role="tab">
+          <i data-lucide="users"></i> CAC
+        </button>
+      </div>
+
+      <!-- ·· Bloc calculateur ORIGINAL CONSERVÉ — style inline identique ·· -->
+      <!-- On ajoute l'id p3-calc-wrapper pour que le JS puisse changer les champs -->
+      <div id="p3-calc-wrapper" style="background: var(--light); padding: 2rem; border-radius: var(--radius); margin: 2rem 0;">
+
+        <!-- AJOUT : en-tête de formule (changé dynamiquement par JS) -->
+        <div class="p3-formula-display" id="p3-formula-display">
+          <div class="p3-fd-label">Formule</div>
+          <div class="p3-fd-formula" id="p3-fd-formula">Marge brute = CA − Achats consommés</div>
+        </div>
+
+        <!-- ·· .grid-2 CONSERVÉE pour les champs ·· -->
+        <!-- Les id ca et achats sont conservés pour ne pas casser calculerMarge() -->
+        <div class="grid-2" id="p3-calc-fields">
+          <!-- Champ 1 — .form-group CONSERVÉ, id "ca" CONSERVÉ -->
+          <div class="form-group">
+            <label for="ca" id="label-ca">Chiffre d'affaires (€)</label>
+            <input type="number" id="ca" value="100000" placeholder="ex: 100000">
+          </div>
+          <!-- Champ 2 — .form-group CONSERVÉ, id "achats" CONSERVÉ -->
+          <div class="form-group">
+            <label for="achats" id="label-achats">Achats consommés (€)</label>
+            <input type="number" id="achats" value="60000" placeholder="ex: 60000">
+          </div>
+        </div>
+
+        <!-- AJOUT : champs 3 et 4 pour BFR et CAC (masqués par défaut) -->
+        <div class="grid-2" id="p3-extra-fields" style="display:none;">
+          <div class="form-group">
+            <label for="p3-input3" id="label-c3">Champ 3</label>
+            <input type="number" id="p3-input3" value="0">
+          </div>
+          <div class="form-group">
+            <label for="p3-input4" id="label-c4">Champ 4</label>
+            <input type="number" id="p3-input4" value="0">
+          </div>
+        </div>
+
+        <!-- ·· Bouton ORIGINAL CONSERVÉ — onclick CONSERVÉ ·· -->
+        <!-- On ajoute uniquement l'icône Lucide en remplacement de Font Awesome -->
+        <button class="btn btn-primary p3-calc-btn" onclick="calculerMarge()">
+          <i data-lucide="calculator"></i> Calculer
+        </button>
+
+        <!-- ·· Résultat ORIGINAL CONSERVÉ — id "marge" CONSERVÉ ·· -->
+        <p style="margin-top: 1.5rem; font-size: 1.3rem;">
+          <span id="p3-result-label">Marge brute</span> =
+          <strong id="marge" class="p3-result-value">40 000</strong>
+          <span id="p3-result-unit">€</span>
+        </p>
+
+        <!-- AJOUT : panneau d'analyse contextuelle du résultat -->
+        <div class="p3-analysis" id="p3-analysis" style="display:none;">
+          <div class="p3-analysis-icon"><i data-lucide="info"></i></div>
+          <div class="p3-analysis-text" id="p3-analysis-text"></div>
+        </div>
+
+        <!-- AJOUT : mini-historique des derniers calculs -->
+        <div class="p3-history" id="p3-history" style="display:none;">
+          <div class="p3-history-label">
+            <i data-lucide="clock"></i> Derniers calculs
+          </div>
+          <div class="p3-history-list" id="p3-history-list"></div>
+        </div>
+
+      </div><!-- /bloc calculateur style inline CONSERVÉ -->
+
+      <!-- AJOUT : tableau de référence des formules les plus courantes -->
+      <div class="p3-formulas-ref">
+        <div class="p3-ref-header">
+          <i data-lucide="book-open"></i>
+          <h3>Référentiel des formules KPI essentielles</h3>
+          <p>Les 8 formules que tout dirigeant doit connaître — avec la source de données pour chacune.</p>
+        </div>
+        <div class="p3-ref-table">
+          <div class="p3-ref-row p3-ref-head">
+            <span>KPI</span><span>Formule</span><span>Source de données</span><span>Fréquence</span>
+          </div>
+          <div class="p3-ref-row">
+            <span><strong>Marge brute</strong></span>
+            <span><code>CA − Achats</code></span>
+            <span>Comptabilité / ERP</span>
+            <span class="p3-freq p3-freq-month">Mensuel</span>
+          </div>
+          <div class="p3-ref-row">
+            <span><strong>Taux de marge</strong></span>
+            <span><code>(CA − Coût) ÷ CA × 100</code></span>
+            <span>Comptabilité</span>
+            <span class="p3-freq p3-freq-month">Mensuel</span>
+          </div>
+          <div class="p3-ref-row">
+            <span><strong>BFR</strong></span>
+            <span><code>Stocks + Créances − Dettes frs</code></span>
+            <span>Bilan / ERP</span>
+            <span class="p3-freq p3-freq-month">Mensuel</span>
+          </div>
+          <div class="p3-ref-row">
+            <span><strong>CAC</strong></span>
+            <span><code>Budget marketing ÷ Nbr clients</code></span>
+            <span>CRM / Marketing</span>
+            <span class="p3-freq p3-freq-month">Mensuel</span>
+          </div>
+          <div class="p3-ref-row">
+            <span><strong>DSO (délai client)</strong></span>
+            <span><code>Créances ÷ CA × 365</code></span>
+            <span>Comptabilité auxiliaire</span>
+            <span class="p3-freq p3-freq-week">Hebdo</span>
+          </div>
+          <div class="p3-ref-row">
+            <span><strong>Trésorerie nette</strong></span>
+            <span><code>FRNG − BFR</code></span>
+            <span>Bilan</span>
+            <span class="p3-freq p3-freq-week">Hebdo</span>
+          </div>
+          <div class="p3-ref-row">
+            <span><strong>Taux de conversion</strong></span>
+            <span><code>Commandes ÷ Visites × 100</code></span>
+            <span>Analytics / CRM</span>
+            <span class="p3-freq p3-freq-day">Quotidien</span>
+          </div>
+          <div class="p3-ref-row">
+            <span><strong>NPS</strong></span>
+            <span><code>% Promoteurs − % Détracteurs</code></span>
+            <span>Enquêtes clients</span>
+            <span class="p3-freq p3-freq-month">Mensuel</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AJOUT : quiz "Quelle formule pour quel KPI ?" -->
+      <div class="p3-quiz">
+        <div class="p3-quiz-hdr">
+          <i data-lucide="help-circle"></i>
+          <div>
+            <h3>Quiz — Reconnaissez-vous la bonne formule ?</h3>
+            <p>Pour chaque KPI, sélectionnez la formule correcte parmi les trois propositions.</p>
+          </div>
+          <div class="p3-quiz-score-box">
+            <span class="p3-qscore-lbl">Score</span>
+            <span class="p3-qscore-val">
+              <span id="p3-score">0</span> / <span id="p3-qtotal">4</span>
+            </span>
+          </div>
+        </div>
+        <div class="p3-quiz-prog">
+          <div class="p3-quiz-prog-fill" id="p3-quiz-fill"></div>
+        </div>
+        <div id="p3-quiz-body"><!-- Injecté par JS --></div>
+        <div class="p3-quiz-final" id="p3-quiz-final" style="display:none;"></div>
+      </div>
+
+      <!-- ·· .alert-box CONSERVÉE — style inline CONSERVÉ ·· -->
+      <!-- Icône Lucide remplace fa-lightbulb -->
+      <div class="alert-box">
+        <h3 style="color: var(--accent); display:flex; align-items:center; gap:8px;">
+          <i data-lucide="lightbulb"></i> À retenir
+        </h3>
+        <p>Un KPI n'est pas qu'un chiffre : c'est un ratio ou un montant mis en perspective.
+           40 000 € de marge ne veut rien dire si on ne le compare pas au CA (taux de marge)
+           ou à la période précédente (évolution).</p>
+        <!-- AJOUT : point complémentaire pédagogique -->
+        <p style="margin-top: 0.75rem;">
+          <strong>La règle des 3 C :</strong> un bon KPI calculé doit être
+          <strong>Comparable</strong> (à un objectif ou à N-1),
+          <strong>Contextualisé</strong> (quel secteur ? quelle taille ?)
+          et <strong>Communicable</strong> (compris par toute l'équipe en 10 secondes).
+        </p>
+      </div>
+
+    </div><!-- /card CONSERVÉE -->
+
+    <!-- AJOUT : navigation inter-modules -->
+    <div class="p3-nav-footer">
+      <a href="page2.html" class="btn btn-secondary">
+        <i data-lucide="chevron-left"></i> Module 2 — Définition KPI
+      </a>
+      <div class="p3-nav-dots-wrap">
+        <span class="p3-nav-module-lbl">Module 3 / 8</span>
+        <div class="p3-nav-dots">
+          <a href="page1.html" class="p3-dot" title="Le Cockpit"></a>
+          <a href="page2.html" class="p3-dot" title="Définition KPI"></a>
+          <a href="page3.html" class="p3-dot p3-dot-active" title="Calculs"></a>
+          <a href="page4.html" class="p3-dot" title="SMART"></a>
+          <a href="page5.html" class="p3-dot" title="Cercles"></a>
+          <a href="page6.html" class="p3-dot" title="Exercice"></a>
+          <a href="page7.html" class="p3-dot" title="Sources"></a>
+          <a href="page8.html" class="p3-dot" title="Bilan"></a>
+        </div>
+      </div>
+      <a href="page4.html" class="btn btn-primary">
+        Module 4 — Méthode SMART <i data-lucide="chevron-right"></i>
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="main-footer">
+  <div class="container footer-content">
+    <div class="footer-top">
+      <span class="footer-logo"><i class="fas fa-chart-line"></i> RD Formation</span>
+      <span class="footer-separator-pipe">|</span>
+      <span class="footer-tagline">Indicateurs Clés de Performance</span>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        &copy; 2026 RD Formation — <strong>Dominez vos chiffres, pilotez votre succès.</strong>
+      </p>
+      <p class="copyright-notice">
+        Toute reproduction interdite. Ce contenu est une création intellectuelle exclusive de l'auteur.
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script src="core/main.js" type="module"></script>
+
+  <!-- ·· Script original CONSERVÉ — fonction calculerMarge() intacte ·· -->
+  <!-- Elle continue à fonctionner exactement comme avant pour l'onglet Marge brute -->
+  <script>
+    // Fonction originale conservée telle quelle — elle lit les mêmes id "ca", "achats", "marge"
+    function calculerMarge() {
+      const ca     = parseFloat(document.getElementById('ca').value)     || 0;
+      const achats = parseFloat(document.getElementById('achats').value) || 0;
+      // On délègue au moteur JS externe qui gère maintenant tous les modes
+      if (typeof window.p3Calculer === 'function') {
+        window.p3Calculer();
+      } else {
+        // Fallback : comportement original si le JS externe n'est pas chargé
+        document.getElementById('marge').textContent = (ca - achats).toFixed(2);
+      }
+    }
+  </script>
+
+  <script src="core/page3.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => lucide.createIcons());
+  </script>
+</body>
+</html>

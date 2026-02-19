@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilan – Masterclass KPI</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/page8.css">
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo"><a href="index.html"><img src="assets/logo.svg" alt="RD Formation" class="header-logo-img"></a></div>
+      <div id="welcome-message" style="font-weight: 600; color: var(--secondary);"></div>
+      <nav>
+        <ul>
+          <li><a href="page1.html">1. Le Cockpit</a></li>
+          <li><a href="page2.html">2. Définition KPI</a></li>
+          <li><a href="page3.html">3. Calculs</a></li>
+          <li><a href="page4.html">4. Méthode SMART</a></li>
+          <li><a href="page5.html">5. Cercles</a></li>
+          <li><a href="page6.html">6. Exercice</a></li>
+          <li><a href="page7.html">7. Sources</a></li>
+          <li><a href="page8.html" class="active">8. Bilan</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div class="p8-hero">
+    <div class="p8-hero-grid"></div>
+    <div class="container">
+      <div class="p8-hero-tag">
+        <i data-lucide="award"></i>
+        Module 8 — Bilan
+      </div>
+      <h1 class="p8-hero-title">
+        Félicitations, vous avez <span class="p8-hero-accent">terminé</span> !
+      </h1>
+      <p class="p8-hero-sub">
+        Récapitulons les indicateurs clés et personnalisons votre certificat de réussite.
+      </p>
+    </div>
+  </div>
+
+  <!-- Barre de progression -->
+  <div class="p8-read-track">
+    <div class="p8-read-bar" id="p8-read-bar"></div>
+  </div>
+
+  <main class="container">
+    <div class="card p8-card-animate">
+      <h2>Indicateurs comptables clés</h2>
+      <p>Voici les KPI essentiels à suivre dans une démarche de pilotage financier.</p>
+
+      <table class="data-table p8-table">
+        <thead>
+          <tr><th>KPI</th><th>Formule simplifiée</th><th>Interprétation</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Marge brute</strong></td><td>CA – Achats consommés</td><td>Richesse créée par l'activité principale.</td></tr>
+          <tr><td><strong>Taux de marge</strong></td><td>(Marge brute / CA) × 100</td><td>Rentabilité commerciale.</td></tr>
+          <tr><td><strong>Résultat net</strong></td><td>Produits – Charges</td><td>Bénéfice ou perte finale.</td></tr>
+          <tr><td><strong>BFR</strong></td><td>Stocks + Créances – Dettes fournisseurs</td><td>Montant à financer pour le cycle d'exploitation.</td></tr>
+          <tr><td><strong>Trésorerie nette</strong></td><td>FRNG – BFR</td><td>Cash disponible immédiatement.</td></tr>
+          <tr><td><strong>Délai moyen de paiement clients</strong></td><td>(Créances clients / CA TTC) × 365</td><td>Rapidité d'encaissement.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="p8-thanks" id="thanks-message">
+        <!-- Message personnalisé injecté par JS -->
+      </div>
+
+      <div class="p8-certificate">
+        <h3><i data-lucide="certificate"></i> Votre certificat de réussite</h3>
+        <p>Vous avez complété les 8 modules de la masterclass. Vous êtes désormais capable de :</p>
+        <ul>
+          <li>Distinguer un KPI d'une donnée brute</li>
+          <li>Calculer et interpréter les principaux ratios financiers</li>
+          <li>Appliquer la méthode SMART à vos objectifs</li>
+          <li>Identifier vos zones de contrôle et d'influence</li><br>
+        </ul>
+        <p class="p8-signature">L'équipe RD Formation</p><br>
+                  Envie d'aller plus loin ? 
+          Explore les <strong>20 indicateurs clés</strong> incontournables en cliquant sur le <strong>Lab des KPI</strong> en bas à droite de votre écran.
+      </div>
+    </div>
+
+    <!-- Navigation (retour à l'accueil) -->
+    <div class="p8-nav-footer">
+      <a href="page7.html" class="btn btn-secondary">
+        <i data-lucide="chevron-left"></i> Module 7 — Sources
+      </a>
+      <div class="p8-nav-dots-wrap">
+        <span class="p8-nav-module-lbl">Module 8 / 8</span>
+        <div class="p8-nav-dots">
+          <a href="page1.html" class="p8-dot" title="Le Cockpit"></a>
+          <a href="page2.html" class="p8-dot" title="Définition KPI"></a>
+          <a href="page3.html" class="p8-dot" title="Calculs"></a>
+          <a href="page4.html" class="p8-dot" title="SMART"></a>
+          <a href="page5.html" class="p8-dot" title="Cercles"></a>
+          <a href="page6.html" class="p8-dot" title="Exercice"></a>
+          <a href="page7.html" class="p8-dot" title="Sources"></a>
+          <a href="page8.html" class="p8-dot p8-dot-active" title="Bilan"></a>
+        </div>
+      </div>
+      <a href="https://rodulfo-dmgz.github.io/rd-gestion/Comptable_assistant/index.html" class="btn btn-primary">
+        Le Lab des KPI <i data-lucide="database-search"></i>
+      </a>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <div class="footer-top">
+        <span class="footer-logo"><i class="fas fa-chart-line"></i> RD Formation</span>
+        <span class="footer-separator-pipe">|</span>
+        <span class="footer-tagline">Indicateurs Clés de Performance</span>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RD Formation — <strong>Dominez vos chiffres, pilotez votre succès.</strong></p>
+        <p class="copyright-notice">Toute reproduction interdite. Ce contenu est une création intellectuelle exclusive de l'auteur.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="core/main.js" type="module"></script>
+  <script src="core/page8.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => lucide.createIcons());</script>
+</body>
+</html>

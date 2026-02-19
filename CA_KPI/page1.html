@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Cockpit d'Entreprise — Masterclass KPI</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons — SVG professionnels, zéro emoji -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/page2.css">
+  <link rel="stylesheet" href="css/cockpit.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER / NAV
+  ════════════════════════════════════════════ -->
+  <header>
+    <div class="container header-content">
+      <div class="logo"><a href="index.html"><img src="assets/logo.svg" alt="RD Formation" class="header-logo-img"></a></div>
+      <div id="welcome-message" style="font-weight: 600; color: var(--secondary);"></div>
+      <nav>
+        <ul>
+          <li><a href="page1.html" class="active">1. Le Cockpit</a></li>
+          <li><a href="page2.html">2. Définition KPI</a></li>
+          <li><a href="page3.html">3. Calculs</a></li>
+          <li><a href="page4.html">4. Méthode SMART</a></li>
+          <li><a href="page5.html">5. Cercles</a></li>
+          <li><a href="page6.html">6. Exercice</a></li>
+          <li><a href="page7.html">7. Sources</a></li>
+          <li><a href="page8.html">8. Bilan</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════
+         HERO — Titre cinématique
+    ════════════════════════════════════════════ -->
+    <section class="hero-section">
+      <div class="hero-grid-bg"></div>
+      <div class="container hero-content">
+        <div class="hero-tag">
+          <i data-lucide="gauge"></i>
+          Module 1 — L'Analogie Fondamentale
+        </div>
+        <h1 class="hero-title">
+          Piloter une entreprise,<br>
+          <span class="hero-accent">c'est conduire une voiture</span>
+        </h1>
+        <p class="hero-sub">
+          Vous regarderiez-vous dans le <strong>rétroviseur</strong> pour avancer ?
+          C'est pourtant ce que font 70 % des TPE/PME qui ne pilotent qu'à travers
+          leur bilan comptable annuel. Ce module vous explique pourquoi il vous faut
+          un <strong>tableau de bord en temps réel</strong>.
+        </p>
+
+        <!-- CTA double — deux façons d'entrer dans le contenu -->
+        <div class="hero-ctas">
+          <button class="cta-btn cta-scenario" id="btn-scenario">
+            <i data-lucide="play-circle"></i>
+            <span>Vivre le scénario</span>
+            <small>L'histoire de Sophie — 3 min</small>
+          </button>
+          <button class="cta-btn cta-simulator" id="btn-simulator">
+            <i data-lucide="sliders-horizontal"></i>
+            <span>Simulateur interactif</span>
+            <small>Pilotez en direct</small>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION A — SCÉNARIO NARRATIF (par défaut caché, reveal au clic)
+    ════════════════════════════════════════════ -->
+    <section class="content-section scenario-section" id="section-scenario" style="display:none;">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-tag">
+            <i data-lucide="book-open"></i> Le Scénario
+          </div>
+          <h2>L'Histoire de Sophie — De la Panne au Pilotage</h2>
+          <p class="section-sub">Suivez chaque étape. Chaque carte représente un moment clé de sa trajectoire.</p>
+        </div>
+
+        <!-- Stepper de progression -->
+        <div class="stepper-nav">
+          <button class="step-dot active" data-step="0" aria-label="Étape 1"></button>
+          <div class="step-line"></div>
+          <button class="step-dot" data-step="1" aria-label="Étape 2"></button>
+          <div class="step-line"></div>
+          <button class="step-dot" data-step="2" aria-label="Étape 3"></button>
+          <div class="step-line"></div>
+          <button class="step-dot" data-step="3" aria-label="Étape 4"></button>
+          <div class="step-line"></div>
+          <button class="step-dot" data-step="4" aria-label="Étape 5"></button>
+        </div>
+
+        <!-- Cartes de scénario -->
+        <div class="scenario-cards">
+
+          <!-- Étape 0 — Le problème -->
+          <div class="scenario-card active" data-step="0">
+            <div class="sc-visual sc-danger">
+              <!-- Tableau de bord brisé SVG -->
+              <svg class="dashboard-svg broken" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="200" rx="16" fill="#1e293b"/>
+                <!-- Écran fissuré -->
+                <path d="M 180 30 L 220 80 L 200 120 L 240 160" stroke="#ef4444" stroke-width="2" fill="none" stroke-dasharray="4,2" class="crack-line"/>
+                <path d="M 150 50 L 190 90 L 170 130" stroke="#ef4444" stroke-width="1.5" fill="none" stroke-dasharray="3,2" class="crack-line"/>
+                <!-- Jauge vitesse cassée -->
+                <circle cx="120" cy="100" r="55" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+                <text x="120" y="88" text-anchor="middle" fill="#64748b" font-size="11" font-family="Space Grotesk">CA</text>
+                <text x="120" y="110" text-anchor="middle" fill="#ef4444" font-size="22" font-weight="700" font-family="Space Grotesk">???</text>
+                <text x="120" y="128" text-anchor="middle" fill="#64748b" font-size="9">k€</text>
+                <!-- Jauge tréso vide -->
+                <circle cx="280" cy="100" r="55" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+                <text x="280" y="88" text-anchor="middle" fill="#64748b" font-size="11" font-family="Space Grotesk">Tréso</text>
+                <text x="280" y="110" text-anchor="middle" fill="#ef4444" font-size="22" font-weight="700" font-family="Space Grotesk">VIDE</text>
+                <circle cx="280" cy="100" r="55" fill="none" stroke="#ef4444" stroke-width="2" opacity="0.3" class="pulse-ring"/>
+                <!-- X rouge -->
+                <line x1="340" y1="20" x2="370" y2="50" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+                <line x1="370" y1="20" x2="340" y2="50" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="sc-content">
+              <div class="sc-step-label"><i data-lucide="alert-circle"></i> Situation initiale</div>
+              <h3 class="sc-title">Sophie roule à l'aveugle</h3>
+              <p>Sophie dirige une boutique de prêt-à-porter. Son comptable lui remet son bilan chaque année en mars. Elle ne sait jamais en temps réel si elle gagne de l'argent, ni combien il lui reste en caisse avant de payer ses fournisseurs.</p>
+              <p>Elle prend ses décisions d'achat <strong>"au feeling"</strong>, en regardant uniquement son solde bancaire du matin — exactement comme si elle ne regardait que le rétroviseur pour conduire.</p>
+              <div class="sc-kpi-row">
+                <div class="sc-kpi danger"><i data-lucide="trending-down"></i><span>Visibilité</span><strong>0 %</strong></div>
+                <div class="sc-kpi danger"><i data-lucide="clock"></i><span>Délai d'alerte</span><strong>12 mois</strong></div>
+                <div class="sc-kpi neutral"><i data-lucide="help-circle"></i><span>Décisions</span><strong>Au feeling</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Étape 1 — L'accident -->
+          <div class="scenario-card" data-step="1">
+            <div class="sc-visual sc-warning">
+              <svg class="dashboard-svg" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="200" rx="16" fill="#1e293b"/>
+                <!-- Jauge vitesse haute -->
+                <circle cx="120" cy="100" r="55" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+                <path d="M 120 100 m -45 0 a 45 45 0 0 1 90 0" fill="none" stroke="#10b981" stroke-width="8" stroke-linecap="round"/>
+                <path d="M 120 100 m -45 0 a 45 45 0 0 1 72 -22" fill="none" stroke="#f59e0b" stroke-width="8" stroke-linecap="round"/>
+                <path d="M 120 100 m -45 0 a 45 45 0 0 1 88 9" fill="none" stroke="#ef4444" stroke-width="8" stroke-linecap="round"/>
+                <text x="120" y="88" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="Space Grotesk">CA</text>
+                <text x="120" y="112" text-anchor="middle" fill="#10b981" font-size="24" font-weight="700" font-family="Space Grotesk">+47%</text>
+                <!-- Tréso à zéro avec clignotant -->
+                <circle cx="280" cy="100" r="55" fill="#0f172a" stroke="#ef4444" stroke-width="3"/>
+                <text x="280" y="78" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="Space Grotesk">Trésorerie</text>
+                <text x="280" y="105" text-anchor="middle" fill="#ef4444" font-size="20" font-weight="800" font-family="Space Grotesk">-2 400 €</text>
+                <text x="280" y="125" text-anchor="middle" fill="#ef4444" font-size="10" font-family="Space Grotesk">DÉCOUVERT</text>
+                <!-- Triangle danger -->
+                <polygon points="200,160 215,185 185,185" fill="#f59e0b" opacity="0.9" class="blink"/>
+                <text x="200" y="181" text-anchor="middle" fill="#1e293b" font-size="10" font-weight="700">!</text>
+              </svg>
+            </div>
+            <div class="sc-content">
+              <div class="sc-step-label sc-warn-lbl"><i data-lucide="zap"></i> Le choc</div>
+              <h3 class="sc-title">Croissance record… et découvert bancaire</h3>
+              <p>Novembre — le chiffre d'affaires de Sophie explose à <strong>+47 %</strong> grâce à une collection automne très bien accueillie. Elle commande massivement pour les fêtes, embauche une vendeuse supplémentaire.</p>
+              <p>Décembre — son banquier l'appelle. Elle est à <strong>−2 400 € sur son compte courant</strong>. Elle ne comprend pas : elle n'a jamais autant vendu. C'est le paradoxe de la croissance — <em>accélérer consomme du carburant</em>.</p>
+              <div class="sc-kpi-row">
+                <div class="sc-kpi success"><i data-lucide="trending-up"></i><span>Croissance CA</span><strong>+47 %</strong></div>
+                <div class="sc-kpi danger"><i data-lucide="alert-triangle"></i><span>Solde banque</span><strong>−2 400 €</strong></div>
+                <div class="sc-kpi warning"><i data-lucide="clock"></i><span>Temps pour réagir</span><strong>0 jour</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Étape 2 — La prise de conscience -->
+          <div class="scenario-card" data-step="2">
+            <div class="sc-visual sc-info">
+              <svg class="dashboard-svg" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="200" rx="16" fill="#1e293b"/>
+                <!-- Livre/tableau -->
+                <rect x="60" y="50" width="280" height="110" rx="8" fill="#0f172a" stroke="#3b82f6" stroke-width="1.5"/>
+                <text x="200" y="80" text-anchor="middle" fill="#3b82f6" font-size="12" font-family="Space Grotesk" font-weight="600">BILAN ANNUEL</text>
+                <line x1="80" y1="92" x2="320" y2="92" stroke="#1e3a5f" stroke-width="1"/>
+                <text x="100" y="112" fill="#64748b" font-size="10" font-family="Space Grotesk">Stocks</text>
+                <text x="280" y="112" text-anchor="end" fill="#64748b" font-size="10" font-family="Space Grotesk">48 200 €</text>
+                <text x="100" y="130" fill="#64748b" font-size="10" font-family="Space Grotesk">Créances clients</text>
+                <text x="280" y="130" text-anchor="end" fill="#64748b" font-size="10" font-family="Space Grotesk">31 000 €</text>
+                <text x="100" y="148" fill="#94a3b8" font-size="10" font-weight="600" font-family="Space Grotesk">Résultat exercice</text>
+                <text x="280" y="148" text-anchor="end" fill="#10b981" font-size="10" font-weight="700" font-family="Space Grotesk">+8 700 €</text>
+                <!-- Calendrier -->
+                <rect x="310" y="30" width="70" height="60" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+                <rect x="310" y="30" width="70" height="18" rx="6" fill="#3b82f6"/>
+                <text x="345" y="43" text-anchor="middle" fill="white" font-size="10" font-weight="700" font-family="Space Grotesk">MARS</text>
+                <text x="345" y="70" text-anchor="middle" fill="#94a3b8" font-size="22" font-weight="800" font-family="Space Grotesk">N+1</text>
+                <!-- Flèche temps -->
+                <path d="M 200 170 L 200 185" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow)"/>
+                <text x="200" y="196" text-anchor="middle" fill="#f59e0b" font-size="9" font-family="Space Grotesk">12 mois de retard</text>
+              </svg>
+            </div>
+            <div class="sc-content">
+              <div class="sc-step-label sc-info-lbl"><i data-lucide="lightbulb"></i> La révélation</div>
+              <h3 class="sc-title">Le bilan : une photo prise il y a 12 mois</h3>
+              <p>Son expert-comptable lui explique : <em>"Sophie, votre bilan vous dit que vous avez gagné 8 700 € l'an dernier. C'est vrai. Mais ce document décrit décembre dernier — il ne vous dit rien sur votre trésorerie <strong>aujourd'hui</strong>."</em></p>
+              <p>Un bilan annuel, c'est regarder dans le rétroviseur pour savoir ce qui s'est passé. C'est <strong>indispensable</strong>, mais totalement insuffisant pour éviter l'obstacle qui est devant vous <em>maintenant</em>.</p>
+              <div class="sc-kpi-row">
+                <div class="sc-kpi neutral"><i data-lucide="calendar"></i><span>Fréquence bilan</span><strong>1× / an</strong></div>
+                <div class="sc-kpi neutral"><i data-lucide="clock"></i><span>Données</span><strong>Passé</strong></div>
+                <div class="sc-kpi success"><i data-lucide="check-circle"></i><span>Utilité</span><strong>Réelle, mais partielle</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Étape 3 — La solution -->
+          <div class="scenario-card" data-step="3">
+            <div class="sc-visual sc-success">
+              <!-- Dashboard complet et fonctionnel -->
+              <svg class="dashboard-svg animated-dash" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                </defs>
+                <rect width="400" height="200" rx="16" fill="#0f172a"/>
+                <!-- Fond grille -->
+                <line x1="0" y1="100" x2="400" y2="100" stroke="#1e293b" stroke-width="1"/>
+                <line x1="200" y1="0" x2="200" y2="200" stroke="#1e293b" stroke-width="1"/>
+                <!-- Jauge CA en vert -->
+                <circle cx="100" cy="95" r="52" fill="#0f172a" stroke="#10b981" stroke-width="2" filter="url(#glow)"/>
+                <path d="M 100 95 m -42 0 a 42 42 0 0 1 84 0" fill="none" stroke="#1e293b" stroke-width="7"/>
+                <path d="M 100 95 m -42 0 a 42 42 0 0 1 67 -20" fill="none" stroke="#10b981" stroke-width="7" stroke-linecap="round" class="arc-anim"/>
+                <text x="100" y="82" text-anchor="middle" fill="#64748b" font-size="10" font-family="Space Grotesk">Croissance</text>
+                <text x="100" y="103" text-anchor="middle" fill="#10b981" font-size="18" font-weight="700" font-family="Space Grotesk">+22%</text>
+                <text x="100" y="118" text-anchor="middle" fill="#10b981" font-size="8" font-family="Space Grotesk">CA mensuel</text>
+                <!-- Jauge tréso en bonne santé -->
+                <circle cx="200" cy="95" r="52" fill="#0f172a" stroke="#3b82f6" stroke-width="2" filter="url(#glow)"/>
+                <path d="M 200 95 m -42 0 a 42 42 0 0 1 84 0" fill="none" stroke="#1e293b" stroke-width="7"/>
+                <path d="M 200 95 m -42 0 a 42 42 0 0 1 76 14" fill="none" stroke="#3b82f6" stroke-width="7" stroke-linecap="round" class="arc-anim"/>
+                <text x="200" y="82" text-anchor="middle" fill="#64748b" font-size="10" font-family="Space Grotesk">Trésorerie</text>
+                <text x="200" y="103" text-anchor="middle" fill="#3b82f6" font-size="16" font-weight="700" font-family="Space Grotesk">18 200€</text>
+                <text x="200" y="118" text-anchor="middle" fill="#3b82f6" font-size="8" font-family="Space Grotesk">disponibles</text>
+                <!-- Jauge marge -->
+                <circle cx="300" cy="95" r="52" fill="#0f172a" stroke="#f59e0b" stroke-width="2" filter="url(#glow)"/>
+                <path d="M 300 95 m -42 0 a 42 42 0 0 1 84 0" fill="none" stroke="#1e293b" stroke-width="7"/>
+                <path d="M 300 95 m -42 0 a 42 42 0 0 1 55 -30" fill="none" stroke="#f59e0b" stroke-width="7" stroke-linecap="round" class="arc-anim"/>
+                <text x="300" y="82" text-anchor="middle" fill="#64748b" font-size="10" font-family="Space Grotesk">Marge brute</text>
+                <text x="300" y="103" text-anchor="middle" fill="#f59e0b" font-size="18" font-weight="700" font-family="Space Grotesk">52%</text>
+                <text x="300" y="118" text-anchor="middle" fill="#f59e0b" font-size="8" font-family="Space Grotesk">objectif 55%</text>
+                <!-- Barre en bas — temps réel -->
+                <rect x="20" y="160" width="360" height="24" rx="4" fill="#1e293b"/>
+                <text x="36" y="176" fill="#10b981" font-size="9" font-family="Space Grotesk">● EN DIRECT — Mis à jour le 15/06 à 09h32</text>
+                <text x="320" y="176" fill="#64748b" font-size="9" font-family="Space Grotesk">Source : ERP</text>
+              </svg>
+            </div>
+            <div class="sc-content">
+              <div class="sc-step-label sc-success-lbl"><i data-lucide="monitor"></i> La solution</div>
+              <h3 class="sc-title">Le tableau de bord — le GPS de l'entreprise</h3>
+              <p>Son expert-comptable lui met en place un tableau de bord mensuel avec 5 KPI essentiels : <strong>chiffre d'affaires, trésorerie disponible, marge brute, délai de paiement clients et BFR</strong>.</p>
+              <p>C'est l'équivalent de la planche de bord d'une voiture moderne : vitesse, niveau d'essence, GPS, voyants. Chaque indicateur joue un rôle précis. Ensemble, ils vous permettent de <strong>décider, pas de subir</strong>.</p>
+              <div class="sc-kpi-row">
+                <div class="sc-kpi success"><i data-lucide="activity"></i><span>Fréquence</span><strong>Mensuel</strong></div>
+                <div class="sc-kpi success"><i data-lucide="eye"></i><span>Visibilité</span><strong>Temps réel</strong></div>
+                <div class="sc-kpi success"><i data-lucide="shield-check"></i><span>Alertes</span><strong>Automatiques</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Étape 4 — Le résultat -->
+          <div class="scenario-card" data-step="4">
+            <div class="sc-visual sc-final">
+              <div class="result-card-inner">
+                <div class="result-icon"><i data-lucide="trophy"></i></div>
+                <div class="result-numbers">
+                  <div class="result-stat">
+                    <span class="rs-val">+34%</span>
+                    <span class="rs-label">Marge nette</span>
+                  </div>
+                  <div class="result-stat">
+                    <span class="rs-val rs-green">0</span>
+                    <span class="rs-label">Découverts bancaires</span>
+                  </div>
+                  <div class="result-stat">
+                    <span class="rs-val rs-blue">5</span>
+                    <span class="rs-label">KPI maîtrisés</span>
+                  </div>
+                </div>
+                <p class="result-quote">"Maintenant je sais exactement où je vais, à quelle vitesse, et combien d'essence il me reste."</p>
+                <p class="result-author">— Sophie, 18 mois après</p>
+              </div>
+            </div>
+            <div class="sc-content">
+              <div class="sc-step-label sc-success-lbl"><i data-lucide="trophy"></i> 18 mois plus tard</div>
+              <h3 class="sc-title">Sophie pilote, elle ne subit plus</h3>
+              <p>Avec ses 5 KPI mensuels, Sophie a pu anticiper un creux de trésorerie en août, négocier un étalement de commande avec son fournisseur principal, et prendre la décision d'ouvrir un second point de vente sur la base de données solides.</p>
+              <p>La différence entre "avoir un bilan" et "avoir un tableau de bord" n'est pas technique — c'est une question de <strong>temporalité et d'intention</strong>. L'un explique le passé. L'autre guide l'avenir.</p>
+              <div class="sc-kpi-row">
+                <div class="sc-kpi success"><i data-lucide="trending-up"></i><span>Marge nette</span><strong>+34 %</strong></div>
+                <div class="sc-kpi success"><i data-lucide="check-circle"></i><span>Découverts</span><strong>Zéro</strong></div>
+                <div class="sc-kpi success"><i data-lucide="map-pin"></i><span>Expansion</span><strong>2ᵉ boutique</strong></div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /scenario-cards -->
+
+        <!-- Boutons navigation scénario -->
+        <div class="scenario-nav">
+          <button class="sc-nav-btn" id="sc-prev" disabled>
+            <i data-lucide="chevron-left"></i> Précédent
+          </button>
+          <div class="sc-progress-track">
+            <div class="sc-progress-fill" id="sc-progress-fill"></div>
+          </div>
+          <button class="sc-nav-btn sc-nav-next" id="sc-next">
+            Suivant <i data-lucide="chevron-right"></i>
+          </button>
+        </div>
+
+        <!-- Bouton retour -->
+        <div style="text-align:center; margin-top: 2rem;">
+          <button class="switch-btn" id="btn-go-simulator">
+            <i data-lucide="sliders-horizontal"></i>
+            Passer au simulateur interactif
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         SECTION B — SIMULATEUR INTERACTIF
+    ════════════════════════════════════════════ -->
+    <section class="content-section simulator-section" id="section-simulator" style="display:none;">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-tag">
+            <i data-lucide="sliders-horizontal"></i> Simulateur
+          </div>
+          <h2>Votre Cockpit d'Entreprise Interactif</h2>
+          <p class="section-sub">Déplacez l'accélérateur et observez en temps réel comment chaque indicateur réagit. La trésorerie diminue quand vous accélérez — <strong>c'est le paradoxe de la croissance.</strong></p>
+        </div>
+
+        <!-- Panneau cockpit principal -->
+        <div class="cockpit-main">
+
+          <!-- Ambiance "nuit" du tableau de bord -->
+          <div class="cockpit-bg">
+            <div class="cockpit-lights"></div>
+          </div>
+
+          <!-- Jauges SVG animées -->
+          <div class="cockpit-gauges">
+
+            <!-- Jauge 1 : Vitesse / CA -->
+            <div class="gauge-unit">
+              <div class="gauge-label-top">Vitesse de Croissance</div>
+              <div class="gauge-wrap">
+                <svg class="gauge-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <filter id="g1">
+                      <feGaussianBlur stdDeviation="4" result="blur"/>
+                      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                  </defs>
+                  <!-- Fond cercle -->
+                  <circle cx="100" cy="100" r="90" fill="#0a0f1e" stroke="#1e293b" stroke-width="2"/>
+                  <!-- Graduation arc fond gris -->
+                  <path id="arc-bg-speed" d="M 27 155 A 83 83 0 1 1 173 155" fill="none" stroke="#1e293b" stroke-width="14" stroke-linecap="round"/>
+                  <!-- Graduation colorée : vert→orange→rouge en zones fixes -->
+                  <path d="M 27 155 A 83 83 0 0 1 44 53"    fill="none" stroke="#10b981" stroke-width="14" stroke-linecap="round" opacity="0.25"/>
+                  <path d="M 44 53  A 83 83 0 0 1 156 53"   fill="none" stroke="#f59e0b" stroke-width="14" stroke-linecap="round" opacity="0.25"/>
+                  <path d="M 156 53 A 83 83 0 0 1 173 155"  fill="none" stroke="#ef4444" stroke-width="14" stroke-linecap="round" opacity="0.25"/>
+                  <!-- Arc de valeur dynamique -->
+                  <path id="speed-arc" d="M 27 155 A 83 83 0 0 1 27 155" fill="none" stroke="#10b981" stroke-width="14" stroke-linecap="round" filter="url(#g1)"/>
+                  <!-- Aiguille -->
+                  <line id="speed-needle" x1="100" y1="100" x2="100" y2="30" stroke="#ffffff" stroke-width="2" stroke-linecap="round" transform="rotate(-135, 100, 100)" class="needle"/>
+                  <circle cx="100" cy="100" r="8" fill="#1e293b" stroke="#ffffff" stroke-width="2"/>
+                  <!-- Valeur centrale -->
+                  <text x="100" y="90"  text-anchor="middle" fill="#64748b"  font-size="13" font-family="Space Grotesk">CA Mensuel</text>
+                  <text id="sim-ca-val" x="100" y="118" text-anchor="middle" fill="#10b981" font-size="26" font-weight="700" font-family="Space Grotesk">0</text>
+                  <text x="100" y="136" text-anchor="middle" fill="#64748b"  font-size="11" font-family="Space Grotesk">k€</text>
+                  <!-- Ticks -->
+                  <text x="34"  y="162" text-anchor="middle" fill="#475569" font-size="9" font-family="Space Grotesk">0</text>
+                  <text x="100" y="28"  text-anchor="middle" fill="#475569" font-size="9" font-family="Space Grotesk">50</text>
+                  <text x="166" y="162" text-anchor="middle" fill="#475569" font-size="9" font-family="Space Grotesk">100</text>
+                </svg>
+              </div>
+              <div class="gauge-sublabel">
+                <i data-lucide="trending-up"></i> Chiffre d'affaires
+              </div>
+            </div>
+
+            <!-- Centre : contrôles + alertes -->
+            <div class="cockpit-center">
+              <div class="cockpit-display">
+                <div class="disp-row">
+                  <span class="disp-lbl"><i data-lucide="activity"></i> BFR</span>
+                  <span class="disp-val" id="sim-bfr-val">0 k€</span>
+                </div>
+                <div class="disp-row">
+                  <span class="disp-lbl"><i data-lucide="users"></i> Clients</span>
+                  <span class="disp-val" id="sim-clients-val">0</span>
+                </div>
+                <div class="disp-row">
+                  <span class="disp-lbl"><i data-lucide="package"></i> Stocks</span>
+                  <span class="disp-val" id="sim-stocks-val">0 k€</span>
+                </div>
+              </div>
+
+              <!-- Accélérateur principal -->
+              <div class="throttle-zone">
+                <label class="throttle-label">
+                  <i data-lucide="zap"></i> Accélérateur de croissance
+                </label>
+                <div class="throttle-wrap">
+                  <input type="range" id="sim-throttle" class="throttle-slider" min="0" max="100" value="0">
+                  <div class="throttle-marks">
+                    <span>Ralenti</span><span>Vitesse croisière</span><span>Pleine vitesse</span>
+                  </div>
+                </div>
+                <div class="throttle-val-display">
+                  Intensité : <strong id="throttle-pct">0 %</strong>
+                </div>
+              </div>
+
+              <!-- Voyants d'alerte -->
+              <div class="warning-lights">
+                <div class="wl" id="wl-bfr">
+                  <div class="wl-dot"></div>
+                  <span>BFR</span>
+                </div>
+                <div class="wl" id="wl-treso">
+                  <div class="wl-dot"></div>
+                  <span>Tréso</span>
+                </div>
+                <div class="wl" id="wl-marge">
+                  <div class="wl-dot"></div>
+                  <span>Marge</span>
+                </div>
+                <div class="wl" id="wl-clients">
+                  <div class="wl-dot"></div>
+                  <span>Clients</span>
+                </div>
+              </div>
+
+              <!-- Message d'alerte central -->
+              <div class="cockpit-alert" id="cockpit-alert" style="opacity:0;">
+                <i data-lucide="alert-triangle"></i>
+                <span id="alert-text">Alerte système</span>
+              </div>
+            </div>
+
+            <!-- Jauge 2 : Trésorerie / Carburant -->
+            <div class="gauge-unit">
+              <div class="gauge-label-top">Carburant — Trésorerie</div>
+              <div class="gauge-wrap">
+                <svg class="gauge-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <filter id="g2">
+                      <feGaussianBlur stdDeviation="4" result="blur"/>
+                      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                  </defs>
+                  <circle cx="100" cy="100" r="90" fill="#0a0f1e" stroke="#1e293b" stroke-width="2"/>
+                  <path d="M 27 155 A 83 83 0 1 1 173 155" fill="none" stroke="#1e293b" stroke-width="14" stroke-linecap="round"/>
+                  <!-- Zones colorées fixes fond -->
+                  <path d="M 27 155 A 83 83 0 0 1 44 53"   fill="none" stroke="#ef4444" stroke-width="14" stroke-linecap="round" opacity="0.25"/>
+                  <path d="M 44 53  A 83 83 0 0 1 156 53"  fill="none" stroke="#f59e0b" stroke-width="14" stroke-linecap="round" opacity="0.25"/>
+                  <path d="M 156 53 A 83 83 0 0 1 173 155" fill="none" stroke="#10b981" stroke-width="14" stroke-linecap="round" opacity="0.25"/>
+                  <!-- Arc dynamique tréso -->
+                  <path id="cash-arc" d="M 27 155 A 83 83 0 1 1 173 155" fill="none" stroke="#10b981" stroke-width="14" stroke-linecap="round" filter="url(#g2)"/>
+                  <!-- Aiguille -->
+                  <line id="cash-needle" x1="100" y1="100" x2="100" y2="30" stroke="#ffffff" stroke-width="2" stroke-linecap="round" transform="rotate(135, 100, 100)" class="needle"/>
+                  <circle cx="100" cy="100" r="8" fill="#1e293b" stroke="#ffffff" stroke-width="2"/>
+                  <!-- Valeur -->
+                  <text x="100" y="90"  text-anchor="middle" fill="#64748b" font-size="13" font-family="Space Grotesk">Trésorerie</text>
+                  <text id="sim-treso-val" x="100" y="118" text-anchor="middle" fill="#10b981" font-size="24" font-weight="700" font-family="Space Grotesk">100%</text>
+                  <text x="100" y="136" text-anchor="middle" fill="#64748b" font-size="11" font-family="Space Grotesk">disponible</text>
+                  <!-- Ticks -->
+                  <text x="34"  y="162" text-anchor="middle" fill="#ef4444" font-size="9" font-family="Space Grotesk">Vide</text>
+                  <text x="100" y="28"  text-anchor="middle" fill="#f59e0b" font-size="9" font-family="Space Grotesk">50%</text>
+                  <text x="166" y="162" text-anchor="middle" fill="#10b981" font-size="9" font-family="Space Grotesk">Plein</text>
+                  <!-- Icône pompe -->
+                  <g transform="translate(155, 55)">
+                    <rect x="0" y="0" width="18" height="22" rx="3" fill="none" stroke="#64748b" stroke-width="1.5"/>
+                    <rect x="5" y="4" width="8" height="6" rx="1" fill="#64748b"/>
+                    <path d="M 18 6 L 24 6 L 24 14 L 18 14" fill="none" stroke="#64748b" stroke-width="1.5"/>
+                    <line x1="9" y1="22" x2="9" y2="28" stroke="#64748b" stroke-width="1.5"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="gauge-sublabel">
+                <i data-lucide="droplets"></i> Cash disponible
+              </div>
+            </div>
+
+          </div><!-- /cockpit-gauges -->
+
+          <!-- Bande d'infos secondaires sous les jauges -->
+          <div class="cockpit-infobar">
+            <div class="info-chip">
+              <i data-lucide="percent"></i>
+              <span>Marge brute</span>
+              <strong id="sim-marge-val">0%</strong>
+            </div>
+            <div class="info-chip">
+              <i data-lucide="clock"></i>
+              <span>DSO Clients</span>
+              <strong id="sim-dso-val">30 j</strong>
+            </div>
+            <div class="info-chip">
+              <i data-lucide="calendar"></i>
+              <span>DPO Fourn.</span>
+              <strong id="sim-dpo-val">45 j</strong>
+            </div>
+            <div class="info-chip" id="chip-status">
+              <i data-lucide="check-circle"></i>
+              <span>Statut</span>
+              <strong id="sim-status-val">Nominal</strong>
+            </div>
+          </div>
+
+        </div><!-- /cockpit-main -->
+
+        <!-- Encadrés pédagogiques sous le cockpit -->
+        <div class="pedagogy-grid">
+          <div class="ped-card ped-speed">
+            <div class="ped-icon"><i data-lucide="gauge"></i></div>
+            <h3>La Vitesse = Chiffre d'Affaires</h3>
+            <p>Augmenter le CA est exaltant, mais rouler à 200 km/h consomme énormément d'énergie. Une croissance rapide exige des stocks, des embauches et des campagnes <em>avant</em> d'être payé par les clients. C'est le <strong>Besoin en Fonds de Roulement</strong>.</p>
+          </div>
+          <div class="ped-card ped-cash">
+            <div class="ped-icon"><i data-lucide="fuel"></i></div>
+            <h3>Le Carburant = Trésorerie</h3>
+            <p>Le paradoxe : <strong>croître consomme de la trésorerie</strong>. Si vous accélérez sans surveiller la jauge, vous risquez la panne sèche — même si vous êtes <em>rentable sur le papier</em>. Des entreprises profitables font faillite par manque de cash.</p>
+          </div>
+          <div class="ped-card ped-gps">
+            <div class="ped-icon"><i data-lucide="navigation"></i></div>
+            <h3>Le GPS = Vos KPI</h3>
+            <p>Un GPS ne conduit pas à votre place — il vous <strong>informe pour que vous décidiez</strong>. De la même façon, vos indicateurs ne prennent pas de décisions : ils vous donnent les données pour réagir <em>avant</em> que la situation devienne critique.</p>
+          </div>
+        </div>
+
+        <!-- Citation expert -->
+        <div class="expert-quote-block">
+          <div class="eq-bar"></div>
+          <blockquote>
+            "Le bilan comptable est une photographie du passé. Le tableau de bord KPI est votre GPS en temps réel pour l'avenir."
+          </blockquote>
+          <cite>— Principe fondamental du contrôle de gestion</cite>
+        </div>
+
+        <!-- Bouton retour scénario -->
+        <div style="text-align:center; margin-top: 2rem;">
+          <button class="switch-btn" id="btn-go-scenario-from-sim">
+            <i data-lucide="book-open"></i>
+            Revoir le scénario de Sophie
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+     <!-- AJOUT : Navigation inter-modules -->
+    <div class="p2-nav-footer">
+      <a href="page1.html" class="btn btn-secondary">
+        <i data-lucide="chevron-down"></i> Module 1 — Le Cockpit
+      </a>
+      <div class="p2-nav-dots-wrap">
+        <span class="p2-nav-module-lbl">Module 2 / 8</span>
+        <div class="p2-nav-dots">
+          <a href="page1.html" class="p2-dot" title="Le Cockpit"></a>
+          <a href="page2.html" class="p2-dot p2-dot-active" title="Définition KPI"></a>
+          <a href="page3.html" class="p2-dot" title="Calculs"></a>
+          <a href="page4.html" class="p2-dot" title="SMART"></a>
+          <a href="page5.html" class="p2-dot" title="Cercles"></a>
+          <a href="page6.html" class="p2-dot" title="Exercice"></a>
+          <a href="page7.html" class="p2-dot" title="Sources"></a>
+          <a href="page8.html" class="p2-dot" title="Bilan"></a>
+        </div>
+      </div>
+      <a href="page2.html" class="btn btn-primary">
+        Module 2 — Définition KPI <i data-lucide="chevron-right"></i>
+      </a>
+    </div>
+  </main>
+
+  
+
+<footer class="main-footer">
+  <div class="container footer-content">
+    <div class="footer-top">
+      <span class="footer-logo"><i class="fas fa-chart-line"></i> RD Formation</span>
+      <span class="footer-separator-pipe">|</span>
+      <span class="footer-tagline">Indicateurs Clés de Performance</span>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        &copy; 2026 RD Formation — <strong>Dominez vos chiffres, pilotez votre succès.</strong>
+      </p>
+      <p class="copyright-notice">
+        Toute reproduction interdite. Ce contenu est une création intellectuelle exclusive de l'auteur.
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script type="module" src="core/main.js"></script>
+  <script src="core/cockpit.js"></script>
+  <script>
+    // Init Lucide après tout le DOM
+    document.addEventListener('DOMContentLoaded', () => lucide.createIcons());
+  </script>
+</body>
+</html>

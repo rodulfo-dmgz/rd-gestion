@@ -1,0 +1,332 @@
+/* page7.css – Styles spécifiques à la page Sources de données */
+/* Tous les sélecteurs sont préfixés par .p7- */
+
+.p7-hero {
+  position: relative;
+  background: linear-gradient(135deg, #1f4590 0%, #2a5a9e 50%, #3b6ab5 100%);
+  padding: 60px 0 50px;
+  overflow: hidden;
+}
+.p7-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+.p7-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; right: -60px;
+  width: 340px; height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,158,11,.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+.p7-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.24);
+  color: rgba(255,255,255,.9);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  animation: p7FadeUp .5s ease both;
+}
+.p7-hero-tag svg { width: 13px; height: 13px; stroke: currentColor; }
+.p7-hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 4vw, 50px);
+  font-weight: 800;
+  color: white;
+  line-height: 1.08;
+  letter-spacing: -1px;
+  margin-bottom: 18px;
+  border-bottom: none !important;
+  display: block !important;
+  padding-bottom: 0 !important;
+  animation: p4FadeUp .55s ease .1s both;
+}
+.p7-hero-accent {
+  background: linear-gradient(90deg, var(--accent), #fb923c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.p7-hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,.72);
+  max-width: 600px;
+  line-height: 1.75;
+  margin-bottom: 36px;
+  font-weight: 300;
+  animation: p7FadeUp .55s ease .18s both;
+}
+.p7-hero-stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  animation: p7FadeUp .55s ease .26s both;
+}
+.p7-stat-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0 26px;
+}
+.p7-stat-item:first-child { padding-left: 0; }
+.p7-stat-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+}
+.p7-stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,.52);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-family: 'Space Grotesk', sans-serif;
+  margin-top: 4px;
+}
+.p7-stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,.2);
+  flex-shrink: 0;
+}
+
+/* Barre de progression */
+.p7-read-track {
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+.p7-read-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  border-radius: 2px;
+  transition: width .15s linear;
+}
+
+/* Animation d'entrée */
+.p7-card-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.p7-card-animate.p7-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tuiles sources */
+.p7-sources-grid {
+  margin-bottom: 1.5rem;
+}
+.p7-source-tile {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.p7-source-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+.p7-tile-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.p7-tile-header svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+.p7-tile-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Démo interactive */
+.p7-demo {
+  background: var(--light);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+.p7-demo h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0;
+}
+.p7-source-example {
+  background: white;
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  margin-top: 1rem;
+  font-style: italic;
+  border-left: 4px solid var(--secondary);
+}
+
+/* Quiz */
+.p7-quiz {
+  margin-top: 2rem;
+  background: var(--light);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  border: 1px solid var(--border);
+}
+.p7-quiz-hdr {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+.p7-quiz-hdr > svg { width: 22px; height: 22px; stroke: var(--primary); }
+.p7-quiz-score-box {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  min-width: 66px;
+}
+.p7-qscore-lbl {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--gray);
+}
+.p7-qscore-val {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary);
+}
+.p7-quiz-prog {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+.p7-quiz-prog-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  transition: width .45s ease;
+}
+.p7-quiz-question {
+  background: white;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 10px;
+}
+.p7-quiz-question.correct { border-color: var(--success); background: #ecfdf5; }
+.p7-quiz-question.wrong   { border-color: var(--danger); background: #fef2f2; }
+.p7-quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.p7-quiz-option {
+  width: 100%;
+  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: white;
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+  transition: all .15s;
+}
+.p7-quiz-option:hover:not(:disabled) {
+  border-color: var(--secondary);
+  background: rgba(28,160,152,.05);
+}
+.p7-quiz-option:disabled { cursor: not-allowed; opacity: .6; }
+.p7-quiz-option.selected-correct { background: var(--success); color: white; }
+.p7-quiz-option.selected-wrong   { background: var(--danger); color: white; }
+.p7-quiz-option.revealed { background: rgba(16,185,129,.12); border-color: var(--success); }
+.p7-quiz-feedback {
+  display: none;
+  margin-top: 0.75rem;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+}
+.p7-quiz-feedback.show { display: block; }
+.p7-quiz-feedback.ok   { background: #d1fae5; color: #065f46; border-left: 3px solid var(--success); }
+.p7-quiz-feedback.ko   { background: #fee2e2; color: #991b1b; border-left: 3px solid var(--danger); }
+.p7-quiz-final {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  margin-top: 1rem;
+}
+
+/* Navigation */
+.p7-nav-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0 3rem;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.p7-nav-footer .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.p7-nav-footer .btn svg { width: 15px; height: 15px; stroke: currentColor; }
+.p7-nav-dots-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.p7-nav-module-lbl {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.p7-nav-dots { display: flex; gap: 7px; }
+.p7-dot {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--border);
+  display: block;
+  transition: background .2s, transform .2s;
+}
+.p7-dot:hover       { background: var(--secondary); transform: scale(1.25); }
+.p7-dot-active      { background: var(--primary);   transform: scale(1.3);  }
+
+@keyframes p7FadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

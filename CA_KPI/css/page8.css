@@ -1,0 +1,183 @@
+/* page8.css – Styles spécifiques à la page Bilan */
+/* Tous les sélecteurs sont préfixés par .p8- */
+
+.p8-hero {
+  position: relative;
+  background: linear-gradient(135deg, #080f1e 0%, #0d1a35 60%, #111827 100%);
+  padding: 80px 0 90px;
+  overflow: hidden;
+}
+.p8-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+.p8-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; right: -60px;
+  width: 340px; height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,158,11,.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+.p8-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.24);
+  color: rgba(255,255,255,.9);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  animation: p8FadeUp .5s ease both;
+}
+.p8-hero-tag svg { width: 13px; height: 13px; stroke: currentColor; }
+.p8-hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 4vw, 50px);
+  font-weight: 800;
+  color: white;
+  line-height: 1.08;
+  letter-spacing: -1px;
+  margin-bottom: 18px;
+  border-bottom: none !important;
+  display: block !important;
+  padding-bottom: 0 !important;
+  animation: p4FadeUp .55s ease .1s both;
+}
+.p8-hero-accent {
+  background: linear-gradient(90deg, var(--accent), #fb923c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.p8-hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,.72);
+  max-width: 600px;
+  line-height: 1.75;
+  margin-bottom: 36px;
+  font-weight: 300;
+  animation: p8FadeUp .55s ease .18s both;
+}
+
+/* Barre de progression */
+.p8-read-track {
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+.p8-read-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  border-radius: 2px;
+  transition: width .15s linear;
+}
+
+/* Animation d'entrée */
+.p8-card-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.p8-card-animate.p8-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tableau */
+.p8-table {
+  margin: 2rem 0;
+}
+
+/* Message de remerciement */
+.p8-thanks {
+  background: var(--secondary);
+  color: white;
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 2rem 0;
+}
+
+/* Certificat */
+.p8-certificate {
+  background: var(--light);
+  border-radius: var(--radius);
+  padding: 2rem;
+  border: 2px dashed var(--primary);
+  margin-top: 2rem;
+}
+.p8-certificate h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0;
+}
+.p8-certificate ul {
+  margin-left: 1.5rem;
+}
+.p8-signature {
+  text-align: right;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* Navigation */
+.p8-nav-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0 3rem;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.p8-nav-footer .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.p8-nav-footer .btn svg { width: 15px; height: 15px; stroke: currentColor; }
+.p8-nav-dots-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.p8-nav-module-lbl {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.p8-nav-dots { display: flex; gap: 7px; }
+.p8-dot {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--border);
+  display: block;
+  transition: background .2s, transform .2s;
+}
+.p8-dot:hover       { background: var(--secondary); transform: scale(1.25); }
+.p8-dot-active      { background: var(--primary);   transform: scale(1.3);  }
+
+@keyframes p8FadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

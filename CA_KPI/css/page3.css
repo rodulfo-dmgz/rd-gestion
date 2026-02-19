@@ -1,0 +1,832 @@
+/* ================================================================
+   page3.css — Enrichissements visuels de la page "Calculs KPI"
+
+   RÈGLE ABSOLUE : aucune classe de styles.css n'est redéfinie.
+   (.card, .grid-2, .info-box, .alert-box, .btn, .form-group…)
+   Tous les sélecteurs sont préfixés .p3- sans exception.
+   Les ajouts dans le HTML s'appuient sur des classes additionnelles
+   qui ne font que compléter, jamais écraser.
+   ================================================================ */
+
+
+/* ================================================================
+   HERO DE PAGE
+   Même logique que page2 mais avec une identité visuelle propre :
+   on bascule sur un dégradé secondaire (teal) pour différencier
+   chaque module à la couleur de sa discipline.
+   ================================================================ */
+.p3-hero {
+  position: relative;
+  /* Dégradé teal → bleu pour ancrer l'idée de calcul / technique */
+  background: linear-gradient(135deg,
+    #065f46 0%,
+    var(--secondary) 50%,
+    #1a7a9a 100%);
+  padding: 58px 0 50px;
+  overflow: hidden;
+}
+
+/* Grille de fond — même principe CSS pur que page2 */
+.p3-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+/* Halo lumineux décoratif en bas à droite */
+.p3-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; right: -60px;
+  width: 340px; height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,158,11,.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Pastille de module — même structure que p2 */
+.p3-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.24);
+  color: rgba(255,255,255,.9);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  animation: p3FadeUp .5s ease both;
+}
+.p3-hero-tag svg { width: 13px; height: 13px; stroke: currentColor; }
+
+/* Titre hero — reset du h1 global sans toucher à la règle originale */
+.p3-hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 4vw, 50px);
+  font-weight: 800;
+  color: white;
+  line-height: 1.08;
+  letter-spacing: -1px;
+  margin-bottom: 18px;
+  border-bottom: none !important;
+  display: block !important;
+  padding-bottom: 0 !important;
+  animation: p3FadeUp .55s ease .1s both;
+}
+
+/* Le mot mis en valeur en orange chaud
+   pour créer un point d'accroche typographique */
+.p3-hero-accent {
+  background: linear-gradient(90deg, var(--accent), #fb923c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.p3-hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,.72);
+  max-width: 600px;
+  line-height: 1.75;
+  margin-bottom: 36px;
+  font-weight: 300;
+  animation: p3FadeUp .55s ease .18s both;
+}
+.p3-hero-sub strong { color: rgba(255,255,255,.95); font-weight: 600; }
+
+/* Bandeau de statistiques animées */
+.p3-hero-stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  animation: p3FadeUp .55s ease .26s both;
+}
+.p3-stat-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0 26px;
+}
+.p3-stat-item:first-child { padding-left: 0; }
+.p3-stat-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+}
+.p3-stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,.52);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-family: 'Space Grotesk', sans-serif;
+  margin-top: 4px;
+}
+.p3-stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,.2);
+  flex-shrink: 0;
+}
+
+
+/* ================================================================
+   BARRE DE PROGRESSION DE LECTURE
+   ================================================================ */
+.p3-read-track {
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+.p3-read-bar {
+  height: 100%;
+  width: 0%;
+  /* Dégradé aux couleurs du module pour cohérence visuelle */
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  border-radius: 2px;
+  transition: width .15s linear;
+}
+
+
+/* ================================================================
+   ANIMATION D'ENTRÉE DE .card
+   Classe additionnelle — .card n'est pas touchée
+   ================================================================ */
+.p3-card-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.p3-card-animate.p3-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sous-titre de section */
+.p3-section-intro {
+  font-size: 14px;
+  color: var(--gray);
+  font-style: italic;
+  margin-bottom: 1.25rem;
+}
+
+
+/* ================================================================
+   VISUALISATION DES 3 NIVEAUX
+   Barre horizontale en 3 blocs qui s'allume au clic.
+   Chaque bloc est cliquable et met en surbrillance la .info-box
+   correspondante en dessous.
+   ================================================================ */
+.p3-level-vis {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--light);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 16px 20px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Une entrée de niveau */
+.p3-lv-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 160px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all .25s ease;
+  background: white;
+}
+.p3-lv-item:hover {
+  border-color: var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.p3-lv-item.p3-lv-active {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(31,69,144,.1);
+}
+
+/* Icône ronde dans chaque niveau */
+.p3-lv-icon {
+  width: 38px; height: 38px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.p3-lv-icon svg { width: 18px; height: 18px; stroke: currentColor; }
+
+/* Texte à droite de l'icône */
+.p3-lv-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.p3-lv-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+.p3-lv-tool {
+  font-size: 11px;
+  color: var(--gray);
+}
+
+/* Badge "Niveau N" */
+.p3-lv-badge {
+  margin-left: auto;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+.p3-lv-badge-blue  { background: rgba(31,69,144,.1);   color: var(--primary);   }
+.p3-lv-badge-teal  { background: rgba(28,160,152,.1);  color: var(--secondary); }
+.p3-lv-badge-amber { background: rgba(245,158,11,.1);  color: var(--accent);    }
+
+/* Flèche entre les niveaux */
+.p3-lv-arrow {
+  color: var(--border);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.p3-lv-arrow svg { width: 18px; height: 18px; stroke: currentColor; }
+
+
+/* ================================================================
+   ENRICHISSEMENT DES .info-box — classe additionnelle .p3-info-tile
+   .info-box reste INCHANGÉE, on y ajoute seulement .p3-info-tile
+   pour le hover et la mise en surbrillance depuis le JS
+   ================================================================ */
+.p3-info-tile {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.p3-info-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+/* Classe appliquée par JS quand le niveau correspondant est sélectionné */
+.p3-info-tile.p3-highlighted {
+  box-shadow: 0 0 0 3px rgba(31,69,144,.15), var(--shadow);
+}
+
+/* En-tête d'une tuile : icône + titre + badge côte à côte */
+.p3-tile-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.p3-tile-icon {
+  width: 40px; height: 40px;
+  border-radius: 9px;
+  background: var(--light);
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.p3-tile-icon svg { width: 18px; height: 18px; stroke: currentColor; }
+
+/* Badge de niveau sur la tuile */
+.p3-tile-badge {
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: 3px 8px;
+  border-radius: 10px;
+  margin-top: 4px;
+}
+
+/* Chip de formule — fond code façon terminal -->
+.p3-formula-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 9px 12px;
+  background: #f8fafc;
+  border: 1.5px solid rgba(31,69,144,.15);
+  border-radius: 6px;
+  font-size: 13px;
+  /* La légère ombre interne évoque un écran LCD
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.04);
+}*/
+
+.p3-formula-chip svg { width: 14px; height: 14px; stroke: var(--gray); flex-shrink: 0; }
+.p3-formula-chip code {
+  font-family: 'Courier New', monospace;
+  font-size: 12.5px;
+  color: var(--primary-dark);
+  font-weight: 600;
+  /* Pas de background supplémentaire sur le <code> pour ne pas doubler le rendu */
+  background: none;
+  padding: 0;
+}
+
+/* Liste avantages / inconvénients */
+.p3-pros-cons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin-top: 10px;
+}
+.p3-pro, .p3-con {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 5px 7px;
+  border-radius: 5px;
+}
+.p3-pro svg { width: 12px; height: 12px; stroke: currentColor; flex-shrink: 0; }
+.p3-con svg { width: 12px; height: 12px; stroke: currentColor; flex-shrink: 0; }
+.p3-pro { background: rgba(16,185,129,.07); color: #065f46; border-left: 2px solid var(--success); }
+.p3-con { background: rgba(239,68,68,.06);  color: #991b1b; border-left: 2px solid var(--danger);  }
+
+
+/* ================================================================
+   ONGLETS DU CALCULATEUR
+   Sélecteur à 4 onglets au-dessus du bloc calculateur original.
+   Le bloc calculateur lui-même (style inline) n'est pas touché.
+   ================================================================ */
+.p3-calc-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  /* Pas de margin-bottom car le bloc calculateur a déjà son propre margin */
+}
+.p3-calc-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: var(--radius-sm);
+  background: var(--light);
+  border: 2px solid var(--border);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.p3-calc-tab svg { width: 13px; height: 13px; stroke: currentColor; }
+.p3-calc-tab:hover { border-color: var(--secondary); color: var(--secondary); }
+.p3-calc-tab.active {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  color: white;
+}
+
+/* Affichage de la formule active au-dessus des champs */
+.p3-formula-display {
+  background: #0f172a;
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.p3-fd-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #475569;
+  white-space: nowrap;
+}
+.p3-fd-formula {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  /* Transition pour que le changement de formule soit doux */
+  transition: opacity .2s ease;
+}
+
+/* Bouton calculer — classe additionnelle pour l'espacement
+   sans modifier .btn ou .btn-primary */
+.p3-calc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.p3-calc-btn svg { width: 16px; height: 16px; stroke: currentColor; }
+
+/* Valeur résultat mise en avant — on surcharge seulement le strong#marge
+   via une classe additionnelle .p3-result-value */
+.p3-result-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.6rem;
+  color: var(--secondary);
+  /* Animation de mise à jour du chiffre */
+  transition: color .3s ease, transform .2s ease;
+}
+.p3-result-value.p3-updated {
+  color: var(--success);
+  transform: scale(1.05);
+}
+
+/* Panneau d'analyse contextuelle sous le résultat */
+.p3-analysis {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 1rem;
+  padding: 12px 14px;
+  background: rgba(28,160,152,.07);
+  border-left: 3px solid var(--secondary);
+  border-radius: 0 6px 6px 0;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--primary-dark);
+  animation: p3FadeIn .35s ease both;
+}
+.p3-analysis svg { width: 16px; height: 16px; stroke: var(--secondary); flex-shrink: 0; margin-top: 1px; }
+
+/* Mini-historique des calculs */
+.p3-history {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.p3-history-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+.p3-history-label svg { width: 13px; height: 13px; stroke: currentColor; }
+.p3-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.p3-history-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 10px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+  animation: p3FadeIn .2s ease both;
+}
+.p3-history-entry .p3-he-type {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  color: var(--gray);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.p3-history-entry .p3-he-val {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  color: var(--secondary);
+  font-size: 13px;
+}
+
+
+/* ================================================================
+   RÉFÉRENTIEL DES FORMULES
+   Tableau lisible avec couleurs sémantiques pour la fréquence
+   ================================================================ */
+.p3-formulas-ref {
+  margin-top: 2rem;
+  background: var(--light);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.p3-ref-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 1.5rem 1.5rem 1rem;
+}
+.p3-ref-header svg { width: 20px; height: 20px; stroke: var(--secondary); flex-shrink: 0; margin-top: 2px; }
+.p3-ref-header h3 { margin: 0 0 4px; font-size: 1rem; }
+.p3-ref-header p  { margin: 0; font-size: 13px; color: var(--gray); }
+
+/* Le tableau est un ensemble de .p3-ref-row en flex
+   (évite le vrai <table> pour un contrôle total du responsive) */
+.p3-ref-table { padding: 0 1.5rem 1.5rem; }
+.p3-ref-row {
+  display: grid;
+  grid-template-columns: 1.4fr 2fr 1.6fr 0.8fr;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  line-height: 1.5;
+  /* Alternance de fond très légère pour la lisibilité */
+  transition: background .15s ease;
+}
+.p3-ref-row:not(.p3-ref-head):nth-child(even) { background: rgba(31,69,144,.03); }
+.p3-ref-row:not(.p3-ref-head):hover { background: rgba(28,160,152,.06); }
+.p3-ref-head {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--gray);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 10px;
+  margin-bottom: 4px;
+  border-radius: 0;
+}
+.p3-ref-row code {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--primary-dark);
+  background: rgba(31,69,144,.07);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Badges de fréquence colorés */
+.p3-freq {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: 3px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.p3-freq-day   { background: rgba(239,68,68,.1);   color: var(--danger);    }
+.p3-freq-week  { background: rgba(245,158,11,.1);  color: var(--accent);    }
+.p3-freq-month { background: rgba(28,160,152,.1);  color: var(--secondary); }
+
+@media (max-width: 700px) {
+  .p3-ref-row { grid-template-columns: 1fr 1fr; }
+  .p3-ref-row > span:nth-child(3),
+  .p3-ref-row > span:nth-child(4) { font-size: 12px; }
+}
+
+
+/* ================================================================
+   QUIZ FORMULES
+   ================================================================ */
+.p3-quiz {
+  margin-top: 2rem;
+  background: var(--light);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  border: 1px solid var(--border);
+}
+.p3-quiz-hdr {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+.p3-quiz-hdr > svg { width: 22px; height: 22px; stroke: var(--primary); flex-shrink: 0; margin-top: 2px; }
+.p3-quiz-hdr h3 { margin: 0 0 3px; font-size: 1rem; }
+.p3-quiz-hdr p  { margin: 0; font-size: 13px; color: var(--gray); }
+
+.p3-quiz-score-box {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  min-width: 66px;
+  flex-shrink: 0;
+}
+.p3-qscore-lbl {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--gray);
+}
+.p3-qscore-val {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.1;
+}
+
+/* Barre de progression quiz */
+.p3-quiz-prog {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+.p3-quiz-prog-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  border-radius: 2px;
+  transition: width .45s ease;
+}
+
+/* Carte de question */
+.p3-q-card {
+  background: white;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 10px;
+  transition: border-color .2s ease;
+}
+.p3-q-card.p3-correct { border-color: var(--success); background: #ecfdf5; }
+.p3-q-card.p3-wrong   { border-color: var(--danger);  background: #fef2f2; }
+
+.p3-q-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--gray);
+  margin-bottom: 6px;
+}
+.p3-q-stmt {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+.p3-q-stmt svg { width: 15px; height: 15px; stroke: var(--gray); flex-shrink: 0; margin-top: 1px; }
+
+/* Boutons de réponse — formules en code */
+.p3-q-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.p3-q-opt {
+  width: 100%;
+  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: white;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  cursor: pointer;
+  text-align: left;
+  transition: all .18s ease;
+}
+.p3-q-opt:hover:not(:disabled) {
+  border-color: var(--secondary);
+  background: rgba(28,160,152,.05);
+}
+.p3-q-opt:disabled { cursor: not-allowed; opacity: .6; }
+.p3-q-opt.p3-opt-correct { background: var(--success); color: white; border-color: var(--success); opacity: 1; }
+.p3-q-opt.p3-opt-wrong   { background: var(--danger);  color: white; border-color: var(--danger);  opacity: 1; }
+.p3-q-opt.p3-opt-reveal  { background: rgba(16,185,129,.12); border-color: var(--success); opacity: 1; }
+
+/* Feedback sous les options */
+.p3-q-feedback {
+  display: none;
+  margin-top: 10px;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.p3-q-feedback.show     { display: block; }
+.p3-q-feedback.fb-ok    { background: #d1fae5; color: #065f46; border-left: 3px solid var(--success); }
+.p3-q-feedback.fb-fail  { background: #fee2e2; color: #991b1b; border-left: 3px solid var(--danger);  }
+
+/* Résultat final */
+.p3-quiz-final {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  margin-top: 1rem;
+}
+.p3-quiz-final svg  { width: 42px; height: 42px; stroke: var(--accent); margin-bottom: 12px; }
+.p3-quiz-final h3   { margin-bottom: 8px; }
+.p3-quiz-final p    { color: var(--gray); margin-bottom: 1.25rem; }
+
+
+/* ================================================================
+   NAVIGATION INTER-MODULES
+   ================================================================ */
+.p3-nav-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0 3rem;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.p3-nav-footer .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.p3-nav-footer .btn svg { width: 15px; height: 15px; stroke: currentColor; }
+
+.p3-nav-dots-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.p3-nav-module-lbl {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.p3-nav-dots { display: flex; gap: 7px; }
+.p3-dot {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--border);
+  display: block;
+  transition: background .2s, transform .2s;
+}
+.p3-dot:hover       { background: var(--secondary); transform: scale(1.25); }
+.p3-dot-active      { background: var(--primary);   transform: scale(1.3);  }
+
+
+/* ================================================================
+   ANIMATIONS GLOBALES
+   ================================================================ */
+@keyframes p3FadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes p3FadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .p3-hero        { padding: 36px 0 30px; }
+  .p3-hero-stats  { flex-wrap: wrap; gap: 16px; }
+  .p3-stat-divider { display: none; }
+  .p3-stat-item   { padding: 0; }
+  .p3-level-vis   { flex-direction: column; }
+  .p3-lv-arrow    { transform: rotate(90deg); }
+  .p3-calc-tabs   { flex-direction: column; }
+  .p3-nav-footer  { flex-direction: column; align-items: center; }
+  .p3-pros-cons   { grid-template-columns: 1fr; }
+}

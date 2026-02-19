@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cercles de contrôle – Masterclass KPI</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/page5.css">
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo"><a href="index.html"><img src="assets/logo.svg" alt="RD Formation" class="header-logo-img"></a></div>
+      <div id="welcome-message" style="font-weight: 600; color: var(--secondary);"></div>
+      <nav>
+        <ul>
+          <li><a href="page1.html">1. Le Cockpit</a></li>
+          <li><a href="page2.html">2. Définition KPI</a></li>
+          <li><a href="page3.html">3. Calculs</a></li>
+          <li><a href="page4.html">4. Méthode SMART</a></li>
+          <li><a href="page5.html" class="active">5. Cercles</a></li>
+          <li><a href="page6.html">6. Exercice</a></li>
+          <li><a href="page7.html">7. Sources</a></li>
+          <li><a href="page8.html">8. Bilan</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div class="p5-hero">
+    <div class="p5-hero-grid"></div>
+    <div class="container">
+      <div class="p5-hero-tag">
+        <i data-lucide="circle"></i>
+        Module 5 — Cercles de contrôle
+      </div>
+      <h1 class="p5-hero-title">
+        Maîtrisez ce que vous <span class="p5-hero-accent">contrôlez</span>
+      </h1>
+      <p class="p5-hero-sub">
+        Savoir distinguer ce que vous maîtrisez, ce que vous influencez et ce que vous subissez est la clé d'un pilotage efficace. Prenons l'exemple du Délai Moyen de Paiement clients (DMP).
+      </p>
+      <div class="p5-hero-stats">
+        <div class="p5-stat-item">
+          <span class="p5-stat-num" data-count="3">0</span>
+          <span class="p5-stat-label">cercles</span>
+        </div>
+        <div class="p5-stat-divider"></div>
+        <div class="p5-stat-item">
+          <span class="p5-stat-num" data-count="8">0</span>
+          <span class="p5-stat-label">leviers</span>
+        </div>
+        <div class="p5-stat-divider"></div>
+        <div class="p5-stat-item">
+          <span class="p5-stat-num" data-count="100" data-suffix="%">0</span>
+          <span class="p5-stat-label">prise de conscience</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barre de progression -->
+  <div class="p5-read-track">
+    <div class="p5-read-bar" id="p5-read-bar"></div>
+  </div>
+
+  <main class="container">
+
+    <!-- Carte principale -->
+    <div class="card p5-card-animate">
+      <p style="font-size: 1.2rem;">Prenons un exemple concret pour un comptable : le <strong>Délai Moyen de Paiement Clients (DMP)</strong>. Ce KPI mesure combien de temps vos clients mettent à vous payer. Voici ce que vous pouvez contrôler, influencer, ou subir.</p>
+
+      <!-- Visualisation interactive des cercles -->
+      <div class="p5-circles-vis" id="p5-circles-vis">
+        <div class="p5-circle p5-circle-outer" data-circle="outer">
+          <div class="p5-circle-label">Hors contrôle</div>
+        </div>
+        <div class="p5-circle p5-circle-middle" data-circle="middle">
+          <div class="p5-circle-label">Influence</div>
+        </div>
+        <div class="p5-circle p5-circle-inner" data-circle="inner">
+          <div class="p5-circle-label">Contrôle total</div>
+        </div>
+      </div>
+
+      <!-- Zone d'explication dynamique -->
+      <div class="p5-circle-explanation" id="p5-circle-explanation">
+        <p>Cliquez sur un cercle pour voir les détails.</p>
+      </div>
+
+      <!-- Grille des cercles avec listes (contenu original enrichi) -->
+      <div class="grid-2 p5-circles-grid">
+        <div class="info-box p5-info-tile" style="border-left-color: var(--primary);" data-circle="inner">
+          <div class="p5-tile-header">
+            <div class="p5-tile-icon" style="color: var(--primary);">
+              <i data-lucide="hand"></i>
+            </div>
+            <div>
+              <h3 style="margin:0;">Cercle interne – Contrôle total</h3>
+            </div>
+          </div>
+          <p><strong>Ce que vous maîtrisez directement :</strong></p>
+          <ul class="p5-list">
+            <li><i data-lucide="check"></i> La saisie des factures (exactitude, rapidité).</li>
+            <li><i data-lucide="check"></i> Le lettrage des paiements.</li>
+            <li><i data-lucide="check"></i> L'envoi des relances (contenu, fréquence).</li>
+            <li><i data-lucide="check"></i> Le choix des conditions de paiement (30 jours fin de mois, acompte…).</li>
+          </ul>
+          <div class="p5-formula-chip">
+            <i data-lucide="function-square"></i>
+            <code>Leviers : exactitude, fréquence, conditions</code>
+          </div>
+        </div>
+
+        <div class="info-box p5-info-tile" style="border-left-color: var(--secondary);" data-circle="middle">
+          <div class="p5-tile-header">
+            <div class="p5-tile-icon" style="color: var(--secondary);">
+              <i data-lucide="handshake"></i>
+            </div>
+            <div>
+              <h3 style="margin:0;">Cercle médian – Influence</h3>
+            </div>
+          </div>
+          <p><strong>Ce que vous pouvez influencer :</strong></p>
+          <ul class="p5-list">
+            <li><i data-lucide="check"></i> Le comportement des clients (via la qualité de la relation).</li>
+            <li><i data-lucide="check"></i> La motivation de l'équipe commerciale à transmettre les commandes rapidement.</li>
+            <li><i data-lucide="check"></i> La politique de crédit client (décidée avec la direction).</li>
+          </ul>
+          <div class="p5-formula-chip">
+            <i data-lucide="function-square"></i>
+            <code>Leviers : relation, communication, négociation</code>
+          </div>
+        </div>
+
+        <div class="info-box p5-info-tile" style="border-left-color: var(--accent);" data-circle="outer">
+          <div class="p5-tile-header">
+            <div class="p5-tile-icon" style="color: var(--accent);">
+              <i data-lucide="globe"></i>
+            </div>
+            <div>
+              <h3 style="margin:0;">Cercle externe – Hors contrôle</h3>
+            </div>
+          </div>
+          <p><strong>Ce que vous subissez :</strong></p>
+          <ul class="p5-list">
+            <li><i data-lucide="x"></i> Les taux de TVA (décisions de l'État).</li>
+            <li><i data-lucide="x"></i> L'inflation, les crises économiques.</li>
+            <li><i data-lucide="x"></i> La législation (loi LME sur les délais de paiement).</li>
+            <li><i data-lucide="x"></i> La santé financière de vos clients (dépôt de bilan).</li>
+          </ul>
+          <div class="p5-formula-chip">
+            <i data-lucide="function-square"></i>
+            <code>Subis : macroéconomie, réglementation</code>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alerte classique (conservée) -->
+      <div class="alert-box">
+        <h3 style="color: var(--danger); display:flex; align-items:center; gap:8px;">
+          <i data-lucide="alert-triangle"></i> L'erreur classique
+        </h3>
+        <p>Vouloir agir sur le cercle externe (se plaindre de l'État, des clients) est une perte d'énergie. La performance passe par l'optimisation de ce que l'on contrôle (interne) et l'influence intelligente (médian).</p>
+      </div>
+
+      <!-- Quiz sur les cercles -->
+      <div class="p5-quiz">
+        <div class="p5-quiz-hdr">
+          <i data-lucide="help-circle"></i>
+          <div>
+            <h3>Quiz — Cercles de contrôle</h3>
+            <p>Testez votre compréhension des trois cercles.</p>
+          </div>
+          <div class="p5-quiz-score-box">
+            <span class="p5-qscore-lbl">Score</span>
+            <span class="p5-qscore-val" id="p5-score">0</span>
+          </div>
+        </div>
+        <div class="p5-quiz-prog">
+          <div class="p5-quiz-prog-fill" id="p5-quiz-fill"></div>
+        </div>
+        <div id="p5-quiz-body"></div>
+        <div class="p5-quiz-final" id="p5-quiz-final" style="display:none;"></div>
+      </div>
+    </div>
+
+    <!-- Navigation inter-modules -->
+    <div class="p5-nav-footer">
+      <a href="page4.html" class="btn btn-secondary">
+        <i data-lucide="chevron-left"></i> Module 4 — SMART
+      </a>
+      <div class="p5-nav-dots-wrap">
+        <span class="p5-nav-module-lbl">Module 5 / 8</span>
+        <div class="p5-nav-dots">
+          <a href="page1.html" class="p5-dot" title="Le Cockpit"></a>
+          <a href="page2.html" class="p5-dot" title="Définition KPI"></a>
+          <a href="page3.html" class="p5-dot" title="Calculs"></a>
+          <a href="page4.html" class="p5-dot" title="SMART"></a>
+          <a href="page5.html" class="p5-dot p5-dot-active" title="Cercles"></a>
+          <a href="page6.html" class="p5-dot" title="Exercice"></a>
+          <a href="page7.html" class="p5-dot" title="Sources"></a>
+          <a href="page8.html" class="p5-dot" title="Bilan"></a>
+        </div>
+      </div>
+      <a href="page6.html" class="btn btn-primary">
+        Module 6 — Exercice <i data-lucide="chevron-right"></i>
+      </a>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <div class="footer-top">
+        <span class="footer-logo"><i class="fas fa-chart-line"></i> RD Formation</span>
+        <span class="footer-separator-pipe">|</span>
+        <span class="footer-tagline">Indicateurs Clés de Performance</span>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RD Formation — <strong>Dominez vos chiffres, pilotez votre succès.</strong></p>
+        <p class="copyright-notice">Toute reproduction interdite. Ce contenu est une création intellectuelle exclusive de l'auteur.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="core/main.js" type="module"></script>
+  <script src="core/page5.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => lucide.createIcons());</script>
+</body>
+</html>

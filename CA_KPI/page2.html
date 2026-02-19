@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qu'est-ce qu'un KPI ? — Masterclass KPI</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Lucide SVG — remplace Font Awesome, zéro emoji -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/page2.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       HEADER — identique à l'original, mot pour mot
+  ═══════════════════════════════════════════════ -->
+  <header>
+       <div class="container header-content">
+      <div class="logo"><a href="index.html"><img src="assets/logo.svg" alt="RD Formation" class="header-logo-img"></a></div>
+      <div id="welcome-message" style="font-weight: 600; color: var(--secondary);"></div>
+      <nav>
+        <ul>
+          <li><a href="page1.html">1. Le Cockpit</a></li>
+          <li><a href="page2.html" class="active">2. Définition KPI</a></li>
+          <li><a href="page3.html">3. Calculs</a></li>
+          <li><a href="page4.html">4. Méthode SMART</a></li>
+          <li><a href="page5.html">5. Cercles</a></li>
+          <li><a href="page6.html">6. Exercice</a></li>
+          <li><a href="page7.html">7. Sources</a></li>
+          <li><a href="page8.html">8. Bilan</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════
+       HERO — AJOUT au-dessus du <main> existant
+       (n'existe pas dans l'original, 100% nouveau)
+  ═══════════════════════════════════════════════ -->
+  <div class="p2-hero">
+    <div class="p2-hero-grid-bg"></div>
+    <div class="container">
+      <div class="p2-hero-tag">
+        <i data-lucide="key-round"></i>
+        Module 2 — Définition & Concepts Fondamentaux
+      </div>
+      <h1 class="p2-hero-title">
+        Qu'est-ce qu'un <span class="p2-hero-accent">véritable</span> KPI ?
+      </h1>
+      <p class="p2-hero-sub">
+        KPI signifie <strong>Key Performance Indicator</strong> — Indicateur Clé de Performance.
+        Le mot <em>Clé</em> est crucial : avoir 50 indicateurs, c'est se noyer dans la donnée.
+        Un bon tableau de bord n'en contient que <strong>4 à 8</strong>.
+      </p>
+      <!-- Compteurs animés — accroche visuelle immédiate -->
+      <div class="p2-hero-stats">
+        <div class="p2-stat-item">
+          <span class="p2-stat-num" data-count="4">0</span>
+          <span class="p2-stat-label">Rôles fondamentaux</span>
+        </div>
+        <div class="p2-stat-divider"></div>
+        <div class="p2-stat-item">
+          <span class="p2-stat-num" data-count="2">0</span>
+          <span class="p2-stat-label">Types d'indicateurs</span>
+        </div>
+        <div class="p2-stat-divider"></div>
+        <div class="p2-stat-item">
+          <span class="p2-stat-num" data-count="8" data-suffix=" max">0</span>
+          <span class="p2-stat-label">KPI par tableau de bord</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       MAIN — STRUCTURE ORIGINALE CONSERVÉE à 100 %
+       Même balise, même classe, même style inline
+  ═══════════════════════════════════════════════ -->
+  <main class="container" style="margin-top: 2rem;">
+
+    <!-- Barre de progression de lecture — ajout discret -->
+    <div class="p2-read-track">
+      <div class="p2-read-bar" id="p2-read-bar"></div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────
+         CARTE PRINCIPALE — classe .card CONSERVÉE
+         On ajoute seulement p2-card-animate pour
+         l'animation d'entrée, sans toucher à .card
+    ─────────────────────────────────────────────── -->
+    <div class="card p2-card-animate">
+
+      <!-- ·· Paragraphe intro original — CONSERVÉ ·· -->
+      <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+        KPI signifie <strong>Key Performance Indicator</strong> (Indicateur Clé de Performance).
+        Attention au mot "Clé". Avoir 50 indicateurs, ce n'est pas piloter, c'est se noyer dans
+        la donnée. Un bon tableau de bord ne contient que 4 à 8 KPI majeurs.
+      </p>
+
+      <!-- ·· Titre original CONSERVÉ ·· -->
+      <h2>Les 4 rôles fondamentaux d'un KPI</h2>
+
+      <!-- Sous-titre pédagogique — AJOUT -->
+      <p class="p2-section-intro">
+        Passez la souris sur chaque rôle pour découvrir un exemple concret
+        tiré d'une entreprise réelle.
+      </p>
+
+      <!-- ·· .grid-2 CONSERVÉE — on enrichit le contenu
+           interne uniquement, pas la classe ·· -->
+      <div class="grid-2">
+
+        <!-- Rôle 1 — style inline CONSERVÉ, icône Lucide ajoutée -->
+        <div class="p2-role-tile" style="background: var(--light); padding: 1.5rem; border-radius: var(--radius); border-top: 3px solid var(--primary);"
+             data-example="Boutique en ligne : après refonte de la fiche produit, le taux de conversion passe de 1,8 % à 2,4 %. Résultat : +33 % de chiffre d'affaires sans un euro de pub supplémentaire. La mesure a révélé où agir.">
+          <div class="p2-role-icon p2-icon-primary">
+            <i data-lucide="bar-chart-2"></i>
+          </div>
+          <h3>1. Mesurer (Évaluer)</h3>
+          <p>Traduire une action concrète en donnée chiffrée. <em>Ex: Taux de conversion d'un site web, Marge brute par produit.</em></p>
+          <div class="p2-hover-example">
+            <i data-lucide="lightbulb"></i>
+            <span class="p2-example-text">Survolez pour voir un exemple concret…</span>
+          </div>
+        </div>
+
+        <!-- Rôle 2 -->
+        <div class="p2-role-tile" style="background: var(--light); padding: 1.5rem; border-radius: var(--radius); border-top: 3px solid var(--danger);"
+             data-example="Restaurant : dès que la marge brute tombe sous 65 %, une alerte automatique est déclenchée. Le gérant identifie en 24 h que son fournisseur de viande a augmenté ses prix de 12 % sans prévenir. Sans KPI d'alerte : la perte se serait étalée sur 3 mois.">
+          <div class="p2-role-icon p2-icon-danger">
+            <i data-lucide="bell-ring"></i>
+          </div>
+          <h3>2. Alerter (Prévenir)</h3>
+          <p>Agir comme un système d'alarme quand un seuil critique est franchi. <em>Ex: Jours de trésorerie restants inférieurs à 30 jours.</em></p>
+          <div class="p2-hover-example">
+            <i data-lucide="lightbulb"></i>
+            <span class="p2-example-text">Survolez pour voir un exemple concret…</span>
+          </div>
+        </div>
+
+        <!-- Rôle 3 -->
+        <div class="p2-role-tile" style="background: var(--light); padding: 1.5rem; border-radius: var(--radius); border-top: 3px solid var(--secondary);"
+             data-example="Agence de com : le coût d'acquisition client (CAC) est à 380 €. Le dirigeant sait qu'au-delà de 400 €, embaucher un commercial n'est plus rentable. Il décide d'optimiser d'abord sa landing page — décision chiffrée, pas au feeling.">
+          <div class="p2-role-icon p2-icon-secondary">
+            <i data-lucide="compass"></i>
+          </div>
+          <h3>3. Décider (Agir)</h3>
+          <p>Donner un contexte clair pour prendre une décision stratégique (embaucher, couper un budget, investir).</p>
+          <div class="p2-hover-example">
+            <i data-lucide="lightbulb"></i>
+            <span class="p2-example-text">Survolez pour voir un exemple concret…</span>
+          </div>
+        </div>
+
+        <!-- Rôle 4 -->
+        <div class="p2-role-tile" style="background: var(--light); padding: 1.5rem; border-radius: var(--radius); border-top: 3px solid var(--accent);"
+             data-example="Cabinet de conseil : objectif 120 nouveaux clients sur l'année. En juillet, le KPI affiche 48 clients — soit 40 % de l'objectif à 58 % du temps écoulé. La direction réoriente sa stratégie commerciale dès août au lieu d'attendre décembre.">
+          <div class="p2-role-icon p2-icon-accent">
+            <i data-lucide="target"></i>
+          </div>
+          <h3>4. Piloter (Atteindre)</h3>
+          <p>S'assurer que la trajectoire actuelle correspond à l'objectif final fixé en début d'année.</p>
+          <div class="p2-hover-example">
+            <i data-lucide="lightbulb"></i>
+            <span class="p2-example-text">Survolez pour voir un exemple concret…</span>
+          </div>
+        </div>
+
+      </div><!-- /grid-2 — CONSERVÉE -->
+
+      <!-- ══════════════════════════════════════════
+           SECTION LEADING / LAGGING
+           Titre original CONSERVÉ, visualisation AJOUTÉE
+      ═══════════════════════════════════════════ -->
+      <h2 style="margin-top: 3rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">
+        Le concept Expert : Leading vs Lagging
+      </h2>
+      <p>C'est ici que la différence se fait entre un amateur et un expert en gestion.</p>
+
+      <!-- AJOUT : visualisation timeline animée -->
+      <div class="p2-timeline-vis">
+        <div class="p2-tl-track">
+          <div class="p2-tl-zone p2-tl-past">
+            <div class="p2-tl-marker p2-tl-lagging">
+              <i data-lucide="history"></i>
+            </div>
+            <div class="p2-tl-zone-label">Passé</div>
+            <div class="p2-tl-zone-sub">Lagging constate</div>
+          </div>
+          <div class="p2-tl-now">
+            <div class="p2-tl-now-ring"></div>
+            <div class="p2-tl-now-dot"></div>
+            <div class="p2-tl-zone-label">Maintenant</div>
+          </div>
+          <div class="p2-tl-zone p2-tl-future">
+            <div class="p2-tl-marker p2-tl-leading">
+              <i data-lucide="telescope"></i>
+            </div>
+            <div class="p2-tl-zone-label">Futur</div>
+            <div class="p2-tl-zone-sub">Leading prédit</div>
+          </div>
+        </div>
+        <p class="p2-tl-caption">
+          <span style="color:var(--primary); font-weight:700;">Lagging</span> regarde en arrière ·
+          <span style="color:var(--secondary); font-weight:700;">Leading</span> regarde en avant
+        </p>
+      </div>
+
+      <!-- ·· .grid-2 CONSERVÉE — contenu enrichi ·· -->
+      <div class="grid-2">
+
+        <!-- .info-box CONSERVÉE — style inline CONSERVÉ -->
+        <div class="info-box p2-ll-box" style="border-left-color: var(--primary);">
+          <!-- Badge AJOUTÉ à l'intérieur de .info-box -->
+          <div class="p2-ll-badge p2-badge-lagging">
+            <i data-lucide="history"></i> Lagging — Résultat
+          </div>
+          <h3 style="color: var(--primary);">Les Indicateurs de Résultat (Lagging)</h3>
+          <p>Ils constatent le passé. Ils sont faciles à mesurer mais très difficiles à changer une fois le résultat tombé. La comptabilité traditionnelle utilise presque exclusivement des Lagging Indicators.</p>
+          <p><strong>Exemples :</strong> Le Chiffre d'Affaires du mois dernier, le Bénéfice net, le Taux de désabonnement annuel.</p>
+          <!-- Exemples enrichis AJOUTÉS -->
+          <div class="p2-examples-mini">
+            <div class="p2-ex-row p2-ex-lagging">
+              <i data-lucide="trending-down"></i>
+              <div>
+                <strong>CA mensuel</strong>
+                <span>Connu le 1ᵉʳ du mois suivant — trop tard pour agir sur ce mois</span>
+              </div>
+            </div>
+            <div class="p2-ex-row p2-ex-lagging">
+              <i data-lucide="file-text"></i>
+              <div>
+                <strong>Bénéfice net annuel</strong>
+                <span>15 mois de retard sur les décisions qui l'ont créé</span>
+              </div>
+            </div>
+            <div class="p2-ex-row p2-ex-lagging">
+              <i data-lucide="user-minus"></i>
+              <div>
+                <strong>Taux de churn</strong>
+                <span>Le client est déjà parti quand l'indicateur s'allume</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- .info-box CONSERVÉE — style inline CONSERVÉ -->
+        <div class="info-box p2-ll-box" style="border-left-color: var(--secondary);">
+          <div class="p2-ll-badge p2-badge-leading">
+            <i data-lucide="telescope"></i> Leading — Action
+          </div>
+          <h3 style="color: var(--secondary);">Les Indicateurs d'Action (Leading)</h3>
+          <p>Ils prédisent l'avenir. Ils mesurent les actions qui vont <em>créer</em> le résultat futur. Ils sont plus difficiles à mesurer mais vous pouvez agir dessus instantanément.</p>
+          <p><strong>Exemples :</strong> Le nombre de devis envoyés cette semaine, la satisfaction client du jour, le trafic du site web d'aujourd'hui.</p>
+          <div class="p2-examples-mini">
+            <div class="p2-ex-row p2-ex-leading">
+              <i data-lucide="send"></i>
+              <div>
+                <strong>Devis envoyés / semaine</strong>
+                <span>Baisse aujourd'hui → CA baissera dans 30 jours — on peut encore agir</span>
+              </div>
+            </div>
+            <div class="p2-ex-row p2-ex-leading">
+              <i data-lucide="smile"></i>
+              <div>
+                <strong>Score satisfaction J+1</strong>
+                <span>Prédit le churn 3 mois à l'avance — le client est encore là</span>
+              </div>
+            </div>
+            <div class="p2-ex-row p2-ex-leading">
+              <i data-lucide="mail-open"></i>
+              <div>
+                <strong>Taux d'ouverture email</strong>
+                <span>Corrélé au CA à J+14 — levier immédiatement actionnable</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /grid-2 CONSERVÉE -->
+
+      <!-- AJOUT : Comparateur interactif entre les deux -->
+      <div class="p2-comparator">
+        <div class="p2-comp-hdr">
+          <i data-lucide="git-compare-arrows"></i>
+          <div>
+            <h3>Même situation, deux lectures différentes</h3>
+            <p>Sélectionnez un scénario et observez comment Leading et Lagging traitent la même réalité.</p>
+          </div>
+        </div>
+        <div class="p2-comp-tabs" role="tablist">
+          <button class="p2-comp-tab active" data-scenario="ventes" role="tab">
+            <i data-lucide="shopping-bag"></i> Ventes en baisse
+          </button>
+          <button class="p2-comp-tab" data-scenario="clients" role="tab">
+            <i data-lucide="users"></i> Satisfaction clients
+          </button>
+          <button class="p2-comp-tab" data-scenario="tresorerie" role="tab">
+            <i data-lucide="banknote"></i> Crise de trésorerie
+          </button>
+        </div>
+        <div class="p2-comp-body" id="p2-comp-body">
+          <!-- Injecté par JS -->
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════
+           SECTION VANITY METRICS
+           .alert-box CONSERVÉE — icône remplacée
+      ═══════════════════════════════════════════ -->
+      <div class="alert-box" style="background: #fee2e2; border-color: var(--danger);">
+        <h3 style="color: var(--danger); display:flex; align-items:center; gap:8px;">
+          <!-- Lucide remplace fa-skull-crossbones -->
+          <i data-lucide="skull"></i>
+          Le piège mortel : Les Vanity Metrics
+        </h3>
+        <p>Ce sont les indicateurs qui flattent l'ego mais n'ont aucun impact direct sur la santé financière ou la décision.</p>
+        <ul>
+          <li><strong>Vanity Metric :</strong> "Nous avons eu 100 000 vues sur notre vidéo TikTok !" (Super, mais ça paie les salaires ?)</li>
+          <li><strong>Vrai KPI (Actionable Metric) :</strong> "Taux d'acquisition de clients payants depuis TikTok = 2%." (Là, on peut piloter !)</li>
+        </ul>
+      </div>
+
+      <!-- AJOUT : Quiz interactif Vanity vs Actionable -->
+      <div class="p2-quiz">
+        <div class="p2-quiz-hdr">
+          <i data-lucide="help-circle"></i>
+          <div>
+            <h3>Quiz — Vanity ou Actionable ?</h3>
+            <p>Pour chaque indicateur, décidez : piège à ego ou vrai KPI ?</p>
+          </div>
+          <div class="p2-quiz-score-wrap">
+            <span class="p2-quiz-score-lbl">Score</span>
+            <span class="p2-quiz-score-val"><span id="p2-score">0</span> / <span id="p2-total">5</span></span>
+          </div>
+        </div>
+        <div class="p2-quiz-progress">
+          <div class="p2-quiz-prog-bar" id="p2-quiz-prog"></div>
+        </div>
+        <div id="p2-quiz-questions"><!-- Injecté par JS --></div>
+        <div class="p2-quiz-final" id="p2-quiz-final" style="display:none;"></div>
+      </div>
+
+      <!-- AJOUT : Filtre des 3 questions pour choisir ses KPI -->
+      <div class="p2-filter-block">
+        <div class="p2-filter-hdr">
+          <i data-lucide="filter"></i>
+          <div>
+            <h3>Le filtre pratique : 3 questions avant d'ajouter un KPI</h3>
+            <p>Cochez chaque critère. Si un seul manque, repensez cet indicateur.</p>
+          </div>
+        </div>
+        <div class="p2-filter-steps">
+
+          <div class="p2-filter-step info-box p2-filter-step-card">
+            <div class="p2-filter-num">1</div>
+            <div class="p2-filter-content">
+              <h3 style="display:flex; align-items:center; gap:8px; margin-bottom:0.5rem;">
+                <i data-lucide="zap"></i> Est-il actionnable ?
+              </h3>
+              <p>Si cet indicateur monte ou baisse, pouvez-vous prendre une action concrète dans les 7 jours ? Si non, c'est une statistique, pas un KPI.</p>
+              <label class="p2-chk-label">
+                <input type="checkbox" class="p2-chk" data-step="1"> Je peux agir dessus immédiatement
+              </label>
+            </div>
+          </div>
+
+          <div class="p2-filter-step info-box p2-filter-step-card">
+            <div class="p2-filter-num">2</div>
+            <div class="p2-filter-content">
+              <h3 style="display:flex; align-items:center; gap:8px; margin-bottom:0.5rem;">
+                <i data-lucide="link"></i> Est-il lié à un objectif ?
+              </h3>
+              <p>Chaque KPI doit être rattaché directement à un objectif de votre plan stratégique. Un indicateur sans objectif est du bruit.</p>
+              <label class="p2-chk-label">
+                <input type="checkbox" class="p2-chk" data-step="2"> Il est relié à un objectif précis
+              </label>
+            </div>
+          </div>
+
+          <div class="p2-filter-step info-box p2-filter-step-card">
+            <div class="p2-filter-num">3</div>
+            <div class="p2-filter-content">
+              <h3 style="display:flex; align-items:center; gap:8px; margin-bottom:0.5rem;">
+                <i data-lucide="database"></i> Peut-il être mesuré régulièrement ?
+              </h3>
+              <p>La donnée doit venir d'une source fiable et accessible. Si le calcul prend 4 h par semaine manuellement, trouvez une alternative.</p>
+              <label class="p2-chk-label">
+                <input type="checkbox" class="p2-chk" data-step="3"> La donnée est disponible et fiable
+              </label>
+            </div>
+          </div>
+
+        </div>
+        <!-- Résultat de la checklist -->
+        <div class="p2-filter-result" id="p2-filter-result" style="display:none;">
+          <i data-lucide="check-circle"></i>
+          <div>
+            <strong>Cet indicateur passe le filtre !</strong>
+            <span>Il peut intégrer votre tableau de bord. Mais souvenez-vous : 4 à 8 KPI maximum au total.</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /card — CONSERVÉE -->
+
+    <!-- AJOUT : Navigation inter-modules -->
+    <div class="p2-nav-footer">
+      <a href="page1.html" class="btn btn-secondary">
+        <i data-lucide="chevron-left"></i> Module 1 — Le Cockpit
+      </a>
+      <div class="p2-nav-dots-wrap">
+        <span class="p2-nav-module-lbl">Module 2 / 8</span>
+        <div class="p2-nav-dots">
+          <a href="page1.html" class="p2-dot" title="Le Cockpit"></a>
+          <a href="page2.html" class="p2-dot p2-dot-active" title="Définition KPI"></a>
+          <a href="page3.html" class="p2-dot" title="Calculs"></a>
+          <a href="page4.html" class="p2-dot" title="SMART"></a>
+          <a href="page5.html" class="p2-dot" title="Cercles"></a>
+          <a href="page6.html" class="p2-dot" title="Exercice"></a>
+          <a href="page7.html" class="p2-dot" title="Sources"></a>
+          <a href="page8.html" class="p2-dot" title="Bilan"></a>
+        </div>
+      </div>
+      <a href="page3.html" class="btn btn-primary">
+        Module 3 — Calculs <i data-lucide="chevron-right"></i>
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="main-footer">
+  <div class="container footer-content">
+    <div class="footer-top">
+      <span class="footer-logo"><i class="fas fa-chart-line"></i> RD Formation</span>
+      <span class="footer-separator-pipe">|</span>
+      <span class="footer-tagline">Indicateurs Clés de Performance</span>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        &copy; 2026 RD Formation — <strong>Dominez vos chiffres, pilotez votre succès.</strong>
+      </p>
+      <p class="copyright-notice">
+        Toute reproduction interdite. Ce contenu est une création intellectuelle exclusive de l'auteur.
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script src="core/main.js" type="module"></script>
+  <script src="core/page2.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => lucide.createIcons());
+  </script>
+
+</body>
+</html>

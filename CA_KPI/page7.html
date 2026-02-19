@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sources de données – Masterclass KPI</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/page7.css">
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo"><a href="index.html"><img src="assets/logo.svg" alt="RD Formation" class="header-logo-img"></a></div>
+      <div id="welcome-message" style="font-weight: 600; color: var(--secondary);"></div>
+      <nav>
+        <ul>
+          <li><a href="page1.html">1. Le Cockpit</a></li>
+          <li><a href="page2.html">2. Définition KPI</a></li>
+          <li><a href="page3.html">3. Calculs</a></li>
+          <li><a href="page4.html">4. Méthode SMART</a></li>
+          <li><a href="page5.html">5. Cercles</a></li>
+          <li><a href="page6.html">6. Exercice</a></li>
+          <li><a href="page7.html" class="active">7. Sources</a></li>
+          <li><a href="page8.html">8. Bilan</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div class="p7-hero">
+    <div class="p7-hero-grid"></div>
+    <div class="container">
+      <div class="p7-hero-tag">
+        <i data-lucide="database"></i>
+        Module 7 — Sources de données
+      </div>
+      <h1 class="p7-hero-title">
+        Où trouver <span class="p7-hero-accent">les données</span> ?
+      </h1>
+      <p class="p7-hero-sub">
+        Un KPI ne vaut que par la qualité de ses sources. Découvrez les sources internes et externes pour alimenter vos indicateurs.
+      </p>
+      <div class="p7-hero-stats">
+        <div class="p7-stat-item">
+          <span class="p7-stat-num" data-count="2">0</span>
+          <span class="p7-stat-label">types de sources</span>
+        </div>
+        <div class="p7-stat-divider"></div>
+        <div class="p7-stat-item">
+          <span class="p7-stat-num" data-count="8">0</span>
+          <span class="p7-stat-label">exemples</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barre de progression -->
+  <div class="p7-read-track">
+    <div class="p7-read-bar" id="p7-read-bar"></div>
+  </div>
+
+  <main class="container">
+    <div class="card p7-card-animate">
+      <h2>Sources internes</h2>
+      <p>Les données produites par votre propre système d'information.</p>
+      <div class="grid-2 p7-sources-grid">
+        <div class="info-box p7-source-tile">
+          <div class="p7-tile-header">
+            <i data-lucide="file-text"></i>
+            <h3>Logiciel comptable</h3>
+          </div>
+          <p>Balance générale, journaux de ventes/achats, compte de résultat. Source de base pour 80% des KPI financiers.</p>
+        </div>
+        <div class="info-box p7-source-tile">
+          <div class="p7-tile-header">
+            <i data-lucide="users"></i>
+            <h3>CRM</h3>
+          </div>
+          <p>CA par client, panier moyen, taux de transformation. Idéal pour les KPI commerciaux.</p>
+        </div>
+        <div class="info-box p7-source-tile">
+          <div class="p7-tile-header">
+            <i data-lucide="package"></i>
+            <h3>ERP</h3>
+          </div>
+          <p>Stocks, mouvements, coûts de production. Permet de calculer le BFR et les rotations.</p>
+        </div>
+        <div class="info-box p7-source-tile">
+          <div class="p7-tile-header">
+            <i data-lucide="clock"></i>
+            <h3>Outils RH</h3>
+          </div>
+          <p>Paie, absentéisme, heures supplémentaires. KPI sociaux.</p>
+        </div>
+      </div>
+
+      <h2 style="margin-top: 2rem;">Sources externes</h2>
+      <p>Benchmark et données de marché.</p>
+      <div class="grid-2 p7-sources-grid">
+        <div class="info-box p7-source-tile" style="border-left-color: var(--secondary);">
+          <div class="p7-tile-header">
+            <i data-lucide="landmark"></i>
+            <h3>INSEE</h3>
+          </div>
+          <p>Taux de croissance par secteur, indices de prix, données régionales. Gratuit et fiable.</p>
+        </div>
+        <div class="info-box p7-source-tile" style="border-left-color: var(--secondary);">
+          <div class="p7-tile-header">
+            <i data-lucide="banknote"></i>
+            <h3>Banque de France</h3>
+          </div>
+          <p>Délais de paiement moyens par secteur, ratios de bilan sectoriels.</p>
+        </div>
+        <div class="info-box p7-source-tile" style="border-left-color: var(--secondary);">
+          <div class="p7-tile-header">
+            <i data-lucide="building"></i>
+            <h3>Fédérations professionnelles</h3>
+          </div>
+          <p>Benchmarks spécifiques à votre métier (ex: Fédération du BTP).</p>
+        </div>
+        <div class="info-box p7-source-tile" style="border-left-color: var(--secondary);">
+          <div class="p7-tile-header">
+            <i data-lucide="globe"></i>
+            <h3>Données publiques</h3>
+          </div>
+          <p>Open data, marchés publics, appels d'offres.</p>
+        </div>
+      </div>
+
+      <div class="p7-demo">
+        <h3><i data-lucide="play"></i> Exemple interactif</h3>
+        <label for="source-select">Choisissez une source externe :</label>
+        <select id="source-select" class="form-group">
+          <option value="insee">INSEE – Marge commerciale moyenne du secteur</option>
+          <option value="banque">Banque de France – Délai de paiement fournisseur</option>
+        </select>
+        <p id="source-example" class="p7-source-example">Sélectionnez une source pour voir un exemple de KPI.</p>
+      </div>
+
+      <!-- Quiz sur les sources -->
+      <div class="p7-quiz">
+        <div class="p7-quiz-hdr">
+          <i data-lucide="help-circle"></i>
+          <div>
+            <h3>Quiz — Sources de données</h3>
+            <p>Testez vos connaissances.</p>
+          </div>
+          <div class="p7-quiz-score-box">
+            <span class="p7-qscore-lbl">Score</span>
+            <span class="p7-qscore-val" id="p7-score">0</span>
+          </div>
+        </div>
+        <div class="p7-quiz-prog">
+          <div class="p7-quiz-prog-fill" id="p7-quiz-fill"></div>
+        </div>
+        <div id="p7-quiz-body"></div>
+        <div class="p7-quiz-final" id="p7-quiz-final" style="display:none;"></div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="p7-nav-footer">
+      <a href="page6.html" class="btn btn-secondary">
+        <i data-lucide="chevron-left"></i> Module 6 — Exercice
+      </a>
+      <div class="p7-nav-dots-wrap">
+        <span class="p7-nav-module-lbl">Module 7 / 8</span>
+        <div class="p7-nav-dots">
+          <a href="page1.html" class="p7-dot" title="Le Cockpit"></a>
+          <a href="page2.html" class="p7-dot" title="Définition KPI"></a>
+          <a href="page3.html" class="p7-dot" title="Calculs"></a>
+          <a href="page4.html" class="p7-dot" title="SMART"></a>
+          <a href="page5.html" class="p7-dot" title="Cercles"></a>
+          <a href="page6.html" class="p7-dot" title="Exercice"></a>
+          <a href="page7.html" class="p7-dot p7-dot-active" title="Sources"></a>
+          <a href="page8.html" class="p7-dot" title="Bilan"></a>
+        </div>
+      </div>
+      <a href="page8.html" class="btn btn-primary">
+        Module 8 — Bilan <i data-lucide="chevron-right"></i>
+      </a>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <div class="footer-top">
+        <span class="footer-logo"><i class="fas fa-chart-line"></i> RD Formation</span>
+        <span class="footer-separator-pipe">|</span>
+        <span class="footer-tagline">Indicateurs Clés de Performance</span>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RD Formation — <strong>Dominez vos chiffres, pilotez votre succès.</strong></p>
+        <p class="copyright-notice">Toute reproduction interdite. Ce contenu est une création intellectuelle exclusive de l'auteur.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="core/main.js" type="module"></script>
+  <script src="core/page7.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => lucide.createIcons());</script>
+</body>
+</html>

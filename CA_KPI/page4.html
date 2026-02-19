@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Méthode SMART – Masterclass KPI</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/page4.css">
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo"><a href="index.html">Masterclass KPI</a></div>
+      <div id="welcome-message" style="font-weight: 600; color: var(--secondary);"></div>
+      <nav>
+        <ul>
+          <li><a href="page1.html">1. Le Cockpit</a></li>
+          <li><a href="page2.html">2. Définition KPI</a></li>
+          <li><a href="page3.html">3. Calculs</a></li>
+          <li><a href="page4.html" class="active">4. Méthode SMART</a></li>
+          <li><a href="page5.html">5. Cercles</a></li>
+          <li><a href="page6.html">6. Exercice</a></li>
+          <li><a href="page7.html">7. Sources</a></li>
+          <li><a href="page8.html">8. Bilan</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero section (comme page3) -->
+  <div class="p4-hero">
+    <div class="p4-hero-grid"></div>
+    <div class="container">
+      <div class="p4-hero-tag"><i data-lucide="target"></i> Module 4 - Méthode SMART Transformez vos intentions en résultats.</div>
+      <h1 class="p4-hero-title">La méthode <span class="p4-hero-accent">SMART</span></h1>
+      <p class="p4-hero-sub">Transformez vos intentions en objectifs opérationnels. Chaque critère est un levier de pilotage.</p>
+      <div class="p4-hero-stats">
+        <div class="p4-stat-item"><span class="p4-stat-num" data-count="5">0</span><span class="p4-stat-label">critères</span></div>
+        <div class="p4-stat-divider"></div>
+        <div class="p4-stat-item"><span class="p4-stat-num" data-count="100">0</span><span class="p4-stat-label">% applicables</span></div>
+        <div class="p4-stat-divider"></div>
+        <div class="p4-stat-item"><span class="p4-stat-num" data-count="15">0</span><span class="p4-stat-label">min pour maîtriser</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barre de progression de lecture -->
+  <div class="p4-read-track">
+    <div class="p4-read-bar" id="p4-read-bar"></div>
+  </div>
+
+  <main class="container">
+    <!-- Première carte : explication des critères (avec visualisation) -->
+    <div class="card p4-card-animate" id="p4-card-1">
+      <h2>Les 5 critères SMART</h2>
+      <p class="p4-section-intro">Cliquez sur un critère pour voir un exemple concret.</p>
+
+      <!-- Visualisation horizontale des critères (inspirée des niveaux page3) -->
+      <div class="p4-criteria-vis">
+        <div class="p4-crit-item" data-crit="S">
+          <div class="p4-crit-icon" style="background: rgba(31,69,144,.1); color: var(--primary);">S</div>
+          <div class="p4-crit-text">
+            <span class="p4-crit-name">Spécifique</span>
+            <span class="p4-crit-desc">Qui ? Quoi ?</span>
+          </div>
+          <span class="p4-crit-badge">Essentiel</span>
+        </div>
+        <div class="p4-crit-arrow"><i data-lucide="chevron-right"></i></div>
+        <div class="p4-crit-item" data-crit="M">
+          <div class="p4-crit-icon" style="background: rgba(28,160,152,.1); color: var(--secondary);">M</div>
+          <div class="p4-crit-text">
+            <span class="p4-crit-name">Mesurable</span>
+            <span class="p4-crit-desc">Combien ?</span>
+          </div>
+          <span class="p4-crit-badge">Quantifiable</span>
+        </div>
+        <div class="p4-crit-arrow"><i data-lucide="chevron-right"></i></div>
+        <div class="p4-crit-item" data-crit="A">
+          <div class="p4-crit-icon" style="background: rgba(245,158,11,.1); color: var(--accent);">A</div>
+          <div class="p4-crit-text">
+            <span class="p4-crit-name">Atteignable</span>
+            <span class="p4-crit-desc">Réaliste ?</span>
+          </div>
+          <span class="p4-crit-badge">Accessible</span>
+        </div>
+        <div class="p4-crit-arrow"><i data-lucide="chevron-right"></i></div>
+        <div class="p4-crit-item" data-crit="R">
+          <div class="p4-crit-icon" style="background: rgba(239,68,68,.1); color: var(--danger);">R</div>
+          <div class="p4-crit-text">
+            <span class="p4-crit-name">Réaliste</span>
+            <span class="p4-crit-desc">Pertinent ?</span>
+          </div>
+          <span class="p4-crit-badge">Cohérent</span>
+        </div>
+        <div class="p4-crit-arrow"><i data-lucide="chevron-right"></i></div>
+        <div class="p4-crit-item" data-crit="T">
+          <div class="p4-crit-icon" style="background: rgba(16,185,129,.1); color: var(--success);">T</div>
+          <div class="p4-crit-text">
+            <span class="p4-crit-name">Temporel</span>
+            <span class="p4-crit-desc">Quand ?</span>
+          </div>
+          <span class="p4-crit-badge">Échéance</span>
+        </div>
+      </div>
+
+      <!-- Zone d'exemple dynamique -->
+      <div id="p4-crit-example" class="p4-crit-example">
+        <p>Cliquez sur un critère pour voir un exemple.</p>
+      </div>
+    </div>
+
+    <!-- Deuxième carte : validateur SMART interactif avec onglets -->
+    <div class="card p4-card-animate" id="p4-card-2">
+      <h2>Validez votre objectif</h2>
+      <p>Choisissez un contexte et saisissez votre objectif. L'analyse SMART s'affiche en temps réel.</p>
+
+      <!-- Onglets de contexte (comme page3) -->
+      <div class="p4-context-tabs">
+        <div class="p4-context-tab active" data-context="financier"><i data-lucide="chart-line"></i> Financier</div>
+        <div class="p4-context-tab" data-context="commercial"><i data-lucide="shopping-cart"></i> Commercial</div>
+        <div class="p4-context-tab" data-context="rh"><i data-lucide="users"></i> RH</div>
+        <div class="p4-context-tab" data-context="marketing"><i data-lucide="megaphone"></i> Marketing</div>
+      </div>
+
+      <!-- Formulaire SMART (conserve les id originaux pour compatibilité avec smartValidator.js) -->
+      <form id="smart-form">
+        <div class="form-group">
+          <label for="objective">Votre objectif <span id="p4-context-label">(ex: financier)</span></label>
+          <input type="text" id="objective" placeholder="Ex: Augmenter le CA de 10% d'ici fin 2026">
+        </div>
+      </form>
+
+      <!-- Affichage des critères avec validation -->
+      <div class="p4-criteria-grid">
+        <div class="p4-criterion" id="p4-crit-S">
+          <span class="p4-crit-letter">S</span>
+          <span class="p4-crit-title">Spécifique</span>
+          <span class="p4-crit-status" id="p4-status-S">⚪</span>
+        </div>
+        <div class="p4-criterion" id="p4-crit-M">
+          <span class="p4-crit-letter">M</span>
+          <span class="p4-crit-title">Mesurable</span>
+          <span class="p4-crit-status" id="p4-status-M">⚪</span>
+        </div>
+        <div class="p4-criterion" id="p4-crit-A">
+          <span class="p4-crit-letter">A</span>
+          <span class="p4-crit-title">Atteignable</span>
+          <span class="p4-crit-status" id="p4-status-A">⚪</span>
+        </div>
+        <div class="p4-criterion" id="p4-crit-R">
+          <span class="p4-crit-letter">R</span>
+          <span class="p4-crit-title">Réaliste</span>
+          <span class="p4-crit-status" id="p4-status-R">⚪</span>
+        </div>
+        <div class="p4-criterion" id="p4-crit-T">
+          <span class="p4-crit-letter">T</span>
+          <span class="p4-crit-title">Temporel</span>
+          <span class="p4-crit-status" id="p4-status-T">⚪</span>
+        </div>
+      </div>
+
+      <!-- Résultat global -->
+      <div id="p4-smart-result" class="p4-smart-result"></div>
+
+      <!-- Suggestions d'amélioration (affichées dynamiquement) -->
+      <div id="p4-suggestions" class="p4-suggestions"></div>
+    </div>
+
+    <!-- Troisième carte : quiz sur la méthode SMART -->
+    <div class="card p4-card-animate" id="p4-card-3">
+      <h2><i data-lucide="brain"></i> Quiz : Maîtrisez-vous les critères ?</h2>
+      <div id="p4-quiz-container"></div>
+    </div>
+
+
+        <!-- AJOUT : navigation inter-modules -->
+    <div class="p4-nav-footer">
+      <a href="page3.html" class="btn btn-secondary">
+        <i data-lucide="chevron-left"></i> Module 3 — Calculs
+      </a>
+      <div class="p4-nav-dots-wrap">
+        <span class="p4-nav-module-lbl">Module 5 / 8</span>
+        <div class="p4-nav-dots">
+          <a href="page1.html" class="p4-dot" title="Le Cockpit"></a>
+          <a href="page2.html" class="p4-dot" title="Définition KPI"></a>
+          <a href="page3.html" class="p4-dot" title="Calculs"></a>
+          <a href="page4.html" class="p4-dot p4-dot-active" title="SMART"></a>
+          <a href="page5.html" class="p4-dot" title="Cercles"></a>
+          <a href="page6.html" class="p4-dot" title="Exercice"></a>
+          <a href="page7.html" class="p4-dot" title="Sources"></a>
+          <a href="page8.html" class="p4-dot" title="Bilan"></a>
+        </div>
+      </div>
+      <a href="page5.html" class="btn btn-primary">
+        Module 5 — Cercles <i data-lucide="chevron-right"></i>
+      </a>
+    </div>
+  </main>
+
+    <footer class="main-footer">
+  <div class="container footer-content">
+    <div class="footer-top">
+      <span class="footer-logo"></i> RD Formation</span>
+      <span class="footer-separator-pipe">|</span>
+      <span class="footer-tagline">Indicateurs Clés de Performance</span>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        &copy; 2026 RD Formation — <strong>Dominez vos chiffres, pilotez votre succès.</strong>
+      </p>
+      <p class="copyright-notice">
+        Toute reproduction interdite. Ce contenu est une création intellectuelle exclusive de l'auteur.
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="core/main.js" type="module"></script>
+  <script src="core/page4.js"></script>
+</body>
+</html>

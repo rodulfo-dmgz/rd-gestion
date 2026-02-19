@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masterclass KPI – L'Art du Pilotage Financier</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="index-page">
+  <header class="header-simple">
+    <div class="container">
+      <div class="logo">Indicateurs clés de performance</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid-2" style="margin-top: 4rem; align-items: center;">
+      
+      <div>
+        <h1 style="border: none; font-size: 3rem; margin-bottom: 1rem;">Propulse ton expertise par les chiffres.</h1>
+        <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 1rem;">
+          La comptabilité regarde le passé, mais tes analyses éclaireront l'avenir. Apprends à transformer des données brutes en leviers de décision pour devenir un collaborateur indispensable.
+        </p>
+        
+        <p style="font-size: 0.9rem; color: var(--primary); font-style: italic; margin-bottom: 2rem;">
+          <i class="fas fa-user-check"></i> Ton adresse mail nous permet simplement de personnaliser ton parcours et de sauvegarder tes progressions dans les exercices.
+        </p>
+        
+        <div class="info-box">
+          <h3 style="color: var(--secondary);"><i class="fas fa-graduation-cap"></i> Tes nouveaux super-pouvoirs :</h3>
+          <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+            <li>Transformer la <strong>Data</strong> brute en <strong>KPI</strong> actionnables.</li>
+            <li>Débusquer les <strong>"Vanity Metrics"</strong> qui font briller les rapports mais ne servent à rien.</li>
+            <li>Maîtriser la méthode SMART pour fixer des objectifs de pro.</li>
+            <li>Bâtir un tableau de bord capable de guider n'importe quelle stratégie.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card login-container" style="margin: 0;">
+        <h2 style="text-align: center; margin-top: 0; margin-bottom: 1.5rem;"><i class="fas fa-user-circle"></i> Accès à la Masterclass</h2>
+        <div id="message-container"></div>
+        
+        <form id="auth-form">
+          <div class="form-group">
+            <label for="civilite">Civilité</label>
+            <select id="civilite" required>
+              <option value="M">Monsieur</option>
+              <option value="F">Madame</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" required placeholder="Votre nom">
+          </div>
+          <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" required placeholder="Votre prénom">
+          </div>
+          <div class="form-group">
+            <label for="email">Adresse E-mail (Identifiant)</label>
+            <input type="email" id="email" required placeholder="contact@entreprise.com">
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+            <i class="fas fa-sign-in-alt"></i> Démarrer la formation
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+    <script src="core/config.js"></script>
+    <script type="module" src="core/auth.js"></script>
+</body>
+</html>
